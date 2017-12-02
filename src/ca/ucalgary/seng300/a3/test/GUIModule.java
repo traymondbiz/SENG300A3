@@ -113,22 +113,71 @@ public class GUIModule {
 		safetyActiveLabel.setBounds(275, 75, 250, 50);
 		userPanel.add(safetyActiveLabel);
 		
-		JButton popOptionALabel = new JButton("");
-		popOptionALabel.setContentAreaFilled(false);
-		popOptionALabel.setBorderPainted(false);
-		popOptionALabel.setOpaque(false);
-		popOptionALabel.addActionListener(new ActionListener() {
+		JButton popOptionAButton = new JButton("");
+		popOptionAButton.setContentAreaFilled(false);
+		popOptionAButton.setBorderPainted(false);
+		popOptionAButton.setOpaque(false);
+		popOptionAButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		popOptionALabel.setIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/Pop.png")));
-		popOptionALabel.setBounds(25, 150, 150, 75);
-		userPanel.add(popOptionALabel);
+		popOptionAButton.setIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/Pop.png")));
+		popOptionAButton.setBounds(25, 150, 150, 75);
+		userPanel.add(popOptionAButton);
 		
-		JLabel lblNewLabel = new JLabel("Example Model\r\n");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\RaylazorIII\\Desktop\\VM.png"));
-		lblNewLabel.setBounds(584, 379, 191, 153);
-		userPanel.add(lblNewLabel);
+		JButton popOptionBButton = new JButton("");
+		popOptionBButton.setIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/Pop.png")));
+		popOptionBButton.setContentAreaFilled(false);
+		popOptionBButton.setBorderPainted(false);
+		popOptionBButton.setBounds(225, 150, 150, 75);
+		userPanel.add(popOptionBButton);
+		
+		JButton popOptionCButton = new JButton("");
+		popOptionCButton.setIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/Pop.png")));
+		popOptionCButton.setContentAreaFilled(false);
+		popOptionCButton.setBorderPainted(false);
+		popOptionCButton.setBounds(25, 275, 150, 75);
+		userPanel.add(popOptionCButton);
+		
+		JButton popOptionDButton = new JButton("");
+		popOptionDButton.setIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/Pop.png")));
+		popOptionDButton.setContentAreaFilled(false);
+		popOptionDButton.setBorderPainted(false);
+		popOptionDButton.setBounds(225, 275, 150, 75);
+		userPanel.add(popOptionDButton);
+		
+		JButton toonieButton = new JButton("<html><center>200</center><br>(Toonie)</html>");
+		toonieButton.setBounds(400, 150, 100, 100);
+		userPanel.add(toonieButton);
+		
+		JButton loonieButton = new JButton("<html><center>100</center><br>(Loonie)</html>");
+		loonieButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		loonieButton.setBounds(538, 150, 100, 100);
+		userPanel.add(loonieButton);
+		
+		JButton quarterButton = new JButton("<html><center>25</center><br>(Quarter)</html>");
+		quarterButton.setBounds(675, 150, 100, 100);
+		userPanel.add(quarterButton);
+		
+		JButton dimeButton = new JButton("<html><center>10</center><br>(Dime)</html>");
+		dimeButton.setBounds(400, 275, 100, 100);
+		userPanel.add(dimeButton);
+		
+		JButton nickelButton = new JButton("<html><center>5</center><br>(Nickel)</html>");
+		nickelButton.setBounds(538, 275, 100, 100);
+		userPanel.add(nickelButton);
+		
+		JButton invalidButton = new JButton("<html><center>5000</center><br>(Invalid)</html>");
+		invalidButton.setBounds(675, 275, 100, 100);
+		userPanel.add(invalidButton);
+		
+		JLabel dispensedLabel = new JLabel("[Dispensed]: <PopName> <Change (int Value or List of Coins)>");
+		dispensedLabel.setFont(new Font("Dialog", Font.BOLD, 18));
+		dispensedLabel.setBounds(25, 494, 749, 42);
+		userPanel.add(dispensedLabel);
 		
 		JPanel techPanel = new JPanel();
 		guiTabbedPane.addTab("Tech", null, techPanel, null);
