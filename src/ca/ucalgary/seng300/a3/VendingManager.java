@@ -54,14 +54,16 @@ public class VendingManager {
 		ChangeModule.initialize(this);
 		DisplayModule.initialize(this);
 		TransactionModule.initialize(this);
-		//added by XM
 		ConfigurationModule.initialize(this);
-		configurationModule = ConfigurationModule.getInstance();
-		//end
+    LoggingModule.initialize(this);
+    
+		
 		listener = VendingListener.getInstance();
 		changeModule = ChangeModule.getInstance();
+		displayModule = DisplayModule.getInstance();
 		transactionModule = TransactionModule.getInstance();
-		displayModule =DisplayModule.getInstance();
+    configurationModule = ConfigurationModule.getInstance();
+		loggingModule = LoggingModule.getInstance();
 	}
 	
 	/**
@@ -73,9 +75,8 @@ public class VendingManager {
 	public static void initialize(VendingMachine host){
 		mgr = new VendingManager(); 
 		vm = host;
-		loggingModule = LoggingModule.getInstance();
+
 		mgr.registerListeners();
-		
 		noCreditThread2 = new Thread(DisplayModule.getInstance());
 
 		displayModule.addLoopMessage("Hi there!",5000) ;
