@@ -2,6 +2,7 @@ package ca.ucalgary.seng300.a3.test;
 
 import static org.junit.Assert.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +11,8 @@ import org.lsmr.vending.PopCan;
 import org.lsmr.vending.hardware.*;
 
 import ca.ucalgary.seng300.a3.*;
+
+import ca.ucalgary.seng300.a3.financeSector.FinanceSector;
 
 /**
  * Software Engineering 300 - Group Assignment 2
@@ -31,7 +34,7 @@ import ca.ucalgary.seng300.a3.*;
  * @since	2.0
  */
 public class ChangeModuleTest {	
-	private ChangeModule cm;
+	private FinanceSector financeSector;
 	private VendingMachine vend;
 	private int[] validCoins;
 	private int[] coinCount = {0, 10, 1, 3, 5, 0};
@@ -62,50 +65,54 @@ public class ChangeModuleTest {
 	
 	/**
 	 * Ensure the getPossibleChangeValues and canMakeChange algorithms calculate correctly when the machine is not able to make exact change.
+	 * @throws IOException 
 	 */
 	@Test
-	public void testNotExactChange(){
+	public void testNotExactChange() throws IOException{
 		configureVend(170);
-		cm = ChangeModule.getInstance();
-		cm.updateExactChangeLight();
-		boolean expected = cm.checkChangeLight(validCoins, coinCount);
+		financeSector = FinanceSector.getInstance();
+		financeSector.updateExactChangeLight();
+		boolean expected = financeSector.checkChangeLight(validCoins, coinCount);
 		assertEquals(expected, false);
 	}
 	
 	/**
 	 * Ensure the getPossibleChangeValues algorithm calculates correctly when the machine is able to make exact change.
+	 * @throws IOException 
 	 */
 	@Test
-	public void testExactChange(){
+	public void testExactChange() throws IOException{
 		configureVend(200);
-		cm = ChangeModule.getInstance();
-		cm.updateExactChangeLight();
-		boolean expected = cm.checkChangeLight(validCoins, coinCount);
+		financeSector = FinanceSector.getInstance();
+		financeSector.updateExactChangeLight();
+		boolean expected = financeSector.checkChangeLight(validCoins, coinCount);
 		assertEquals(expected, true);
 	}
 
 	/**
 	 * Ensure the getPossibleChangeValues and canMakeChange algorithms calculate correctly when the machine is able to make exact change.
+	 * @throws IOException 
 	 */
 	@Test
-	public void testExactChange2(){
+	public void testExactChange2() throws IOException{
 		configureVend(150);
-		cm = ChangeModule.getInstance();
-		cm.updateExactChangeLight();
-		boolean expected = cm.checkChangeLight(validCoins, coinCount);
+		financeSector = FinanceSector.getInstance();
+		financeSector.updateExactChangeLight();
+		boolean expected = financeSector.checkChangeLight(validCoins, coinCount);
 		assertEquals(expected, true);
 	}
 
 	/**
 	 * Ensure the getCoinsToReturn returns the correct available coins for returns.
+	 * @throws IOException 
 	 */
 	@Test
-	public void testCoinsToReturn(){
+	public void testCoinsToReturn() throws IOException{
 		configureVend(150);
-		cm = ChangeModule.getInstance();
-		cm.updateExactChangeLight();
+		financeSector = FinanceSector.getInstance();
+		financeSector.updateExactChangeLight();
 		ArrayList<Integer> returnList = new ArrayList<Integer>();
-		returnList = cm.getCoinsToReturn(10, validCoins, coinCount);
+		returnList = financeSector.getCoinsToReturn(10, validCoins, coinCount);
 		ArrayList<Integer> expectedReturn = new ArrayList<Integer>();
 		expectedReturn.add(5); expectedReturn.add(5);
 		assertEquals(expectedReturn, returnList);
@@ -117,7 +124,7 @@ public class ChangeModuleTest {
 	 */
 	@After
 	public void tearDown(){
-		cm = null;
+		financeSector = null;
 		vend = null;
 	}
 	
@@ -125,8 +132,9 @@ public class ChangeModuleTest {
      * Configures the hardware to use a set of names and costs for pop cans.
      * 
 	 * @param popPrice Cost for each pop. Cannot be non-positive.
+	 * @throws IOException 
 	 */
-	void configureVend(int popPrice){
+	void configureVend(int popPrice) throws IOException{
 		List<String> popCanNames = new ArrayList<String>();
 		popCanNames.add("Coke"); 
 		popCanNames.add("Pepsi"); 

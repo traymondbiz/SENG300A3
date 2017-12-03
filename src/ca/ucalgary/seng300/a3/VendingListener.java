@@ -5,6 +5,9 @@ import java.io.IOException;
 import org.lsmr.vending.*;
 import org.lsmr.vending.hardware.*;
 
+import EnumTypes.OutputDataType;
+import EnumTypes.OutputMethod;
+
 /**
  * Software Engineering 300 - Group Assignment 2
  * VendingListener.java
@@ -84,7 +87,7 @@ public class VendingListener implements CoinSlotListener, PushButtonListener, Co
 	 * @throws IOException 
 	 */
 	@Override
-	public void pressed(PushButton button) {
+	public void pressed(PushButton button)  {
 		
 		int bIndex = mgr.getButtonIndex(button); 
 		if (bIndex == -1){
@@ -94,22 +97,46 @@ public class VendingListener implements CoinSlotListener, PushButtonListener, Co
 		else{
 			try{
 				//Assumes a 1-to-1, strictly ordered mapping betwee
-				mgr.buy(bIndex); 
-				mgr.addLog(mgr.getPopKindName(bIndex)+" button pressed by user with: "+ Integer.toString(mgr.getCredit()));
+				mgr.buy(bIndex);
+				mgr.addMessage(mgr.getPopKindName(bIndex)+" button pressed by user with: "+ Integer.toString(mgr.getCredit()), OutputDataType.BUTTON_PRESSED  ,0);
+				
 			} 
 			catch(InsufficientFundsException e){
-				mgr.addLog("User Could not purchase " + mgr.getPopKindName(bIndex) + ". " + Integer.toString(mgr.getPopKindCost(bIndex)-mgr.getCredit()) + " cents missing from credit.");
+				try {
+					mgr.addMessage("User Could not purchase " + mgr.getPopKindName(bIndex) + ". " + Integer.toString(mgr.getPopKindCost(bIndex)-mgr.getCredit()) + " cents missing from credit.",OutputDataType.EXCEPTION_HANDELING,0);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			} 
 			catch(DisabledException e){
-				mgr.addLog("User Could not purchase " + mgr.getPopKindName(bIndex) + " since the system is disabled");
+				try {
+					mgr.addMessage("User Could not purchase " + mgr.getPopKindName(bIndex) + " since the system is disabled",OutputDataType.EXCEPTION_HANDELING,0);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				mgr.setOutOfOrder(); // set the out of order light
 			} 
 			catch (EmptyException e){
-				mgr.addLog("User Could not purchase " + mgr.getPopKindName(bIndex) + " becasue there is none in the machine.");
+				try {
+					mgr.addMessage("User Could not purchase " + mgr.getPopKindName(bIndex) + " becasue there is none in the machine.",OutputDataType.EXCEPTION_HANDELING,0);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			} 
 			catch (CapacityExceededException e){
-				mgr.addLog("User Could not purchase " + mgr.getPopKindName(bIndex) + " becasue the deivery chute is full of change");
+				try {
+					mgr.addMessage("User Could not purchase " + mgr.getPopKindName(bIndex) + " becasue the deivery chute is full of change",OutputDataType.EXCEPTION_HANDELING,0);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				mgr.setOutOfOrder();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 		}		
 	}
@@ -121,9 +148,19 @@ public class VendingListener implements CoinSlotListener, PushButtonListener, Co
 	 */
 	@Override
 	public void validCoinInserted(CoinSlot slot, Coin coin) {
-		mgr.addCredit(coin.getValue());
+		try {
+			mgr.addCredit(coin.getValue());
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		
-			mgr.addLog("User instered: " + Integer.toString(coin.getValue()) +"coin to coin slot");
+		try {
+			mgr.addMessage("User instered: " + Integer.toString(coin.getValue()) +"coin to coin slot",OutputDataType.VALID_COIN_INSERTED,0);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
@@ -134,9 +171,19 @@ public class VendingListener implements CoinSlotListener, PushButtonListener, Co
 	public void coinsDelivered(CoinReturn coinReturn, Coin[] coins){
 		mgr.resetDisplay();
 		
-		mgr.addLog("Coins Returned to User: " + coins.toString());
+		
+			try {
+				mgr.addMessage(("Coins Returned to User: " + coins.toString()),OutputDataType.COIN_REFUNDED,0);
+			} catch (IOException e) {
+				
+				e.printStackTrace();
+			}
+		
 		
 	}
+	
+	
+	
 	
 	/**
 	 * Changes the current message displayed on-screen.

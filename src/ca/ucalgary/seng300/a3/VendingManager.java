@@ -5,6 +5,11 @@ import java.util.ArrayList;
 
 import org.lsmr.vending.hardware.*;
 
+import EnumTypes.OutputDataType;
+import EnumTypes.OutputMethod;
+import ca.ucalgary.seng300.a3.financeSector.FinanceSector;
+import ca.ucalgary.seng300.outputSector.InfoSector;
+
 /**
  * VendingManager is the primary access-point for the logic controlling the
  * VendingMachine hardware. It is associated with VendingListener, which listens
@@ -31,13 +36,9 @@ import org.lsmr.vending.hardware.*;
 public class VendingManager {
 	private static VendingManager mgr;
 	private static VendingListener listener;
-	private static ChangeModule changeModule;
-	private static LoggingModule loggingModule;
+	private static InfoSector infoSector;
+	private static FinanceSector financeSector;
 	private static VendingMachine vm;
-	private static DisplayModule displayModule;
-	private static TransactionModule transactionModule;
-	private static Thread noCreditThread2;
-	private int credit = 0;
 	
 	/**
 	 * Singleton constructor. Initializes and stores the singleton instance
@@ -45,13 +46,15 @@ public class VendingManager {
 	 */
 	private VendingManager(){
 		VendingListener.initialize(this);
-		ChangeModule.initialize(this);
-		DisplayModule.initialize(this);
-		TransactionModule.initialize(this);
+		
+		InfoSector.initialize(this);
+		FinanceSector.initialize(this);
+		
+		infoSector = InfoSector.getInstance();
+		financeSector = FinanceSector.getInstance();
 		listener = VendingListener.getInstance();
-		changeModule = ChangeModule.getInstance();
-		transactionModule = TransactionModule.getInstance();
-		displayModule =DisplayModule.getInstance();
+		
+		
 	}
 	
 	/**
@@ -59,20 +62,19 @@ public class VendingManager {
 	 * the Vending logic package. Registers the VendingListener(s) with the
 	 * appropriate hardware.
 	 * @param host The VendingMachine which the VendingManager is intended to manage.
+	 * @throws IOException 
 	 */
-	public static void initialize(VendingMachine host){
+	public static void initialize(VendingMachine host) throws IOException{
 		mgr = new VendingManager(); 
 		vm = host;
-		loggingModule = LoggingModule.getInstance();
 		mgr.registerListeners();
 		
-		noCreditThread2 = new Thread(DisplayModule.getInstance());
-
-		displayModule.addLoopMessage("Hi there!",5000) ;
-		displayModule.addLoopMessage("",10000) ;
+		mgr.setOutputmaps();
+		financeSector.setModule();
 		
-		noCreditThread2.start();
-		mgr.setModule();
+		mgr.addMessage("Hi there!", OutputDataType.WELCOME_MESSAGE_TEXT  ,5000);
+		mgr.addMessage("", OutputDataType.WELCOME_MESSAGE_TEXT  ,10000);
+		
 	}
 	
 	
@@ -92,6 +94,20 @@ public class VendingManager {
 		getCoinSlot().register(listener);
 		getDisplay().register(listener);
 		registerButtonListener(listener);
+	}
+	private void setOutputmaps() {
+		
+		infoSector.setOutputMap(OutputDataType.CREDIT_INFO, OutputMethod.DISPLAY, true);
+		
+		infoSector.setOutputMap(OutputDataType.WELCOME_MESSAGE_TEXT, OutputMethod.LOOPING_MESSAGE, true);
+		
+		infoSector.setOutputMap(OutputDataType.BUTTON_PRESSED, OutputMethod.TEXT_LOG, true);
+		infoSector.setOutputMap(OutputDataType.EXCEPTION_HANDELING, OutputMethod.TEXT_LOG, true);
+		infoSector.setOutputMap(OutputDataType.VALID_COIN_INSERTED, OutputMethod.TEXT_LOG, true);
+		infoSector.setOutputMap(OutputDataType.COIN_REFUNDED, OutputMethod.TEXT_LOG, true);
+		infoSector.setOutputMap(OutputDataType.CREDIT_INFO, OutputMethod.TEXT_LOG, true);
+		
+		
 	}
 	
 	/**
@@ -146,16 +162,13 @@ public class VendingManager {
 		}
 		return inPopPrices;
 	}
-	private void setModule() {
-
-		ChangeModule.setCoins(getValidCoinsArray(), getCoinCount());
-		ChangeModule.setPopPrices(getPopPrices());
-		
-	}
+	
 
 	// General Purpose Accessor Methods
-	public Thread getLoopingThread2(){
-		return (noCreditThread2);
+	public int getCredit() {
+		
+		return financeSector.getCredit();
+		
 	}
 	void enableSafety(){
 		vm.enableSafety();
@@ -200,36 +213,33 @@ public class VendingManager {
 	Integer getCoinKindForCoinRack(int index){
 		return vm.getCoinKindForCoinRack(index); 
 	}
-	int getNumberOfPopCanRacks(){
+	public int getNumberOfPopCanRacks(){
 		return vm.getNumberOfPopCanRacks(); 
 	}
-	String getPopKindName(int index){
+	public String getPopKindName(int index){
 		return vm.getPopKindName(index); 
 	}
-	int getPopKindCost(int index){
+	public int getPopKindCost(int index){
 		return vm.getPopKindCost(index); 
 	}
 	PopCanRack getPopCanRack(int index){
 		return vm.getPopCanRack(index); 
 	}
-	int getPopCanCount(int index){
+	public int getPopCanCount(int index){
 		return vm.getPopCanRack(index).size(); 
 	}
-	void dispensePopCanRack(int index) throws DisabledException, EmptyException, CapacityExceededException {
+	public void dispensePopCanRack(int index) throws DisabledException, EmptyException, CapacityExceededException {
 		getPopCanRack(index).dispensePopCan();
 	
 	}
-	void storeCoinsInStorage() throws CapacityExceededException, DisabledException {
+	public void storeCoinsInStorage() throws CapacityExceededException, DisabledException {
 		getCoinReceptacle().storeCoins(); 
 		
 	}
 	Display getDisplay(){
 		return vm.getDisplay();
 	}
-	void ReduceCredit(int cost) {
-		
-		credit -=cost;
-	}
+	
 	CoinReturn getCoinReturn() {
 		return vm.getCoinReturn();
 	}
@@ -256,17 +266,7 @@ public class VendingManager {
 	 * It is assumed to not be a security vulnerability.
 	 * @return The stored credit, in cents.
 	 */
-	public int getCredit(){
-		return credit;
-	}
 	
-	/**
-	 * Sets the credit of the current machine.
-	 * @param temp	The new credit value to be represented.
-	 */
-	public void setCredit(int temp){
-		credit = temp;
-	}
 	
 	/**
 	 * Displays a string message.
@@ -280,18 +280,20 @@ public class VendingManager {
 	/**
 	 * Adds a message to be displayed.
 	 * @param str
+	 * @throws IOException 
 	 */
-	public void addMessage(String str) {
-		displayModule.addMessage(str);
+	public void addMessage(String str, OutputDataType dataType, int time) throws IOException {
+		infoSector.sendOutput( str, dataType, time);
+		
+		
 	}
 
     /**
      * Adds value to the tracked credit.
      * @param added The credit to add, in cents.
      */
-	void resetDisplay() {
-        noCreditThread2 = new Thread(DisplayModule.getInstance());
-        noCreditThread2.start();     //Starts the looping display message when vm is turned on (created)
+	public void resetDisplay() {
+        infoSector.resetDisplay();
 	}
 	
 //vvv=======================VENDING LOGIC START=======================vvv	
@@ -299,9 +301,10 @@ public class VendingManager {
 	/**
 	 * Adds credit to the current amount in the machine.
 	 * @param added	Credit to be added.
+	 * @throws IOException 
 	 */
-    public void addCredit(int added){
-    	transactionModule.addCredit(added);
+    public void addCredit(int added) throws IOException{
+    	    financeSector.addCredit(added);
     	
     }
     
@@ -313,30 +316,26 @@ public class VendingManager {
 	 * @throws EmptyException Thrown if the selected pop rack is empty.
 	 * @throws DisabledException Thrown if the pop rack or delivery chute is disabled.
 	 * @throws CapacityExceededException Thrown if the delivery chute is full.
+	 * @throws IOException 
 	 */
 	public void buy(int popIndex) throws InsufficientFundsException, EmptyException, 
-											DisabledException, CapacityExceededException {
-		transactionModule.buy(popIndex);
+											DisabledException, CapacityExceededException, IOException {
+		financeSector.buy(popIndex);
 	}
 	
 	/**
 	 * Add a message to be logged.
 	 * @param msg	Message to be logged.
+	 * @throws IOException 
 	 */
-	public void addLog(String msg) {
-		try {
-			loggingModule.logMessage(msg);
-		}catch(IOException e){
-			mgr.setOutOfOrder();
-		}
+	public void addLog(String msg, OutputDataType dataType, int time) throws IOException {
+		mgr.addMessage(msg, dataType  ,time);
+		
 	}
 	
 	/**
 	 * wrapper method for change module so other modules can interact with it
 	 */
-	public ArrayList<Integer> getCoinsToReturn(int remaining) {
-		return changeModule.getCoinsToReturn(remaining, getValidCoinsArray(), getCoinCount());
-	}
 	
 	/**
 	 * Dispense the specified coin.
@@ -367,9 +366,12 @@ public class VendingManager {
 		getExactChangeLight().deactivate();
 	}
 	public void updateExactChangeLightState() {
-		changeModule.updateExactChangeLight();
+		financeSector.updateExactChangeLight();
 	}
-	
+	public void interruptDisplay(){
+		infoSector.interruptLoopingThread();
+
+	}
 	/**
 	 * Activates the Out Of Order light when necessary.
 	 */

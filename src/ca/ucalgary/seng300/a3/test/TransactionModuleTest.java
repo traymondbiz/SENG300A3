@@ -3,6 +3,7 @@ package ca.ucalgary.seng300.a3.test;
 import static org.junit.Assert.*;
 
 import java.util.List;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import org.junit.*;
@@ -82,9 +83,10 @@ public class TransactionModuleTest {
 	 * and the updated credit is reset to zero.
 	 * 
 	 * @throws InterruptedException Thrown when a thread is waiting, sleeping, or otherwise occupied, and the thread is interrupted, either before or during the activity.
+	 * @throws IOException 
 	 */
 	@Test
-	public void testPostPCreditZero() throws InterruptedException{
+	public void testPostPCreditZero() throws InterruptedException, IOException{
 		VendingManager.initialize(vend);
 		VendingManager vm = VendingManager.getInstance();
 		vm.addCredit(200);
@@ -100,9 +102,10 @@ public class TransactionModuleTest {
 	/**
 	 * Ensures the display device displays the message "Credit: " and the amount of updated credit when a purchase happens
 	 * and the updated credit is non-zero.
+	 * @throws IOException 
 	 */
 	@Test
-	public void testPostPCreditNotZero(){
+	public void testPostPCreditNotZero() throws IOException{
 		VendingManager.initialize(vend);
 		VendingManager vm = VendingManager.getInstance();
 		vm.addCredit(250);
@@ -116,9 +119,10 @@ public class TransactionModuleTest {
 	
 	/**
 	 * Ensures the buy function throws the correct exception when the credit < cost.
+	 * @throws IOException 
 	 */
 	@Test
-	public void testInsufficentFundsException(){
+	public void testInsufficentFundsException() throws IOException{
 		VendingManager.initialize(vend);
 		VendingManager vm = VendingManager.getInstance();
 		vm.addCredit(50);
