@@ -1,12 +1,14 @@
 package ca.ucalgary.seng300.a3;
 
 import java.io.File;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.Writer;
 import java.util.Date;
 
 public class LoggingModule {
-	private static PrintWriter writer;
+	private static Writer output;
 
 	/**
 	 * Software Engineering 300 - Group Assignment 2
@@ -96,15 +98,15 @@ public class LoggingModule {
 	 */
 	private void printToFile(String messageToLog) throws IOException {
 		Date currentDate = new Date();
-		File currentFileDir = new File("event log" + ".txt");
+		File currentFileDir = new File("event log.txt");
 		
 		if(!currentFileDir.isFile()) {
 			currentFileDir.createNewFile(); 
 		}
-
-		writer = new PrintWriter(currentFileDir);
-		writer.println(currentDate.toString() + ": " + messageToLog);
-		writer.close();
+		
+		output = new BufferedWriter(new FileWriter("event log.txt", true));
+		output.append(currentDate.toString() + ":" + messageToLog + "\n");
+		output.close();
 	}
 
 }

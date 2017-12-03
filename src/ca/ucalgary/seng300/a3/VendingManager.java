@@ -2,6 +2,7 @@ package ca.ucalgary.seng300.a3;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.lsmr.vending.hardware.*;
 
@@ -36,6 +37,11 @@ public class VendingManager {
 	private static VendingMachine vm;
 	private static DisplayModule displayModule;
 	private static TransactionModule transactionModule;
+	//added by XM
+	private static ConfigurationModule configurationModule;
+	private static List <String> newPopList = new ArrayList<String>();
+	private static List <Integer> newPriceList = new ArrayList<Integer>();
+	//
 	private static Thread noCreditThread2;
 	private int credit = 0;
 	
@@ -48,10 +54,16 @@ public class VendingManager {
 		ChangeModule.initialize(this);
 		DisplayModule.initialize(this);
 		TransactionModule.initialize(this);
+		ConfigurationModule.initialize(this);
+    LoggingModule.initialize(this);
+    
+		
 		listener = VendingListener.getInstance();
 		changeModule = ChangeModule.getInstance();
+		displayModule = DisplayModule.getInstance();
 		transactionModule = TransactionModule.getInstance();
-		displayModule =DisplayModule.getInstance();
+    configurationModule = ConfigurationModule.getInstance();
+		loggingModule = LoggingModule.getInstance();
 	}
 	
 	/**
@@ -63,9 +75,8 @@ public class VendingManager {
 	public static void initialize(VendingMachine host){
 		mgr = new VendingManager(); 
 		vm = host;
-		loggingModule = LoggingModule.getInstance();
+
 		mgr.registerListeners();
-		
 		noCreditThread2 = new Thread(DisplayModule.getInstance());
 
 		displayModule.addLoopMessage("Hi there!",5000) ;
@@ -92,6 +103,10 @@ public class VendingManager {
 		getCoinSlot().register(listener);
 		getDisplay().register(listener);
 		registerButtonListener(listener);
+		//added by XM
+		getConfigPanel().getDisplay().register(listener);
+		registerConfigButtonListener(listener);
+		//end
 	}
 	
 	/**
@@ -105,6 +120,32 @@ public class VendingManager {
 			getSelectionButton(i).register(listener);;
 		}		
 	}
+	
+	//added by XM
+	/**
+	 * Register the buttons of the Configuration Panel.
+	 * The amount of buttons registered depends on the array of characters in ConfigurationModule, buttonValue.
+	 * 
+	 * @param listener
+	 */
+	private void registerConfigButtonListener(PushButtonListener listener) {
+		try {
+			int configButtonCount = configurationModule.getNumberOfConfigButtons();
+			for(int i = 0; i < configButtonCount; i++) {
+				getConfigPanel().getButton(i).register(listener);
+			}
+			getConfigPanel().getEnterButton().register(listener);
+		}catch (NullPointerException e) {
+			System.out.println("buttonValue too big for 37 buttons. Limit the size to 37.");
+		}
+	}
+	/**
+	 * @return	Number of Configuration Panel buttons that are registered.
+	 */
+	public int getNumberOfConfigButtons() {
+		return configurationModule.getNumberOfConfigButtons();
+	}
+	//end
 	
 	/**
 	 * Produces an array of valid coin denominations accepted by the machine.
@@ -233,6 +274,12 @@ public class VendingManager {
 	CoinReturn getCoinReturn() {
 		return vm.getCoinReturn();
 	}
+	
+	//added by XM
+	ConfigurationPanel getConfigPanel() {
+		return vm.getConfigurationPanel();
+	}
+	//end
 
 	/**
 	 * Returns the index of the given SelectionButton,
@@ -316,7 +363,20 @@ public class VendingManager {
 	public void restartConfigDisplay(){
 //		vm.displayMessageConfig("Pop Slot: ");
 	}
-	//End of new code
+	//End of new code (Chris)
+  
+	//added by XM
+	/**
+	 * Displays message in Configuration Panel's display
+	 * 
+	 * @param str	String displayed
+	 */
+	public void displayMessageConfig(String str){
+		getConfigPanel().getDisplay().display(str);
+		
+	}
+	
+	//End of new code (XM)
 	
 //vvv=======================VENDING LOGIC START=======================vvv	
 
@@ -400,4 +460,66 @@ public class VendingManager {
 	public void setOutOfOrder() {
 		getOutOfOrderLight().activate();
 	}
+	
+	//added by XM
+	
+	/**
+	 * Send the index of the configuration panel button that was pushed.
+	 * @param index		Index of the configuration panel button
+	 */
+	public void pressConfigButton (int index) {
+		configurationModule.enterChar(index);
+	}
+	
+	/**
+	 * Configuration panel's enter button was pushed.
+	 */
+	public void pressedConfigEnterButton() {
+		try {
+			configurationModule.pressedEnter();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * Check if pop rack exists
+	 * 
+	 * @param index		index of the pop rack in the vending machine
+	 * @return			boolean value of whether pop rack exists
+	 */
+	public boolean checkPopRackExist(int index) {
+		try {
+			String a = vm.getPopKindName(index);
+			return true;
+		}catch(Exception e){
+			return false;
+		}
+	}
+	
+	/**
+	 * Changes price of a pop slot
+	 * Creates a new list of pop names and pop prices. All pop that has no relation to the pop slot being changed will retain their original values
+	 * The pop slot that corresponds to the index will have it's price changed.
+	 * Clears the lists after configuring Vending Machine.
+	 * 
+	 * @param index		Pop slot to be changed
+	 * @param newPrice	New price to be changed to
+	 */
+	public void changePopPrice(int index, int newPrice) {
+		for (int i = 0; i < vm.getNumberOfSelectionButtons(); i++) {
+			if(i == index) {
+				newPopList.add(vm.getPopKindName(index));
+				newPriceList.add(newPrice);
+			}else {
+				newPopList.add(vm.getPopKindName(index));
+				newPriceList.add(vm.getPopKindCost(index));
+			}
+		}
+		
+		vm.configure(newPopList, newPriceList);
+		newPopList.clear();
+		newPriceList.clear();
+	}
+	//end
 }

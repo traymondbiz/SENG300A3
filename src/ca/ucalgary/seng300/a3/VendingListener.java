@@ -90,6 +90,20 @@ public class VendingListener implements CoinSlotListener, PushButtonListener, Co
 		if (bIndex == -1){
 			//Then it's not a pop selection button. 
 			//This may be where we handle "change return" button presses
+			//added by XM
+			//If button corresponds to a ConfigurationPanel selection button, it will send the index of the button to VendingManager
+			//If button is the enter button, then tell VendingManger that it was pressed.
+			if(mgr.getConfigPanel().getEnterButton().equals(button)) {
+				mgr.pressedConfigEnterButton();
+			}else {
+				for(int configBIndex = 0; configBIndex < mgr.getNumberOfConfigButtons(); configBIndex++) {
+					if (mgr.getConfigPanel().getButton(configBIndex).equals(button)) {
+						mgr.pressConfigButton(configBIndex);
+					}
+				}
+			}
+			
+			//end
 		}
 		else{
 			try{
@@ -123,7 +137,7 @@ public class VendingListener implements CoinSlotListener, PushButtonListener, Co
 	public void validCoinInserted(CoinSlot slot, Coin coin) {
 		mgr.addCredit(coin.getValue());
 		
-			mgr.addLog("User instered: " + Integer.toString(coin.getValue()) +"coin to coin slot");
+			mgr.addLog("User inserted: " + Integer.toString(coin.getValue()) +"coin to coin slot");
 		
 	}
 
