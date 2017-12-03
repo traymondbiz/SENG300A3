@@ -123,7 +123,7 @@ public class VendingListener implements CoinSlotListener, PushButtonListener, Co
 	public void validCoinInserted(CoinSlot slot, Coin coin) {
 		mgr.addCredit(coin.getValue());
 		
-			mgr.addLog("User instered: " + Integer.toString(coin.getValue()) +"coin to coin slot");
+			mgr.addLog("User inserted: " + Integer.toString(coin.getValue()) +"coin to coin slot");
 		
 	}
 

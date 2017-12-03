@@ -48,6 +48,7 @@ public class VendingManager {
 		ChangeModule.initialize(this);
 		DisplayModule.initialize(this);
 		TransactionModule.initialize(this);
+		LoggingModule.initialize(this);
 		listener = VendingListener.getInstance();
 		changeModule = ChangeModule.getInstance();
 		transactionModule = TransactionModule.getInstance();
