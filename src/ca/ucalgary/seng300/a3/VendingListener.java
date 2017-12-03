@@ -25,7 +25,7 @@ import org.lsmr.vending.hardware.*;
  * @since	1.0
  */
 
-public class VendingListener implements CoinSlotListener, PushButtonListener, CoinReturnListener, DisplayListener {
+public class VendingListener implements CoinSlotListener, PushButtonListener, CoinReturnListener, DisplayListener, LockListener {
 	
 	/**
 	 * Self-referential variable. (Singleton)
@@ -153,4 +153,18 @@ public class VendingListener implements CoinSlotListener, PushButtonListener, Co
 	public static String returnMsg(){
 		return message;
 	}
+
+	//New code by Christopher
+	@Override
+	public void locked(Lock lock) {
+		mgr.disableSafety();
+		mgr.deactivateCofigPanel();
+	}
+
+	@Override
+	public void unlocked(Lock lock) {
+		mgr.enableSafety();	
+		mgr.activateCofigPanel();
+	}
+	//End of new code
 }
