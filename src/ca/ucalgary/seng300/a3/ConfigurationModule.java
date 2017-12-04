@@ -1,7 +1,7 @@
 package ca.ucalgary.seng300.a3;
 
 public class ConfigurationModule{
-	
+	//
 	private static ConfigurationModule cm;
 	private VendingManager vm;
 	private static char [] buttonValue = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
