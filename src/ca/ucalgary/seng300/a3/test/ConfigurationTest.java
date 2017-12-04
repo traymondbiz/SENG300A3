@@ -1,4 +1,5 @@
-package ca.ucalgary.seng300.a3;
+package ca.ucalgary.seng300.a3.test;
+
 
 import static org.junit.Assert.*;
 
@@ -8,6 +9,9 @@ import java.util.ArrayList;
 import org.junit.*;
 import org.lsmr.vending.*;
 import org.lsmr.vending.hardware.*;
+
+import ca.ucalgary.seng300.a3.VendingListener;
+import ca.ucalgary.seng300.a3.VendingManager;
 
 public class ConfigurationTest {
 	private VendingMachine vend;

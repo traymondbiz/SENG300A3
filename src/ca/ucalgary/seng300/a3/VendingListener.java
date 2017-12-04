@@ -116,37 +116,25 @@ public class VendingListener implements CoinSlotListener, PushButtonListener, Co
 				
 			} 
 			catch(InsufficientFundsException e){
-				try {
+				
 					mgr.addMessage("User Could not purchase " + mgr.getPopKindName(bIndex) + ". " + Integer.toString(mgr.getPopKindCost(bIndex)-mgr.getCredit()) + " cents missing from credit.",OutputDataType.EXCEPTION_HANDELING,0);
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
+				 
 			} 
 			catch(DisabledException e){
-				try {
+				
 					mgr.addMessage("User Could not purchase " + mgr.getPopKindName(bIndex) + " since the system is disabled",OutputDataType.EXCEPTION_HANDELING,0);
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
+				
 				mgr.setOutOfOrder(); // set the out of order light
 			} 
 			catch (EmptyException e){
-				try {
+				
 					mgr.addMessage("User Could not purchase " + mgr.getPopKindName(bIndex) + " becasue there is none in the machine.",OutputDataType.EXCEPTION_HANDELING,0);
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
+				
 			} 
 			catch (CapacityExceededException e){
-				try {
+				
 					mgr.addMessage("User Could not purchase " + mgr.getPopKindName(bIndex) + " becasue the deivery chute is full of change",OutputDataType.EXCEPTION_HANDELING,0);
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
+				
 				mgr.setOutOfOrder();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -168,12 +156,9 @@ public class VendingListener implements CoinSlotListener, PushButtonListener, Co
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		try {
+		
 			mgr.addMessage("User instered: " + Integer.toString(coin.getValue()) +"coin to coin slot",OutputDataType.VALID_COIN_INSERTED,0);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 		
 	}
 
@@ -185,12 +170,9 @@ public class VendingListener implements CoinSlotListener, PushButtonListener, Co
 		mgr.resetDisplay();
 		
 		
-			try {
+			
 				mgr.addMessage(("Coins Returned to User: " + coins.toString()),OutputDataType.COIN_REFUNDED,0);
-			} catch (IOException e) {
-				
-				e.printStackTrace();
-			}
+			
 		
 		
 	}
