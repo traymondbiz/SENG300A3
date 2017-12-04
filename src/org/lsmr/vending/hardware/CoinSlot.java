@@ -41,7 +41,7 @@ public final class CoinSlot extends AbstractHardware<CoinSlotListener> {
 	    if(vv == coin.getValue())
 		return true;
 	}
-
+	
 	return false;
     }
 

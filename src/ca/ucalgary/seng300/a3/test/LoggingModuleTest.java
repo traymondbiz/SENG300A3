@@ -72,7 +72,8 @@ public class LoggingModuleTest {
 					if(string[i].contains(":")) {
 						int count = string[i].length() - string[i].replace(":", "").length();
 						if (count == 1) {
-							assertEquals(string[i+1], "this");
+							String[] s = string[i].split(":");
+							assertEquals(s[1], "this");
 						}
 					}
 				}

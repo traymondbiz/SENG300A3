@@ -28,7 +28,7 @@ import EnumTypes.OutputMethod;
  * @since	1.0
  */
 
-public class VendingListener implements CoinSlotListener, PushButtonListener, CoinReturnListener, DisplayListener {
+public class VendingListener implements CoinSlotListener, PushButtonListener, CoinReturnListener, DisplayListener, LockListener {
 	
 	/**
 	 * Self-referential variable. (Singleton)
@@ -93,6 +93,20 @@ public class VendingListener implements CoinSlotListener, PushButtonListener, Co
 		if (bIndex == -1){
 			//Then it's not a pop selection button. 
 			//This may be where we handle "change return" button presses
+			//added by XM
+			//If button corresponds to a ConfigurationPanel selection button, it will send the index of the button to VendingManager
+			//If button is the enter button, then tell VendingManger that it was pressed.
+			if(mgr.getConfigPanel().getEnterButton().equals(button)) {
+				mgr.pressedConfigEnterButton();
+			}else {
+				for(int configBIndex = 0; configBIndex < mgr.getNumberOfConfigButtons(); configBIndex++) {
+					if (mgr.getConfigPanel().getButton(configBIndex).equals(button)) {
+						mgr.pressConfigButton(configBIndex);
+					}
+				}
+			}
+			
+			//end
 		}
 		else{
 			try{
@@ -154,7 +168,6 @@ public class VendingListener implements CoinSlotListener, PushButtonListener, Co
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		
 		try {
 			mgr.addMessage("User instered: " + Integer.toString(coin.getValue()) +"coin to coin slot",OutputDataType.VALID_COIN_INSERTED,0);
 		} catch (IOException e) {
@@ -200,4 +213,18 @@ public class VendingListener implements CoinSlotListener, PushButtonListener, Co
 	public static String returnMsg(){
 		return message;
 	}
+
+	//New code by Christopher
+	@Override
+	public void locked(Lock lock) {
+		mgr.disableSafety();
+		mgr.deactivateCofigPanel();
+	}
+
+	@Override
+	public void unlocked(Lock lock) {
+		mgr.enableSafety();	
+		mgr.activateCofigPanel();
+	}
+	//End of new code
 }
