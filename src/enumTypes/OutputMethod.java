@@ -1,4 +1,4 @@
-package EnumTypes;
+package enumTypes;
 
 public enum OutputMethod {
 	TEXT_LOG(0), DISPLAY(1), LOOPING_MESSAGE(2);

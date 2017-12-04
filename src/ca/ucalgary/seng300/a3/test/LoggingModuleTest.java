@@ -7,7 +7,7 @@ import java.io.*;
 import org.junit.*;
 
 import ca.ucalgary.seng300.a3.*;
-import ca.ucalgary.seng300.outputSector.LoggingModule;
+import ca.ucalgary.seng300.informationSector.LoggingModule;
 
 /**
  * Software Engineering 300 - Group Assignment 2

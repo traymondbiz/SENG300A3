@@ -1,4 +1,4 @@
-package ca.ucalgary.seng300.outputSector;
+package ca.ucalgary.seng300.informationSector;
 
 import java.util.Vector;
 

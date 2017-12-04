@@ -5,8 +5,8 @@ import java.io.IOException;
 import org.lsmr.vending.*;
 import org.lsmr.vending.hardware.*;
 
-import EnumTypes.OutputDataType;
-import EnumTypes.OutputMethod;
+import enumTypes.OutputDataType;
+import enumTypes.OutputMethod;
 
 /**
  * Software Engineering 300 - Group Assignment 2

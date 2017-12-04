@@ -7,9 +7,9 @@ import org.lsmr.vending.hardware.CapacityExceededException;
 import org.lsmr.vending.hardware.DisabledException;
 import org.lsmr.vending.hardware.EmptyException;
 
-import EnumTypes.OutputDataType;
 import ca.ucalgary.seng300.a3.InsufficientFundsException;
 import ca.ucalgary.seng300.a3.VendingManager;
+import enumTypes.OutputDataType;
 
 public class FinanceSector {
 

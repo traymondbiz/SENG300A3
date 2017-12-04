@@ -1,10 +1,10 @@
-package ca.ucalgary.seng300.outputSector;
+package ca.ucalgary.seng300.informationSector;
 
 import java.io.IOException;
 
-import EnumTypes.OutputDataType;
-import EnumTypes.OutputMethod;
 import ca.ucalgary.seng300.a3.VendingManager;
+import enumTypes.OutputDataType;
+import enumTypes.OutputMethod;
 
 
 public class InfoSector {

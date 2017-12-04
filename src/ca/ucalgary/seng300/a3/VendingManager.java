@@ -6,10 +6,10 @@ import java.util.List;
 
 import org.lsmr.vending.hardware.*;
 
-import EnumTypes.OutputDataType;
-import EnumTypes.OutputMethod;
 import ca.ucalgary.seng300.a3.financeSector.FinanceSector;
-import ca.ucalgary.seng300.outputSector.InfoSector;
+import ca.ucalgary.seng300.informationSector.InfoSector;
+import enumTypes.OutputDataType;
+import enumTypes.OutputMethod;
 
 /**
  * VendingManager is the primary access-point for the logic controlling the

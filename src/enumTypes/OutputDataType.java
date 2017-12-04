@@ -1,4 +1,4 @@
-package EnumTypes;
+package enumTypes;
 
 
 public enum OutputDataType {
