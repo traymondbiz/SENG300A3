@@ -1,4 +1,4 @@
-package ca.ucalgary.seng300.outputSector;
+package ca.ucalgary.seng300.a3;
 
 import java.io.File;
 import java.io.BufferedWriter;
@@ -43,7 +43,7 @@ public class LoggingModule {
 	/**
 	 * Reference to manager of this module. (Hardware calls, other module calls, etc.)
 	 */
-	private static InfoSector mgr;
+	private static VendingManager mgr;
 	
 	/**
 	 * Private constructor to prevent additional creations. (Singleton)
@@ -56,7 +56,7 @@ public class LoggingModule {
 	 * 
 	 * @param manager	The VendingManager assigning itself this class.
 	 */
-	public static void initialize(InfoSector manager) {
+	public static void initialize(VendingManager manager) {
 		if (manager != null) {
 			mgr = manager;
 			loggingModule = new LoggingModule();

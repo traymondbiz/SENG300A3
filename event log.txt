@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-Sun Dec 03 07:40:22 MST 2017: Credit: 50
-=======
 Sat Dec 02 19:19:33 MST 2017: User instered: 200coin to coin slot
 Sat Dec 02 22:19:36 MST 2017:User inserted: 5coin to coin slot
 Sat Dec 02 22:19:37 MST 2017:User inserted: 200coin to coin slot
@@ -343,4 +340,3 @@ Sun Dec 03 05:06:21 MST 2017:User inserted: 25coin to coin slot
 Sun Dec 03 05:06:22 MST 2017:User inserted: 5coin to coin slot
 Sun Dec 03 05:06:23 MST 2017:Dr. Walker button pressed by user with: 1
 Sun Dec 03 05:06:24 MST 2017:User Could not purchase Dr. Walker. 553 cents missing from credit.
->>>>>>> master
