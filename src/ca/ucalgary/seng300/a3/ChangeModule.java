@@ -1,8 +1,6 @@
-package ca.ucalgary.seng300.a3.financeSector;
+package ca.ucalgary.seng300.a3;
 
 import java.util.ArrayList;
-
-import ca.ucalgary.seng300.a3.VendingManager;
 
 /**
  * Software Engineering 300 - Group Assignment 2
@@ -46,7 +44,7 @@ public class ChangeModule {
 	/**
 	 * Reference to manager of this module. (Hardware calls, other module calls, etc.)
 	 */
-	private static FinanceSector mgr;
+	private static VendingManager mgr;
 	
 	/**
 	 * An array containing all the valid currency denomination.
@@ -74,7 +72,7 @@ public class ChangeModule {
 	 * 
 	 * @param manager	The VendingManager assigning itself this class.
 	 */
-	public static void initialize(FinanceSector manager) {
+	public static void initialize(VendingManager manager) {
 		if (manager != null) {
 			mgr = manager;
 			changeModule = new ChangeModule();
@@ -116,7 +114,16 @@ public class ChangeModule {
 	 * Debugging method that receives exact values (initialized above) and performs an
 	 * algorithm to determine whether the 'Exact Change Light' should be on or off.
 	 */
-	
+	public void updateExactChangeLight() {
+		if(checkChangeLight(mgr.getValidCoinsArray(),mgr.getCoinCount())){
+			// Can make change, deactivate light.
+			mgr.deactivateExactChangeLight();
+		}else {
+			// Can't make change, activate light.
+			mgr.activateExactChangeLight();
+		}
+		
+	}
 	
 
 	

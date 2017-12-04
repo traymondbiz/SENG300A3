@@ -1,4 +1,4 @@
-package ca.ucalgary.seng300.outputSector;
+package ca.ucalgary.seng300.a3;
 
 import java.util.Vector;
 
@@ -32,7 +32,7 @@ public class DisplayModule  implements Runnable {
 	/**
 	 * Reference to manager of this module. (Hardware calls, other module calls, etc.)
 	 */
-	private static InfoSector mgr;
+	private static VendingManager mgr;
 	
 	/**
 	 * A list of messages to display/modify.
@@ -63,7 +63,7 @@ public class DisplayModule  implements Runnable {
 	 * 
 	 * @param manager	The VendingManager assigning itself this class.
 	 */
-	public static void initialize(InfoSector host){
+	public static void initialize(VendingManager host){
 		displayModule = new DisplayModule(host);
 	}
 	
@@ -72,7 +72,7 @@ public class DisplayModule  implements Runnable {
 	 * 
 	 * @param host	The VendingManager to call upon for hardware interactions.
 	 */
-	private DisplayModule(InfoSector host){		
+	private DisplayModule(VendingManager host){		
 		mgr = host;
 	}
 	

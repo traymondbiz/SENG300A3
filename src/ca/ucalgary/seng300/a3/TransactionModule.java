@@ -1,15 +1,10 @@
-package ca.ucalgary.seng300.a3.financeSector;
+package ca.ucalgary.seng300.a3;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 import org.lsmr.vending.hardware.CapacityExceededException;
 import org.lsmr.vending.hardware.DisabledException;
 import org.lsmr.vending.hardware.EmptyException;
-
-import EnumTypes.OutputDataType;
-import ca.ucalgary.seng300.a3.InsufficientFundsException;
-import ca.ucalgary.seng300.a3.VendingManager;
 
 /**
  * Software Engineering 300 - Group Assignment 2
@@ -33,7 +28,7 @@ public class TransactionModule {
 	/**
 	 * Reference to manager of this module. (Hardware calls, other module calls, etc.)
 	 */
-	private static FinanceSector mgr;
+	private static VendingManager mgr;
 	
 	/**
 	 * Self-referential variable. (Singleton)
@@ -46,7 +41,7 @@ public class TransactionModule {
 	 * 
 	 * @param manager	The VendingManager assigning itself this class.
 	 */
-	public static void initialize(FinanceSector host){
+	public static void initialize(VendingManager host){
 		transactionModule = new TransactionModule();
 		mgr  = host;
 	}
@@ -62,15 +57,12 @@ public class TransactionModule {
 	/**
 	 * Adds and updates the manager on the current credit value. Display message.
 	 * @param added	The amount of credit that the machine has accepted.
-	 * @throws IOException 
 	 */
-    public void addCredit(int added) throws IOException{
+    public void addCredit(int added){
     	mgr.setCredit( added + mgr.getCredit()  );
         if(mgr.getCredit() != 0) {
-        	
-        		mgr.interruptDisplay();
-            
-        		mgr.addMessage("Credit: " + Integer.toString(mgr.getCredit()), OutputDataType.CREDIT_INFO,0);
+            mgr.getLoopingThread2().interrupt();
+            mgr.addMessage("Credit: " + Integer.toString(mgr.getCredit()));
         } 
         else {
         	mgr.resetDisplay();
@@ -84,10 +76,9 @@ public class TransactionModule {
      * @throws EmptyException				Thrown if there aren't any pops there.
      * @throws DisabledException			Thrown if the machine is disabled.
      * @throws CapacityExceededException	Thrown if the machine cannot take any more coins.
-     * @throws IOException 
      */
 	public void buy(int popIndex) throws InsufficientFundsException, EmptyException, 
-											DisabledException, CapacityExceededException, IOException {
+											DisabledException, CapacityExceededException {
 		
 		// Checks to see there is enough credit to purchase a pop.
 		int cost = mgr.getPopKindCost(popIndex);
@@ -109,7 +100,7 @@ public class TransactionModule {
 				// Refresh the machine.
 				mgr.setCredit(remaining); //all change has been given
 				mgr.storeCoinsInStorage();
-				mgr.updateExactChangeLight();
+				mgr.updateExactChangeLightState();
 				mgr.addCredit(0); //update screen with adding 0 credit
 				if(popIsEmpty()) { // set the out of order light on if we are out of pop in all racks 
 					mgr.setOutOfOrder();
@@ -129,7 +120,7 @@ public class TransactionModule {
 	 */
 	private boolean popIsEmpty() {
 		for(int i=0;i<mgr.getNumberOfPopCanRacks();i++) {
-			if(mgr.getPopCanCount(i) > 0) {
+			if(mgr.getPopCanRack(i).size() > 0) {
 				return false;
 			}
 		}
