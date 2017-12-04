@@ -73,7 +73,7 @@ public class VendingManager {
 	 * @param host The VendingMachine which the VendingManager is intended to manage.
 	 * @throws IOException 
 	 */
-	public static void initialize(VendingMachine host) throws IOException{
+	public static void initialize(VendingMachine host) {
 		mgr = new VendingManager(); 
 		vm = host;
 		mgr.registerListeners();
@@ -328,8 +328,13 @@ public class VendingManager {
 	 * @param str
 	 * @throws IOException 
 	 */
-	public void addMessage(String str, OutputDataType dataType, int time) throws IOException {
-		infoSector.sendOutput( str, dataType, time);
+	public void addMessage(String str, OutputDataType dataType, int time) {
+		try {
+			infoSector.sendOutput( str, dataType, time);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		
 	}
