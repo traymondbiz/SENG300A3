@@ -86,4 +86,23 @@ public class ConfigurationModule{
 		}
 	}
 	
+	//New code by Christopher
+	//When the vending machine is unlocked, this is called to create the first display menu.
+	public void startConfigPanel(){
+		vm.displayMessageConfig("Pop Slot: ");
+		}
+	
+	/*When the vending machine is locked, it resets all the variables to empty and
+	 * resets to selection menu back to pop select.
+	 */
+	public void clearConfigPanel(){
+		enteredKey = "";
+		priceChangeMode = false;
+		vm.displayMessageConfig("");
+		slotNumber = -1;
+		newPrice = 0;
+		}
+		//End of new code (Chris)
+	
+	
 }

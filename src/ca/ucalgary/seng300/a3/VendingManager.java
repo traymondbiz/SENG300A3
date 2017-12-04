@@ -341,27 +341,15 @@ public class VendingManager {
         noCreditThread2.start();     //Starts the looping display message when vm is turned on (created)
 	}
 	
-	//New code by Christopher (not really testable until ConfigurationModule is finished)
-	//Will implement after ConfigurationModule gets merged
+	//New code by Christopher
+	//Restarts configurationModule's display
 	public void activateCofigPanel() {
-		//configPanel.restartConfigDisplay();
+		configurationModule.startConfigPanel();
 	}
-
-	//Will implement after ConfigurationModule gets merged
+	
+	//Clears configurationModule's variables
 	public void deactivateCofigPanel() {
-		//configPanel.clearConfigData()
-	}
-	
-	//To be put in ConfigurationModule after it is merged
-	public void clearConfigPanel(){
-//		enteredKey = "";
-//		priceChangeMode = false;
-//		vm.displayMessageConfig("");
-	}
-	
-	//To be put in ConfigurationModule after it is merged
-	public void restartConfigDisplay(){
-//		vm.displayMessageConfig("Pop Slot: ");
+		configurationModule.clearConfigPanel();
 	}
 	//End of new code (Chris)
   
