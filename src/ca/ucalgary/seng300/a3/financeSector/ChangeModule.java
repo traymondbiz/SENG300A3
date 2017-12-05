@@ -230,7 +230,7 @@ public class ChangeModule {
 	 * @param coinCount		A list corresponding with validCoins on the number of coins per denomination.
 	 * @return				An ArrayList containing all the coin values that must be returned.
 	 */
-	public ArrayList<Integer> getCoinsToReturn(int change, int[] validCoins, int[] coinCount) {
+	public ArrayList<Integer> getCoinsToReturn(int change, int[] coinKinds, int[] coinsIn) {
 
 		int[][] bestChange = new int[change + 1][coinKinds.length];
 
@@ -297,6 +297,15 @@ public class ChangeModule {
 			}
 		}
 		return map;
+	}
+
+	//added by Zach
+	private int sumArray(int[] array){
+		int sum = 0;
+		for(int value: array){
+			sum = sum + value;
+		}
+		return sum;
 	}
 
 	/**
