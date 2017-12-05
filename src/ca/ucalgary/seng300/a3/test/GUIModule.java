@@ -228,6 +228,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		
 		//Component 4
 		JButton limeZillaButton = new JButton("");
+		limeZillaButton.setRolloverIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/sodaLimeM.png")));
 		limeZillaButton.setPressedIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/sodaLimeP.png")));
 		limeZillaButton.setContentAreaFilled(false);
 		limeZillaButton.setBorderPainted(false);
@@ -243,6 +244,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		
 		//Component 5
 		JButton fissureButton = new JButton("");
+		fissureButton.setRolloverIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/sodaFissureM.png")));
 		fissureButton.setPressedIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/sodaFissureP.png")));
 		fissureButton.setIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/sodaFissure.png")));
 		fissureButton.setContentAreaFilled(false);
@@ -257,6 +259,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		
 		//Component 6
 		JButton himalayanRainButton = new JButton("");
+		himalayanRainButton.setRolloverIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/sodaRainM.png")));
 		himalayanRainButton.setPressedIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/sodaRainP.png")));
 		himalayanRainButton.setIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/sodaRain.png")));
 		himalayanRainButton.setContentAreaFilled(false);
@@ -271,6 +274,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		
 		//Component 7
 		JButton drWalkerButton = new JButton("");
+		drWalkerButton.setRolloverIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/sodaDrWalkerM.png")));
 		drWalkerButton.setPressedIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/sodaDrWalkerP.png")));
 		drWalkerButton.setIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/sodaDrWalker.png")));
 		drWalkerButton.setContentAreaFilled(false);
@@ -285,6 +289,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		
 		//Component 8
 		JButton toonieButton = new JButton("<html><center>200</center><br>(Toonie)</html>");
+		toonieButton.setRolloverIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/coinToonieM.png")));
 		toonieButton.setPressedIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/coinToonieP.png")));
 		toonieButton.setBorder(null);
 		toonieButton.setContentAreaFilled(false);
@@ -304,6 +309,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		
 		//Component 9
 		JButton loonieButton = new JButton("<html><center>100</center><br>(Loonie)</html>");
+		loonieButton.setRolloverIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/coinLoonieM.png")));
 		loonieButton.setPressedIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/coinLoonieP.png")));
 		loonieButton.setBorder(null);
 		loonieButton.setContentAreaFilled(false);
@@ -323,6 +329,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		
 		//Component 10
 		JButton quarterButton = new JButton("<html><center>25</center><br>(Quarter)</html>");
+		quarterButton.setRolloverIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/coinQuarterM.png")));
 		quarterButton.setPressedIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/coinQuarterP.png")));
 		quarterButton.setBorder(null);
 		quarterButton.setContentAreaFilled(false);
@@ -342,6 +349,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		
 		//Component 11
 		JButton dimeButton = new JButton("<html><center>10</center><br>(Dime)</html>");
+		dimeButton.setRolloverIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/coinDimeM.png")));
 		dimeButton.setPressedIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/coinDimeP.png")));
 		dimeButton.setBorder(null);
 		dimeButton.setContentAreaFilled(false);
@@ -361,6 +369,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		
 		//Component 12
 		JButton nickelButton = new JButton("<html><center>5</center><br>(Nickel)</html>");
+		nickelButton.setRolloverIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/coinNickelM.png")));
 		nickelButton.setPressedIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/coinNickelP.png")));
 		nickelButton.setBorder(null);
 		nickelButton.setContentAreaFilled(false);
@@ -380,6 +389,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		
 		//Component 13
 		JButton invalidButton = new JButton("<html><center>5000</center><br>(Invalid)</html>");
+		invalidButton.setRolloverIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/coinInvalidM.png")));
 		invalidButton.setPressedIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/coinInvalidP.png")));
 		invalidButton.setBorder(null);
 		invalidButton.setContentAreaFilled(false);
@@ -426,6 +436,18 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		JLabel label_2 = new JLabel("5.54");
 		label_2.setBounds(250, 325, 150, 14);
 		userPanel.add(label_2);
+		
+		JLabel label = new JLabel("");
+		label.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
+		label.setOpaque(true);
+		label.setBackground(Color.WHITE);
+		label.setBounds(25, 61, 750, 288);
+		userPanel.add(label);
+		
+		JLabel bgUser = new JLabel("");
+		bgUser.setIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/bg.png")));
+		bgUser.setBounds(0, 0, 789, 543);
+		userPanel.add(bgUser);
 		
 		ImageIcon bg = new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/bg.png"));
 		
@@ -626,6 +648,11 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		btninsertcharacter.setFont(new Font("Dialog", Font.BOLD, 20));
 		btninsertcharacter.setBounds(674, 188, 100, 100);
 		techPanel.add(btninsertcharacter);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/bg.png")));
+		lblNewLabel.setBounds(0, 0, 789, 543);
+		techPanel.add(lblNewLabel);
 
 	}
 
