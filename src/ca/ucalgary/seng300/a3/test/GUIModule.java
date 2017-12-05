@@ -54,7 +54,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 	private JPanel techPanel;
 	private VendingMachine vm;
 	private VendingManager mgr;
-	private boolean vendLocked = false;
+	private boolean vendLocked = true;
 
 	/**
 	 * Launch the application.
@@ -632,11 +632,22 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 	// UNUSED FUNCTIONS
 	public void popCanAdded(PopCanRack popCanRack, PopCan popCan) {}
 	public void popCansFull(PopCanRack popCanRack) {}
-	public void popCansEmpty(PopCanRack popCanRack) {}
 	public void popCansLoaded(PopCanRack rack, PopCan... popCans) {}
 	public void popCansUnloaded(PopCanRack rack, PopCan... popCans) {}
 	public void enabled(AbstractHardware<? extends AbstractHardwareListener> hardware) {}
 	public void disabled(AbstractHardware<? extends AbstractHardwareListener> hardware) {}
+	
+	
+	public void popCansEmpty(PopCanRack popCanRack) {
+		for(int i = 0; i < vm.getNumberOfPopCanRacks(); i++)
+		{
+			if(popCanRack == vm.getPopCanRack(i))
+			{
+				((JButton) userPanel.getComponent(i + 4)).setEnabled(false);
+				break;
+			}
+		}
+	}
 	
 	// Listener function that is called when pop is dispensed
 	public void popCanRemoved(PopCanRack popCanRack, PopCan popCan) {
@@ -644,6 +655,26 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 	}
 
 	public void locked(Lock lock) {
+		for(int i = 4; i < 8; i++)
+		{
+			if(vm.getPopCanRack(i-4).size() > 0)
+				((JButton) userPanel.getComponent(i)).setEnabled(true);
+		}
+		for(int i = 8; i < 14; i++)
+		{
+			((JButton) userPanel.getComponent(i)).setEnabled(true);		
+		}
+		((JLabel) userPanel.getComponent(3)).setEnabled(false);
+		
+		for(int i = 2; i < 14; i++)
+		{
+			((JButton) techPanel.getComponent(i)).setEnabled(false);		
+		}
+		((JButton) techPanel.getComponent(15)).setEnabled(false);
+		((JComboBox) techPanel.getComponent(1)).setEnabled(false);		
+	}
+
+	public void unlocked(Lock lock) {
 		for(int i = 4; i < 14; i++)
 		{
 			((JButton) userPanel.getComponent(i)).setEnabled(false);
@@ -656,21 +687,6 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		}
 		((JButton) techPanel.getComponent(15)).setEnabled(true);
 		((JComboBox) techPanel.getComponent(1)).setEnabled(true);		
-	}
-
-	public void unlocked(Lock lock) {
-		for(int i = 4; i < 14; i++)
-		{
-			((JButton) userPanel.getComponent(i)).setEnabled(true);
-		}
-		((JLabel) userPanel.getComponent(3)).setEnabled(false);
-		
-		for(int i = 2; i < 14; i++)
-		{
-			((JButton) techPanel.getComponent(i)).setEnabled(false);		
-		}
-		((JButton) techPanel.getComponent(15)).setEnabled(false);
-		((JComboBox) techPanel.getComponent(1)).setEnabled(false);		
 	}
 
 	public void activated(IndicatorLight light) {

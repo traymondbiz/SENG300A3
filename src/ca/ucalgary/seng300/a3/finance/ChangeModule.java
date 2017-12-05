@@ -328,6 +328,10 @@ public class ChangeModule {
 		}
 		return true;
 	}
+	
+	public void updateExactChangeLight() {
+		mgr.updateExactChangeLight();
+	}
 
 	/**
 	 * [DEBUGGING METHOD]: Used in order to support the accompanying unit test: ChangeModuleTest.java

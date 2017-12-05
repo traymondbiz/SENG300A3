@@ -55,16 +55,14 @@ public class VendingManager {
 	 */
 	private VendingManager(){
 		VendingListener.initialize(this);
-
-		
+		ConfigurationModule.initialize(this);
 		InfoSector.initialize(this);
 		FinanceSector.initialize(this);
 		
 		infoSector = InfoSector.getInstance();
 		financeSector = FinanceSector.getInstance();
 		listener = VendingListener.getInstance();
-		
-    configurationModule = ConfigurationModule.getInstance();
+		configurationModule = ConfigurationModule.getInstance();
 
 	}
 	

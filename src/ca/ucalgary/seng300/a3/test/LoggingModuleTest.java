@@ -55,7 +55,7 @@ public class LoggingModuleTest {
 		logging.logMessage("this");
 		
 		// The name of the file to open.
-		String fileName = "event log.txt";
+		String fileName = "Log.txt";
 		
 		// This will reference one line at a time
 		String line = null;

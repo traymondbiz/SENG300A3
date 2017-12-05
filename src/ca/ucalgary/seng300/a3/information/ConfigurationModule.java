@@ -121,5 +121,9 @@ public class ConfigurationModule{
 		}
 		//End of new code (Chris)
 	
+	public void updateExactChangeLight() {
+		vm.updateExactChangeLightState();
+	}
+	
 	
 }
