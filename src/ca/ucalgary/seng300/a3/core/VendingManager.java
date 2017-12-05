@@ -1,4 +1,4 @@
-package ca.ucalgary.seng300.a3;
+package ca.ucalgary.seng300.a3.core;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -6,10 +6,12 @@ import java.util.List;
 
 import org.lsmr.vending.hardware.*;
 
-import ca.ucalgary.seng300.a3.financeSector.FinanceSector;
-import ca.ucalgary.seng300.informationSector.InfoSector;
-import enumTypes.OutputDataType;
-import enumTypes.OutputMethod;
+import ca.ucalgary.seng300.a3.enums.OutputDataType;
+import ca.ucalgary.seng300.a3.enums.OutputMethod;
+import ca.ucalgary.seng300.a3.exceptions.InsufficientFundsException;
+import ca.ucalgary.seng300.a3.finance.ConfigurationModule;
+import ca.ucalgary.seng300.a3.finance.FinanceSector;
+import ca.ucalgary.seng300.a3.information.InfoSector;
 
 /**
  * VendingManager is the primary access-point for the logic controlling the
@@ -116,7 +118,7 @@ public class VendingManager {
 		infoSector.setOutputMap(OutputDataType.WELCOME_MESSAGE_TEXT, OutputMethod.LOOPING_MESSAGE, true);
 		
 		infoSector.setOutputMap(OutputDataType.BUTTON_PRESSED, OutputMethod.TEXT_LOG, true);
-		infoSector.setOutputMap(OutputDataType.EXCEPTION_HANDELING, OutputMethod.TEXT_LOG, true);
+		infoSector.setOutputMap(OutputDataType.EXCEPTION_HANDLING, OutputMethod.TEXT_LOG, true);
 		infoSector.setOutputMap(OutputDataType.VALID_COIN_INSERTED, OutputMethod.TEXT_LOG, true);
 		infoSector.setOutputMap(OutputDataType.COIN_REFUNDED, OutputMethod.TEXT_LOG, true);
 		infoSector.setOutputMap(OutputDataType.CREDIT_INFO, OutputMethod.TEXT_LOG, true);

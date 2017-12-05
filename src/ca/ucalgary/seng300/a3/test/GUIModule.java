@@ -38,8 +38,8 @@ import org.lsmr.vending.hardware.Display;
 import org.lsmr.vending.hardware.DisplayListener;
 import org.lsmr.vending.hardware.VendingMachine;
 
-import ca.ucalgary.seng300.a3.VendingListener;
-import ca.ucalgary.seng300.a3.VendingManager;
+import ca.ucalgary.seng300.a3.core.VendingListener;
+import ca.ucalgary.seng300.a3.core.VendingManager;
 
 public class GUIModule implements DisplayListener{
 

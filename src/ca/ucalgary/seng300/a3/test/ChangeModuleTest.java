@@ -10,9 +10,8 @@ import org.junit.*;
 import org.lsmr.vending.PopCan;
 import org.lsmr.vending.hardware.*;
 
-import ca.ucalgary.seng300.a3.*;
-
-import ca.ucalgary.seng300.a3.financeSector.FinanceSector;
+import ca.ucalgary.seng300.a3.core.*;
+import ca.ucalgary.seng300.a3.finance.FinanceSector;
 
 /**
  * Software Engineering 300 - Group Assignment 2

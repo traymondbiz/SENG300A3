@@ -1,8 +1,8 @@
-package ca.ucalgary.seng300.a3.financeSector;
+package ca.ucalgary.seng300.a3.finance;
 
 import java.util.ArrayList;
 
-import ca.ucalgary.seng300.a3.VendingManager;
+import ca.ucalgary.seng300.a3.core.VendingManager;
 
 /**
  * Software Engineering 300 - Group Assignment 2

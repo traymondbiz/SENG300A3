@@ -1,4 +1,6 @@
-package ca.ucalgary.seng300.a3;
+package ca.ucalgary.seng300.a3.finance;
+
+import ca.ucalgary.seng300.a3.core.VendingManager;
 
 public class ConfigurationModule{
 	//

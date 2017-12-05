@@ -1,4 +1,4 @@
-package ca.ucalgary.seng300.informationSector;
+package ca.ucalgary.seng300.a3.information;
 
 import java.io.File;
 import java.io.BufferedWriter;

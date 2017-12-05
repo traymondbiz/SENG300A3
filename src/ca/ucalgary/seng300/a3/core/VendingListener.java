@@ -1,12 +1,13 @@
-package ca.ucalgary.seng300.a3;
+package ca.ucalgary.seng300.a3.core;
 
 import java.io.IOException;
 
 import org.lsmr.vending.*;
 import org.lsmr.vending.hardware.*;
 
-import enumTypes.OutputDataType;
-import enumTypes.OutputMethod;
+import ca.ucalgary.seng300.a3.enums.OutputDataType;
+import ca.ucalgary.seng300.a3.enums.OutputMethod;
+import ca.ucalgary.seng300.a3.exceptions.InsufficientFundsException;
 
 /**
  * Software Engineering 300 - Group Assignment 2
@@ -117,23 +118,23 @@ public class VendingListener implements CoinSlotListener, PushButtonListener, Co
 			} 
 			catch(InsufficientFundsException e){
 				
-					mgr.addMessage("User Could not purchase " + mgr.getPopKindName(bIndex) + ". " + Integer.toString(mgr.getPopKindCost(bIndex)-mgr.getCredit()) + " cents missing from credit.",OutputDataType.EXCEPTION_HANDELING,0);
+					mgr.addMessage("User Could not purchase " + mgr.getPopKindName(bIndex) + ". " + Integer.toString(mgr.getPopKindCost(bIndex)-mgr.getCredit()) + " cents missing from credit.",OutputDataType.EXCEPTION_HANDLING,0);
 				 
 			} 
 			catch(DisabledException e){
 				
-					mgr.addMessage("User Could not purchase " + mgr.getPopKindName(bIndex) + " since the system is disabled",OutputDataType.EXCEPTION_HANDELING,0);
+					mgr.addMessage("User Could not purchase " + mgr.getPopKindName(bIndex) + " since the system is disabled",OutputDataType.EXCEPTION_HANDLING,0);
 				
 				mgr.setOutOfOrder(); // set the out of order light
 			} 
 			catch (EmptyException e){
 				
-					mgr.addMessage("User Could not purchase " + mgr.getPopKindName(bIndex) + " becasue there is none in the machine.",OutputDataType.EXCEPTION_HANDELING,0);
+					mgr.addMessage("User Could not purchase " + mgr.getPopKindName(bIndex) + " becasue there is none in the machine.",OutputDataType.EXCEPTION_HANDLING,0);
 				
 			} 
 			catch (CapacityExceededException e){
 				
-					mgr.addMessage("User Could not purchase " + mgr.getPopKindName(bIndex) + " becasue the deivery chute is full of change",OutputDataType.EXCEPTION_HANDELING,0);
+					mgr.addMessage("User Could not purchase " + mgr.getPopKindName(bIndex) + " becasue the deivery chute is full of change",OutputDataType.EXCEPTION_HANDLING,0);
 				
 				mgr.setOutOfOrder();
 			} catch (IOException e) {

@@ -1,4 +1,4 @@
-package ca.ucalgary.seng300.a3.financeSector;
+package ca.ucalgary.seng300.a3.finance;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -7,9 +7,9 @@ import org.lsmr.vending.hardware.CapacityExceededException;
 import org.lsmr.vending.hardware.DisabledException;
 import org.lsmr.vending.hardware.EmptyException;
 
-import ca.ucalgary.seng300.a3.InsufficientFundsException;
-import ca.ucalgary.seng300.a3.VendingManager;
-import enumTypes.OutputDataType;
+import ca.ucalgary.seng300.a3.core.VendingManager;
+import ca.ucalgary.seng300.a3.enums.OutputDataType;
+import ca.ucalgary.seng300.a3.exceptions.InsufficientFundsException;
 
 /**
  * Software Engineering 300 - Group Assignment 2
