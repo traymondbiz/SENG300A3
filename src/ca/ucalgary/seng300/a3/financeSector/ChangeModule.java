@@ -299,7 +299,7 @@ public class ChangeModule {
 		return map;
 	}
 
-	//added by Zach
+	//added by Zach     
 	private int sumArray(int[] array){
 		int sum = 0;
 		for(int value: array){
