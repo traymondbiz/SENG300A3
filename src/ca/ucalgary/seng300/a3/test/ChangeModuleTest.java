@@ -2,16 +2,16 @@ package ca.ucalgary.seng300.a3.test;
 
 import static org.junit.Assert.*;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.*;
 import org.lsmr.vending.PopCan;
 import org.lsmr.vending.hardware.*;
-
 import ca.ucalgary.seng300.a3.core.*;
+import ca.ucalgary.seng300.a3.finance.ChangeModule;
 import ca.ucalgary.seng300.a3.finance.FinanceSector;
+import ca.ucalgary.seng300.a3.*;
 
 /**
  * Software Engineering 300 - Group Assignment 2
@@ -32,8 +32,19 @@ import ca.ucalgary.seng300.a3.finance.FinanceSector;
  * @version	2.0
  * @since	2.0
  */
+
+/*
+ * ChangeModule.java originally had the method called updateExactChangeLight(), but it has
+ * since been moved over to FinanceSector.java
+ * As a result, in order to fix the compilation errors, a private instance of FinanceSector has
+ * been created, but NOT INITIALIZED.
+ * As such, any failed test cases can most likely be attributed to this.
+ * It's not certain how we would get around to creating a valid instance of FinanceSector, due to its
+ * tie-ins with VendingManager, and that to a VendingMachine.
+ */
 public class ChangeModuleTest {	
-	private FinanceSector financeSector;
+	private ChangeModule cm;
+	private FinanceSector fSec;
 	private VendingMachine vend;
 	private int[] validCoins;
 	private int[] coinCount = {0, 10, 1, 3, 5, 0};
@@ -64,54 +75,58 @@ public class ChangeModuleTest {
 	
 	/**
 	 * Ensure the getPossibleChangeValues and canMakeChange algorithms calculate correctly when the machine is not able to make exact change.
-	 * @throws IOException 
 	 */
 	@Test
-	public void testNotExactChange() throws IOException{
+	public void testNotExactChange(){
 		configureVend(170);
-		financeSector = FinanceSector.getInstance();
-		financeSector.updateExactChangeLight();
-		boolean expected = financeSector.checkChangeLight(validCoins, coinCount);
+		cm = ChangeModule.getInstance();
+		// See note at top of code.
+		//cm.updateExactChangeLight();
+		fSec.updateExactChangeLight();
+		boolean expected = cm.checkChangeLight(validCoins, coinCount);
 		assertEquals(expected, false);
 	}
 	
 	/**
 	 * Ensure the getPossibleChangeValues algorithm calculates correctly when the machine is able to make exact change.
-	 * @throws IOException 
 	 */
 	@Test
-	public void testExactChange() throws IOException{
+	public void testExactChange(){
 		configureVend(200);
-		financeSector = FinanceSector.getInstance();
-		financeSector.updateExactChangeLight();
-		boolean expected = financeSector.checkChangeLight(validCoins, coinCount);
+		cm = ChangeModule.getInstance();
+		// See note at top of code.
+		//cm.updateExactChangeLight();
+		fSec.updateExactChangeLight();
+		boolean expected = cm.checkChangeLight(validCoins, coinCount);
 		assertEquals(expected, true);
 	}
 
 	/**
 	 * Ensure the getPossibleChangeValues and canMakeChange algorithms calculate correctly when the machine is able to make exact change.
-	 * @throws IOException 
 	 */
 	@Test
-	public void testExactChange2() throws IOException{
+	public void testExactChange2(){
 		configureVend(150);
-		financeSector = FinanceSector.getInstance();
-		financeSector.updateExactChangeLight();
-		boolean expected = financeSector.checkChangeLight(validCoins, coinCount);
+		cm = ChangeModule.getInstance();
+		// See note at top of code.
+		//cm.updateExactChangeLight();
+		fSec.updateExactChangeLight();
+		boolean expected = cm.checkChangeLight(validCoins, coinCount);
 		assertEquals(expected, true);
 	}
 
 	/**
 	 * Ensure the getCoinsToReturn returns the correct available coins for returns.
-	 * @throws IOException 
 	 */
 	@Test
-	public void testCoinsToReturn() throws IOException{
+	public void testCoinsToReturn(){
 		configureVend(150);
-		financeSector = FinanceSector.getInstance();
-		financeSector.updateExactChangeLight();
+		cm = ChangeModule.getInstance();
+		// See note at top of code.
+		//cm.updateExactChangeLight();
+		fSec.updateExactChangeLight();
 		ArrayList<Integer> returnList = new ArrayList<Integer>();
-		returnList = financeSector.getCoinsToReturn(10, validCoins, coinCount);
+		returnList = cm.getCoinsToReturn(10, validCoins, coinCount);
 		ArrayList<Integer> expectedReturn = new ArrayList<Integer>();
 		expectedReturn.add(10);
 		assertEquals(expectedReturn, returnList);
@@ -123,7 +138,7 @@ public class ChangeModuleTest {
 	 */
 	@After
 	public void tearDown(){
-		financeSector = null;
+		cm = null;
 		vend = null;
 	}
 	
@@ -131,9 +146,8 @@ public class ChangeModuleTest {
      * Configures the hardware to use a set of names and costs for pop cans.
      * 
 	 * @param popPrice Cost for each pop. Cannot be non-positive.
-	 * @throws IOException 
 	 */
-	void configureVend(int popPrice) throws IOException{
+	void configureVend(int popPrice){
 		List<String> popCanNames = new ArrayList<String>();
 		popCanNames.add("Coke"); 
 		popCanNames.add("Pepsi"); 

@@ -5,27 +5,42 @@ import ca.ucalgary.seng300.a3.core.VendingManager;
 public class ConfigurationModule{
 	//
 	private static ConfigurationModule cm;
-	private VendingManager vm;
-	private static char [] buttonValue = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+	private static VendingManager vm;
+	private static char [] numericValue = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
 	private static String enteredKey = "";
 	private static boolean priceChangeMode = false;
 	private static int slotNumber;
 	private static int newPrice;
 
-	public static void initialize(VendingManager vm) {
-		cm = new ConfigurationModule(vm);
-	}
+	/**
+	 * Private constructor to prevent additional creations. (Singleton)
+	 */
+	private ConfigurationModule() {}
 	
-	public ConfigurationModule(VendingManager vm) {
-		this.vm = vm;
+	/**
+	 * Forces the existing singleton instance to be replaced.
+	 * Called by VendingManager during its instantiation.
+	 * 
+	 * @param mgr	The VendingManager assigning itself this class.
+	 */
+	public static void initialize(VendingManager mgr) {
+		if (mgr != null) {
+			vm = mgr;
+			cm = new ConfigurationModule();
+		}
 	}
 	
 	public static ConfigurationModule getInstance() {
 		return cm;
 	}
 	
+	public boolean getMode()
+	{
+		return priceChangeMode;
+	}
+	
 	public int getNumberOfConfigButtons() {
-		return buttonValue.length;
+		return numericValue.length;
 	}
 	
 	/*Gets the index of the button that was pushed and adds a char value from buttonValue[index] to enteredKey
@@ -35,7 +50,7 @@ public class ConfigurationModule{
 	 * @param index		The index of the button pushed
 	 */
 	public void enterChar(int index) {
-		enteredKey += buttonValue[index];
+		enteredKey += numericValue[index];
 		if(!priceChangeMode) {
 			vm.displayMessageConfig("Pop Slot: " + enteredKey);
 		}else {

@@ -84,7 +84,6 @@ public class TransactionModuleTest {
 	 * and the updated credit is reset to zero.
 	 * 
 	 * @throws InterruptedException Thrown when a thread is waiting, sleeping, or otherwise occupied, and the thread is interrupted, either before or during the activity.
-	 * @throws IOException 
 	 */
 	@Test
 	public void testPostPCreditZero() throws InterruptedException, IOException{
@@ -103,7 +102,6 @@ public class TransactionModuleTest {
 	/**
 	 * Ensures the display device displays the message "Credit: " and the amount of updated credit when a purchase happens
 	 * and the updated credit is non-zero.
-	 * @throws IOException 
 	 */
 	@Test
 	public void testPostPCreditNotZero() throws IOException{
@@ -120,7 +118,6 @@ public class TransactionModuleTest {
 	
 	/**
 	 * Ensures the buy function throws the correct exception when the credit < cost.
-	 * @throws IOException 
 	 */
 	@Test
 	public void testInsufficentFundsException() throws IOException{

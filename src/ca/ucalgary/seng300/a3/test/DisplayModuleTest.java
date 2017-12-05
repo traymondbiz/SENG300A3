@@ -81,10 +81,9 @@ public class DisplayModuleTest {
 	 * Ensures the display device displays the "Hi there!" message within the first 5 seconds if the machine contains no credit.
 	 * 
 	 * @throws InterruptedException Thrown when a thread is waiting, sleeping, or otherwise occupied, and the thread is interrupted, either before or during the activity.
-	 * @throws IOException 
 	 */
 	@Test
-	public void testHiThere() throws InterruptedException, IOException{
+	public void testHiThere() throws InterruptedException{
 		VendingManager.initialize(vend);
 		Thread.sleep(1000);
 		assertEquals(VendingListener.returnMsg(), "Hi there!");
@@ -94,10 +93,9 @@ public class DisplayModuleTest {
 	 * Ensures the display device erases the "Hi there!" message during the following 10 seconds if the machine contains no credit.
 	 * 
 	 * @throws InterruptedException Thrown when a thread is waiting, sleeping, or otherwise occupied, and the thread is interrupted, either before or during the activity.
-	 * @throws IOException 
 	 */
 	@Test
-	public void testHiThereErased() throws InterruptedException, IOException{
+	public void testHiThereErased() throws InterruptedException{
 		VendingManager.initialize(vend);
 		Thread.sleep(6000);
 		assertEquals(VendingListener.returnMsg(), "");
@@ -107,10 +105,9 @@ public class DisplayModuleTest {
 	 * Ensures the display device repeats the message display cycle every 15 seconds if the machine contains no credit.
 	 * 
 	 * @throws InterruptedException Thrown when a thread is waiting, sleeping, or otherwise occupied, and the thread is interrupted, either before or during the activity.
-	 * @throws IOException 
 	 */
 	@Test
-	public void testMessageCycle() throws InterruptedException, IOException{
+	public void testMessageCycle() throws InterruptedException{
 		VendingManager.initialize(vend);
 		Thread.sleep(16000);
 		assertEquals(VendingListener.returnMsg(), "Hi there!");
@@ -119,7 +116,6 @@ public class DisplayModuleTest {
 	
 	/** 
 	 * Ensures the display device displays the message "Credit: " and the amount of credit when the user enters valid coins.
-	 * @throws IOException 
 	 */
 	@Test
 	public void testCreditChange() throws IOException{

@@ -83,7 +83,7 @@ public class DisplayModule  implements Runnable {
 	public static DisplayModule getInstance(){
 		return displayModule;
 	}
-
+	
 	/**
 	 * Adds a message to loop through while the machine is inactive.
 	 * @param Str	The message to be displayed.

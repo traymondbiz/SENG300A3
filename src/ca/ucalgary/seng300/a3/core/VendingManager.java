@@ -109,6 +109,7 @@ public class VendingManager {
 		//added by XM
 		getConfigPanel().getDisplay().register(listener);
 		registerConfigButtonListener(listener);
+		getLock().register(listener);
 		//end
 	}
 	private void setOutputmaps() {
@@ -286,6 +287,18 @@ public class VendingManager {
 		return vm.getCoinReturn();
 	}
 	
+	Lock getLock() {
+		return vm.getLock();
+	}
+	
+	/**
+	 * returns the mode of the configurationModule
+	 */
+	public boolean getConfigMode()
+	{
+		return configurationModule.getMode();
+	}
+	
 	//added by XM
 	ConfigurationPanel getConfigPanel() {
 		return vm.getConfigurationPanel();
@@ -356,7 +369,7 @@ public class VendingManager {
 	}
 	
 	//Clears configurationModule's variables
-	public void deactivateCofigPanel() {
+	public void deactivateConfigPanel() {
 		configurationModule.clearConfigPanel();
 	}
 	//End of new code (Chris)
@@ -505,11 +518,12 @@ public class VendingManager {
 	public void changePopPrice(int index, int newPrice) {
 		for (int i = 0; i < vm.getNumberOfSelectionButtons(); i++) {
 			if(i == index) {
-				newPopList.add(vm.getPopKindName(index));
+				newPopList.add(vm.getPopKindName(i));
 				newPriceList.add(newPrice);
-			}else {
-				newPopList.add(vm.getPopKindName(index));
-				newPriceList.add(vm.getPopKindCost(index));
+			}
+			else {
+				newPopList.add(vm.getPopKindName(i));
+				newPriceList.add(vm.getPopKindCost(i));
 			}
 		}
 		
@@ -518,4 +532,5 @@ public class VendingManager {
 		newPriceList.clear();
 	}
 	//end
+
 }

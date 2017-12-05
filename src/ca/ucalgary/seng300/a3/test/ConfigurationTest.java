@@ -1,6 +1,5 @@
 package ca.ucalgary.seng300.a3.test;
 
-
 import static org.junit.Assert.*;
 
 import java.util.List;
@@ -37,7 +36,7 @@ public class ConfigurationTest {
     	int deliveryChuteCapacity = 5;
     	int coinReturnCapacity = 5;
     	vend = new VendingMachine(coinKind, selectionButtonCount, coinRackCapacity, popCanRackCapacity, receptacleCapacity, deliveryChuteCapacity, coinReturnCapacity);
-   
+    	
 		List<String> popCanNames = new ArrayList<String>();
 		popCanNames.add("Coke"); 
 		popCanNames.add("Pepsi"); 
@@ -72,7 +71,7 @@ public class ConfigurationTest {
 		vm.pressConfigButton(0);
 		vm.pressConfigButton(0);
 		vm.pressedConfigEnterButton();
-		assertEquals(100, vm.getPopKindCost(1));
+		assertEquals(100, vend.getPopKindCost(1));
 	}
 	
 	/**Tested configuration panel's display.
@@ -91,7 +90,7 @@ public class ConfigurationTest {
 		vm.pressConfigButton(0);
 		assertEquals(VendingListener.returnMsg(), "New Price: 100");
 		vm.pressedConfigEnterButton();
-		assertEquals(100, vm.getPopKindCost(2));
+		assertEquals(100, vend.getPopKindCost(2));
 		assertEquals(VendingListener.returnMsg(), "Pop Slot: ");
 	}
 }
