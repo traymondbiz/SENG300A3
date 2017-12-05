@@ -158,7 +158,7 @@ public class VendingListener implements CoinSlotListener, PushButtonListener, Co
 			e1.printStackTrace();
 		}
 		
-			mgr.addMessage("User instered: " + Integer.toString(coin.getValue()) +"coin to coin slot",OutputDataType.VALID_COIN_INSERTED,0);
+			mgr.addMessage("User inserted: " + Integer.toString(coin.getValue()) +" coin to coin slot",OutputDataType.VALID_COIN_INSERTED,0);
 		
 		
 	}

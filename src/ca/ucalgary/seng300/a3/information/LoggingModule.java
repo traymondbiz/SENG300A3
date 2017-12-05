@@ -105,7 +105,7 @@ public class LoggingModule {
 		}
 		
 		output = new BufferedWriter(new FileWriter("event log.txt", true));
-		output.append(currentDate.toString() + ":" + messageToLog + "\n");
+		output.append(currentDate.toString() + ": " + messageToLog + "\n");
 		output.close();
 	}
 

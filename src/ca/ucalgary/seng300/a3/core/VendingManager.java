@@ -9,8 +9,8 @@ import org.lsmr.vending.hardware.*;
 import ca.ucalgary.seng300.a3.enums.OutputDataType;
 import ca.ucalgary.seng300.a3.enums.OutputMethod;
 import ca.ucalgary.seng300.a3.exceptions.InsufficientFundsException;
-import ca.ucalgary.seng300.a3.finance.ConfigurationModule;
 import ca.ucalgary.seng300.a3.finance.FinanceSector;
+import ca.ucalgary.seng300.a3.information.ConfigurationModule;
 import ca.ucalgary.seng300.a3.information.InfoSector;
 
 /**

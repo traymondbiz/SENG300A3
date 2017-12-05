@@ -113,7 +113,7 @@ public class ChangeModuleTest {
 		ArrayList<Integer> returnList = new ArrayList<Integer>();
 		returnList = financeSector.getCoinsToReturn(10, validCoins, coinCount);
 		ArrayList<Integer> expectedReturn = new ArrayList<Integer>();
-		expectedReturn.add(5); expectedReturn.add(5);
+		expectedReturn.add(10);
 		assertEquals(expectedReturn, returnList);
 	}
 	

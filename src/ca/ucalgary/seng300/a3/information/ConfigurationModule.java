@@ -1,4 +1,4 @@
-package ca.ucalgary.seng300.a3.finance;
+package ca.ucalgary.seng300.a3.information;
 
 import ca.ucalgary.seng300.a3.core.VendingManager;
 
