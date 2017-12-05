@@ -33,18 +33,22 @@ import org.lsmr.vending.PopCan;
 import org.lsmr.vending.hardware.AbstractHardware;
 import org.lsmr.vending.hardware.AbstractHardwareListener;
 import org.lsmr.vending.hardware.CapacityExceededException;
+import org.lsmr.vending.hardware.DeliveryChute;
 import org.lsmr.vending.hardware.DisabledException;
 import org.lsmr.vending.hardware.Display;
-import org.lsmr.vending.hardware.DisplayListener;
+import org.lsmr.vending.hardware.PopCanRack;
+import org.lsmr.vending.hardware.PopCanRackListener;
 import org.lsmr.vending.hardware.VendingMachine;
 
 import ca.ucalgary.seng300.a3.VendingListener;
 import ca.ucalgary.seng300.a3.VendingManager;
 
-public class GUIModule implements DisplayListener{
+public class GUIModule implements PopCanRackListener{
 
 	private JFrame guiFrame;
 	JLabel displayLabel;
+	JLabel dispensedLabel;
+	int popTime = 0;
 
 
 	/**
@@ -84,7 +88,13 @@ public class GUIModule implements DisplayListener{
 		int coinReturnCapacity = 5;
 		VendingMachine vm = new VendingMachine(coinKind, selectionButtonCount, coinRackCapacity, popCanRackCapacity, receptacleCapacity, deliveryChuteCapacity, coinReturnCapacity);
 		VendingManager.initialize(vm);
-		VendingManager mgr = VendingManager.getInstance();	
+		VendingManager mgr = VendingManager.getInstance();
+		
+		//Register the GUI as a listener to the popCanRack
+		for(int i = 0; i < selectionButtonCount; i++)
+		{
+			vm.getPopCanRack(i).register(this);
+		}
 
 		List<String> popCanNames = new ArrayList<String>();
 		popCanNames.add("Lime Zilla");
@@ -352,7 +362,7 @@ public class GUIModule implements DisplayListener{
 		invalidButton.setBounds(623, 250, 75, 75);
 		userPanel.add(invalidButton);
 		
-		JLabel dispensedLabel = new JLabel("[Dispensed]: <PopName> <Change (int Value or List of Coins)>");
+		dispensedLabel = new JLabel("[Dispensed]: <PopName> <Change (int Value or List of Coins)>");
 		dispensedLabel.setOpaque(true);
 		dispensedLabel.setBackground(Color.WHITE);
 		dispensedLabel.setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -485,6 +495,19 @@ public class GUIModule implements DisplayListener{
 		Timer timer = new Timer(100, new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				((JLabel) userPanel.getComponent(0)).setText(VendingListener.returnMsg());
+				exactChangeLabel.setEnabled(vm.getExactChangeLight().isActive());
+				safetyActiveLabel.setEnabled(vm.isSafetyEnabled());
+				outOfOrderLabel.setEnabled(vm.getOutOfOrderLight().isActive());
+				if(!dispensedLabel.getText().equals(""))
+				{
+					if(popTime >= 4000)
+					{
+						dispensedLabel.setText("");
+						popTime = 0;
+					}					
+					else
+						popTime += 100;
+				}
 				}
 		});
 		timer.start();
@@ -492,20 +515,17 @@ public class GUIModule implements DisplayListener{
 		
 	}
 
-	@Override
-	public void enabled(AbstractHardware<? extends AbstractHardwareListener> hardware) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void disabled(AbstractHardware<? extends AbstractHardwareListener> hardware) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void messageChange(Display display, String oldMessage, String newMessage) {
-		displayLabel.setText(newMessage);
+	// UNUSED FUNCTIONS
+	public void popCanAdded(PopCanRack popCanRack, PopCan popCan) {}
+	public void popCansFull(PopCanRack popCanRack) {}
+	public void popCansEmpty(PopCanRack popCanRack) {}
+	public void popCansLoaded(PopCanRack rack, PopCan... popCans) {}
+	public void popCansUnloaded(PopCanRack rack, PopCan... popCans) {}
+	public void enabled(AbstractHardware<? extends AbstractHardwareListener> hardware) {}
+	public void disabled(AbstractHardware<? extends AbstractHardwareListener> hardware) {}
+	
+	// Listener function that is called when pop is dispensed
+	public void popCanRemoved(PopCanRack popCanRack, PopCan popCan) {
+		dispensedLabel.setText("[Dispensed]: " + popCan.getName());
 	}
 }
