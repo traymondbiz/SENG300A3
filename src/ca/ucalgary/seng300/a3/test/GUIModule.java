@@ -409,7 +409,7 @@ public class GUIModule implements PopCanRackListener{
 		JComboBox comboBox = new JComboBox();
 		comboBox.setFont(new Font("Dialog", Font.BOLD, 30));
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}));
-		comboBox.setBounds(465, 406, 100, 100);
+		comboBox.setBounds(564, 188, 100, 100);
 		((JLabel)comboBox.getRenderer()).setHorizontalAlignment(SwingConstants.CENTER);
 		((JLabel)comboBox.getRenderer()).setVerticalAlignment(SwingConstants.CENTER);
 		techPanel.add(comboBox);
@@ -477,6 +477,16 @@ public class GUIModule implements PopCanRackListener{
 		btnEnter.setFont(new Font("Dialog", Font.BOLD, 20));
 		btnEnter.setBounds(575, 406, 200, 100);
 		techPanel.add(btnEnter);
+		
+		JButton btnLock = new JButton("LOCK");
+		btnLock.setFont(new Font("Dialog", Font.BOLD, 20));
+		btnLock.setBounds(564, 77, 211, 100);
+		techPanel.add(btnLock);
+		
+		JButton btninsertcharacter = new JButton("<html><center>INSERT<br>CHAR</center></html>");
+		btninsertcharacter.setFont(new Font("Dialog", Font.BOLD, 20));
+		btninsertcharacter.setBounds(674, 188, 100, 100);
+		techPanel.add(btninsertcharacter);
 		
 		JPanel logPanel = new JPanel();
 		guiTabbedPane.addTab("Log", null, logPanel, null);
