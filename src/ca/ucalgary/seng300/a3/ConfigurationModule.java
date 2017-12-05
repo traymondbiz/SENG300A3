@@ -32,6 +32,11 @@ public class ConfigurationModule{
 		return cm;
 	}
 	
+	public boolean getMode()
+	{
+		return priceChangeMode;
+	}
+	
 	public int getNumberOfConfigButtons() {
 		return numericValue.length;
 	}

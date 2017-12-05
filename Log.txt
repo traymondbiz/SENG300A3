@@ -1,0 +1,75 @@
+Tue Dec 05 04:40:12 MST 2017:User inserted: 200 coin to coin slot
+Tue Dec 05 04:40:12 MST 2017:User inserted: 100 coin to coin slot
+Tue Dec 05 04:40:13 MST 2017:Fissure button pressed by user with: 0
+Tue Dec 05 04:40:14 MST 2017:User inserted: 200 coin to coin slot
+Tue Dec 05 04:40:15 MST 2017:User inserted: 100 coin to coin slot
+Tue Dec 05 04:40:15 MST 2017:Fissure button pressed by user with: 0
+Tue Dec 05 04:40:16 MST 2017:User inserted: 200 coin to coin slot
+Tue Dec 05 04:40:16 MST 2017:User inserted: 100 coin to coin slot
+Tue Dec 05 04:40:17 MST 2017:Fissure button pressed by user with: 0
+Tue Dec 05 04:40:17 MST 2017:User inserted: 200 coin to coin slot
+Tue Dec 05 04:40:17 MST 2017:User inserted: 100 coin to coin slot
+Tue Dec 05 04:40:18 MST 2017:Fissure button pressed by user with: 0
+Tue Dec 05 04:40:18 MST 2017:User inserted: 200 coin to coin slot
+Tue Dec 05 04:40:19 MST 2017:User inserted: 100 coin to coin slot
+Tue Dec 05 04:40:19 MST 2017:Fissure button pressed by user with: 0
+Tue Dec 05 04:40:21 MST 2017:User inserted: 200 coin to coin slot
+Tue Dec 05 04:40:22 MST 2017:User inserted: 200 coin to coin slot
+Tue Dec 05 04:40:22 MST 2017:User inserted: 100 coin to coin slot
+Tue Dec 05 04:40:23 MST 2017:User inserted: 25 coin to coin slot
+Tue Dec 05 04:40:23 MST 2017:User inserted: 25 coin to coin slot
+Tue Dec 05 04:40:24 MST 2017:User inserted: 5 coin to coin slot
+Tue Dec 05 04:40:24 MST 2017:User Could not purchase Dr. Walker because the delivery chute is full of change
+Tue Dec 05 04:40:29 MST 2017:User Could not purchase Dr. Walker because the delivery chute is full of change
+Tue Dec 05 04:44:27 MST 2017:User inserted: 200 coin to coin slot
+Tue Dec 05 04:44:28 MST 2017:User inserted: 25 coin to coin slot
+Tue Dec 05 04:44:30 MST 2017:User inserted: 5 coin to coin slot
+Tue Dec 05 04:44:31 MST 2017:Himalayan Rain button pressed by user with: 5
+Tue Dec 05 04:45:43 MST 2017:User inserted: 100 coin to coin slot
+Tue Dec 05 04:45:43 MST 2017:User inserted: 25 coin to coin slot
+Tue Dec 05 04:45:45 MST 2017:User inserted: 5 coin to coin slot
+Tue Dec 05 04:45:45 MST 2017:User inserted: 5 coin to coin slot
+Tue Dec 05 04:46:08 MST 2017:Lime Zilla button pressed by user with: 5
+Tue Dec 05 04:46:16 MST 2017:User inserted: 200 coin to coin slot
+Tue Dec 05 04:46:16 MST 2017:User inserted: 100 coin to coin slot
+Tue Dec 05 04:46:17 MST 2017:Fissure button pressed by user with: 0
+Tue Dec 05 04:46:20 MST 2017:User inserted: 100 coin to coin slot
+Tue Dec 05 04:46:21 MST 2017:User inserted: 25 coin to coin slot
+Tue Dec 05 04:46:21 MST 2017:User inserted: 5 coin to coin slot
+Tue Dec 05 04:46:22 MST 2017:User inserted: 5 coin to coin slot
+Tue Dec 05 04:46:22 MST 2017:Lime Zilla button pressed by user with: 0
+Tue Dec 05 04:46:23 MST 2017:User Could not purchase Lime Zilla. 130 cents missing from credit.
+Tue Dec 05 04:46:34 MST 2017:User inserted: 100 coin to coin slot
+Tue Dec 05 04:46:34 MST 2017:User inserted: 25 coin to coin slot
+Tue Dec 05 04:46:35 MST 2017:User inserted: 5 coin to coin slot
+Tue Dec 05 04:46:35 MST 2017:User inserted: 5 coin to coin slot
+Tue Dec 05 04:46:36 MST 2017:Lime Zilla button pressed by user with: 5
+Tue Dec 05 04:46:37 MST 2017:User inserted: 100 coin to coin slot
+Tue Dec 05 04:46:39 MST 2017:User inserted: 25 coin to coin slot
+Tue Dec 05 04:46:40 MST 2017:User inserted: 5 coin to coin slot
+Tue Dec 05 04:46:41 MST 2017:Lime Zilla button pressed by user with: 0
+Tue Dec 05 04:47:24 MST 2017:User inserted: 100 coin to coin slot
+Tue Dec 05 04:47:24 MST 2017:User inserted: 25 coin to coin slot
+Tue Dec 05 04:47:25 MST 2017:User inserted: 5 coin to coin slot
+Tue Dec 05 04:47:26 MST 2017:User inserted: 5 coin to coin slot
+Tue Dec 05 04:47:26 MST 2017:Lime Zilla button pressed by user with: 0
+Tue Dec 05 04:47:29 MST 2017:User inserted: 100 coin to coin slot
+Tue Dec 05 04:47:29 MST 2017:User inserted: 25 coin to coin slot
+Tue Dec 05 04:47:29 MST 2017:User inserted: 5 coin to coin slot
+Tue Dec 05 04:47:30 MST 2017:User inserted: 5 coin to coin slot
+Tue Dec 05 04:47:30 MST 2017:Lime Zilla button pressed by user with: 0
+Tue Dec 05 04:47:36 MST 2017:User inserted: 100 coin to coin slot
+Tue Dec 05 04:47:36 MST 2017:User inserted: 25 coin to coin slot
+Tue Dec 05 04:47:38 MST 2017:User inserted: 5 coin to coin slot
+Tue Dec 05 04:47:39 MST 2017:User inserted: 5 coin to coin slot
+Tue Dec 05 04:47:39 MST 2017:Lime Zilla button pressed by user with: 5
+Tue Dec 05 04:47:40 MST 2017:User inserted: 100 coin to coin slot
+Tue Dec 05 04:47:41 MST 2017:User inserted: 25 coin to coin slot
+Tue Dec 05 04:47:42 MST 2017:User inserted: 5 coin to coin slot
+Tue Dec 05 04:47:42 MST 2017:Lime Zilla button pressed by user with: 0
+Tue Dec 05 04:48:04 MST 2017:User inserted: 200 coin to coin slot
+Tue Dec 05 04:48:05 MST 2017:User inserted: 100 coin to coin slot
+Tue Dec 05 04:48:07 MST 2017:Fissure button pressed by user with: 0
+Tue Dec 05 04:48:07 MST 2017:User Could not purchase Dr. Walker. 554 cents missing from credit.
+Tue Dec 05 04:48:08 MST 2017:User Could not purchase Himalayan Rain. 225 cents missing from credit.
+Tue Dec 05 04:48:09 MST 2017:User Could not purchase Lime Zilla. 130 cents missing from credit.

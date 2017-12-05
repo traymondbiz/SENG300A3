@@ -107,7 +107,7 @@ public class VendingListener implements CoinSlotListener, PushButtonListener, Co
 		}
 		else{
 			try{
-				//Assumes a 1-to-1, strictly ordered mapping betwee
+				//Assumes a 1-to-1, strictly ordered mapping between
 				mgr.buy(bIndex); 
 				mgr.addLog(mgr.getPopKindName(bIndex)+" button pressed by user with: "+ Integer.toString(mgr.getCredit()));
 			} 
@@ -119,10 +119,10 @@ public class VendingListener implements CoinSlotListener, PushButtonListener, Co
 				mgr.setOutOfOrder(); // set the out of order light
 			} 
 			catch (EmptyException e){
-				mgr.addLog("User Could not purchase " + mgr.getPopKindName(bIndex) + " becasue there is none in the machine.");
+				mgr.addLog("User Could not purchase " + mgr.getPopKindName(bIndex) + " because there is none in the machine.");
 			} 
 			catch (CapacityExceededException e){
-				mgr.addLog("User Could not purchase " + mgr.getPopKindName(bIndex) + " becasue the deivery chute is full of change");
+				mgr.addLog("User Could not purchase " + mgr.getPopKindName(bIndex) + " because the delivery chute is full of change");
 				mgr.setOutOfOrder();
 			}
 		}		
@@ -137,7 +137,7 @@ public class VendingListener implements CoinSlotListener, PushButtonListener, Co
 	public void validCoinInserted(CoinSlot slot, Coin coin) {
 		mgr.addCredit(coin.getValue());
 		
-			mgr.addLog("User inserted: " + Integer.toString(coin.getValue()) +"coin to coin slot");
+			mgr.addLog("User inserted: " + Integer.toString(coin.getValue()) +" coin to coin slot");
 		
 	}
 
@@ -148,7 +148,7 @@ public class VendingListener implements CoinSlotListener, PushButtonListener, Co
 	public void coinsDelivered(CoinReturn coinReturn, Coin[] coins){
 		mgr.resetDisplay();
 		
-		mgr.addLog("Coins Returned to User: " + coins.toString());
+		mgr.addLog("Coins returned to user: " + coins.toString());
 		
 	}
 	

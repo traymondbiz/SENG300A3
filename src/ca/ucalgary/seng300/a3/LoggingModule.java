@@ -98,13 +98,13 @@ public class LoggingModule {
 	 */
 	private void printToFile(String messageToLog) throws IOException {
 		Date currentDate = new Date();
-		File currentFileDir = new File("event log.txt");
+		File currentFileDir = new File("Log.txt");
 		
 		if(!currentFileDir.isFile()) {
 			currentFileDir.createNewFile(); 
 		}
 		
-		output = new BufferedWriter(new FileWriter("event log.txt", true));
+		output = new BufferedWriter(new FileWriter("Log.txt", true));
 		output.append(currentDate.toString() + ":" + messageToLog + "\n");
 		output.close();
 	}

@@ -54,6 +54,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 	private JPanel techPanel;
 	private VendingMachine vm;
 	private VendingManager mgr;
+	private boolean vendLocked = false;
 
 	/**
 	 * Launch the application.
@@ -102,6 +103,8 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		vm.getDisplay().register(this);
 		vm.getExactChangeLight().register(this);
 		vm.getOutOfOrderLight().register(this);
+		vm.getLock().register(this);
+		vm.getConfigurationPanel().getDisplay().register(this);
 
 		List<String> popCanNames = new ArrayList<String>();
 		popCanNames.add("Lime Zilla");
@@ -177,7 +180,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		userPanel.setLayout(null);
 		
 		//Component 0
-		JLabel displayLabel = new JLabel("CREDIT AND MESSAGE DISPLAY HERE");
+		JLabel displayLabel = new JLabel("Hi There!");
 		displayLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		displayLabel.setIconTextGap(0);
 		displayLabel.setForeground(Color.GREEN);
@@ -198,7 +201,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		outOfOrderLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		outOfOrderLabel.setVerticalAlignment(SwingConstants.TOP);
 		outOfOrderLabel.setDisabledIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/red.png")));
-		outOfOrderLabel.setIcon(new ImageIcon("C:\\Users\\RaylazorIII\\Desktop\\green.png"));
+		outOfOrderLabel.setIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/green.png")));
 		outOfOrderLabel.setBounds(39, 75, 250, 50);
 		userPanel.add(outOfOrderLabel);
 		
@@ -225,6 +228,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		
 		//Component 4
 		JButton limeZillaButton = new JButton("");
+		limeZillaButton.setPressedIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/sodaLimeP.png")));
 		limeZillaButton.setContentAreaFilled(false);
 		limeZillaButton.setBorderPainted(false);
 		limeZillaButton.setOpaque(false);
@@ -239,6 +243,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		
 		//Component 5
 		JButton fissureButton = new JButton("");
+		fissureButton.setPressedIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/sodaFissureP.png")));
 		fissureButton.setIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/sodaFissure.png")));
 		fissureButton.setContentAreaFilled(false);
 		fissureButton.setBorderPainted(false);
@@ -252,6 +257,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		
 		//Component 6
 		JButton himalayanRainButton = new JButton("");
+		himalayanRainButton.setPressedIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/sodaRainP.png")));
 		himalayanRainButton.setIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/sodaRain.png")));
 		himalayanRainButton.setContentAreaFilled(false);
 		himalayanRainButton.setBorderPainted(false);
@@ -265,6 +271,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		
 		//Component 7
 		JButton drWalkerButton = new JButton("");
+		drWalkerButton.setPressedIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/sodaDrWalkerP.png")));
 		drWalkerButton.setIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/sodaDrWalker.png")));
 		drWalkerButton.setContentAreaFilled(false);
 		drWalkerButton.setBorderPainted(false);
@@ -278,6 +285,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		
 		//Component 8
 		JButton toonieButton = new JButton("<html><center>200</center><br>(Toonie)</html>");
+		toonieButton.setPressedIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/coinToonieP.png")));
 		toonieButton.setBorder(null);
 		toonieButton.setContentAreaFilled(false);
 		toonieButton.setOpaque(false);
@@ -296,6 +304,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		
 		//Component 9
 		JButton loonieButton = new JButton("<html><center>100</center><br>(Loonie)</html>");
+		loonieButton.setPressedIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/coinLoonieP.png")));
 		loonieButton.setBorder(null);
 		loonieButton.setContentAreaFilled(false);
 		loonieButton.setIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/coinLoonie.png")));
@@ -314,6 +323,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		
 		//Component 10
 		JButton quarterButton = new JButton("<html><center>25</center><br>(Quarter)</html>");
+		quarterButton.setPressedIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/coinQuarterP.png")));
 		quarterButton.setBorder(null);
 		quarterButton.setContentAreaFilled(false);
 		quarterButton.setIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/coinQuarter.png")));
@@ -332,6 +342,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		
 		//Component 11
 		JButton dimeButton = new JButton("<html><center>10</center><br>(Dime)</html>");
+		dimeButton.setPressedIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/coinDimeP.png")));
 		dimeButton.setBorder(null);
 		dimeButton.setContentAreaFilled(false);
 		dimeButton.setOpaque(false);
@@ -350,6 +361,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		
 		//Component 12
 		JButton nickelButton = new JButton("<html><center>5</center><br>(Nickel)</html>");
+		nickelButton.setPressedIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/coinNickelP.png")));
 		nickelButton.setBorder(null);
 		nickelButton.setContentAreaFilled(false);
 		nickelButton.setIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/coinNickel.png")));
@@ -368,6 +380,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		
 		//Component 13
 		JButton invalidButton = new JButton("<html><center>5000</center><br>(Invalid)</html>");
+		invalidButton.setPressedIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/coinInvalidP.png")));
 		invalidButton.setBorder(null);
 		invalidButton.setContentAreaFilled(false);
 		invalidButton.setOpaque(false);
@@ -394,22 +407,25 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		dispensedLabel.setBounds(26, 490, 749, 42);
 		userPanel.add(dispensedLabel);
 		
-		
-		JLabel label_2 = new JLabel("5.54");
-		label_2.setBounds(250, 325, 150, 14);
-		userPanel.add(label_2);
-		
-		JLabel label_3 = new JLabel("2.25");
-		label_3.setBounds(75, 325, 150, 14);
-		userPanel.add(label_3);
-		
+		//Component 15
 		JLabel label_4 = new JLabel("1.30");
 		label_4.setBounds(75, 225, 150, 14);
 		userPanel.add(label_4);
 		
+		//Component 16
 		JLabel label_1 = new JLabel("3.00");
 		label_1.setBounds(250, 225, 150, 14);
 		userPanel.add(label_1);
+		
+		//Component 17
+		JLabel label_3 = new JLabel("2.25");
+		label_3.setBounds(75, 325, 150, 14);
+		userPanel.add(label_3);
+		
+		//Component 18
+		JLabel label_2 = new JLabel("5.54");
+		label_2.setBounds(250, 325, 150, 14);
+		userPanel.add(label_2);
 		
 		ImageIcon bg = new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/bg.png"));
 		
@@ -418,21 +434,22 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		techPanel.setLayout(null);
 		
 		//Component 0
-		JLabel label = new JLabel("CREDIT AND MESSAGE DISPLAY HERE");
-		label.setToolTipText("Displays messages created by Display Module.");
-		label.setOpaque(true);
-		label.setLocation(new Point(25, 25));
-		label.setIconTextGap(0);
-		label.setHorizontalAlignment(SwingConstants.CENTER);
-		label.setForeground(Color.GREEN);
-		label.setFont(new Font("DialogInput", Font.PLAIN, 18));
-		label.setBorder(new LineBorder(new Color(0, 0, 0)));
-		label.setBackground(Color.DARK_GRAY);
-		label.setBounds(25, 25, 750, 25);
-		techPanel.add(label);
+		JLabel lblEnterPopIndex = new JLabel("ENTER POP INDEX TO PROCEED");
+		lblEnterPopIndex.setToolTipText("Displays messages created by Display Module.");
+		lblEnterPopIndex.setOpaque(true);
+		lblEnterPopIndex.setLocation(new Point(25, 25));
+		lblEnterPopIndex.setIconTextGap(0);
+		lblEnterPopIndex.setHorizontalAlignment(SwingConstants.CENTER);
+		lblEnterPopIndex.setForeground(Color.GREEN);
+		lblEnterPopIndex.setFont(new Font("DialogInput", Font.PLAIN, 18));
+		lblEnterPopIndex.setBorder(new LineBorder(new Color(0, 0, 0)));
+		lblEnterPopIndex.setBackground(Color.DARK_GRAY);
+		lblEnterPopIndex.setBounds(25, 25, 750, 25);
+		techPanel.add(lblEnterPopIndex);
 		
 		//Component 1
 		JComboBox comboBox = new JComboBox();
+		comboBox.setEnabled(false);
 		comboBox.setFont(new Font("Dialog", Font.BOLD, 30));
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}));
 		comboBox.setBounds(564, 188, 100, 100);
@@ -441,89 +458,171 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		techPanel.add(comboBox);
 		
 		//Component 2
-		JButton btnNewButton = new JButton("1");
-		btnNewButton.setFont(new Font("Dialog", Font.BOLD, 30));
-		btnNewButton.setBounds(25, 299, 100, 100);
-		techPanel.add(btnNewButton);
-		
-		//Component 3
-		JButton btnO = new JButton("0");
-		btnO.addActionListener(new ActionListener() {
+		JButton btn1 = new JButton("1");
+		btn1.setEnabled(false);
+		btn1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				mgr.pressConfigButton(1);
 			}
 		});
-		btnO.setFont(new Font("Dialog", Font.BOLD, 30));
-		btnO.setBounds(25, 406, 100, 100);
-		techPanel.add(btnO);
+		btn1.setFont(new Font("Dialog", Font.BOLD, 30));
+		btn1.setBounds(25, 299, 100, 100);
+		techPanel.add(btn1);
+		
+		//Component 3
+		JButton btn0 = new JButton("0");
+		btn0.setEnabled(false);
+		btn0.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				mgr.pressConfigButton(0);
+			}
+		});
+		btn0.setFont(new Font("Dialog", Font.BOLD, 30));
+		btn0.setBounds(25, 406, 100, 100);
+		techPanel.add(btn0);
 		
 		//Component 4
-		JButton button = new JButton("2");
-		button.setFont(new Font("Dialog", Font.BOLD, 30));
-		button.setBounds(135, 299, 100, 100);
-		techPanel.add(button);
+		JButton btn2 = new JButton("2");
+		btn2.setEnabled(false);
+		btn2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				mgr.pressConfigButton(2);
+			}
+		});
+		btn2.setFont(new Font("Dialog", Font.BOLD, 30));
+		btn2.setBounds(135, 299, 100, 100);
+		techPanel.add(btn2);
 		
 		//Component 5
-		JButton button_1 = new JButton("3");
-		button_1.setFont(new Font("Dialog", Font.BOLD, 30));
-		button_1.setBounds(245, 299, 100, 100);
-		techPanel.add(button_1);
+		JButton btn3 = new JButton("3");
+		btn3.setEnabled(false);
+		btn3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				mgr.pressConfigButton(3);
+			}
+		});
+		btn3.setFont(new Font("Dialog", Font.BOLD, 30));
+		btn3.setBounds(245, 299, 100, 100);
+		techPanel.add(btn3);
 		
 		//Component 6
-		JButton button_2 = new JButton("4");
-		button_2.setFont(new Font("Dialog", Font.BOLD, 30));
-		button_2.setBounds(25, 188, 100, 100);
-		techPanel.add(button_2);
+		JButton btn4 = new JButton("4");
+		btn4.setEnabled(false);
+		btn4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				mgr.pressConfigButton(4);
+			}
+		});
+		btn4.setFont(new Font("Dialog", Font.BOLD, 30));
+		btn4.setBounds(25, 188, 100, 100);
+		techPanel.add(btn4);
 		
 		//Component 7
-		JButton button_3 = new JButton("5");
-		button_3.setFont(new Font("Dialog", Font.BOLD, 30));
-		button_3.setBounds(135, 188, 100, 100);
-		techPanel.add(button_3);
+		JButton btn5 = new JButton("5");
+		btn5.setEnabled(false);
+		btn5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				mgr.pressConfigButton(5);
+			}
+		});
+		btn5.setFont(new Font("Dialog", Font.BOLD, 30));
+		btn5.setBounds(135, 188, 100, 100);
+		techPanel.add(btn5);
 		
 		//Component 8
-		JButton button_4 = new JButton("6");
-		button_4.setFont(new Font("Dialog", Font.BOLD, 30));
-		button_4.setBounds(245, 188, 100, 100);
-		techPanel.add(button_4);
+		JButton btn6 = new JButton("6");
+		btn6.setEnabled(false);
+		btn6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				mgr.pressConfigButton(6);
+			}
+		});
+		btn6.setFont(new Font("Dialog", Font.BOLD, 30));
+		btn6.setBounds(245, 188, 100, 100);
+		techPanel.add(btn6);
 		
 		//Component 9
-		JButton button_5 = new JButton("7");
-		button_5.setFont(new Font("Dialog", Font.BOLD, 30));
-		button_5.setBounds(25, 77, 100, 100);
-		techPanel.add(button_5);
+		JButton btn7 = new JButton("7");
+		btn7.setEnabled(false);
+		btn7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				mgr.pressConfigButton(7);
+			}
+		});
+		btn7.setFont(new Font("Dialog", Font.BOLD, 30));
+		btn7.setBounds(25, 77, 100, 100);
+		techPanel.add(btn7);
 		
 		//Component 10
-		JButton button_6 = new JButton("8");
-		button_6.setFont(new Font("Dialog", Font.BOLD, 30));
-		button_6.setBounds(135, 77, 100, 100);
-		techPanel.add(button_6);
+		JButton btn8 = new JButton("8");
+		btn8.setEnabled(false);
+		btn8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				mgr.pressConfigButton(8);
+			}
+		});
+		btn8.setFont(new Font("Dialog", Font.BOLD, 30));
+		btn8.setBounds(135, 77, 100, 100);
+		techPanel.add(btn8);
 		
 		//Component 11
-		JButton button_7 = new JButton("9");
-		button_7.setFont(new Font("Dialog", Font.BOLD, 30));
-		button_7.setBounds(245, 77, 100, 100);
-		techPanel.add(button_7);
+		JButton btn9 = new JButton("9");
+		btn9.setEnabled(false);
+		btn9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				mgr.pressConfigButton(9);
+			}
+		});
+		btn9.setFont(new Font("Dialog", Font.BOLD, 30));
+		btn9.setBounds(245, 77, 100, 100);
+		techPanel.add(btn9);
 		
 		//Component 12
 		JButton btnShift = new JButton("SHIFT");
+		btnShift.setEnabled(false);
+		btnShift.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		btnShift.setFont(new Font("Dialog", Font.BOLD, 20));
 		btnShift.setBounds(134, 406, 211, 100);
 		techPanel.add(btnShift);
 		
 		//Component 13
 		JButton btnEnter = new JButton("ENTER");
+		btnEnter.setEnabled(false);
+		btnEnter.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				mgr.pressedConfigEnterButton();
+			}
+		});
 		btnEnter.setFont(new Font("Dialog", Font.BOLD, 20));
 		btnEnter.setBounds(575, 406, 200, 100);
 		techPanel.add(btnEnter);
 		
 		//Component 14
 		JButton btnLock = new JButton("LOCK");
+		btnLock.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if(vendLocked)
+				{
+					vm.getLock().unlock();
+					vendLocked = false;
+				}
+				else
+				{
+					vm.getLock().lock();
+					vendLocked = true;
+				}
+			}
+		});
 		btnLock.setFont(new Font("Dialog", Font.BOLD, 20));
 		btnLock.setBounds(564, 77, 211, 100);
 		techPanel.add(btnLock);
 		
 		//Component 15
 		JButton btninsertcharacter = new JButton("<html><center>INSERT<br>CHAR</center></html>");
+		btninsertcharacter.setEnabled(false);
 		btninsertcharacter.setFont(new Font("Dialog", Font.BOLD, 20));
 		btninsertcharacter.setBounds(674, 188, 100, 100);
 		techPanel.add(btninsertcharacter);
@@ -545,11 +644,33 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 	}
 
 	public void locked(Lock lock) {
-
+		for(int i = 4; i < 14; i++)
+		{
+			((JButton) userPanel.getComponent(i)).setEnabled(false);
+		}
+		((JLabel) userPanel.getComponent(3)).setEnabled(true);
+		
+		for(int i = 2; i < 14; i++)
+		{
+			((JButton) techPanel.getComponent(i)).setEnabled(true);		
+		}
+		((JButton) techPanel.getComponent(15)).setEnabled(true);
+		((JComboBox) techPanel.getComponent(1)).setEnabled(true);		
 	}
 
 	public void unlocked(Lock lock) {
-
+		for(int i = 4; i < 14; i++)
+		{
+			((JButton) userPanel.getComponent(i)).setEnabled(true);
+		}
+		((JLabel) userPanel.getComponent(3)).setEnabled(false);
+		
+		for(int i = 2; i < 14; i++)
+		{
+			((JButton) techPanel.getComponent(i)).setEnabled(false);		
+		}
+		((JButton) techPanel.getComponent(15)).setEnabled(false);
+		((JComboBox) techPanel.getComponent(1)).setEnabled(false);		
 	}
 
 	public void activated(IndicatorLight light) {
@@ -567,6 +688,18 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 	}
 
 	public void messageChange(Display display, String oldMessage, String newMessage) {
-		((JLabel) userPanel.getComponent(0)).setText(newMessage);
+		if(display == vm.getDisplay())
+			((JLabel) userPanel.getComponent(0)).setText(newMessage);
+		else
+		{
+			((JLabel) techPanel.getComponent(0)).setText(newMessage);
+			if(!mgr.getConfigMode())
+			{
+				for(int i = 0 ; i < 4; i++)
+				{
+					((JLabel) userPanel.getComponent(i + 15)).setText(String.valueOf(vm.getPopKindCost(i)));
+				}
+			}
+		}
 	}
 }
