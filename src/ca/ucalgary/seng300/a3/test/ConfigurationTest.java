@@ -9,8 +9,8 @@ import org.junit.*;
 import org.lsmr.vending.*;
 import org.lsmr.vending.hardware.*;
 
-import ca.ucalgary.seng300.a3.VendingListener;
-import ca.ucalgary.seng300.a3.VendingManager;
+import ca.ucalgary.seng300.a3.core.VendingListener;
+import ca.ucalgary.seng300.a3.core.VendingManager;
 
 public class ConfigurationTest {
 	private VendingMachine vend;

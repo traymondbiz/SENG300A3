@@ -1,4 +1,4 @@
-package ca.ucalgary.seng300.a3;
+package ca.ucalgary.seng300.a3.exceptions;
 
 /**
  * An exception to signal that there are no sufficient funds to make a purchase.

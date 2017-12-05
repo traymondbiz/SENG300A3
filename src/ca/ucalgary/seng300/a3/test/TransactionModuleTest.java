@@ -3,13 +3,15 @@ package ca.ucalgary.seng300.a3.test;
 import static org.junit.Assert.*;
 
 import java.util.List;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import org.junit.*;
 import org.lsmr.vending.*;
 import org.lsmr.vending.hardware.*;
 
-import ca.ucalgary.seng300.a3.*;
+import ca.ucalgary.seng300.a3.core.*;
+import ca.ucalgary.seng300.a3.exceptions.InsufficientFundsException;
 
 /**
  * Software Engineering 300 - Group Assignment 2
@@ -84,7 +86,7 @@ public class TransactionModuleTest {
 	 * @throws InterruptedException Thrown when a thread is waiting, sleeping, or otherwise occupied, and the thread is interrupted, either before or during the activity.
 	 */
 	@Test
-	public void testPostPCreditZero() throws InterruptedException{
+	public void testPostPCreditZero() throws InterruptedException, IOException{
 		VendingManager.initialize(vend);
 		VendingManager vm = VendingManager.getInstance();
 		vm.addCredit(200);
@@ -102,7 +104,7 @@ public class TransactionModuleTest {
 	 * and the updated credit is non-zero.
 	 */
 	@Test
-	public void testPostPCreditNotZero(){
+	public void testPostPCreditNotZero() throws IOException{
 		VendingManager.initialize(vend);
 		VendingManager vm = VendingManager.getInstance();
 		vm.addCredit(250);
@@ -118,7 +120,7 @@ public class TransactionModuleTest {
 	 * Ensures the buy function throws the correct exception when the credit < cost.
 	 */
 	@Test
-	public void testInsufficentFundsException(){
+	public void testInsufficentFundsException() throws IOException{
 		VendingManager.initialize(vend);
 		VendingManager vm = VendingManager.getInstance();
 		vm.addCredit(50);

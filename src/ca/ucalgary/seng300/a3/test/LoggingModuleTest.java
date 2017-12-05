@@ -6,6 +6,8 @@ import java.io.*;
 
 import org.junit.*;
 
+import ca.ucalgary.seng300.a3.core.*;
+import ca.ucalgary.seng300.a3.information.LoggingModule;
 import ca.ucalgary.seng300.a3.*;
 
 /**
@@ -23,7 +25,7 @@ import ca.ucalgary.seng300.a3.*;
  * @author Mengxi Cheng 			(10151992)
  * @author Zachary Metz 			(30001506)
  * @author Abdul Basit 				(30033896)
- *   
+ * 
  * @version	2.0
  * @since	2.0
  */

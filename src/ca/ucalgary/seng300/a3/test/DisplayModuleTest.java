@@ -3,13 +3,14 @@ package ca.ucalgary.seng300.a3.test;
 import static org.junit.Assert.*;
 
 import java.util.List;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import org.junit.*;
 import org.lsmr.vending.*;
 import org.lsmr.vending.hardware.*;
 
-import ca.ucalgary.seng300.a3.*;
+import ca.ucalgary.seng300.a3.core.*;
 
 /**
  * Software Engineering 300 - Group Assignment 2
@@ -117,7 +118,7 @@ public class DisplayModuleTest {
 	 * Ensures the display device displays the message "Credit: " and the amount of credit when the user enters valid coins.
 	 */
 	@Test
-	public void testCreditChange(){
+	public void testCreditChange() throws IOException{
 		VendingManager.initialize(vend);
 		VendingManager vm = VendingManager.getInstance();
 		vm.addCredit(200);

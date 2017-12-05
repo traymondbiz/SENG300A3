@@ -8,7 +8,9 @@ import java.util.List;
 import org.junit.*;
 import org.lsmr.vending.PopCan;
 import org.lsmr.vending.hardware.*;
-
+import ca.ucalgary.seng300.a3.core.*;
+import ca.ucalgary.seng300.a3.finance.ChangeModule;
+import ca.ucalgary.seng300.a3.finance.FinanceSector;
 import ca.ucalgary.seng300.a3.*;
 
 /**
@@ -30,8 +32,19 @@ import ca.ucalgary.seng300.a3.*;
  * @version	2.0
  * @since	2.0
  */
+
+/*
+ * ChangeModule.java originally had the method called updateExactChangeLight(), but it has
+ * since been moved over to FinanceSector.java
+ * As a result, in order to fix the compilation errors, a private instance of FinanceSector has
+ * been created, but NOT INITIALIZED.
+ * As such, any failed test cases can most likely be attributed to this.
+ * It's not certain how we would get around to creating a valid instance of FinanceSector, due to its
+ * tie-ins with VendingManager, and that to a VendingMachine.
+ */
 public class ChangeModuleTest {	
 	private ChangeModule cm;
+	private FinanceSector fSec;
 	private VendingMachine vend;
 	private int[] validCoins;
 	private int[] coinCount = {0, 10, 1, 3, 5, 0};
@@ -67,7 +80,9 @@ public class ChangeModuleTest {
 	public void testNotExactChange(){
 		configureVend(170);
 		cm = ChangeModule.getInstance();
-		cm.updateExactChangeLight();
+		// See note at top of code.
+		//cm.updateExactChangeLight();
+		fSec.updateExactChangeLight();
 		boolean expected = cm.checkChangeLight(validCoins, coinCount);
 		assertEquals(expected, false);
 	}
@@ -79,7 +94,9 @@ public class ChangeModuleTest {
 	public void testExactChange(){
 		configureVend(200);
 		cm = ChangeModule.getInstance();
-		cm.updateExactChangeLight();
+		// See note at top of code.
+		//cm.updateExactChangeLight();
+		fSec.updateExactChangeLight();
 		boolean expected = cm.checkChangeLight(validCoins, coinCount);
 		assertEquals(expected, true);
 	}
@@ -91,7 +108,9 @@ public class ChangeModuleTest {
 	public void testExactChange2(){
 		configureVend(150);
 		cm = ChangeModule.getInstance();
-		cm.updateExactChangeLight();
+		// See note at top of code.
+		//cm.updateExactChangeLight();
+		fSec.updateExactChangeLight();
 		boolean expected = cm.checkChangeLight(validCoins, coinCount);
 		assertEquals(expected, true);
 	}
@@ -103,11 +122,13 @@ public class ChangeModuleTest {
 	public void testCoinsToReturn(){
 		configureVend(150);
 		cm = ChangeModule.getInstance();
-		cm.updateExactChangeLight();
+		// See note at top of code.
+		//cm.updateExactChangeLight();
+		fSec.updateExactChangeLight();
 		ArrayList<Integer> returnList = new ArrayList<Integer>();
 		returnList = cm.getCoinsToReturn(10, validCoins, coinCount);
 		ArrayList<Integer> expectedReturn = new ArrayList<Integer>();
-		expectedReturn.add(5); expectedReturn.add(5);
+		expectedReturn.add(10);
 		assertEquals(expectedReturn, returnList);
 	}
 	

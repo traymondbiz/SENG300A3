@@ -1,7 +1,9 @@
-package ca.ucalgary.seng300.a3;
+package ca.ucalgary.seng300.a3.information;
+
+import ca.ucalgary.seng300.a3.core.VendingManager;
 
 public class ConfigurationModule{
-	
+	//
 	private static ConfigurationModule cm;
 	private static VendingManager vm;
 	private static char [] numericValue = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
