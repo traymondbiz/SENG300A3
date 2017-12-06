@@ -76,11 +76,12 @@ public class ChangeModuleTest {
 	 */
 	@Test
 	public void testNotExactChange(){
+		//Create vending machine with pop prices set to 170
 		configureVend(170);
 		cm = ChangeModule.getInstance();
 		// See note at top of code.
 		boolean expected = cm.checkChangeLight(validCoins, coinCount);
-		assertEquals(expected, false);
+		assertEquals(expected, false); //Exact change should not be required
 	}
 	
 	/**
@@ -88,11 +89,12 @@ public class ChangeModuleTest {
 	 */
 	@Test
 	public void testExactChange(){
+		//Create vending machine with pop prices set to 200
 		configureVend(200);
 		cm = ChangeModule.getInstance();
 		// See note at top of code.
 		boolean expected = cm.checkChangeLight(validCoins, coinCount);
-		assertEquals(expected, true);
+		assertEquals(expected, true);//Exact change should be required
 	}
 
 	/**
@@ -100,11 +102,12 @@ public class ChangeModuleTest {
 	 */
 	@Test
 	public void testExactChange2(){
+		//Create vending machine with pop prices set to 150
 		configureVend(150);
 		cm = ChangeModule.getInstance();
 		// See note at top of code.
 		boolean expected = cm.checkChangeLight(validCoins, coinCount);
-		assertEquals(expected, false);
+		assertEquals(expected, false); //Exact change should be required
 	}
 
 	/**
@@ -112,6 +115,7 @@ public class ChangeModuleTest {
 	 */
 	@Test
 	public void testCoinsToReturn(){
+		//Create vending machine with pop prices set to 150
 		configureVend(150);
 		cm = ChangeModule.getInstance();
 		// See note at top of code.
@@ -121,7 +125,7 @@ public class ChangeModuleTest {
 		returnList = cm.getCoinsToReturn(10, validCoins, coinCount);
 		ArrayList<Integer> expectedReturn = new ArrayList<Integer>();
 		expectedReturn.add(10);
-		assertEquals(expectedReturn, returnList);
+		assertEquals(expectedReturn, returnList); //Confirm how many of each coin is returned
 	}
 	
 	
@@ -140,6 +144,7 @@ public class ChangeModuleTest {
 	 * @param popPrice Cost for each pop. Cannot be non-positive.
 	 */
 	void configureVend(int popPrice){
+		//Generate popcan names
 		List<String> popCanNames = new ArrayList<String>();
 		popCanNames.add("Coke"); 
 		popCanNames.add("Pepsi"); 
@@ -148,16 +153,19 @@ public class ChangeModuleTest {
 		popCanNames.add("Water"); 
 		popCanNames.add("Iced Tea");
 		
+		//Add Coke as a selectable pop
 		PopCan popcan = new PopCan("Coke");
 		try {
 			vend.getPopCanRack(0).acceptPopCan(popcan);
 		} catch (CapacityExceededException | DisabledException e) {
 		};
 		
+		//Set all popcan prices to popPrice
 		List<Integer> popCanCosts = new ArrayList<Integer>();
 		for (int i = 0; i < 6; i++) {
 			popCanCosts.add(popPrice);
 		}
+		//Configure and create the vending machine to be tested
 		vend.configure(popCanNames, popCanCosts);	
     	VendingManager.initialize(vend);		
 	}
