@@ -67,20 +67,15 @@ public class LoggingModuleTest {
 			// Always wrap FileReader in BufferedReader.
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
 			
-			while ((line = bufferedReader.readLine()) != null) {
-				String[] string = line.split(" ");
-				for (int i=0; i<string.length;i++) {
-					if(string[i].contains(":")) {
-						int count = string[i].length() - string[i].replace(":", "").length();
-						if (count == 1) {
-							String[] s = string[i].split(":");
-							assertEquals(s[1], "this");
-						}
-					}
-				}
-			}
+			String lastLine = "";
 			
-			// Always close files.
+			while ((line = bufferedReader.readLine()) != null) { //get the last line in the file
+				lastLine = line;
+			}
+			String[] string = lastLine.split(":");
+			assertEquals(string[3], " this");
+			
+			// Always. Close. Files.
 			bufferedReader.close();
 		} catch (FileNotFoundException ex) {
 			assertTrue(false);
