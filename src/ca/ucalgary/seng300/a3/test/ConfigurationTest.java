@@ -37,6 +37,7 @@ public class ConfigurationTest {
     	int coinReturnCapacity = 5;
     	vend = new VendingMachine(coinKind, selectionButtonCount, coinRackCapacity, popCanRackCapacity, receptacleCapacity, deliveryChuteCapacity, coinReturnCapacity);
     	
+    	//Generate pop names
 		List<String> popCanNames = new ArrayList<String>();
 		popCanNames.add("Coke"); 
 		popCanNames.add("Pepsi"); 
@@ -45,12 +46,14 @@ public class ConfigurationTest {
 		popCanNames.add("Water"); 
 		popCanNames.add("Iced Tea");
 		
+        //Add Coke to pop can rack 0
 		PopCan popcan = new PopCan("Coke");
 		try {
 			vend.getPopCanRack(0).acceptPopCan(popcan);
 		} catch (CapacityExceededException | DisabledException e) {
 		};
 		
+        //Set all popcan prices to 200
 		List<Integer> popCanCosts = new ArrayList<Integer>();
 		for (int i = 0; i < 6; i++) {
 			popCanCosts.add(200);
@@ -63,15 +66,18 @@ public class ConfigurationTest {
 	 */
 	@Test
 	public void testPriceChange(){
+		//Create vending machine
 		VendingManager.initialize(vend);
 		VendingManager vm = VendingManager.getInstance();
+		//Enter 1 to change rack 1 price
 		vm.pressConfigButton(1);
 		vm.pressedConfigEnterButton();
+		//Enter new price to be 100
 		vm.pressConfigButton(1);
 		vm.pressConfigButton(0);
 		vm.pressConfigButton(0);
 		vm.pressedConfigEnterButton();
-		assertEquals(100, vend.getPopKindCost(1));
+		assertEquals(100, vend.getPopKindCost(1)); //Confirm price is now 100
 	}
 	
 	/**Tested configuration panel's display.
@@ -79,18 +85,21 @@ public class ConfigurationTest {
 	 */
 	@Test
 	public void testConfigDisplay() throws InterruptedException {
+		//Create vending machine
 		VendingManager.initialize(vend);
 		VendingManager vm = VendingManager.getInstance();
+		//Enter 2 to change rack 2 price
 		vm.pressConfigButton(2);
-		assertEquals(VendingListener.returnMsg(), "Pop Slot: 2");
+		assertEquals(VendingListener.returnMsg(), "Pop Slot: 2"); //New character "2" should be added to display
 		vm.pressedConfigEnterButton();
-		assertEquals(VendingListener.returnMsg(), "New Price: ");
+		assertEquals(VendingListener.returnMsg(), "New Price: "); //Display should reset after entering new mode
+		//Change price to be 100
 		vm.pressConfigButton(1);
 		vm.pressConfigButton(0);
 		vm.pressConfigButton(0);
-		assertEquals(VendingListener.returnMsg(), "New Price: 100");
+		assertEquals(VendingListener.returnMsg(), "New Price: 100"); //New characters "100" should be added to display
 		vm.pressedConfigEnterButton();
-		assertEquals(100, vend.getPopKindCost(2));
-		assertEquals(VendingListener.returnMsg(), "Pop Slot: ");
+		assertEquals(100, vend.getPopKindCost(2));		//Confirm price updated
+		assertEquals(VendingListener.returnMsg(), "Pop Slot: ");	//Display should reset after entering new mode
 	}
 }
