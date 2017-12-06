@@ -10,7 +10,6 @@ import org.lsmr.vending.PopCan;
 import org.lsmr.vending.hardware.*;
 import ca.ucalgary.seng300.a3.core.*;
 import ca.ucalgary.seng300.a3.finance.ChangeModule;
-import ca.ucalgary.seng300.a3.finance.FinanceSector;
 import ca.ucalgary.seng300.a3.*;
 
 /**
@@ -44,7 +43,6 @@ import ca.ucalgary.seng300.a3.*;
  */
 public class ChangeModuleTest {	
 	private ChangeModule cm;
-	private FinanceSector fSec;
 	private VendingMachine vend;
 	private int[] validCoins;
 	private int[] coinCount = {0, 10, 1, 3, 5, 0};
@@ -81,8 +79,6 @@ public class ChangeModuleTest {
 		configureVend(170);
 		cm = ChangeModule.getInstance();
 		// See note at top of code.
-		cm.updateExactChangeLight();
-		//fSec.updateExactChangeLight();
 		boolean expected = cm.checkChangeLight(validCoins, coinCount);
 		assertEquals(expected, false);
 	}
@@ -95,8 +91,6 @@ public class ChangeModuleTest {
 		configureVend(200);
 		cm = ChangeModule.getInstance();
 		// See note at top of code.
-		cm.updateExactChangeLight();
-		//fSec.updateExactChangeLight();
 		boolean expected = cm.checkChangeLight(validCoins, coinCount);
 		assertEquals(expected, true);
 	}
@@ -109,10 +103,8 @@ public class ChangeModuleTest {
 		configureVend(150);
 		cm = ChangeModule.getInstance();
 		// See note at top of code.
-		cm.updateExactChangeLight();
-		//fSec.updateExactChangeLight();
 		boolean expected = cm.checkChangeLight(validCoins, coinCount);
-		assertEquals(expected, true);
+		assertEquals(expected, false);
 	}
 
 	/**
@@ -123,7 +115,7 @@ public class ChangeModuleTest {
 		configureVend(150);
 		cm = ChangeModule.getInstance();
 		// See note at top of code.
-		cm.updateExactChangeLight();
+		//cm.updateExactChangeLight();
 		//fSec.updateExactChangeLight();
 		ArrayList<Integer> returnList = new ArrayList<Integer>();
 		returnList = cm.getCoinsToReturn(10, validCoins, coinCount);
