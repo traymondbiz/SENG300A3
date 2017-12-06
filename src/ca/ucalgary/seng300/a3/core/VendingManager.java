@@ -9,7 +9,7 @@ import org.lsmr.vending.hardware.*;
 import ca.ucalgary.seng300.a3.enums.OutputDataType;
 import ca.ucalgary.seng300.a3.enums.OutputMethod;
 import ca.ucalgary.seng300.a3.exceptions.InsufficientFundsException;
-import ca.ucalgary.seng300.a3.finance.FinanceSector;
+import ca.ucalgary.seng300.a3.finance.TransactionModule;
 import ca.ucalgary.seng300.a3.information.ConfigurationModule;
 import ca.ucalgary.seng300.a3.information.InfoSector;
 
@@ -40,8 +40,11 @@ public class VendingManager {
 	private static VendingManager mgr;
 	private static VendingListener listener;
 	private static InfoSector infoSector;
-	private static FinanceSector financeSector;
 	private static VendingMachine vm;
+	
+	//added by zach
+	private static TransactionModule tm;
+	private static int credit;
 
 	//added by XM
 	private static ConfigurationModule configurationModule;
@@ -57,12 +60,15 @@ public class VendingManager {
 		VendingListener.initialize(this);
 		ConfigurationModule.initialize(this);
 		InfoSector.initialize(this);
-		FinanceSector.initialize(this);
 		
 		infoSector = InfoSector.getInstance();
-		financeSector = FinanceSector.getInstance();
+		
 		listener = VendingListener.getInstance();
 		configurationModule = ConfigurationModule.getInstance();
+		
+		//added by zach
+		TransactionModule.initialize(this);
+		tm = TransactionModule.getInstance();
 
 	}
 	
@@ -79,7 +85,7 @@ public class VendingManager {
 		mgr.registerListeners();
 		
 		mgr.setOutputmaps();
-		financeSector.setModule();
+		
 		
 		mgr.addMessage("Hi there!", OutputDataType.WELCOME_MESSAGE_TEXT  ,5000);
 		mgr.addMessage("", OutputDataType.WELCOME_MESSAGE_TEXT  ,10000);
@@ -207,8 +213,7 @@ public class VendingManager {
 
 	// General Purpose Accessor Methods
 	public int getCredit() {
-		
-		return financeSector.getCredit();
+		return credit;
 		
 	}
 	void enableSafety(){
@@ -393,7 +398,7 @@ public class VendingManager {
 	 * @throws IOException 
 	 */
     public void addCredit(int added) throws IOException{
-    	    financeSector.addCredit(added);
+    	   credit = credit + added;
     	
     }
     
@@ -409,7 +414,7 @@ public class VendingManager {
 	 */
 	public void buy(int popIndex) throws InsufficientFundsException, EmptyException, 
 											DisabledException, CapacityExceededException, IOException {
-		financeSector.buy(popIndex);
+		tm.buy(popIndex);
 	}
 	
 	/**
@@ -455,7 +460,7 @@ public class VendingManager {
 		getExactChangeLight().deactivate();
 	}
 	public void updateExactChangeLightState() {
-		financeSector.updateExactChangeLight();
+		tm.updateExactChangeLight();
 	}
 	public void interruptDisplay(){
 		infoSector.interruptLoopingThread();
@@ -530,5 +535,9 @@ public class VendingManager {
 		newPriceList.clear();
 	}
 	//end
+	//added by zach
+	public void setCredit(int newCredit) {
+		credit = newCredit;
+	}
 
 }
