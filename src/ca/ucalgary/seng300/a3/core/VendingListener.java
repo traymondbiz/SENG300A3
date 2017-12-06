@@ -200,13 +200,13 @@ public class VendingListener implements CoinSlotListener, PushButtonListener, Co
 	//New code by Christopher
 	@Override
 	public void locked(Lock lock) {
-		mgr.disableSafety();
+		mgr.enableSafety();
 		mgr.deactivateConfigPanel();
 	}
 
 	@Override
 	public void unlocked(Lock lock) {
-		mgr.enableSafety();	
+		mgr.disableSafety();	
 		mgr.activateCofigPanel();
 	}
 	//End of new code
