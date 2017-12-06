@@ -387,14 +387,18 @@ public class VendingManager {
 	
 //vvv=======================VENDING LOGIC START=======================vvv	
 
+
+
+
+
+
 	/**
 	 * Adds credit to the current amount in the machine.
 	 * @param added	Credit to be added.
 	 * @throws IOException 
 	 */
     public void addCredit(int added) throws IOException{
-    	 tm.addCredit(added);  
-    	
+    	tm.addCredit(added);
     }
     
 	/**

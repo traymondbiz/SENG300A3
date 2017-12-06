@@ -92,9 +92,11 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		int deliveryChuteCapacity = 5;
 		int coinReturnCapacity = 5;
 		vm = new VendingMachine(coinKind, selectionButtonCount, coinRackCapacity, popCanRackCapacity, receptacleCapacity, deliveryChuteCapacity, coinReturnCapacity);
-		VendingManager.initialize(vm);
-		mgr = VendingManager.getInstance();
+		vm.loadCoins(10,10,10,10,10);//ESB		
 		
+		VendingManager.initialize(vm);
+	  
+		mgr = VendingManager.getInstance();
 		//Register the GUI as a listener to the popCanRack
 		for(int i = 0; i < selectionButtonCount; i++)
 		{
@@ -119,7 +121,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		popCanCosts.add(130);
 		popCanCosts.add(300);
 		popCanCosts.add(225);
-		popCanCosts.add(554);
+		popCanCosts.add(555);
 		vm.configure(popCanNames, popCanCosts);
 		
 		// Stock Vending Machine: 5 Lime Zillas
@@ -237,6 +239,11 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		limeZillaButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				vm.getSelectionButton(0).press();
+				int[] returnList = mgr.getCoinCount(); 
+				for (int i =0; i<5; i++){
+					System.out.println(returnList[i]);
+				}
+				
 			}
 		});
 		limeZillaButton.setBounds(75, 150, 150, 75);
@@ -433,7 +440,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		userPanel.add(label_3);
 		
 		//Component 18
-		JLabel label_2 = new JLabel("5.54");
+		JLabel label_2 = new JLabel("5.55");//ESB
 		label_2.setBounds(250, 325, 150, 14);
 		userPanel.add(label_2);
 		
@@ -654,8 +661,13 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		lblNewLabel.setBounds(0, 0, 789, 543);
 		techPanel.add(lblNewLabel);
 
+		mgr.updateExactChangeLightState();//ESB MDG 
+		
 	}
 
+	
+	
+	
 	// UNUSED FUNCTIONS
 	public void popCanAdded(PopCanRack popCanRack, PopCan popCan) {}
 	public void popCansFull(PopCanRack popCanRack) {}
