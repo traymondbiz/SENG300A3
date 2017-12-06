@@ -28,10 +28,42 @@ import ca.ucalgary.seng300.a3.core.VendingListener;
 import ca.ucalgary.seng300.a3.core.VendingManager;
 import ca.ucalgary.seng300.a3.exceptions.InsufficientFundsException;
 
+/**
+ * Software Engineering 300 - Group Assignment 3
+ * TechTest.java
+ * 
+ * This class is used to system test the technical functionality of the entire vending machine.
+ * 
+ * Id Input/Output Technology and Solutions (Group 2)
+ * @author Raymond Tran 			(30028473)
+ * @author Hooman Khosravi 			(30044760)
+ * @author Christopher Smith 		(10140988)
+ * @author Mengxi Cheng 			(10151992)
+ * @author Zachary Metz 			(30001506)
+ * @author Abdul Basit 				(30033896)
+ * @author Elodie Boudes			(10171818)
+ * @author Michael De Grood			(10134884)
+ * @author Tae Chyung				(10139101)		
+ * @author Xian-Meng Low			(10127970)			
+ *   
+ * @version	2.0
+ * @since	2.0
+ */
 public class TechTest implements PopCanRackListener, DisplayListener, IndicatorLightListener, LockListener{
 	private VendingMachine vend;
 	private VendingManager vm;
 	
+	/**
+	 * A method to prepare a vending machine to the basic specifications outlined by the Client 
+	 * Canadian coins
+	 * And to configure the hardware to use a set of names and costs for pop cans.
+	 * 4 buttons/kinds of pop
+	 * 200 coins in each coin rack
+	 * 10 pops per rack
+	 * 200 coins can be stored in each receptacle
+	 * 5 pops per delivery chute
+	 * 5 coins can be returned in each receptacle
+	 */
 	@Before
 	public void setup(){
 		Coin toonie = new Coin(200);
@@ -116,6 +148,16 @@ public class TechTest implements PopCanRackListener, DisplayListener, IndicatorL
 		}
 	}
 	
+	
+	/**
+	 * Ensures the vending machine successfully dispenses the pop when the correct amount of coins is inserted.
+	 * 
+	 * @throws InsufficientFundsException    Thrown when the credit is not enough for purchasing the pop.
+	 * @throws EmptyException    Thrown when the pop rack is empty.
+	 * @throws DisabledException    Thrown when the safety is enabled.
+	 * @throws CapacityExceededException    Thrown when the addition of an item has caused the device to overflow.
+	 * @throws IOException    Thrown when an I/O exception of some sort has occurred.
+	 */
 	@Test
 	public void testBuyAfterPriceChange() throws InsufficientFundsException, EmptyException, DisabledException, CapacityExceededException, IOException {
 		vm.pressConfigButton(1);
@@ -129,6 +171,9 @@ public class TechTest implements PopCanRackListener, DisplayListener, IndicatorL
 		assertEquals(vend.getPopCanRack(1).size(), 4);
 	}
 
+	/**
+	 * Ensures the multiple prices are set correctly by the technician.
+	 */
 	@Test
 	public void testChangeMultiplePrices() {
 		vm.pressConfigButton(0);
@@ -149,6 +194,15 @@ public class TechTest implements PopCanRackListener, DisplayListener, IndicatorL
 		assertEquals(vend.getPopKindCost(3), 554);
 	}
 	
+	/**
+	 * Ensures the vending machine unlocks successfully.
+	 * 
+	 * @throws IOException    Thrown when an I/O exception of some sort has occurred.
+	 * @throws InsufficientFundsException    Thrown when the credit is not enough for purchasing the pop.
+	 * @throws EmptyException    Thrown when the pop rack is empty.
+	 * @throws DisabledException    Thrown when the safety is enabled.
+	 * @throws CapacityExceededException    Thrown when the addition of an item has caused the device to overflow.
+	 */
 	@Test
 	public void testLock() throws IOException, InsufficientFundsException, EmptyException, DisabledException, CapacityExceededException {
 		vend.getLock().lock();
@@ -157,21 +211,28 @@ public class TechTest implements PopCanRackListener, DisplayListener, IndicatorL
 		vm.buy(1);
 		assertEquals(vend.getPopCanRack(1).size(), 4);
 	}
-//	@Test
-//	public void testConfigDisplay() {
-//		vm.pressConfigButton(2);
-//		assertEquals(VendingListener.returnMsg(), "Pop Slot: 2");
-//		vm.pressedConfigEnterButton();
-//		assertEquals(VendingListener.returnMsg(), "New Price: ");
-//		vm.pressConfigButton(1);
-//		vm.pressConfigButton(0);
-//		vm.pressConfigButton(0);
-//		assertEquals(VendingListener.returnMsg(), "New Price: 100");
-//		vm.pressedConfigEnterButton();
-//		assertEquals(100, vend.getPopKindCost(2));
-//		assertEquals(VendingListener.returnMsg(), "Pop Slot: ");
-//	}
 	
+	/**
+	 * Ensures the configuration panel displays the correct message successfully. 
+	 */
+	@Test
+	public void testConfigDisplay() {
+		vm.pressConfigButton(2);
+		assertEquals(VendingListener.returnMsg(), "Pop Slot: 2");
+		vm.pressedConfigEnterButton();
+		assertEquals(VendingListener.returnMsg(), "New Price: ");
+		vm.pressConfigButton(1);
+		vm.pressConfigButton(0);
+		vm.pressConfigButton(0);
+		assertEquals(VendingListener.returnMsg(), "New Price: 100");
+		vm.pressedConfigEnterButton();
+		assertEquals(100, vend.getPopKindCost(2));
+		assertEquals(VendingListener.returnMsg(), "Pop Slot: ");
+	}
+
+	/**
+	 * Method to destroy the vending machine and change module after each test in order to not affect the following test.
+	 */	
 	@After
 	public void tearDown(){
 		vend = null;
