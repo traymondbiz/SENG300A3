@@ -98,8 +98,8 @@ public class DisplayModule  implements Runnable {
 	 * Adds a display message.
 	 * @param str	The message to be passed along.
 	 */
-	public void addMessage(String str) {
-		mgr.displayMessage(str);
+	public void addMessage(String str, boolean locked) {
+		mgr.displayMessage(str, locked);
 	}
 
 	/**
@@ -117,7 +117,9 @@ public class DisplayModule  implements Runnable {
 		try{ 
 			while(!Thread.currentThread().isInterrupted()){
 				if (!messageList.isEmpty()) {
-					mgr.displayMessage(messageList.get(messageIndex).message  );
+					
+					mgr.displayMessage(messageList.get(messageIndex ).message, true);
+					
 					Thread.sleep( messageList.get(messageIndex).time );
 					
 					messageIndex++;
