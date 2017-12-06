@@ -105,7 +105,8 @@ public class LoggingModule {
 		}
 		
 		output = new BufferedWriter(new FileWriter("Log.txt", true));
-		output.append(currentDate.toString() + ": " + messageToLog + "\n");
+		output.append(currentDate.toString() + ": " + messageToLog );
+		output.append(System.getProperty("line.separator")); //need to do this instead of \n, no idea why
 		output.close();
 	}
 
