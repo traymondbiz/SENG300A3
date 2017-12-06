@@ -228,10 +228,10 @@ public class CoinSlotTesting {
 		for (Coin testCoin : testCoins){
 			try{
 				testSlot.addCoin(testCoin);
-				assertEquals(testListener.ejectCoin(), testCoin);
-				assertTrue(testListener.wasCoinAccepted());
-				assertEquals(validSink.ejectCoin(), testCoin);
-				assertNotEquals(returnSink.ejectCoin(),testCoin);
+                assertEquals(testListener.ejectCoin(), testCoin);     //Coin was received by listener
+                assertTrue(testListener.wasCoinAccepted());            //Coin was accepted as valid
+                assertEquals(validSink.ejectCoin(), testCoin);        //Coin went to valid sink
+                assertNotEquals(returnSink.ejectCoin(),testCoin);    //Coin did not go to return sink
 			}
 			catch(Exception e){
 				fail(e.toString());
@@ -253,10 +253,10 @@ public class CoinSlotTesting {
 		for (Coin testCoin : testCoins){
 			try{
 				testSlot.addCoin(testCoin);
-				assertEquals(testListener.ejectCoin(), testCoin);
-				assertFalse(testListener.wasCoinAccepted());
-				assertNotEquals(validSink.ejectCoin(), testCoin);
-				assertEquals(returnSink.ejectCoin(), testCoin);
+                assertEquals(testListener.ejectCoin(), testCoin);    //Coin was received by listener
+                assertFalse(testListener.wasCoinAccepted());        //Coin was rejected as invalid
+                assertNotEquals(validSink.ejectCoin(), testCoin);    //Coin did not go to valid sink
+                assertEquals(returnSink.ejectCoin(), testCoin);        //Coin went to return sink
 			}
 			catch(Exception e){
 				fail(e.toString());
@@ -295,10 +295,10 @@ public class CoinSlotTesting {
 			fail("Coin accepted when slot disabled"); //Only run if no exception is thrown
 		}
 		catch(DisabledException e){
-			assertTrue(testListener.isSlotDisabled());
-			assertNull(testListener.ejectCoin());
-			assertNull(validSink.ejectCoin());
-			assertNull(returnSink.ejectCoin());
+            assertTrue(testListener.isSlotDisabled());    //Confirm slot disabled correctly
+            assertNull(testListener.ejectCoin());        //No coin should have been sent to listener
+            assertNull(validSink.ejectCoin());            //No coin should have been sent to valid sink
+            assertNull(returnSink.ejectCoin());            //No coin should have been sent to return sink
 
 		}
 		catch(Exception e){
@@ -324,10 +324,10 @@ public class CoinSlotTesting {
 			fail("Should have thrown exception");
 		}
 		catch(DisabledException e){
-			assertEquals(testListener.ejectCoin(), testCoin);
-			assertTrue(testListener.wasCoinAccepted());
-			assertEquals(validSink.ejectCoin(), testCoin);
-			assertNull(returnSink.ejectCoin());
+            assertEquals(testListener.ejectCoin(), testCoin);    //Coin was received by listener
+            assertTrue(testListener.wasCoinAccepted());            //Coin was accepted as valid
+            assertEquals(validSink.ejectCoin(), testCoin);        //Coin went to valid sink
+            assertNull(returnSink.ejectCoin());                    //Coin did not go to return sink
 		}
 		catch(Exception e){
 			fail("Wrong exception thrown: " + e.toString());
@@ -341,10 +341,10 @@ public class CoinSlotTesting {
 			fail("Should have thrown exception");
 		}
 		catch(DisabledException e){
-			assertEquals(testListener.ejectCoin(), testCoin);
-			assertFalse(testListener.wasCoinAccepted());
-			assertNull(validSink.ejectCoin());
-			assertEquals(returnSink.ejectCoin(),testCoin);
+            assertEquals(testListener.ejectCoin(), testCoin);    //Coin was received by listener
+            assertFalse(testListener.wasCoinAccepted());        //Coin was rejected as invalid
+            assertNull(validSink.ejectCoin());                    //Coin did not go to valid sink
+            assertEquals(returnSink.ejectCoin(),testCoin);        //Coin went to return sink
 		}
 		catch(Exception e){
 			fail("Wrong exception thrown: " + e.toString());
@@ -401,10 +401,10 @@ public class CoinSlotTesting {
 		Coin testCoin = new Coin(5); //Valid coin
 		try{
 			testSlot.addCoin(testCoin);
-			assertEquals(testListener.ejectCoin(), testCoin);
-			assertFalse(testListener.wasCoinAccepted());
-			assertNull(validSink.ejectCoin());
-			assertEquals(returnSink.ejectCoin(),testCoin);
+            assertEquals(testListener.ejectCoin(), testCoin);    //Coin was received by listener
+            assertFalse(testListener.wasCoinAccepted());        //Coin was rejected as invalid
+            assertNull(validSink.ejectCoin());                    //Coin did not go to valid sink
+            assertEquals(returnSink.ejectCoin(),testCoin);        //Coin went to return sink
 		}
 		catch(Exception e){
 			fail("Exception thrown when adding valid coin and valid sink is full: "
