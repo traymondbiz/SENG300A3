@@ -398,8 +398,7 @@ public class VendingManager {
 	 * @throws IOException 
 	 */
     public void addCredit(int added) throws IOException{
-    	   credit = credit + added;
-    	
+    	tm.addCredit(added);   
     }
     
 	/**
