@@ -47,6 +47,7 @@ import ca.ucalgary.seng300.a3.exceptions.InsufficientFundsException;
  * @author Elodie Boudes			(10171818)
  * @author Michael De Grood 		(10134884)
  * @author Tae Chyung				(10139101)
+ * @author Xian Meng Low			(10127970)
  * 
  * @version	3.0
  * @since	1.0
