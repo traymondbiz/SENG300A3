@@ -659,6 +659,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		
 		//Component 16
 		JComboBox coinTechPick = new JComboBox();
+		coinTechPick.setEnabled(false);
 		coinTechPick.setFont(new Font("Dialog", Font.PLAIN, 20));
 		coinTechPick.setModel(new DefaultComboBoxModel(new String[] {"nickel", "dime", "quarter", "loonie", "toonie"}));
 		coinTechPick.setBounds(355, 188, 210, 45);
@@ -666,6 +667,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		
 		//Component 17
 		JButton coinTechAdd = new JButton("+");
+		coinTechAdd.setEnabled(false);
 		coinTechAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				int index = coinTechPick.getSelectedIndex();
@@ -678,6 +680,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		
 		//Component 18
 		JButton coinTechRemove = new JButton("-");
+		coinTechRemove.setEnabled(false);
 		coinTechRemove.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				int index = coinTechPick.getSelectedIndex();
@@ -689,6 +692,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		
 		//Component 19
 		JComboBox popTechPick = new JComboBox();
+		popTechPick.setEnabled(false);
 		popTechPick.setFont(new Font("Dialog", Font.PLAIN, 20));
 		popTechPick.setModel(new DefaultComboBoxModel(new String[] {"limeZilla", "fissure", "himalayanRain", "drWalker"}));
 		popTechPick.setBounds(355, 244, 210, 45);
@@ -696,6 +700,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		
 		//Component 20
 		JButton popTechAdd = new JButton("+");
+		popTechAdd.setEnabled(false);
 		popTechAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				int index = popTechPick.getSelectedIndex();
@@ -707,6 +712,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		
 		//Component 21
 		JButton popTechRemove = new JButton("-");
+		popTechRemove.setEnabled(false);
 		popTechRemove.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				int index = popTechPick.getSelectedIndex();
@@ -769,6 +775,15 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		{
 			((JButton) techPanel.getComponent(i)).setEnabled(false);		
 		}
+		((JComboBox) techPanel.getComponent(16)).setEnabled(false);		
+		((JButton) techPanel.getComponent(17)).setEnabled(false);
+		((JButton) techPanel.getComponent(18)).setEnabled(false);
+
+		((JComboBox) techPanel.getComponent(19)).setEnabled(false);		
+		((JButton) techPanel.getComponent(20)).setEnabled(false);
+		((JButton) techPanel.getComponent(21)).setEnabled(false);
+
+
 		((JButton) techPanel.getComponent(15)).setEnabled(false);
 		((JComboBox) techPanel.getComponent(1)).setEnabled(false);		
 	}
@@ -784,6 +799,15 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		{
 			((JButton) techPanel.getComponent(i)).setEnabled(true);		
 		}
+		
+		((JComboBox) techPanel.getComponent(16)).setEnabled(true);		
+		((JButton) techPanel.getComponent(17)).setEnabled(true);
+		((JButton) techPanel.getComponent(18)).setEnabled(true);
+
+		((JComboBox) techPanel.getComponent(19)).setEnabled(true);		
+		((JButton) techPanel.getComponent(20)).setEnabled(true);
+		((JButton) techPanel.getComponent(21)).setEnabled(true);
+		
 		((JButton) techPanel.getComponent(15)).setEnabled(true);
 		((JComboBox) techPanel.getComponent(1)).setEnabled(true);		
 	}
