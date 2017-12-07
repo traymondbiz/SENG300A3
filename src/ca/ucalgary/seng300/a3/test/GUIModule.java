@@ -482,7 +482,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		comboBox.setEnabled(false);
 		comboBox.setFont(new Font("Dialog", Font.BOLD, 30));
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}));
-		comboBox.setBounds(564, 188, 100, 100);
+		comboBox.setBounds(355, 77, 100, 100);
 		((JLabel)comboBox.getRenderer()).setHorizontalAlignment(SwingConstants.CENTER);
 		((JLabel)comboBox.getRenderer()).setVerticalAlignment(SwingConstants.CENTER);
 		techPanel.add(comboBox);
@@ -627,7 +627,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 			}
 		});
 		btnEnter.setFont(new Font("Dialog", Font.BOLD, 20));
-		btnEnter.setBounds(575, 406, 200, 100);
+		btnEnter.setBounds(564, 406, 211, 100);
 		techPanel.add(btnEnter);
 		
 		//Component 14
@@ -647,15 +647,43 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 			}
 		});
 		btnLock.setFont(new Font("Dialog", Font.BOLD, 20));
-		btnLock.setBounds(564, 77, 211, 100);
+		btnLock.setBounds(575, 77, 200, 100);
 		techPanel.add(btnLock);
 		
 		//Component 15
 		JButton btninsertcharacter = new JButton("<html><center>INSERT<br>CHAR</center></html>");
 		btninsertcharacter.setEnabled(false);
 		btninsertcharacter.setFont(new Font("Dialog", Font.BOLD, 20));
-		btninsertcharacter.setBounds(674, 188, 100, 100);
+		btninsertcharacter.setBounds(465, 77, 100, 100);
 		techPanel.add(btninsertcharacter);
+		
+		JComboBox coinTechPick = new JComboBox();
+		coinTechPick.setFont(new Font("Dialog", Font.PLAIN, 20));
+		coinTechPick.setModel(new DefaultComboBoxModel(new String[] {"toonie", "loonie", "quarter", "dime", "nickel"}));
+		coinTechPick.setBounds(355, 188, 210, 45);
+		techPanel.add(coinTechPick);
+		
+		JButton coinTechAdd = new JButton("+");
+		coinTechAdd.setBounds(575, 188, 95, 45);
+		techPanel.add(coinTechAdd);
+		
+		JButton coinTechRemove = new JButton("-");
+		coinTechRemove.setBounds(680, 188, 95, 45);
+		techPanel.add(coinTechRemove);
+		
+		JComboBox popTechPick = new JComboBox();
+		popTechPick.setFont(new Font("Dialog", Font.PLAIN, 20));
+		popTechPick.setModel(new DefaultComboBoxModel(new String[] {"limeZilla", "fissure", "himalayanRain", "drWalker"}));
+		popTechPick.setBounds(355, 244, 210, 45);
+		techPanel.add(popTechPick);
+		
+		JButton popTechAdd = new JButton("+");
+		popTechAdd.setBounds(575, 244, 95, 45);
+		techPanel.add(popTechAdd);
+		
+		JButton popTechRemove = new JButton("-");
+		popTechRemove.setBounds(680, 244, 95, 45);
+		techPanel.add(popTechRemove);
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/bg.png")));
