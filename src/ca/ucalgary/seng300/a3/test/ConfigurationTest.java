@@ -100,9 +100,9 @@ public class ConfigurationTest {
 		vm.pressConfigButton(1);
 		vm.pressConfigButton(0);
 		vm.pressConfigButton(0);
-		assertEquals(VendingListener.returnMsg(), "New Price: 100"); //New characters "100" should be added to display
+		assertEquals("New Price: 100", VendingListener.returnMsg()); //New characters "100" should be added to display
 		vm.pressedConfigEnterButton();
 		assertEquals(100, vend.getPopKindCost(2));		//Confirm price updated
-		assertEquals(VendingListener.returnMsg(), "Pop Slot: ");	//Display should reset after entering new mode
+		assertEquals("Pop Slot: ", VendingListener.returnMsg());	//Display should reset after entering new mode
 	}
 }
