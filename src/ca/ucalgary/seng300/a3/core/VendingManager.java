@@ -330,7 +330,8 @@ public class VendingManager {
 	 * @param str	Message to be displayed.
 	 */
 	public void displayMessage(String str, boolean locked){
-		if (!locked)
+		// originally !locked
+		if (locked)
 			vm.getDisplay().display(str);
 		else
 			getConfigPanel().getDisplay().display(str);

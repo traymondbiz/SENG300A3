@@ -93,7 +93,7 @@ private static InfoSector infoSector;
 	}
 	
 	public void sendOutput(String Str, OutputDataType outputType, int time) throws IOException {
-		
+		System.out.println("I am a sleep method.");
 		OutputMethod temp;
 
 		

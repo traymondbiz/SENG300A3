@@ -743,10 +743,22 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 	}
 
 	public void messageChange(Display display, String oldMessage, String newMessage) {
-		if(display == vm.getDisplay())
+		if(display == vm.getDisplay()) {
+			//Hackjob
+			try {
+				Thread.sleep(200);
+			} 
+			catch (InterruptedException e) {}
 			((JLabel) userPanel.getComponent(0)).setText(newMessage);
-		else
-		{
+		
+		}
+		else {
+			try {
+				Thread.sleep(200);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			((JLabel) techPanel.getComponent(0)).setText(newMessage);
 			if(!mgr.getConfigMode())
 			{

@@ -965,3 +965,60 @@ Tue Dec 05 22:25:56 MST 2017: Credit: 200
 Tue Dec 05 22:25:57 MST 2017: Credit: 250
 Tue Dec 05 22:25:57 MST 2017: Credit: 50
 Tue Dec 05 22:25:57 MST 2017: Credit: 100
+Wed Dec 06 18:09:06 MST 2017: Credit: 200
+Wed Dec 06 18:09:06 MST 2017: User inserted: 200 coin to coin slot
+Wed Dec 06 18:09:06 MST 2017: Credit: 300
+Wed Dec 06 18:09:06 MST 2017: User inserted: 100 coin to coin slot
+Wed Dec 06 18:09:07 MST 2017: Credit: 325
+Wed Dec 06 18:09:07 MST 2017: User inserted: 25 coin to coin slot
+Wed Dec 06 18:09:08 MST 2017: Lime Zilla button pressed by user with: 0
+Wed Dec 06 18:09:08 MST 2017: User Could not purchase Himalayan Rain. 225 cents missing from credit.
+Wed Dec 06 18:09:37 MST 2017: Credit: 200
+Wed Dec 06 18:09:37 MST 2017: User inserted: 200 coin to coin slot
+Wed Dec 06 18:09:38 MST 2017: Credit: 300
+Wed Dec 06 18:09:38 MST 2017: User inserted: 100 coin to coin slot
+Wed Dec 06 18:09:38 MST 2017: Credit: 325
+Wed Dec 06 18:09:38 MST 2017: User inserted: 25 coin to coin slot
+Wed Dec 06 18:09:39 MST 2017: Credit: 335
+Wed Dec 06 18:09:39 MST 2017: User inserted: 10 coin to coin slot
+Wed Dec 06 18:09:39 MST 2017: Credit: 535
+Wed Dec 06 18:09:39 MST 2017: User inserted: 200 coin to coin slot
+Wed Dec 06 18:09:41 MST 2017: Fissure button pressed by user with: 0
+Wed Dec 06 18:09:42 MST 2017: User Could not purchase Lime Zilla. 130 cents missing from credit.
+Wed Dec 06 18:09:42 MST 2017: User Could not purchase Himalayan Rain. 225 cents missing from credit.
+Wed Dec 06 18:09:42 MST 2017: User Could not purchase Dr. Walker. 555 cents missing from credit.
+Wed Dec 06 18:09:43 MST 2017: User Could not purchase Fissure. 300 cents missing from credit.
+Wed Dec 06 18:09:43 MST 2017: User Could not purchase Lime Zilla. 130 cents missing from credit.
+Wed Dec 06 18:09:43 MST 2017: User Could not purchase Himalayan Rain. 225 cents missing from credit.
+Wed Dec 06 18:09:43 MST 2017: User Could not purchase Dr. Walker. 555 cents missing from credit.
+Wed Dec 06 18:09:44 MST 2017: User Could not purchase Fissure. 300 cents missing from credit.
+Wed Dec 06 18:26:59 MST 2017: Credit: 200
+Wed Dec 06 18:26:59 MST 2017: User inserted: 200 coin to coin slot
+Wed Dec 06 18:27:00 MST 2017: Credit: 400
+Wed Dec 06 18:27:00 MST 2017: User inserted: 200 coin to coin slot
+Wed Dec 06 18:31:43 MST 2017: Credit: 200
+Wed Dec 06 18:31:43 MST 2017: User inserted: 200 coin to coin slot
+Wed Dec 06 18:33:23 MST 2017: Credit: 200
+Wed Dec 06 18:33:23 MST 2017: User inserted: 200 coin to coin slot
+Wed Dec 06 18:33:24 MST 2017: Credit: 400
+Wed Dec 06 18:33:24 MST 2017: User inserted: 200 coin to coin slot
+Wed Dec 06 18:33:25 MST 2017: Fissure button pressed by user with: 0
+Wed Dec 06 18:34:23 MST 2017: Credit: 200
+Wed Dec 06 18:35:56 MST 2017: Credit: 200
+Wed Dec 06 18:35:56 MST 2017: User inserted: 200 coin to coin slot
+Wed Dec 06 18:35:56 MST 2017: Credit: 300
+Wed Dec 06 18:35:56 MST 2017: User inserted: 100 coin to coin slot
+Wed Dec 06 18:35:57 MST 2017: Credit: 325
+Wed Dec 06 18:35:57 MST 2017: User inserted: 25 coin to coin slot
+Wed Dec 06 18:36:12 MST 2017: this
+Wed Dec 06 18:36:15 MST 2017: Credit: 300
+Wed Dec 06 18:36:15 MST 2017: Credit: 100
+Wed Dec 06 18:36:19 MST 2017: Credit: 200
+Wed Dec 06 18:36:20 MST 2017: Credit: 250
+Wed Dec 06 18:36:20 MST 2017: Credit: 50
+Wed Dec 06 18:36:20 MST 2017: Credit: 100
+Wed Dec 06 18:36:24 MST 2017: Credit: 130
+Wed Dec 06 18:36:24 MST 2017: Credit: 200
+Wed Dec 06 18:36:24 MST 2017: Credit: 130
+Wed Dec 06 18:36:24 MST 2017: Credit: 130
+Wed Dec 06 18:36:24 MST 2017: Credit: 200

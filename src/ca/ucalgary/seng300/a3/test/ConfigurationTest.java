@@ -89,10 +89,13 @@ public class ConfigurationTest {
 		VendingManager.initialize(vend);
 		VendingManager vm = VendingManager.getInstance();
 		//Enter 2 to change rack 2 price
+		
 		vm.pressConfigButton(2);
-		assertEquals(VendingListener.returnMsg(), "Pop Slot: 2"); //New character "2" should be added to display
+		assertEquals("Pop Slot: 2", VendingListener.returnMsg()); //New character "2" should be added to display
+		
 		vm.pressedConfigEnterButton();
-		assertEquals(VendingListener.returnMsg(), "New Price: "); //Display should reset after entering new mode
+		assertEquals("New Price: ", VendingListener.returnMsg()); //Display should reset after entering new mode
+		
 		//Change price to be 100
 		vm.pressConfigButton(1);
 		vm.pressConfigButton(0);
