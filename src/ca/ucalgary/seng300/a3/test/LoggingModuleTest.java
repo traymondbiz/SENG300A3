@@ -73,7 +73,7 @@ public class LoggingModuleTest {
 				lastLine = line;
 			}
 			String[] string = lastLine.split(":");
-			assertEquals(string[3], " this");
+			assertEquals(" this", string[3]);
 			
 			// Always. Close. Files.
 			bufferedReader.close();
