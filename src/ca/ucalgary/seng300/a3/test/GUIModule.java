@@ -657,31 +657,62 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		btninsertcharacter.setBounds(465, 77, 100, 100);
 		techPanel.add(btninsertcharacter);
 		
+		//Component 16
 		JComboBox coinTechPick = new JComboBox();
 		coinTechPick.setFont(new Font("Dialog", Font.PLAIN, 20));
-		coinTechPick.setModel(new DefaultComboBoxModel(new String[] {"toonie", "loonie", "quarter", "dime", "nickel"}));
+		coinTechPick.setModel(new DefaultComboBoxModel(new String[] {"nickel", "dime", "quarter", "loonie", "toonie"}));
 		coinTechPick.setBounds(355, 188, 210, 45);
 		techPanel.add(coinTechPick);
 		
+		//Component 17
 		JButton coinTechAdd = new JButton("+");
+		coinTechAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int index = coinTechPick.getSelectedIndex();
+				int coins = vm.getCoinKindForCoinRack(index);
+				vm.getCoinRack(index).load(new Coin(coins));
+			}
+		});
 		coinTechAdd.setBounds(575, 188, 95, 45);
 		techPanel.add(coinTechAdd);
 		
+		//Component 18
 		JButton coinTechRemove = new JButton("-");
+		coinTechRemove.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int index = coinTechPick.getSelectedIndex();
+				vm.getCoinRack(index).unload();
+			}
+		});
 		coinTechRemove.setBounds(680, 188, 95, 45);
 		techPanel.add(coinTechRemove);
 		
+		//Component 19
 		JComboBox popTechPick = new JComboBox();
 		popTechPick.setFont(new Font("Dialog", Font.PLAIN, 20));
 		popTechPick.setModel(new DefaultComboBoxModel(new String[] {"limeZilla", "fissure", "himalayanRain", "drWalker"}));
 		popTechPick.setBounds(355, 244, 210, 45);
 		techPanel.add(popTechPick);
 		
+		//Component 20
 		JButton popTechAdd = new JButton("+");
+		popTechAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int index = popTechPick.getSelectedIndex();
+				vm.getPopCanRack(index).load(new PopCan((String)coinTechPick.getSelectedItem()));
+			}
+		});
 		popTechAdd.setBounds(575, 244, 95, 45);
 		techPanel.add(popTechAdd);
 		
+		//Component 21
 		JButton popTechRemove = new JButton("-");
+		popTechRemove.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int index = popTechPick.getSelectedIndex();
+				vm.getPopCanRack(index).unload();
+			}
+		});
 		popTechRemove.setBounds(680, 244, 95, 45);
 		techPanel.add(popTechRemove);
 		
@@ -773,21 +804,9 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 
 	public void messageChange(Display display, String oldMessage, String newMessage) {
 		if(display == vm.getDisplay()) {
-			//Hackjob
-			//try {
-			//	Thread.sleep(200);
-			//} 
-			//catch (InterruptedException e) {}
 			((JLabel) userPanel.getComponent(0)).setText(newMessage);
-		
 		}
 		else {
-			//try {
-			//	Thread.sleep(200);
-			//} catch (InterruptedException e) {
-			//	// TODO Auto-generated catch block
-			//	e.printStackTrace();
-			//}
 			((JLabel) techPanel.getComponent(0)).setText(newMessage);
 			if(!mgr.getConfigMode())
 			{
