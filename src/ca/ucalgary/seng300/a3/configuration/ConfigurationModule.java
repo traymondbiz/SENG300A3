@@ -1,13 +1,12 @@
 package ca.ucalgary.seng300.a3.configuration;
 
-import ca.ucalgary.seng300.a3.core.VendingManager;
+
 import ca.ucalgary.seng300.a3.enums.OutputDataType;
-import ca.ucalgary.seng300.a3.enums.OutputMethod;
 
 public class ConfigurationModule{
 	//
 	private static ConfigurationModule cm;
-	private static VendingManager vmgr;
+	private static ConfigurationAlpha vmgr;
 	
 	private static char [] numericValue = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
 	private static String enteredKey = "";
@@ -26,7 +25,7 @@ public class ConfigurationModule{
 	 * 
 	 * @param mgr	The VendingManager assigning itself this class.
 	 */
-	public static void initialize(VendingManager mgr) {
+	public static void initialize(ConfigurationAlpha mgr) {
 		if (mgr != null) {
 			vmgr = mgr;
 			cm = new ConfigurationModule();

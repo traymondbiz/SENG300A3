@@ -50,7 +50,7 @@ public class VendingManager {
 	private static int credit;
 
 	//added by XM
-	private static ConfigurationModule configurationModule;
+
 	private static List <String> newPopList = new ArrayList<String>();
 	private static List <Integer> newPriceList = new ArrayList<Integer>();
 	//
@@ -61,15 +61,14 @@ public class VendingManager {
 	 */
 	private VendingManager(){
 		VendingListener.initialize(this);
-		ConfigurationModule.initialize(this);
+		
 		InfoSector.initialize(this);
 		ConfigurationAlpha.initialize(this);
 		
 		infoSector = InfoSector.getInstance();
 		configurationAlpha = ConfigurationAlpha.getInstance();
 		listener = VendingListener.getInstance();
-		configurationModule = ConfigurationModule.getInstance();
-		
+			
 		//added by zach
 		TransactionModule.initialize(this);
 		tm = TransactionModule.getInstance();
@@ -146,7 +145,7 @@ public class VendingManager {
 	 */
 	private void registerConfigButtonListener(PushButtonListener listener) {
 		try {
-			int configButtonCount = configurationModule.getNumberOfConfigButtons();
+			int configButtonCount = configurationAlpha.getNumberOfConfigButtons();
 			for(int i = 0; i < configButtonCount; i++) {
 				getConfigPanel().getButton(i).register(listener);
 			}
@@ -159,7 +158,7 @@ public class VendingManager {
 	 * @return	Number of Configuration Panel buttons that are registered.
 	 */
 	public int getNumberOfConfigButtons() {
-		return configurationModule.getNumberOfConfigButtons();
+		return configurationAlpha.getNumberOfConfigButtons();
 	}
 	//end
 	
@@ -293,7 +292,7 @@ public class VendingManager {
 	 */
 	public boolean getConfigMode()
 	{
-		return configurationModule.getMode();
+		return configurationAlpha.getMode();
 	}
 	
 	//added by XM
@@ -379,12 +378,12 @@ public class VendingManager {
 	//New code by Christopher
 	//Restarts configurationModule's display
 	public void activateCofigPanel() {
-		configurationModule.startConfigPanel();
+		configurationAlpha.startConfigPanel();
 	}
 	
 	//Clears configurationModule's variables
 	public void deactivateConfigPanel() {
-		configurationModule.clearConfigPanel();
+		configurationAlpha.clearConfigPanel();
 	}
 	//End of new code (Chris)
   
@@ -484,8 +483,14 @@ public class VendingManager {
 	/**
 	 * Activates the Out Of Order light when necessary.
 	 */
+	//added by zach
 	public void setOutOfOrder() {
 		getOutOfOrderLight().activate();
+		//disable what the user can interact with
+		mgr.getDeliveryChute().disable();
+		mgr.getCoinSlot().disable();
+		//set a message that cannot be changed
+		mgr.displayMessage("OUT OF ORDER", true);
 	}
 	
 	//added by XM
@@ -495,18 +500,16 @@ public class VendingManager {
 	 * @param index		Index of the configuration panel button
 	 */
 	public void pressConfigButton (int index) {
-		configurationModule.enterChar(index);
+		configurationAlpha.enterChar(index);
 	}
 	
 	/**
 	 * Configuration panel's enter button was pushed.
 	 */
 	public void pressedConfigEnterButton() {
-		try {
-			configurationModule.pressedEnter();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		
+		configurationAlpha.pressedEnter();
+		
 	}
 	
 	/**

@@ -1,11 +1,11 @@
 package ca.ucalgary.seng300.a3.configuration;
 
 
-import java.io.IOException;
 
 import ca.ucalgary.seng300.a3.core.VendingManager;
 import ca.ucalgary.seng300.a3.enums.OutputDataType;
 import ca.ucalgary.seng300.a3.enums.OutputMethod;
+import ca.ucalgary.seng300.a3.information.DisplayModule;
 
 
 public class ConfigurationAlpha {
@@ -14,8 +14,8 @@ private static VendingManager mgr;
 
 	private static ConfigurationAlpha configurationAlpha;
 
-
-//	private static LoggingModule loggingModule;
+	
+	private static ConfigurationModule configurationModule;
 	
 	
 	
@@ -42,9 +42,9 @@ private static VendingManager mgr;
 		mgr = host;
 		
 		
-//		LoggingModule.initialize();
-		//
-	//	loggingModule = LoggingModule.getInstance();
+		ConfigurationModule.initialize(this);
+		
+		configurationModule = ConfigurationModule.getInstance();
 		
 		
 	}
@@ -89,6 +89,63 @@ private static VendingManager mgr;
 		mgr.addMessage( str, dataType, time);
 
 		
+		
+	}
+
+	public void changePopPrice(int slotNumber, int newPrice) {
+		mgr.changePopPrice(slotNumber, newPrice);
+		
+	}
+
+	public boolean checkPopRackExist(int slotNumber) {
+
+
+		return mgr.checkPopRackExist(slotNumber);
+		
+	}
+
+	public void updateExactChangeLightState() {
+		configurationModule.updateExactChangeLight();
+		
+	}
+
+	public int getNumberOfConfigButtons() {
+
+
+		return configurationModule.getNumberOfConfigButtons();
+	}
+
+	public boolean getMode() {
+
+
+		return configurationModule.getMode();
+	}
+
+	public void startConfigPanel() {
+
+
+		configurationModule.startConfigPanel();
+	}
+
+	public void clearConfigPanel() {
+
+
+		configurationModule.clearConfigPanel();
+	}
+
+	public void enterChar(int index) {
+		configurationModule.enterChar(index);
+		
+	}
+
+	public void pressedEnter() {
+		try {
+			configurationModule.pressedEnter();
+		} catch (InterruptedException e) {
+
+
+			e.printStackTrace();
+		}
 		
 	}
 	

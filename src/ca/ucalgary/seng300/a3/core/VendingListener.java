@@ -210,7 +210,7 @@ public class VendingListener implements CoinSlotListener, PushButtonListener, Co
 		
 		if(displayType == DisplayType.BACK_PANEL_DISPKAY ) return messagePanel;
 		
-		return message;
+		return "";
 	}
 
 	//New code by Christopher
