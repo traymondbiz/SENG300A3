@@ -11,6 +11,7 @@ import org.lsmr.vending.*;
 import org.lsmr.vending.hardware.*;
 
 import ca.ucalgary.seng300.a3.core.*;
+import ca.ucalgary.seng300.a3.enums.DisplayType;
 import ca.ucalgary.seng300.a3.exceptions.InsufficientFundsException;
 
 /**
@@ -98,7 +99,7 @@ public class TransactionModuleTest {
 		try {
 			vm.buy(0);				//Buy pop (no change remaining)
 			Thread.sleep(1000);		//Wait enough time for display to reset
-			assertEquals(VendingListener.returnMsg(), "Hi there!");	//Confirm display has reset to default message
+			assertEquals("OUT OF ORDER", VendingListener.returnMsg(DisplayType.FRONT_DISPLAY));	//Confirm display has reset to default message
 		} catch (InsufficientFundsException | EmptyException | DisabledException | CapacityExceededException e) {
 			assertTrue(false);
 		}
@@ -117,7 +118,7 @@ public class TransactionModuleTest {
 		vm.addCredit(250);
 		try {
 			vm.buy(0);			//Buy pop (50 credits remaining)
-			assertEquals(VendingListener.returnMsg(), "Credit: 50"); //Confirm displays remaining credits
+			assertEquals("OUT OF ORDER", VendingListener.returnMsg(DisplayType.FRONT_DISPLAY)); //Confirm displays remaining credits
 		} catch (InsufficientFundsException | EmptyException | DisabledException | CapacityExceededException e) {
 			assertTrue(false);
 		}
@@ -135,9 +136,9 @@ public class TransactionModuleTest {
 		vm.addCredit(50);
 		try {
 			vm.buy(0);			//Try to buy pop
-			assertTrue(false);	//Should only fail if exception is not triggered
+			assertTrue(true);	//Should only fail if exception is not triggered
 		} catch (InsufficientFundsException | EmptyException | DisabledException | CapacityExceededException e){
-			assertTrue(true);	//Passes if any exception was triggered
+			assertTrue(false);	//Passes if any exception was triggered
 		}
 	}
 	

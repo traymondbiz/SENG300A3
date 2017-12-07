@@ -482,7 +482,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		comboBox.setEnabled(false);
 		comboBox.setFont(new Font("Dialog", Font.BOLD, 30));
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}));
-		comboBox.setBounds(564, 188, 100, 100);
+		comboBox.setBounds(355, 77, 100, 100);
 		((JLabel)comboBox.getRenderer()).setHorizontalAlignment(SwingConstants.CENTER);
 		((JLabel)comboBox.getRenderer()).setVerticalAlignment(SwingConstants.CENTER);
 		techPanel.add(comboBox);
@@ -627,7 +627,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 			}
 		});
 		btnEnter.setFont(new Font("Dialog", Font.BOLD, 20));
-		btnEnter.setBounds(575, 406, 200, 100);
+		btnEnter.setBounds(564, 406, 211, 100);
 		techPanel.add(btnEnter);
 		
 		//Component 14
@@ -647,15 +647,80 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 			}
 		});
 		btnLock.setFont(new Font("Dialog", Font.BOLD, 20));
-		btnLock.setBounds(564, 77, 211, 100);
+		btnLock.setBounds(575, 77, 200, 100);
 		techPanel.add(btnLock);
 		
 		//Component 15
 		JButton btninsertcharacter = new JButton("<html><center>INSERT<br>CHAR</center></html>");
 		btninsertcharacter.setEnabled(false);
 		btninsertcharacter.setFont(new Font("Dialog", Font.BOLD, 20));
-		btninsertcharacter.setBounds(674, 188, 100, 100);
+		btninsertcharacter.setBounds(465, 77, 100, 100);
 		techPanel.add(btninsertcharacter);
+		
+		//Component 16
+		JComboBox coinTechPick = new JComboBox();
+		coinTechPick.setEnabled(false);
+		coinTechPick.setFont(new Font("Dialog", Font.PLAIN, 20));
+		coinTechPick.setModel(new DefaultComboBoxModel(new String[] {"nickel", "dime", "quarter", "loonie", "toonie"}));
+		coinTechPick.setBounds(355, 188, 210, 45);
+		techPanel.add(coinTechPick);
+		
+		//Component 17
+		JButton coinTechAdd = new JButton("+");
+		coinTechAdd.setEnabled(false);
+		coinTechAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int index = coinTechPick.getSelectedIndex();
+				int coins = vm.getCoinKindForCoinRack(index);
+				vm.getCoinRack(index).load(new Coin(coins));
+			}
+		});
+		coinTechAdd.setBounds(575, 188, 95, 45);
+		techPanel.add(coinTechAdd);
+		
+		//Component 18
+		JButton coinTechRemove = new JButton("-");
+		coinTechRemove.setEnabled(false);
+		coinTechRemove.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int index = coinTechPick.getSelectedIndex();
+				vm.getCoinRack(index).unload();
+			}
+		});
+		coinTechRemove.setBounds(680, 188, 95, 45);
+		techPanel.add(coinTechRemove);
+		
+		//Component 19
+		JComboBox popTechPick = new JComboBox();
+		popTechPick.setEnabled(false);
+		popTechPick.setFont(new Font("Dialog", Font.PLAIN, 20));
+		popTechPick.setModel(new DefaultComboBoxModel(new String[] {"limeZilla", "fissure", "himalayanRain", "drWalker"}));
+		popTechPick.setBounds(355, 244, 210, 45);
+		techPanel.add(popTechPick);
+		
+		//Component 20
+		JButton popTechAdd = new JButton("+");
+		popTechAdd.setEnabled(false);
+		popTechAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int index = popTechPick.getSelectedIndex();
+				vm.getPopCanRack(index).load(new PopCan((String)coinTechPick.getSelectedItem()));
+			}
+		});
+		popTechAdd.setBounds(575, 244, 95, 45);
+		techPanel.add(popTechAdd);
+		
+		//Component 21
+		JButton popTechRemove = new JButton("-");
+		popTechRemove.setEnabled(false);
+		popTechRemove.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int index = popTechPick.getSelectedIndex();
+				vm.getPopCanRack(index).unload();
+			}
+		});
+		popTechRemove.setBounds(680, 244, 95, 45);
+		techPanel.add(popTechRemove);
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/bg.png")));
@@ -710,6 +775,15 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		{
 			((JButton) techPanel.getComponent(i)).setEnabled(false);		
 		}
+		((JComboBox) techPanel.getComponent(16)).setEnabled(false);		
+		((JButton) techPanel.getComponent(17)).setEnabled(false);
+		((JButton) techPanel.getComponent(18)).setEnabled(false);
+
+		((JComboBox) techPanel.getComponent(19)).setEnabled(false);		
+		((JButton) techPanel.getComponent(20)).setEnabled(false);
+		((JButton) techPanel.getComponent(21)).setEnabled(false);
+
+
 		((JButton) techPanel.getComponent(15)).setEnabled(false);
 		((JComboBox) techPanel.getComponent(1)).setEnabled(false);		
 	}
@@ -725,6 +799,15 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		{
 			((JButton) techPanel.getComponent(i)).setEnabled(true);		
 		}
+		
+		((JComboBox) techPanel.getComponent(16)).setEnabled(true);		
+		((JButton) techPanel.getComponent(17)).setEnabled(true);
+		((JButton) techPanel.getComponent(18)).setEnabled(true);
+
+		((JComboBox) techPanel.getComponent(19)).setEnabled(true);		
+		((JButton) techPanel.getComponent(20)).setEnabled(true);
+		((JButton) techPanel.getComponent(21)).setEnabled(true);
+		
 		((JButton) techPanel.getComponent(15)).setEnabled(true);
 		((JComboBox) techPanel.getComponent(1)).setEnabled(true);		
 	}
@@ -745,21 +828,9 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 
 	public void messageChange(Display display, String oldMessage, String newMessage) {
 		if(display == vm.getDisplay()) {
-			//Hackjob
-			//try {
-			//	Thread.sleep(200);
-			//} 
-			//catch (InterruptedException e) {}
 			((JLabel) userPanel.getComponent(0)).setText(newMessage);
-		
 		}
 		else {
-			//try {
-			//	Thread.sleep(200);
-			//} catch (InterruptedException e) {
-			//	// TODO Auto-generated catch block
-			//	e.printStackTrace();
-			//}
 			((JLabel) techPanel.getComponent(0)).setText(newMessage);
 			if(!mgr.getConfigMode())
 			{
