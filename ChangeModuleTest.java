@@ -81,7 +81,7 @@ public class ChangeModuleTest {
 		cm = ChangeModule.getInstance();
 		// See note at top of code.
 		boolean expected = cm.checkChangeLight(validCoins, coinCount);
-		assertEquals(expected, false); //Exact change should not be required
+		assertEquals(expected, false); 	//Exact change should not be required
 	}
 	
 	/**
@@ -94,7 +94,7 @@ public class ChangeModuleTest {
 		cm = ChangeModule.getInstance();
 		// See note at top of code.
 		boolean expected = cm.checkChangeLight(validCoins, coinCount);
-		assertEquals(expected, true);//Exact change should be required
+		assertEquals(expected, true); //Exact change should be required
 	}
 
 	/**
@@ -107,7 +107,11 @@ public class ChangeModuleTest {
 		cm = ChangeModule.getInstance();
 		// See note at top of code.
 		boolean expected = cm.checkChangeLight(validCoins, coinCount);
-		assertEquals(expected, false); //Exact change should be required
+<<<<<<< HEAD
+		assertEquals(expected, true); //Exact change should be required
+=======
+		assertEquals(expected, false);
+>>>>>>> c0642c15dde88431a5111c483e7d578acb15fbcf
 	}
 
 	/**

@@ -92,19 +92,11 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		int deliveryChuteCapacity = 5;
 		int coinReturnCapacity = 5;
 		vm = new VendingMachine(coinKind, selectionButtonCount, coinRackCapacity, popCanRackCapacity, receptacleCapacity, deliveryChuteCapacity, coinReturnCapacity);
-		VendingManager.initialize(vm);
-		mgr = VendingManager.getInstance();
+		vm.loadCoins(10,10,10,10,10);//ESB		
 		
-		//Register the GUI as a listener to the popCanRack
-		for(int i = 0; i < selectionButtonCount; i++)
-		{
-			vm.getPopCanRack(i).register(this);
-		}
-		vm.getDisplay().register(this);
-		vm.getExactChangeLight().register(this);
-		vm.getOutOfOrderLight().register(this);
-		vm.getLock().register(this);
-		vm.getConfigurationPanel().getDisplay().register(this);
+		VendingManager.initialize(vm);
+	  
+		mgr = VendingManager.getInstance();
 
 		List<String> popCanNames = new ArrayList<String>();
 		popCanNames.add("Lime Zilla");
@@ -119,7 +111,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		popCanCosts.add(130);
 		popCanCosts.add(300);
 		popCanCosts.add(225);
-		popCanCosts.add(554);
+		popCanCosts.add(555);
 		vm.configure(popCanNames, popCanCosts);
 		
 		// Stock Vending Machine: 5 Lime Zillas
@@ -178,6 +170,17 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		userPanel.setBorder(null);
 		guiTabbedPane.addTab("User", null, userPanel, null);
 		userPanel.setLayout(null);
+
+		//Register the GUI as a listener to the popCanRack
+		for(int i = 0; i < selectionButtonCount; i++)
+		{
+			vm.getPopCanRack(i).register(this);
+		}
+		vm.getDisplay().register(this);
+		vm.getExactChangeLight().register(this);
+		vm.getOutOfOrderLight().register(this);
+		vm.getLock().register(this);
+		vm.getConfigurationPanel().getDisplay().register(this);
 		
 		//Component 0
 		JLabel displayLabel = new JLabel("Hi There!");
@@ -237,6 +240,11 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		limeZillaButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				vm.getSelectionButton(0).press();
+				int[] returnList = mgr.getCoinCount(); 
+				for (int i =0; i<5; i++){
+					System.out.println(returnList[i]);
+				}
+				
 			}
 		});
 		limeZillaButton.setBounds(75, 150, 150, 75);
@@ -433,7 +441,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		userPanel.add(label_3);
 		
 		//Component 18
-		JLabel label_2 = new JLabel("5.54");
+		JLabel label_2 = new JLabel("5.55");//ESB
 		label_2.setBounds(250, 325, 150, 14);
 		userPanel.add(label_2);
 		
@@ -654,8 +662,13 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		lblNewLabel.setBounds(0, 0, 789, 543);
 		techPanel.add(lblNewLabel);
 
+		mgr.updateExactChangeLightState();//ESB MDG 
+		
 	}
 
+	
+	
+	
 	// UNUSED FUNCTIONS
 	public void popCanAdded(PopCanRack popCanRack, PopCan popCan) {}
 	public void popCansFull(PopCanRack popCanRack) {}
@@ -731,10 +744,22 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 	}
 
 	public void messageChange(Display display, String oldMessage, String newMessage) {
-		if(display == vm.getDisplay())
+		if(display == vm.getDisplay()) {
+			//Hackjob
+			//try {
+			//	Thread.sleep(200);
+			//} 
+			//catch (InterruptedException e) {}
 			((JLabel) userPanel.getComponent(0)).setText(newMessage);
-		else
-		{
+		
+		}
+		else {
+			//try {
+			//	Thread.sleep(200);
+			//} catch (InterruptedException e) {
+			//	// TODO Auto-generated catch block
+			//	e.printStackTrace();
+			//}
 			((JLabel) techPanel.getComponent(0)).setText(newMessage);
 			if(!mgr.getConfigMode())
 			{

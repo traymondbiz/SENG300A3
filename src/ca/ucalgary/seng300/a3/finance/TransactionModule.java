@@ -33,12 +33,15 @@ public class TransactionModule {
 	/**
 	 * Reference to manager of this module. (Hardware calls, other module calls, etc.)
 	 */
-	private static FinanceSector mgr;
+	private static VendingManager mgr;
 	
 	/**
 	 * Self-referential variable. (Singleton)
 	 */
 	private static TransactionModule transactionModule;
+	
+	//added by zach
+	private static ChangeModule cm;
 	
 	/**
 	 * Forces the existing singleton instance to be replaced.
@@ -46,9 +49,12 @@ public class TransactionModule {
 	 * 
 	 * @param manager	The VendingManager assigning itself this class.
 	 */
-	public static void initialize(FinanceSector host){
+	public static void initialize(VendingManager host){
 		transactionModule = new TransactionModule();
+		ChangeModule.initialize(transactionModule);
+		cm = ChangeModule.getInstance();
 		mgr  = host;
+		
 	}
 
 	/**
@@ -65,7 +71,7 @@ public class TransactionModule {
 	 * @throws IOException 
 	 */
     public void addCredit(int added) throws IOException{
-    	mgr.setCredit( added + mgr.getCredit()  );
+    	mgr.setCredit(mgr.getCredit()+added);
         if(mgr.getCredit() != 0) {
         	
         		mgr.interruptDisplay();
@@ -99,7 +105,7 @@ public class TransactionModule {
 				mgr.dispensePopCanRack(popIndex);
 				int remaining = mgr.getCredit() - cost ;
 				if(remaining > 0) { // if true there is change to give
-					ArrayList<Integer> returnList = mgr.getCoinsToReturn(remaining);
+					ArrayList<Integer> returnList = cm.getCoinsToReturn(remaining,mgr.getValidCoinsArray(),mgr.getCoinCount());
 					while(!returnList.isEmpty()) {
 						mgr.dispenseCoin(returnList.get(0));
 						remaining -= returnList.get(0);
@@ -109,7 +115,7 @@ public class TransactionModule {
 				// Refresh the machine.
 				mgr.setCredit(remaining); //all change has been given
 				mgr.storeCoinsInStorage();
-				mgr.updateExactChangeLight();
+				updateExactChangeLight();
 				mgr.addCredit(0); //update screen with adding 0 credit
 				if(popIsEmpty()) { // set the out of order light on if we are out of pop in all racks 
 					mgr.setOutOfOrder();
@@ -122,7 +128,24 @@ public class TransactionModule {
 			throw new InsufficientFundsException("Cannot buy " + popName + ". " + dif + " cents missing.");
 		}
 	}
+	//added by zach
+	public void updateExactChangeLight() {
+		
+		if(cm.checkChangeLight(mgr.getValidCoinsArray(), mgr.getPopPrices())) {
+			mgr.deactivateExactChangeLight();
+		}else {
+			mgr.activateExactChangeLight();
+		}
+		
+	}
+	public int[] getPopPrices() {
+		return mgr.getPopPrices();
+	}
+	public int[] getValidCoinsArray() {
+		return mgr.getValidCoinsArray();
+	}
 	
+
 	/**
 	 * Checks to see whether there is still pop in the machine.
 	 * @return	true is there is pop, false otherwise.
@@ -134,5 +157,10 @@ public class TransactionModule {
 			}
 		}
 		return true;
+	}
+
+	public int[] getCoinCount() {
+		
+		return mgr.getCoinCount();
 	}
 }

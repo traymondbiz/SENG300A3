@@ -56,6 +56,7 @@ public class DisplayModuleTest {
     	int coinReturnCapacity = 5;
     	vend = new VendingMachine(coinKind, selectionButtonCount, coinRackCapacity, popCanRackCapacity, receptacleCapacity, deliveryChuteCapacity, coinReturnCapacity);
    
+    	//Generate pop names
 		List<String> popCanNames = new ArrayList<String>();
 		popCanNames.add("Coke"); 
 		popCanNames.add("Pepsi"); 
@@ -64,12 +65,14 @@ public class DisplayModuleTest {
 		popCanNames.add("Water"); 
 		popCanNames.add("Iced Tea");
 		
+		//Add Coke to pop can rack 0
 		PopCan popcan = new PopCan("Coke");
 		try {
 			vend.getPopCanRack(0).acceptPopCan(popcan);
 		} catch (CapacityExceededException | DisabledException e) {
 		};
 		
+		//Set all popcan prices to 200
 		List<Integer> popCanCosts = new ArrayList<Integer>();
 		for (int i = 0; i < 6; i++) {
 			popCanCosts.add(200);

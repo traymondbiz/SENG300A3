@@ -46,7 +46,7 @@ public class ChangeModule {
 	/**
 	 * Reference to manager of this module. (Hardware calls, other module calls, etc.)
 	 */
-	private static FinanceSector mgr;
+	private static TransactionModule mgr;
 
 	/**
 	 * An array containing all the valid currency denomination.
@@ -74,7 +74,7 @@ public class ChangeModule {
 	 *
 	 * @param manager	The VendingManager assigning itself this class.
 	 */
-	public static void initialize(FinanceSector manager) {
+	public static void initialize(TransactionModule manager) {
 		if (manager != null) {
 			mgr = manager;
 			changeModule = new ChangeModule();
@@ -132,10 +132,12 @@ public class ChangeModule {
 	 * @return				Returns a list containing every cent value change the machine needs to be prepared to make.
 	 */
 	private static ArrayList<Integer> getPossibleChangeValues(int[] validCoins, int[] popPrices) {
+		
 		ArrayList<Integer> changesToMake = new ArrayList<Integer>();
 		int remainder;
 		int loopCount;
 		// For each coin on each type of pop, perform the test.
+		
 		for(int popPrice: popPrices) {
 			for(int validCoinIndex: validCoins) {
 
@@ -182,6 +184,8 @@ public class ChangeModule {
 	 * @return		The 'center' of the algorithm.
 	 */
 	private static int qoinPartition(int low, int high) {
+		validCoins = mgr.getValidCoinsArray();
+		coinCount = mgr.getCoinCount();
 		int p = validCoins[high];
 		int i = low;
 		int j = high - 1;
@@ -319,19 +323,17 @@ public class ChangeModule {
 	 * @return				true if the machine is able to make change for every instance
 	 */
 	public boolean checkChangeLight(int[] validCoins, int[] coinCount) {
-		ArrayList<Integer> valuesOfChange = getPossibleChangeValues(validCoins, popPrices);
+		ArrayList<Integer> valuesOfChange = getPossibleChangeValues(validCoins, mgr.getPopPrices());
 		for(int change : valuesOfChange) {
 			// If at some point, we are NOT able to make change for a specific 'remainder', return false.
-			if(!canMakeChange(change,validCoins, coinCount)) {
+			if(!canMakeChange(change,mgr.getValidCoinsArray(), mgr.getCoinCount())) {
 				return false;
 			}
 		}
 		return true;
 	}
 	
-	public void updateExactChangeLight() {
-		mgr.updateExactChangeLight();
-	}
+	
 
 	/**
 	 * [DEBUGGING METHOD]: Used in order to support the accompanying unit test: ChangeModuleTest.java

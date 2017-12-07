@@ -57,6 +57,7 @@ public class TransactionModuleTest {
     	int coinReturnCapacity = 5;
     	vend = new VendingMachine(coinKind, selectionButtonCount, coinRackCapacity, popCanRackCapacity, receptacleCapacity, deliveryChuteCapacity, coinReturnCapacity);
    
+    	//Generate pop names
 		List<String> popCanNames = new ArrayList<String>();
 		popCanNames.add("Coke"); 
 		popCanNames.add("Pepsi"); 
@@ -64,13 +65,15 @@ public class TransactionModuleTest {
 		popCanNames.add("Mountain dew"); 
 		popCanNames.add("Water"); 
 		popCanNames.add("Iced Tea");
-		
+
+		//Add Coke to pop can rack 0
 		PopCan popcan = new PopCan("Coke");
 		try {
 			vend.getPopCanRack(0).acceptPopCan(popcan);
 		} catch (CapacityExceededException | DisabledException e) {
 		};
 		
+		//Set all popcan prices to 200
 		List<Integer> popCanCosts = new ArrayList<Integer>();
 		for (int i = 0; i < 6; i++) {
 			popCanCosts.add(200);
@@ -87,13 +90,15 @@ public class TransactionModuleTest {
 	 */
 	@Test
 	public void testPostPCreditZero() throws InterruptedException, IOException{
+		//Create vending machine
 		VendingManager.initialize(vend);
 		VendingManager vm = VendingManager.getInstance();
+		//Add exactly required credits for pop
 		vm.addCredit(200);
 		try {
-			vm.buy(0);
-			Thread.sleep(1000);
-			assertEquals(VendingListener.returnMsg(), "Hi there!");
+			vm.buy(0);				//Buy pop (no change remaining)
+			Thread.sleep(1000);		//Wait enough time for display to reset
+			assertEquals(VendingListener.returnMsg(), "Hi there!");	//Confirm display has reset to default message
 		} catch (InsufficientFundsException | EmptyException | DisabledException | CapacityExceededException e) {
 			assertTrue(false);
 		}
@@ -105,12 +110,14 @@ public class TransactionModuleTest {
 	 */
 	@Test
 	public void testPostPCreditNotZero() throws IOException{
+		//Create vending machine
 		VendingManager.initialize(vend);
 		VendingManager vm = VendingManager.getInstance();
+		//Add more than needed credits for pop
 		vm.addCredit(250);
 		try {
-			vm.buy(0);
-			assertEquals(VendingListener.returnMsg(), "Credit: 50");
+			vm.buy(0);			//Buy pop (50 credits remaining)
+			assertEquals(VendingListener.returnMsg(), "Credit: 50"); //Confirm displays remaining credits
 		} catch (InsufficientFundsException | EmptyException | DisabledException | CapacityExceededException e) {
 			assertTrue(false);
 		}
@@ -121,14 +128,16 @@ public class TransactionModuleTest {
 	 */
 	@Test
 	public void testInsufficentFundsException() throws IOException{
+		//Create vending machine
 		VendingManager.initialize(vend);
 		VendingManager vm = VendingManager.getInstance();
+		//Add too few credits for purchase
 		vm.addCredit(50);
 		try {
-			vm.buy(0);
-			assertTrue(false);
+			vm.buy(0);			//Try to buy pop
+			assertTrue(false);	//Should only fail if exception is not triggered
 		} catch (InsufficientFundsException | EmptyException | DisabledException | CapacityExceededException e){
-			assertTrue(true);
+			assertTrue(true);	//Passes if any exception was triggered
 		}
 	}
 	

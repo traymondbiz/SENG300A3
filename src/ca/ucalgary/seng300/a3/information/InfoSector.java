@@ -93,9 +93,16 @@ private static InfoSector infoSector;
 	}
 	
 	public void sendOutput(String Str, OutputDataType outputType, int time) throws IOException {
-		
+		System.out.println("I am a sleep method.");
 		OutputMethod temp;
 
+		
+		temp = OutputMethod.CONFIG_PANEL_DISPLAY;
+		if (outputMap[outputType.getValue()][temp.getValue()]){
+			
+			displayModule.addMessage(Str, false);
+		}
+		
 		temp = OutputMethod.TEXT_LOG;
 		if (outputMap[outputType.getValue()][temp.getValue()]){
 			
@@ -106,7 +113,7 @@ private static InfoSector infoSector;
 		temp = OutputMethod.DISPLAY;
 		if (outputMap[outputType.getValue()][temp.getValue()]){
 			
-			displayModule.addMessage(Str);
+			displayModule.addMessage(Str, true);
 		}
 		
 		temp = OutputMethod.LOOPING_MESSAGE;
@@ -116,9 +123,9 @@ private static InfoSector infoSector;
 		}
 	
 	}
-	public void displayMessage(String str) {
+	public void displayMessage(String str, boolean locked) {
 		
-		mgr.displayMessage(str);
+		mgr.displayMessage(str, locked);
 	}
 	
 	public void resetDisplay() {
