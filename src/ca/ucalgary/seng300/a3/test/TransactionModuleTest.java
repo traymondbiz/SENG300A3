@@ -98,7 +98,7 @@ public class TransactionModuleTest {
 		try {
 			vm.buy(0);				//Buy pop (no change remaining)
 			Thread.sleep(1000);		//Wait enough time for display to reset
-			assertEquals(VendingListener.returnMsg(), "Hi there!");	//Confirm display has reset to default message
+			assertEquals("Hi there!", VendingListener.returnMsg());	//Confirm display has reset to default message
 		} catch (InsufficientFundsException | EmptyException | DisabledException | CapacityExceededException e) {
 			assertTrue(false);
 		}
@@ -117,7 +117,7 @@ public class TransactionModuleTest {
 		vm.addCredit(250);
 		try {
 			vm.buy(0);			//Buy pop (50 credits remaining)
-			assertEquals(VendingListener.returnMsg(), "Credit: 50"); //Confirm displays remaining credits
+			assertEquals("Credit: 50", VendingListener.returnMsg()); //Confirm displays remaining credits
 		} catch (InsufficientFundsException | EmptyException | DisabledException | CapacityExceededException e) {
 			assertTrue(false);
 		}
