@@ -8,6 +8,7 @@ import org.lsmr.vending.hardware.*;
 
 import ca.ucalgary.seng300.a3.configuration.ConfigurationAlpha;
 import ca.ucalgary.seng300.a3.configuration.ConfigurationModule;
+import ca.ucalgary.seng300.a3.enums.DisplayType;
 import ca.ucalgary.seng300.a3.enums.OutputDataType;
 import ca.ucalgary.seng300.a3.enums.OutputMethod;
 import ca.ucalgary.seng300.a3.exceptions.InsufficientFundsException;
@@ -336,6 +337,20 @@ public class VendingManager {
 		else
 			getConfigPanel().getDisplay().display(str);
 	}
+	
+	public DisplayType getDisplayType( Display display) {
+		
+		if(display == vm.getDisplay()) return DisplayType.FRONT_DISPLAY;
+		
+		if(display == getConfigPanel().getDisplay()) return DisplayType.BACK_PANEL_DISPKAY;
+		
+		return DisplayType.UNKNOWN_DISPLAY;
+		
+		
+		
+		
+	}
+	
 	
 	/**
 	 * Adds a message to be displayed.

@@ -11,6 +11,7 @@ import org.lsmr.vending.hardware.*;
 
 import ca.ucalgary.seng300.a3.core.VendingListener;
 import ca.ucalgary.seng300.a3.core.VendingManager;
+import ca.ucalgary.seng300.a3.enums.DisplayType;
 
 public class ConfigurationTest {
 	private VendingMachine vend;
@@ -91,18 +92,18 @@ public class ConfigurationTest {
 		//Enter 2 to change rack 2 price
 		
 		vm.pressConfigButton(2);
-		assertEquals("Pop Slot: 2", VendingListener.returnMsg()); //New character "2" should be added to display
+		assertEquals("Pop Slot: 2", VendingListener.returnMsg(DisplayType.BACK_PANEL_DISPKAY)); //New character "2" should be added to display
 		
 		vm.pressedConfigEnterButton();
-		assertEquals("New Price: ", VendingListener.returnMsg()); //Display should reset after entering new mode
+		assertEquals("New Price: ", VendingListener.returnMsg(DisplayType.BACK_PANEL_DISPKAY)); //Display should reset after entering new mode
 		
 		//Change price to be 100
 		vm.pressConfigButton(1);
 		vm.pressConfigButton(0);
 		vm.pressConfigButton(0);
-		assertEquals("New Price: 100", VendingListener.returnMsg()); //New characters "100" should be added to display
+		assertEquals("New Price: 100", VendingListener.returnMsg(DisplayType.BACK_PANEL_DISPKAY)); //New characters "100" should be added to display
 		vm.pressedConfigEnterButton();
 		assertEquals(100, vend.getPopKindCost(2));		//Confirm price updated
-		assertEquals("Pop Slot: ", VendingListener.returnMsg());	//Display should reset after entering new mode
+		assertEquals("Pop Slot: ", VendingListener.returnMsg(DisplayType.BACK_PANEL_DISPKAY));	//Display should reset after entering new mode
 	}
 }

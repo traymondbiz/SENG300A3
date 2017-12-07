@@ -26,6 +26,7 @@ import org.lsmr.vending.hardware.VendingMachine;
 
 import ca.ucalgary.seng300.a3.core.VendingListener;
 import ca.ucalgary.seng300.a3.core.VendingManager;
+import ca.ucalgary.seng300.a3.enums.DisplayType;
 import ca.ucalgary.seng300.a3.exceptions.InsufficientFundsException;
 
 /**
@@ -218,16 +219,16 @@ public class TechTest implements PopCanRackListener, DisplayListener, IndicatorL
 	@Test
 	public void testConfigDisplay() {
 		vm.pressConfigButton(2);
-		assertEquals("Pop Slot: 2", VendingListener.returnMsg());
+		assertEquals("Pop Slot: 2", VendingListener.returnMsg(DisplayType.BACK_PANEL_DISPKAY));
 		vm.pressedConfigEnterButton();
-		assertEquals("New Price: ", VendingListener.returnMsg());
+		assertEquals("New Price: ", VendingListener.returnMsg(DisplayType.BACK_PANEL_DISPKAY));
 		vm.pressConfigButton(1);
 		vm.pressConfigButton(0);
 		vm.pressConfigButton(0);
-		assertEquals("New Price: 100", VendingListener.returnMsg());
+		assertEquals("New Price: 100", VendingListener.returnMsg(DisplayType.BACK_PANEL_DISPKAY));
 		vm.pressedConfigEnterButton();
 		assertEquals(100, vend.getPopKindCost(2));
-		assertEquals("Pop Slot: ", VendingListener.returnMsg());
+		assertEquals("Pop Slot: ", VendingListener.returnMsg(DisplayType.BACK_PANEL_DISPKAY));
 	}
 
 	/**

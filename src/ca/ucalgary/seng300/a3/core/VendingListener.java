@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.lsmr.vending.*;
 import org.lsmr.vending.hardware.*;
 
+import ca.ucalgary.seng300.a3.enums.DisplayType;
 import ca.ucalgary.seng300.a3.enums.OutputDataType;
 import ca.ucalgary.seng300.a3.enums.OutputMethod;
 import ca.ucalgary.seng300.a3.exceptions.InsufficientFundsException;
@@ -45,6 +46,8 @@ public class VendingListener implements CoinSlotListener, PushButtonListener, Co
 	 * String representing the current message on display.
 	 */
 	private static String message = null;
+	
+	private static String messagePanel = null;
 	
 	/**
 	 * Private constructor to prevent additional creations. (Singleton)
@@ -186,14 +189,27 @@ public class VendingListener implements CoinSlotListener, PushButtonListener, Co
 	 */
 	@Override
 	public void messageChange(Display display, String oldMessage, String newMessage) {
-		message = newMessage;
+		
+		if(mgr.getDisplayType(display) == DisplayType.FRONT_DISPLAY ) message = newMessage;
+		
+		if(mgr.getDisplayType(display) == DisplayType.BACK_PANEL_DISPKAY ) messagePanel = newMessage;
+		
+		
+
+		
 	}
 
 	/**
 	 * Retrieve the current message.
 	 * @return	the current message displayed.
 	 */
-	public static String returnMsg(){
+	public static String returnMsg(DisplayType displayType){
+		
+		
+		if(displayType == DisplayType.FRONT_DISPLAY ) return message;
+		
+		if(displayType == DisplayType.BACK_PANEL_DISPKAY ) return messagePanel;
+		
 		return message;
 	}
 

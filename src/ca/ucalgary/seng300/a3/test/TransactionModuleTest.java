@@ -11,6 +11,7 @@ import org.lsmr.vending.*;
 import org.lsmr.vending.hardware.*;
 
 import ca.ucalgary.seng300.a3.core.*;
+import ca.ucalgary.seng300.a3.enums.DisplayType;
 import ca.ucalgary.seng300.a3.exceptions.InsufficientFundsException;
 
 /**
@@ -98,7 +99,7 @@ public class TransactionModuleTest {
 		try {
 			vm.buy(0);				//Buy pop (no change remaining)
 			Thread.sleep(1000);		//Wait enough time for display to reset
-			assertEquals("Hi there!", VendingListener.returnMsg());	//Confirm display has reset to default message
+			assertEquals("Hi there!", VendingListener.returnMsg(DisplayType.FRONT_DISPLAY));	//Confirm display has reset to default message
 		} catch (InsufficientFundsException | EmptyException | DisabledException | CapacityExceededException e) {
 			assertTrue(false);
 		}
@@ -117,7 +118,7 @@ public class TransactionModuleTest {
 		vm.addCredit(250);
 		try {
 			vm.buy(0);			//Buy pop (50 credits remaining)
-			assertEquals("Credit: 50", VendingListener.returnMsg()); //Confirm displays remaining credits
+			assertEquals("Credit: 50", VendingListener.returnMsg(DisplayType.FRONT_DISPLAY)); //Confirm displays remaining credits
 		} catch (InsufficientFundsException | EmptyException | DisabledException | CapacityExceededException e) {
 			assertTrue(false);
 		}
