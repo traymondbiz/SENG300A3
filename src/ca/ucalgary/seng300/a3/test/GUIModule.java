@@ -97,16 +97,6 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		VendingManager.initialize(vm);
 	  
 		mgr = VendingManager.getInstance();
-		//Register the GUI as a listener to the popCanRack
-		for(int i = 0; i < selectionButtonCount; i++)
-		{
-			vm.getPopCanRack(i).register(this);
-		}
-		vm.getDisplay().register(this);
-		vm.getExactChangeLight().register(this);
-		vm.getOutOfOrderLight().register(this);
-		vm.getLock().register(this);
-		vm.getConfigurationPanel().getDisplay().register(this);
 
 		List<String> popCanNames = new ArrayList<String>();
 		popCanNames.add("Lime Zilla");
@@ -180,6 +170,17 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		userPanel.setBorder(null);
 		guiTabbedPane.addTab("User", null, userPanel, null);
 		userPanel.setLayout(null);
+
+		//Register the GUI as a listener to the popCanRack
+		for(int i = 0; i < selectionButtonCount; i++)
+		{
+			vm.getPopCanRack(i).register(this);
+		}
+		vm.getDisplay().register(this);
+		vm.getExactChangeLight().register(this);
+		vm.getOutOfOrderLight().register(this);
+		vm.getLock().register(this);
+		vm.getConfigurationPanel().getDisplay().register(this);
 		
 		//Component 0
 		JLabel displayLabel = new JLabel("Hi There!");
@@ -745,20 +746,20 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 	public void messageChange(Display display, String oldMessage, String newMessage) {
 		if(display == vm.getDisplay()) {
 			//Hackjob
-			try {
-				Thread.sleep(200);
-			} 
-			catch (InterruptedException e) {}
+			//try {
+			//	Thread.sleep(200);
+			//} 
+			//catch (InterruptedException e) {}
 			((JLabel) userPanel.getComponent(0)).setText(newMessage);
 		
 		}
 		else {
-			try {
-				Thread.sleep(200);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			//try {
+			//	Thread.sleep(200);
+			//} catch (InterruptedException e) {
+			//	// TODO Auto-generated catch block
+			//	e.printStackTrace();
+			//}
 			((JLabel) techPanel.getComponent(0)).setText(newMessage);
 			if(!mgr.getConfigMode())
 			{
