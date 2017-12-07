@@ -168,7 +168,7 @@ public class TechTest implements PopCanRackListener, DisplayListener, IndicatorL
 		vm.pressedConfigEnterButton();
 		vm.addCredit(100);
 		vm.buy(1);
-		assertEquals(vend.getPopCanRack(1).size(), 4);
+		assertEquals(4, vend.getPopCanRack(1).size());
 	}
 
 	/**
@@ -188,10 +188,10 @@ public class TechTest implements PopCanRackListener, DisplayListener, IndicatorL
 		vm.pressConfigButton(0);
 		vm.pressConfigButton(0);
 		vm.pressedConfigEnterButton();
-		assertEquals(vend.getPopKindCost(0), 100);
-		assertEquals(vend.getPopKindCost(1), 200);
-		assertEquals(vend.getPopKindCost(2), 225);
-		assertEquals(vend.getPopKindCost(3), 554);
+		assertEquals(100, vend.getPopKindCost(0));
+		assertEquals(200, vend.getPopKindCost(1));
+		assertEquals(225, vend.getPopKindCost(2));
+		assertEquals(554, vend.getPopKindCost(3));
 	}
 	
 	/**
@@ -209,7 +209,7 @@ public class TechTest implements PopCanRackListener, DisplayListener, IndicatorL
 		vend.getLock().unlock();
 		vm.addCredit(300);
 		vm.buy(1);
-		assertEquals(vend.getPopCanRack(1).size(), 4);
+		assertEquals(4, vend.getPopCanRack(1).size());
 	}
 	
 	/**
@@ -218,16 +218,16 @@ public class TechTest implements PopCanRackListener, DisplayListener, IndicatorL
 	@Test
 	public void testConfigDisplay() {
 		vm.pressConfigButton(2);
-		assertEquals(VendingListener.returnMsg(), "Pop Slot: 2");
+		assertEquals("Pop Slot: 2", VendingListener.returnMsg());
 		vm.pressedConfigEnterButton();
-		assertEquals(VendingListener.returnMsg(), "New Price: ");
+		assertEquals("New Price: ", VendingListener.returnMsg());
 		vm.pressConfigButton(1);
 		vm.pressConfigButton(0);
 		vm.pressConfigButton(0);
-		assertEquals(VendingListener.returnMsg(), "New Price: 100");
+		assertEquals("New Price: 100", VendingListener.returnMsg());
 		vm.pressedConfigEnterButton();
 		assertEquals(100, vend.getPopKindCost(2));
-		assertEquals(VendingListener.returnMsg(), "Pop Slot: ");
+		assertEquals("Pop Slot: ", VendingListener.returnMsg());
 	}
 
 	/**
