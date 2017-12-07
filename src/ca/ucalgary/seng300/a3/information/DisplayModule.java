@@ -2,6 +2,8 @@ package ca.ucalgary.seng300.a3.information;
 
 import java.util.Vector;
 
+import ca.ucalgary.seng300.a3.information.DisplayModule.TimeMessage;
+
 /**
  * Software Engineering 300 - Group Assignment 2
  * DisplayModule.java
@@ -47,7 +49,8 @@ public class DisplayModule  implements Runnable {
 	/**
 	 * A small structure containing a time-message pair.
 	 */
-	private class TimeMessage {
+	// should be private.
+	public class TimeMessage {
 		public int time;
 		public String message;
 		
@@ -98,8 +101,8 @@ public class DisplayModule  implements Runnable {
 	 * Adds a display message.
 	 * @param str	The message to be passed along.
 	 */
-	public void addMessage(String str) {
-		mgr.displayMessage(str);
+	public void addMessage(String str, boolean locked) {
+		mgr.displayMessage(str, locked);
 	}
 
 	/**
@@ -117,7 +120,13 @@ public class DisplayModule  implements Runnable {
 		try{ 
 			while(!Thread.currentThread().isInterrupted()){
 				if (!messageList.isEmpty()) {
-					mgr.displayMessage(messageList.get(messageIndex).message  );
+					
+					TimeMessage apple = messageList.get(messageIndex);
+					String appleSauce = apple.message;
+					mgr.displayMessage(appleSauce, true);
+					
+					//mgr.displayMessage(messageList.get(messageIndex).message, true);
+					
 					Thread.sleep( messageList.get(messageIndex).time );
 					
 					messageIndex++;

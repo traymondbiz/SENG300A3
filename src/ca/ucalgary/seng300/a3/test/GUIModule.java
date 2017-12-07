@@ -746,12 +746,14 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		if(display == vm.getDisplay()) {
 			try {
 				Thread.sleep(200); // It takes roughly ~185ms for all threads to boot up properly and produce messages. As such, we avoid immediately retrieving the message.
-			} catch (InterruptedException e) {
+			} 
+      catch (InterruptedException e) {
 			}
-			((JLabel) userPanel.getComponent(0)).setText(newMessage);
+		  ((JLabel) userPanel.getComponent(0)).setText(newMessage);
 		}
 		else {
-			((JLabel) techPanel.getComponent(0)).setText(newMessage);
+		}
+		((JLabel) techPanel.getComponent(0)).setText(newMessage);
 			if(!mgr.getConfigMode()){
 				for(int i = 0 ; i < 4; i++){
 					((JLabel) userPanel.getComponent(i + 15)).setText(String.valueOf(vm.getPopKindCost(i)));

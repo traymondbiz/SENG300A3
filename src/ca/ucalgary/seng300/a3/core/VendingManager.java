@@ -6,11 +6,12 @@ import java.util.List;
 
 import org.lsmr.vending.hardware.*;
 
+import ca.ucalgary.seng300.a3.configuration.ConfigurationAlpha;
+import ca.ucalgary.seng300.a3.configuration.ConfigurationModule;
 import ca.ucalgary.seng300.a3.enums.OutputDataType;
 import ca.ucalgary.seng300.a3.enums.OutputMethod;
 import ca.ucalgary.seng300.a3.exceptions.InsufficientFundsException;
 import ca.ucalgary.seng300.a3.finance.TransactionModule;
-import ca.ucalgary.seng300.a3.information.ConfigurationModule;
 import ca.ucalgary.seng300.a3.information.InfoSector;
 
 /**
@@ -40,6 +41,7 @@ public class VendingManager {
 	private static VendingManager mgr;
 	private static VendingListener listener;
 	private static InfoSector infoSector;
+	private static ConfigurationAlpha configurationAlpha;
 	private static VendingMachine vm;
 	
 	//added by zach
@@ -60,16 +62,17 @@ public class VendingManager {
 		VendingListener.initialize(this);
 		ConfigurationModule.initialize(this);
 		InfoSector.initialize(this);
+		ConfigurationAlpha.initialize(this);
 		
 		infoSector = InfoSector.getInstance();
-		
+		configurationAlpha = ConfigurationAlpha.getInstance();
 		listener = VendingListener.getInstance();
 		configurationModule = ConfigurationModule.getInstance();
 		
 		//added by zach
 		TransactionModule.initialize(this);
 		tm = TransactionModule.getInstance();
-
+		
 	}
 	
 	/**
@@ -84,16 +87,19 @@ public class VendingManager {
 		vm = host;
 		mgr.registerListeners();
 		
-		mgr.setOutputmaps();
 		
-		
-		mgr.addMessage("Hi there!", OutputDataType.WELCOME_MESSAGE_TEXT  ,5000);
-		mgr.addMessage("", OutputDataType.WELCOME_MESSAGE_TEXT  ,10000);
+		configurationAlpha.setStartingState();
 
 		
 	}
 	
-	
+	public void setOutputMap(OutputDataType outputDataType, OutputMethod outputMethod, boolean value ) {
+		
+		infoSector.setOutputMap(outputDataType, outputMethod, value);
+		
+		
+	}
+		
 	/**
 	 * Provides public access to the VendingManager singleton.
 	 * @return The singleton VendingManager instance  
@@ -116,20 +122,7 @@ public class VendingManager {
 		getLock().register(listener);
 		//end
 	}
-	private void setOutputmaps() {
-		
-		infoSector.setOutputMap(OutputDataType.CREDIT_INFO, OutputMethod.DISPLAY, true);
-		
-		infoSector.setOutputMap(OutputDataType.WELCOME_MESSAGE_TEXT, OutputMethod.LOOPING_MESSAGE, true);
-		
-		infoSector.setOutputMap(OutputDataType.BUTTON_PRESSED, OutputMethod.TEXT_LOG, true);
-		infoSector.setOutputMap(OutputDataType.EXCEPTION_HANDLING, OutputMethod.TEXT_LOG, true);
-		infoSector.setOutputMap(OutputDataType.VALID_COIN_INSERTED, OutputMethod.TEXT_LOG, true);
-		infoSector.setOutputMap(OutputDataType.COIN_REFUNDED, OutputMethod.TEXT_LOG, true);
-		infoSector.setOutputMap(OutputDataType.CREDIT_INFO, OutputMethod.TEXT_LOG, true);
-		
-		
-	}
+	
 	
 	/**
 	 * Iterates through all selection buttons in the VendingMachine and
@@ -336,9 +329,12 @@ public class VendingManager {
 	 * Displays a string message.
 	 * @param str	Message to be displayed.
 	 */
-	public void displayMessage(String str){
-		vm.getDisplay().display(str);
-		
+	public void displayMessage(String str, boolean locked){
+		// originally !locked
+		if (locked)
+			vm.getDisplay().display(str);
+		else
+			getConfigPanel().getDisplay().display(str);
 	}
 	
 	/**
@@ -392,13 +388,18 @@ public class VendingManager {
 	
 //vvv=======================VENDING LOGIC START=======================vvv	
 
+
+
+
+
+
 	/**
 	 * Adds credit to the current amount in the machine.
 	 * @param added	Credit to be added.
 	 * @throws IOException 
 	 */
     public void addCredit(int added) throws IOException{
-    	tm.addCredit(added);   
+    	tm.addCredit(added);
     }
     
 	/**
