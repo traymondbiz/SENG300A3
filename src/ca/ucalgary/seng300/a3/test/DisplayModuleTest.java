@@ -89,7 +89,7 @@ public class DisplayModuleTest {
 	public void testHiThere() throws InterruptedException{
 		VendingManager.initialize(vend);
 		Thread.sleep(1000);
-		assertEquals(VendingListener.returnMsg(), "Hi there!");
+		assertEquals("Hi there!", VendingListener.returnMsg());
 	}
 	
 	/**
@@ -101,7 +101,7 @@ public class DisplayModuleTest {
 	public void testHiThereErased() throws InterruptedException{
 		VendingManager.initialize(vend);
 		Thread.sleep(6000);
-		assertEquals(VendingListener.returnMsg(), "");
+		assertEquals("", VendingListener.returnMsg());
 	}
 	
 	/**
@@ -113,7 +113,7 @@ public class DisplayModuleTest {
 	public void testMessageCycle() throws InterruptedException{
 		VendingManager.initialize(vend);
 		Thread.sleep(16000);
-		assertEquals(VendingListener.returnMsg(), "Hi there!");
+		assertEquals("Hi there!", VendingListener.returnMsg());
 
 	}
 	
@@ -125,7 +125,7 @@ public class DisplayModuleTest {
 		VendingManager.initialize(vend);
 		VendingManager vm = VendingManager.getInstance();
 		vm.addCredit(200);
-		assertEquals(VendingListener.returnMsg(), "Credit: 200");
+		assertEquals("Credit: 200", VendingListener.returnMsg());
 	} 
 	
 	/**
