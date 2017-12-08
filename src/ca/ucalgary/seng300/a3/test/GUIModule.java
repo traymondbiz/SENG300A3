@@ -105,8 +105,8 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		int coinRackCapacity = 200;
 		int popCanRackCapacity = 10;
 		int receptacleCapacity = 200; 
-		int deliveryChuteCapacity = 5;
-		int coinReturnCapacity = 5;
+		int deliveryChuteCapacity = 20;
+		int coinReturnCapacity = 50;
 		vendingMachine = new VendingMachine(coinKind, selectionButtonCount, coinRackCapacity, popCanRackCapacity, receptacleCapacity, deliveryChuteCapacity, coinReturnCapacity);
 		vendingMachine.loadCoins(10,10,10,10,10);//ESB		
 		
