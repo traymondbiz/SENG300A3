@@ -1,5 +1,27 @@
 package ca.ucalgary.seng300.a3.test;
 
+/**
+ * Software Engineering 300 - Group Assignment 3
+ * GUIModule.java
+ * 
+ * This class is used to test the functionality of the LoggingModule class.
+ * 
+ * Id Input/Output Technology and Solutions (Group 2)
+ * @author Raymond Tran 			(30028473)
+ * @author Hooman Khosravi 			(30044760)
+ * @author Christopher Smith 		(10140988)
+ * @author Mengxi Cheng 			(10151992)
+ * @author Zachary Metz 			(30001506)
+ * @author Abdul Basit 				(30033896)
+ * @author Elodie Boudes			(10171818)
+ * @author Michael De Grood			(10134884)
+ * @author Tae Chyung				(10139101)		
+ * @author Xian-Meng Low			(10127970)			
+ *   
+ * @version	2.0
+ * @since	2.0
+ */
+
 import static org.junit.Assert.*;
 
 import java.util.List;
@@ -14,27 +36,9 @@ import ca.ucalgary.seng300.a3.core.*;
 import ca.ucalgary.seng300.a3.enums.DisplayType;
 import ca.ucalgary.seng300.a3.exceptions.InsufficientFundsException;
 
-/**
- * Software Engineering 300 - Group Assignment 2
- * TransactionModuleTest.java
- * 
- * This class is used to test the functionality of the TransactionModule class.
- * 
- * 87.0% code coverage was achieved in TransactionModule.
- * 
- * Id Input/Output Technology and Solutions (Group 2)
- * @author Raymond Tran 			(30028473)
- * @author Hooman Khosravi 			(30044760)
- * @author Christopher Smith 		(10140988)
- * @author Mengxi Cheng 			(10151992)
- * @author Zachary Metz 			(30001506)
- * @author Abdul Basit 				(30033896)
- *   
- * @version	2.0
- * @since	2.0
- */
+
 public class TransactionModuleTest {
-	private VendingMachine vend;
+	private VendingMachine vendingMachine;
 
 	/**
 	 * A method to prepare a vending machine to the basic specifications outlined by the Client 
@@ -56,7 +60,7 @@ public class TransactionModuleTest {
     	int receptacleCapacity = 200; 
     	int deliveryChuteCapacity = 5;
     	int coinReturnCapacity = 5;
-    	vend = new VendingMachine(coinKind, selectionButtonCount, coinRackCapacity, popCanRackCapacity, receptacleCapacity, deliveryChuteCapacity, coinReturnCapacity);
+    	vendingMachine = new VendingMachine(coinKind, selectionButtonCount, coinRackCapacity, popCanRackCapacity, receptacleCapacity, deliveryChuteCapacity, coinReturnCapacity);
    
     	//Generate pop names
 		List<String> popCanNames = new ArrayList<String>();
@@ -70,7 +74,7 @@ public class TransactionModuleTest {
 		//Add Coke to pop can rack 0
 		PopCan popcan = new PopCan("Coke");
 		try {
-			vend.getPopCanRack(0).acceptPopCan(popcan);
+			vendingMachine.getPopCanRack(0).acceptPopCan(popcan);
 		} catch (CapacityExceededException | DisabledException e) {
 		};
 		
@@ -80,7 +84,7 @@ public class TransactionModuleTest {
 			popCanCosts.add(200);
 		}
 		
-		vend.configure(popCanNames, popCanCosts);
+		vendingMachine.configure(popCanNames, popCanCosts);
 	}
 	
 	/**
@@ -92,7 +96,7 @@ public class TransactionModuleTest {
 	@Test
 	public void testPostPCreditZero() throws InterruptedException, IOException{
 		//Create vending machine
-		VendingManager.initialize(vend);
+		VendingManager.initialize(vendingMachine);
 		VendingManager vm = VendingManager.getInstance();
 		//Add exactly required credits for pop
 		vm.addCredit(200);
@@ -112,7 +116,7 @@ public class TransactionModuleTest {
 	@Test
 	public void testPostPCreditNotZero() throws IOException{
 		//Create vending machine
-		VendingManager.initialize(vend);
+		VendingManager.initialize(vendingMachine);
 		VendingManager vm = VendingManager.getInstance();
 		//Add more than needed credits for pop
 		vm.addCredit(250);
@@ -130,7 +134,7 @@ public class TransactionModuleTest {
 	@Test
 	public void testInsufficentFundsException() throws IOException{
 		//Create vending machine
-		VendingManager.initialize(vend);
+		VendingManager.initialize(vendingMachine);
 		VendingManager vm = VendingManager.getInstance();
 		//Add too few credits for purchase
 		vm.addCredit(50);
@@ -147,6 +151,6 @@ public class TransactionModuleTest {
 	 */	
 	@After
 	public void tearDown() {
-		vend = null; 
+		vendingMachine = null; 
 	} 
 }

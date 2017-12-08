@@ -51,8 +51,8 @@ import ca.ucalgary.seng300.a3.exceptions.InsufficientFundsException;
  * @since	2.0
  */
 public class TechTest implements PopCanRackListener, DisplayListener, IndicatorLightListener, LockListener{
-	private VendingMachine vend;
-	private VendingManager vm;
+	private VendingMachine vendingMachine;
+	private VendingManager mgr;
 	
 	/**
 	 * A method to prepare a vending machine to the basic specifications outlined by the Client 
@@ -81,20 +81,20 @@ public class TechTest implements PopCanRackListener, DisplayListener, IndicatorL
 		int receptacleCapacity = 200; 
 		int deliveryChuteCapacity = 5;
 		int coinReturnCapacity = 5;
-		vend = new VendingMachine(coinKind, selectionButtonCount, coinRackCapacity, popCanRackCapacity, receptacleCapacity, deliveryChuteCapacity, coinReturnCapacity);
-		VendingManager.initialize(vend);
-		vm = VendingManager.getInstance();
+		vendingMachine = new VendingMachine(coinKind, selectionButtonCount, coinRackCapacity, popCanRackCapacity, receptacleCapacity, deliveryChuteCapacity, coinReturnCapacity);
+		VendingManager.initialize(vendingMachine);
+		mgr = VendingManager.getInstance();
 		
 		//Register the GUI as a listener to the popCanRack
 		for(int i = 0; i < selectionButtonCount; i++)
 		{
-			vend.getPopCanRack(i).register(this);
+			vendingMachine.getPopCanRack(i).register(this);
 		}
-		vend.getDisplay().register(this);
-		vend.getExactChangeLight().register(this);
-		vend.getOutOfOrderLight().register(this);
-		vend.getLock().register(this);
-		vend.getConfigurationPanel().getDisplay().register(this);
+		vendingMachine.getDisplay().register(this);
+		vendingMachine.getExactChangeLight().register(this);
+		vendingMachine.getOutOfOrderLight().register(this);
+		vendingMachine.getLock().register(this);
+		vendingMachine.getConfigurationPanel().getDisplay().register(this);
 
 		List<String> popCanNames = new ArrayList<String>();
 		popCanNames.add("Lime Zilla");
@@ -110,12 +110,12 @@ public class TechTest implements PopCanRackListener, DisplayListener, IndicatorL
 		popCanCosts.add(300);
 		popCanCosts.add(225);
 		popCanCosts.add(554);
-		vend.configure(popCanNames, popCanCosts);
+		vendingMachine.configure(popCanNames, popCanCosts);
 		
 		// Stock Vending Machine: 5 Lime Zillas
 		try {
 			for(int i = 0; i < 5; i++) {
-				vend.getPopCanRack(0).acceptPopCan(limeZilla);
+				vendingMachine.getPopCanRack(0).acceptPopCan(limeZilla);
 			}
 		} 
 		catch (CapacityExceededException | DisabledException e) {
@@ -124,7 +124,7 @@ public class TechTest implements PopCanRackListener, DisplayListener, IndicatorL
 		// Stock Vending Machine: 5 Fissure Drinks
 		try {
 			for(int i = 0; i < 5; i++) {
-				vend.getPopCanRack(1).acceptPopCan(fissure);
+				vendingMachine.getPopCanRack(1).acceptPopCan(fissure);
 			}
 		} 
 		catch (CapacityExceededException | DisabledException e) {
@@ -133,7 +133,7 @@ public class TechTest implements PopCanRackListener, DisplayListener, IndicatorL
 		// Stock Vending Machine: 5 Himalayan Rains
 		try {
 			for(int i = 0; i < 5; i++) {
-				vend.getPopCanRack(2).acceptPopCan(himalayanRain);
+				vendingMachine.getPopCanRack(2).acceptPopCan(himalayanRain);
 			}
 		} 
 		catch (CapacityExceededException | DisabledException e) {
@@ -142,7 +142,7 @@ public class TechTest implements PopCanRackListener, DisplayListener, IndicatorL
 		// Stock Vending Machine: 5 Dr. Walkers
 		try {
 			for(int i = 0; i < 5; i++) {
-				vend.getPopCanRack(3).acceptPopCan(drWalker);
+				vendingMachine.getPopCanRack(3).acceptPopCan(drWalker);
 			}
 		} 
 		catch (CapacityExceededException | DisabledException e) {
@@ -161,15 +161,15 @@ public class TechTest implements PopCanRackListener, DisplayListener, IndicatorL
 	 */
 	@Test
 	public void testBuyAfterPriceChange() throws InsufficientFundsException, EmptyException, DisabledException, CapacityExceededException, IOException {
-		vm.pressConfigButton(1);
-		vm.pressedConfigEnterButton();
-		vm.pressConfigButton(1);
-		vm.pressConfigButton(0);
-		vm.pressConfigButton(0);
-		vm.pressedConfigEnterButton();
-		vm.addCredit(100);
-		vm.buy(1);
-		assertEquals(4, vend.getPopCanRack(1).size());
+		mgr.pressConfigButton(1);
+		mgr.pressedConfigEnterButton();
+		mgr.pressConfigButton(1);
+		mgr.pressConfigButton(0);
+		mgr.pressConfigButton(0);
+		mgr.pressedConfigEnterButton();
+		mgr.addCredit(100);
+		mgr.buy(1);
+		assertEquals(4, vendingMachine.getPopCanRack(1).size());
 	}
 
 	/**
@@ -177,22 +177,22 @@ public class TechTest implements PopCanRackListener, DisplayListener, IndicatorL
 	 */
 	@Test
 	public void testChangeMultiplePrices() {
-		vm.pressConfigButton(0);
-		vm.pressedConfigEnterButton();
-		vm.pressConfigButton(1);
-		vm.pressConfigButton(0);
-		vm.pressConfigButton(0);
-		vm.pressedConfigEnterButton();
-		vm.pressConfigButton(1);
-		vm.pressedConfigEnterButton();
-		vm.pressConfigButton(2);
-		vm.pressConfigButton(0);
-		vm.pressConfigButton(0);
-		vm.pressedConfigEnterButton();
-		assertEquals(100, vend.getPopKindCost(0));
-		assertEquals(200, vend.getPopKindCost(1));
-		assertEquals(225, vend.getPopKindCost(2));
-		assertEquals(554, vend.getPopKindCost(3));
+		mgr.pressConfigButton(0);
+		mgr.pressedConfigEnterButton();
+		mgr.pressConfigButton(1);
+		mgr.pressConfigButton(0);
+		mgr.pressConfigButton(0);
+		mgr.pressedConfigEnterButton();
+		mgr.pressConfigButton(1);
+		mgr.pressedConfigEnterButton();
+		mgr.pressConfigButton(2);
+		mgr.pressConfigButton(0);
+		mgr.pressConfigButton(0);
+		mgr.pressedConfigEnterButton();
+		assertEquals(100, vendingMachine.getPopKindCost(0));
+		assertEquals(200, vendingMachine.getPopKindCost(1));
+		assertEquals(225, vendingMachine.getPopKindCost(2));
+		assertEquals(554, vendingMachine.getPopKindCost(3));
 	}
 	
 	/**
@@ -206,11 +206,11 @@ public class TechTest implements PopCanRackListener, DisplayListener, IndicatorL
 	 */
 	@Test
 	public void testLock() throws IOException, InsufficientFundsException, EmptyException, DisabledException, CapacityExceededException {
-		vend.getLock().lock();
-		vend.getLock().unlock();
-		vm.addCredit(300);
-		vm.buy(1);
-		assertEquals(4, vend.getPopCanRack(1).size());
+		vendingMachine.getLock().unlock();
+		vendingMachine.getLock().lock();
+		mgr.addCredit(300);
+		mgr.buy(1);
+		assertEquals(4, vendingMachine.getPopCanRack(1).size());
 	}
 	
 	/**
@@ -218,16 +218,16 @@ public class TechTest implements PopCanRackListener, DisplayListener, IndicatorL
 	 */
 	@Test
 	public void testConfigDisplay() {
-		vm.pressConfigButton(2);
+		mgr.pressConfigButton(2);
 		assertEquals("Pop Slot: 2", VendingListener.returnMsg(DisplayType.BACK_PANEL_DISPKAY));
-		vm.pressedConfigEnterButton();
+		mgr.pressedConfigEnterButton();
 		assertEquals("New Price: ", VendingListener.returnMsg(DisplayType.BACK_PANEL_DISPKAY));
-		vm.pressConfigButton(1);
-		vm.pressConfigButton(0);
-		vm.pressConfigButton(0);
+		mgr.pressConfigButton(1);
+		mgr.pressConfigButton(0);
+		mgr.pressConfigButton(0);
 		assertEquals("New Price: 100", VendingListener.returnMsg(DisplayType.BACK_PANEL_DISPKAY));
-		vm.pressedConfigEnterButton();
-		assertEquals(100, vend.getPopKindCost(2));
+		mgr.pressedConfigEnterButton();
+		assertEquals(100, vendingMachine.getPopKindCost(2));
 		assertEquals("Pop Slot: ", VendingListener.returnMsg(DisplayType.BACK_PANEL_DISPKAY));
 	}
 
@@ -236,8 +236,8 @@ public class TechTest implements PopCanRackListener, DisplayListener, IndicatorL
 	 */	
 	@After
 	public void tearDown(){
-		vend = null;
-		vm = null;
+		vendingMachine = null;
+		mgr = null;
 	}
 
 	// Unused functions

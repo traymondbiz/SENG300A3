@@ -1,135 +1,171 @@
 package ca.ucalgary.seng300.a3.configuration;
 
+/**
+ * Software Engineering 300 - Group Assignment 3
+ * ConfigurationAlpha.java
+ * 
+ * This class is the master of the configuration module.
+ * 
+ * Id Input/Output Technology and Solutions (Group 2)
+ * @author Raymond Tran 			(30028473)
+ * @author Hooman Khosravi 			(30044760)
+ * @author Christopher Smith 		(10140988)
+ * @author Mengxi Cheng 			(10151992)
+ * @author Zachary Metz 			(30001506)
+ * @author Abdul Basit 				(30033896)
+ * @author Elodie Boudes			(10171818)
+ * @author Michael De Grood			(10134884)
+ * @author Tae Chyung				(10139101)		
+ * @author Xian-Meng Low			(10127970)			
+ *   
+ * @version	2.0
+ * @since	2.0
+ */
 
+import ca.ucalgary.seng300.a3.core.VendingManager;
 import ca.ucalgary.seng300.a3.enums.OutputDataType;
+import ca.ucalgary.seng300.a3.enums.OutputMethod;
 
-public class ConfigurationModule{
-	//
-	private static ConfigurationModule cm;
-	private static ConfigurationAlpha vmgr;
+
+public class ConfigurationModule {
+private static VendingManager mgr;
 	
-	private static char [] numericValue = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
-	private static String enteredKey = "";
-	private static boolean priceChangeMode = false;
-	private static int slotNumber;
-	private static int newPrice;
 
-	/**
-	 * Private constructor to prevent additional creations. (Singleton)
-	 */
-	private ConfigurationModule() {}
+	private static ConfigurationModule configurationModule;
+
+	
+	private static TechnicianModule technicianModule;
+	
+	
 	
 	/**
 	 * Forces the existing singleton instance to be replaced.
 	 * Called by VendingManager during its instantiation.
 	 * 
-	 * @param mgr	The VendingManager assigning itself this class.
+	 * @param manager	The VendingManager assigning itself this class.
 	 */
-	public static void initialize(ConfigurationAlpha mgr) {
-		if (mgr != null) {
-			vmgr = mgr;
-			cm = new ConfigurationModule();
-		}
+	public static void initialize(VendingManager host){
+		configurationModule = new ConfigurationModule(host);
+		
+		
 	}
 	
-	public static ConfigurationModule getInstance() {
-		return cm;
-	}
-	
-	public boolean getMode()
-	{
-		return priceChangeMode;
-	}
-	
-	public int getNumberOfConfigButtons() {
-		return numericValue.length;
-	}
-	
-	/*Gets the index of the button that was pushed and adds a char value from buttonValue[index] to enteredKey
-	 * Depending on the mode, the panel displays to the user what mode, slot choosing mode or price change mode, they are in.
-	 * Also shows what values they entered.
+	/**
+	 * Assigns mgr.java a (the) manager.
 	 * 
-	 * @param index		The index of the button pushed
+	 * @param host	The VendingManager to call upon for hardware interactions.
 	 */
+	private  ConfigurationModule(VendingManager host){		
+		
+		
+		mgr = host;
+		
+		
+		TechnicianModule.initialize(this);
+		
+		technicianModule = TechnicianModule.getInstance();
+		
+		
+	}
+	
+	
+	public static ConfigurationModule getInstance(){
+		return configurationModule;
+	}
+	
+	public void setStartingState() {
+		
+		setStartingOutputDistribution();
+		setStartingMessages();
+		
+		
+		
+	}
+	public void setStartingMessages() {
+		
+		mgr.addMessage("Hi there!", OutputDataType.WELCOME_MESSAGE_TEXT  ,5000);
+		mgr.addMessage("", OutputDataType.WELCOME_MESSAGE_TEXT  ,10000);
+		
+		
+	}
+	public void setStartingOutputDistribution() {
+		mgr.setOutputMap(OutputDataType.CREDIT_INFO, OutputMethod.DISPLAY, true);
+		
+		mgr.setOutputMap(OutputDataType.WELCOME_MESSAGE_TEXT, OutputMethod.LOOPING_MESSAGE, true);
+		
+		mgr.setOutputMap(OutputDataType.BUTTON_PRESSED, OutputMethod.TEXT_LOG, true);
+		mgr.setOutputMap(OutputDataType.EXCEPTION_HANDLING, OutputMethod.TEXT_LOG, true);
+		mgr.setOutputMap(OutputDataType.VALID_COIN_INSERTED, OutputMethod.TEXT_LOG, true);
+		mgr.setOutputMap(OutputDataType.COIN_REFUNDED, OutputMethod.TEXT_LOG, true);
+		mgr.setOutputMap(OutputDataType.CREDIT_INFO, OutputMethod.TEXT_LOG, true);
+		
+		mgr.setOutputMap(OutputDataType.CONFIG_PANEL_MESSAGE, OutputMethod.CONFIG_PANEL_DISPLAY, true);
+		
+	}
+	
+	public void addMessage(String str, OutputDataType dataType, int time) {
+
+		mgr.addMessage( str, dataType, time);
+
+		
+		
+	}
+
+	public void changePopPrice(int slotNumber, int newPrice) {
+		mgr.changePopPrice(slotNumber, newPrice);
+		
+	}
+
+	public boolean checkPopRackExist(int slotNumber) {
+
+
+		return mgr.checkPopRackExist(slotNumber);
+		
+	}
+
+	public void updateExactChangeLightState() {
+		technicianModule.updateExactChangeLight();
+		
+	}
+
+	public int getNumberOfConfigButtons() {
+
+
+		return technicianModule.getNumberOfConfigButtons();
+	}
+
+	public boolean getMode() {
+
+
+		return technicianModule.getMode();
+	}
+
+	public void startConfigPanel() {
+
+
+		technicianModule.startConfigPanel();
+	}
+
+	public void clearConfigPanel() {
+
+
+		technicianModule.clearConfigPanel();
+	}
+
 	public void enterChar(int index) {
-		enteredKey += numericValue[index];
-		if(!priceChangeMode) {
-			vmgr.addMessage("Pop Slot: " + enteredKey, OutputDataType.CONFIG_PANEL_MESSAGE, 0);
-		}else {
-			vmgr.addMessage("New Price: " + enteredKey, OutputDataType.CONFIG_PANEL_MESSAGE, 0);
-		}
+		technicianModule.enterChar(index);
+		
 	}
-	
-	/*When enter is pressed, if Configuration Panel is still in slot selection mode, gets the slot number from enteredKey and goes to price change mode.
-	 * If in price change mode, gets the new price from enteredKey and changes the price of the previously entered pop slot.
-	 * Unless, enteredKey is just 0, enteredKey always filters out it's leftmost 0's.
-	 * If user entered an invalid entry, reset the panel state and start at slot selection mode.
-	 */
-	public void pressedEnter() throws InterruptedException {
-		if(priceChangeMode) {
-			try {
-				enteredKey.replaceFirst("^0+(?!$)", "");
-				newPrice = Integer.parseInt(enteredKey);
-				enteredKey = "";
-				vmgr.changePopPrice(slotNumber, newPrice);
-				newPrice = 0;
-				priceChangeMode = false;
-				//ca.addMessage("Pop Slot: ");
-				vmgr.addMessage("Pop Slot: ", OutputDataType.CONFIG_PANEL_MESSAGE, 0);
-			}catch (NumberFormatException e) {
-				//ca.addMessage("Invalid entry. Returning to pop slot selection");
-				vmgr.addMessage("Invalid entry. Returning to pop slot selection", OutputDataType.CONFIG_PANEL_MESSAGE, 0);
-				Thread.sleep(5000);
-				//ca.addMessage("Pop Slot: ");
-				vmgr.addMessage("Pop Slot: ", OutputDataType.CONFIG_PANEL_MESSAGE, 0);
-				newPrice = 0;
-				priceChangeMode = false;
-				enteredKey = "";
-			}
-		}else {
-			try {
-				enteredKey.replaceFirst("^0+(?!$)", "");
-				slotNumber = Integer.parseInt(enteredKey);
-				if (vmgr.checkPopRackExist(slotNumber)) {
-					priceChangeMode = true;
-					vmgr.addMessage("New Price: ", OutputDataType.CONFIG_PANEL_MESSAGE, 0);
-				}else {
-					vmgr.addMessage("No such slot exists. Returning to pop slot selection", OutputDataType.CONFIG_PANEL_MESSAGE, 0);
-					Thread.sleep(5000);
-					vmgr.addMessage("Pop Slot: ", OutputDataType.CONFIG_PANEL_MESSAGE, 0);
-				}
-				enteredKey = "";
-			}catch (NumberFormatException e) {
-			//	ca.addMessage("Invalid entry. Returning to pop slot selection");
-				
-				
-				Thread.sleep(5000);
-				vmgr.addMessage("Pop Slot: ", OutputDataType.CONFIG_PANEL_MESSAGE, 0);
-				enteredKey = "";
-			}
+
+	public void pressedEnter() {
+		try {
+			technicianModule.pressedEnter();
+		} catch (InterruptedException e) {
+
+
+			e.printStackTrace();
 		}
-	}
-	
-	//New code by Christopher
-	//When the vending machine is unlocked, this is called to create the first display menu.
-	public void startConfigPanel(){
-		vmgr.addMessage("Pop Slot: ", OutputDataType.CONFIG_PANEL_MESSAGE, 0);
-		}
-	
-	/*When the vending machine is locked, it resets all the variables to empty and
-	 * resets to selection menu back to pop select.
-	 */
-	public void clearConfigPanel(){
-		enteredKey = "";
-		priceChangeMode = false;
-		vmgr.addMessage("", OutputDataType.CONFIG_PANEL_MESSAGE, 0);
-		slotNumber = -1;
-		newPrice = 0;
-		}
-		//End of new code (Chris)
-	
-	public void updateExactChangeLight() {
-		vmgr.updateExactChangeLightState();
+		
 	}
 	
 	

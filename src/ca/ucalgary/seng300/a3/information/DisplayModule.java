@@ -5,12 +5,13 @@ import java.util.Vector;
 import ca.ucalgary.seng300.a3.information.DisplayModule.TimeMessage;
 
 /**
- * Software Engineering 300 - Group Assignment 2
+ * Software Engineering 300 - Group Assignment 3
  * DisplayModule.java
  * 
  * Creates a thread that infinitely alternates display message until interrupt
  * is received. Interrupt is triggered when at least one valid coin is inserted.
  * Once a purchase is made and credits return to zero, the thread 
+ * 
  * 
  * Id Input/Output Technology and Solutions (Group 2)
  * @author Raymond Tran 			(30028473)
@@ -19,7 +20,11 @@ import ca.ucalgary.seng300.a3.information.DisplayModule.TimeMessage;
  * @author Mengxi Cheng 			(10151992)
  * @author Zachary Metz 			(30001506)
  * @author Abdul Basit 				(30033896)
- * 
+ * @author Elodie Boudes			(10171818)
+ * @author Michael De Grood			(10134884)
+ * @author Tae Chyung				(10139101)		
+ * @author Xian-Meng Low			(10127970)			
+ *   
  * @version	2.0
  * @since	2.0
  */
@@ -34,7 +39,7 @@ public class DisplayModule  implements Runnable {
 	/**
 	 * Reference to manager of this module. (Hardware calls, other module calls, etc.)
 	 */
-	private static InfoSector mgr;
+	private static OutputModule mgr;
 	
 	/**
 	 * A list of messages to display/modify.
@@ -49,7 +54,6 @@ public class DisplayModule  implements Runnable {
 	/**
 	 * A small structure containing a time-message pair.
 	 */
-	// should be private.
 	public class TimeMessage {
 		public int time;
 		public String message;
@@ -66,7 +70,7 @@ public class DisplayModule  implements Runnable {
 	 * 
 	 * @param manager	The VendingManager assigning itself this class.
 	 */
-	public static void initialize(InfoSector host){
+	public static void initialize(OutputModule host){
 		displayModule = new DisplayModule(host);
 	}
 	
@@ -75,7 +79,7 @@ public class DisplayModule  implements Runnable {
 	 * 
 	 * @param host	The VendingManager to call upon for hardware interactions.
 	 */
-	private DisplayModule(InfoSector host){		
+	private DisplayModule(OutputModule host){		
 		mgr = host;
 	}
 	

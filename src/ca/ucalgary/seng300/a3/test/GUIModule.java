@@ -1,6 +1,26 @@
 package ca.ucalgary.seng300.a3.test;
 
-
+/**
+ * Software Engineering 300 - Group Assignment 3
+ * GUIModule.java
+ * 
+ * This class generates the GUI to allow Mr Client to interact with the vending machine 
+ * 
+ * Id Input/Output Technology and Solutions (Group 2)
+ * @author Raymond Tran 			(30028473)
+ * @author Hooman Khosravi 			(30044760)
+ * @author Christopher Smith 		(10140988)
+ * @author Mengxi Cheng 			(10151992)
+ * @author Zachary Metz 			(30001506)
+ * @author Abdul Basit 				(30033896)
+ * @author Elodie Boudes			(10171818)
+ * @author Michael De Grood			(10134884)
+ * @author Tae Chyung				(10139101)		
+ * @author Xian-Meng Low			(10127970)			
+ *   
+ * @version	2.0
+ * @since	2.0
+ */
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -21,11 +41,8 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
-import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
-import javax.swing.Timer;
 import javax.swing.border.LineBorder;
 
 import org.lsmr.vending.Coin;
@@ -44,7 +61,6 @@ import org.lsmr.vending.hardware.PopCanRack;
 import org.lsmr.vending.hardware.PopCanRackListener;
 import org.lsmr.vending.hardware.VendingMachine;
 
-import ca.ucalgary.seng300.a3.core.VendingListener;
 import ca.ucalgary.seng300.a3.core.VendingManager;
 
 public class GUIModule implements PopCanRackListener, DisplayListener, IndicatorLightListener, LockListener{
@@ -52,7 +68,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 	private JFrame guiFrame;
 	private JPanel userPanel;
 	private JPanel techPanel;
-	private VendingMachine vm;
+	private VendingMachine vendingMachine;
 	private VendingManager mgr;
 	private boolean vendLocked = true;
 
@@ -91,10 +107,10 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		int receptacleCapacity = 200; 
 		int deliveryChuteCapacity = 5;
 		int coinReturnCapacity = 5;
-		vm = new VendingMachine(coinKind, selectionButtonCount, coinRackCapacity, popCanRackCapacity, receptacleCapacity, deliveryChuteCapacity, coinReturnCapacity);
-		vm.loadCoins(10,10,10,10,10);//ESB		
+		vendingMachine = new VendingMachine(coinKind, selectionButtonCount, coinRackCapacity, popCanRackCapacity, receptacleCapacity, deliveryChuteCapacity, coinReturnCapacity);
+		vendingMachine.loadCoins(10,10,10,10,10);//ESB		
 		
-		VendingManager.initialize(vm);
+		VendingManager.initialize(vendingMachine);
 	  
 		mgr = VendingManager.getInstance();
 
@@ -112,12 +128,12 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		popCanCosts.add(300);
 		popCanCosts.add(225);
 		popCanCosts.add(555);
-		vm.configure(popCanNames, popCanCosts);
+		vendingMachine.configure(popCanNames, popCanCosts);
 		
 		// Stock Vending Machine: 5 Lime Zillas
 		try {
 			for(int i = 0; i < 5; i++) {
-				vm.getPopCanRack(0).acceptPopCan(limeZilla);
+				vendingMachine.getPopCanRack(0).acceptPopCan(limeZilla);
 			}
 		} 
 		catch (CapacityExceededException | DisabledException e) {
@@ -126,7 +142,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		// Stock Vending Machine: 5 Fissure Drinks
 		try {
 			for(int i = 0; i < 5; i++) {
-				vm.getPopCanRack(1).acceptPopCan(fissure);
+				vendingMachine.getPopCanRack(1).acceptPopCan(fissure);
 			}
 		} 
 		catch (CapacityExceededException | DisabledException e) {
@@ -135,7 +151,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		// Stock Vending Machine: 5 Himalayan Rains
 		try {
 			for(int i = 0; i < 5; i++) {
-				vm.getPopCanRack(2).acceptPopCan(himalayanRain);
+				vendingMachine.getPopCanRack(2).acceptPopCan(himalayanRain);
 			}
 		} 
 		catch (CapacityExceededException | DisabledException e) {
@@ -144,7 +160,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		// Stock Vending Machine: 5 Dr. Walkers
 		try {
 			for(int i = 0; i < 5; i++) {
-				vm.getPopCanRack(3).acceptPopCan(drWalker);
+				vendingMachine.getPopCanRack(3).acceptPopCan(drWalker);
 			}
 		} 
 		catch (CapacityExceededException | DisabledException e) {
@@ -174,13 +190,13 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		//Register the GUI as a listener to the popCanRack
 		for(int i = 0; i < selectionButtonCount; i++)
 		{
-			vm.getPopCanRack(i).register(this);
+			vendingMachine.getPopCanRack(i).register(this);
 		}
-		vm.getDisplay().register(this);
-		vm.getExactChangeLight().register(this);
-		vm.getOutOfOrderLight().register(this);
-		vm.getLock().register(this);
-		vm.getConfigurationPanel().getDisplay().register(this);
+		vendingMachine.getDisplay().register(this);
+		vendingMachine.getExactChangeLight().register(this);
+		vendingMachine.getOutOfOrderLight().register(this);
+		vendingMachine.getLock().register(this);
+		vendingMachine.getConfigurationPanel().getDisplay().register(this);
 		
 		//Component 0
 		JLabel displayLabel = new JLabel("Hi There!");
@@ -239,7 +255,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		limeZillaButton.setIcon(new ImageIcon(GUIModule.class.getResource("/ca/ucalgary/seng300/a3/test/guiresources/sodaLime.png")));
 		limeZillaButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				vm.getSelectionButton(0).press();
+				vendingMachine.getSelectionButton(0).press();
 				int[] returnList = mgr.getCoinCount(); 
 				for (int i =0; i<5; i++){
 					System.out.println(returnList[i]);
@@ -259,7 +275,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		fissureButton.setBorderPainted(false);
 		fissureButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				vm.getSelectionButton(1).press();
+				vendingMachine.getSelectionButton(1).press();
 			}
 		});
 		fissureButton.setBounds(250, 150, 150, 75);
@@ -274,7 +290,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		himalayanRainButton.setBorderPainted(false);
 		himalayanRainButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				vm.getSelectionButton(2).press();
+				vendingMachine.getSelectionButton(2).press();
 			}
 		});
 		himalayanRainButton.setBounds(75, 250, 150, 75);
@@ -289,7 +305,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		drWalkerButton.setBorderPainted(false);
 		drWalkerButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				vm.getSelectionButton(3).press();
+				vendingMachine.getSelectionButton(3).press();
 			}
 		});
 		drWalkerButton.setBounds(250, 250, 150, 75);
@@ -306,7 +322,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		toonieButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					vm.getCoinSlot().addCoin(toonie);
+					vendingMachine.getCoinSlot().addCoin(toonie);
 				}
 				catch (DisabledException e1) {
 				}
@@ -326,7 +342,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		loonieButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					vm.getCoinSlot().addCoin(loonie);
+					vendingMachine.getCoinSlot().addCoin(loonie);
 				}
 				catch (DisabledException e1) {
 				}
@@ -346,7 +362,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		quarterButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					vm.getCoinSlot().addCoin(quarter);
+					vendingMachine.getCoinSlot().addCoin(quarter);
 				}
 				catch (DisabledException e1) {
 				}
@@ -366,7 +382,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		dimeButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					vm.getCoinSlot().addCoin(dime);
+					vendingMachine.getCoinSlot().addCoin(dime);
 				}
 				catch (DisabledException e1) {
 				}
@@ -386,7 +402,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		nickelButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					vm.getCoinSlot().addCoin(nickel);
+					vendingMachine.getCoinSlot().addCoin(nickel);
 				}
 				catch (DisabledException e1) {
 				}
@@ -406,7 +422,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		invalidButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					vm.getCoinSlot().addCoin(invalidCoin);
+					vendingMachine.getCoinSlot().addCoin(invalidCoin);
 				}
 				catch (DisabledException e1) {
 				}
@@ -636,12 +652,12 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 			public void actionPerformed(ActionEvent arg0) {
 				if(vendLocked)
 				{
-					vm.getLock().unlock();
+					vendingMachine.getLock().unlock();
 					vendLocked = false;
 				}
 				else
 				{
-					vm.getLock().lock();
+					vendingMachine.getLock().lock();
 					vendLocked = true;
 				}
 			}
@@ -671,8 +687,8 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		coinTechAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				int index = coinTechPick.getSelectedIndex();
-				int coins = vm.getCoinKindForCoinRack(index);
-				vm.getCoinRack(index).load(new Coin(coins));
+				int coins = vendingMachine.getCoinKindForCoinRack(index);
+				vendingMachine.getCoinRack(index).load(new Coin(coins));
 			}
 		});
 		coinTechAdd.setBounds(575, 188, 95, 45);
@@ -684,7 +700,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		coinTechRemove.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				int index = coinTechPick.getSelectedIndex();
-				vm.getCoinRack(index).unload();
+				vendingMachine.getCoinRack(index).unload();
 			}
 		});
 		coinTechRemove.setBounds(680, 188, 95, 45);
@@ -704,7 +720,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		popTechAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				int index = popTechPick.getSelectedIndex();
-				vm.getPopCanRack(index).load(new PopCan((String)coinTechPick.getSelectedItem()));
+				vendingMachine.getPopCanRack(index).load(new PopCan((String)coinTechPick.getSelectedItem()));
 			}
 		});
 		popTechAdd.setBounds(575, 244, 95, 45);
@@ -716,7 +732,7 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		popTechRemove.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				int index = popTechPick.getSelectedIndex();
-				vm.getPopCanRack(index).unload();
+				vendingMachine.getPopCanRack(index).unload();
 			}
 		});
 		popTechRemove.setBounds(680, 244, 95, 45);
@@ -733,20 +749,15 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 
 	
 	
+
 	
-	// UNUSED FUNCTIONS
-	public void popCanAdded(PopCanRack popCanRack, PopCan popCan) {}
-	public void popCansFull(PopCanRack popCanRack) {}
-	public void popCansLoaded(PopCanRack rack, PopCan... popCans) {}
-	public void popCansUnloaded(PopCanRack rack, PopCan... popCans) {}
-	public void enabled(AbstractHardware<? extends AbstractHardwareListener> hardware) {}
-	public void disabled(AbstractHardware<? extends AbstractHardwareListener> hardware) {}
-	
-	
+	/**
+	 * Disabled the buttons corresponding to a specific rack when it is out of pop 
+	 */
 	public void popCansEmpty(PopCanRack popCanRack) {
-		for(int i = 0; i < vm.getNumberOfPopCanRacks(); i++)
+		for(int i = 0; i < vendingMachine.getNumberOfPopCanRacks(); i++)
 		{
-			if(popCanRack == vm.getPopCanRack(i))
+			if(popCanRack == vendingMachine.getPopCanRack(i))
 			{
 				((JButton) userPanel.getComponent(i + 4)).setEnabled(false);
 				break;
@@ -754,15 +765,21 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		}
 	}
 	
-	// Listener function that is called when pop is dispensed
+
+	/**
+	 * Listener function that is called when pop is dispensed
+	 */
 	public void popCanRemoved(PopCanRack popCanRack, PopCan popCan) {
 		((JLabel) userPanel.getComponent(14)).setText("[Dispensed]: " + popCan.getName());
 	}
 
+	/**
+	 * 
+	 */
 	public void locked(Lock lock) {
 		for(int i = 4; i < 8; i++)
 		{
-			if(vm.getPopCanRack(i-4).size() > 0)
+			if(vendingMachine.getPopCanRack(i-4).size() > 0)
 				((JButton) userPanel.getComponent(i)).setEnabled(true);
 		}
 		for(int i = 8; i < 14; i++)
@@ -788,6 +805,9 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 		((JComboBox) techPanel.getComponent(1)).setEnabled(false);		
 	}
 
+	/**
+	 * 
+	 */
 	public void unlocked(Lock lock) {
 		for(int i = 4; i < 14; i++)
 		{
@@ -813,21 +833,21 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 	}
 
 	public void activated(IndicatorLight light) {
-		if(light == vm.getExactChangeLight())
+		if(light == vendingMachine.getExactChangeLight())
 			((JLabel) userPanel.getComponent(2)).setEnabled(true);
 		else
 			((JLabel) userPanel.getComponent(1)).setEnabled(true);		
 	}
 
 	public void deactivated(IndicatorLight light) {
-		if(light == vm.getExactChangeLight())
+		if(light == vendingMachine.getExactChangeLight())
 			((JLabel) userPanel.getComponent(2)).setEnabled(false);
 		else
 			((JLabel) userPanel.getComponent(1)).setEnabled(false);
 	}
 
 	public void messageChange(Display display, String oldMessage, String newMessage) {
-		if(display == vm.getDisplay()) {
+		if(display == vendingMachine.getDisplay()) {
 			((JLabel) userPanel.getComponent(0)).setText(newMessage);
 		}
 		else {
@@ -836,9 +856,18 @@ public class GUIModule implements PopCanRackListener, DisplayListener, Indicator
 			{
 				for(int i = 0 ; i < 4; i++)
 				{
-					((JLabel) userPanel.getComponent(i + 15)).setText(String.valueOf(vm.getPopKindCost(i)));
+					((JLabel) userPanel.getComponent(i + 15)).setText(String.valueOf(vendingMachine.getPopKindCost(i)));
 				}
 			}
 		}
 	}
+	
+	
+	// UNUSED FUNCTIONS
+	public void popCanAdded(PopCanRack popCanRack, PopCan popCan) {}
+	public void popCansFull(PopCanRack popCanRack) {}
+	public void popCansLoaded(PopCanRack rack, PopCan... popCans) {}
+	public void popCansUnloaded(PopCanRack rack, PopCan... popCans) {}
+	public void enabled(AbstractHardware<? extends AbstractHardwareListener> hardware) {}
+	public void disabled(AbstractHardware<? extends AbstractHardwareListener> hardware) {}
 }
