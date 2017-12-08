@@ -1,1088 +1,202 @@
-Tue Dec 05 04:40:12 MST 2017:User inserted: 200 coin to coin slot
-Tue Dec 05 04:40:12 MST 2017:User inserted: 100 coin to coin slot
-Tue Dec 05 04:40:13 MST 2017:Fissure button pressed by user with: 0
-Tue Dec 05 04:40:14 MST 2017:User inserted: 200 coin to coin slot
-Tue Dec 05 04:40:15 MST 2017:User inserted: 100 coin to coin slot
-Tue Dec 05 04:40:15 MST 2017:Fissure button pressed by user with: 0
-Tue Dec 05 04:40:16 MST 2017:User inserted: 200 coin to coin slot
-Tue Dec 05 04:40:16 MST 2017:User inserted: 100 coin to coin slot
-Tue Dec 05 04:40:17 MST 2017:Fissure button pressed by user with: 0
-Tue Dec 05 04:40:17 MST 2017:User inserted: 200 coin to coin slot
-Tue Dec 05 04:40:17 MST 2017:User inserted: 100 coin to coin slot
-Tue Dec 05 04:40:18 MST 2017:Fissure button pressed by user with: 0
-Tue Dec 05 04:40:18 MST 2017:User inserted: 200 coin to coin slot
-Tue Dec 05 04:40:19 MST 2017:User inserted: 100 coin to coin slot
-Tue Dec 05 04:40:19 MST 2017:Fissure button pressed by user with: 0
-Tue Dec 05 04:40:21 MST 2017:User inserted: 200 coin to coin slot
-Tue Dec 05 04:40:22 MST 2017:User inserted: 200 coin to coin slot
-Tue Dec 05 04:40:22 MST 2017:User inserted: 100 coin to coin slot
-Tue Dec 05 04:40:23 MST 2017:User inserted: 25 coin to coin slot
-Tue Dec 05 04:40:23 MST 2017:User inserted: 25 coin to coin slot
-Tue Dec 05 04:40:24 MST 2017:User inserted: 5 coin to coin slot
-Tue Dec 05 04:40:24 MST 2017:User Could not purchase Dr. Walker because the delivery chute is full of change
-Tue Dec 05 04:40:29 MST 2017:User Could not purchase Dr. Walker because the delivery chute is full of change
-Tue Dec 05 04:44:27 MST 2017:User inserted: 200 coin to coin slot
-Tue Dec 05 04:44:28 MST 2017:User inserted: 25 coin to coin slot
-Tue Dec 05 04:44:30 MST 2017:User inserted: 5 coin to coin slot
-Tue Dec 05 04:44:31 MST 2017:Himalayan Rain button pressed by user with: 5
-Tue Dec 05 04:45:43 MST 2017:User inserted: 100 coin to coin slot
-Tue Dec 05 04:45:43 MST 2017:User inserted: 25 coin to coin slot
-Tue Dec 05 04:45:45 MST 2017:User inserted: 5 coin to coin slot
-Tue Dec 05 04:45:45 MST 2017:User inserted: 5 coin to coin slot
-Tue Dec 05 04:46:08 MST 2017:Lime Zilla button pressed by user with: 5
-Tue Dec 05 04:46:16 MST 2017:User inserted: 200 coin to coin slot
-Tue Dec 05 04:46:16 MST 2017:User inserted: 100 coin to coin slot
-Tue Dec 05 04:46:17 MST 2017:Fissure button pressed by user with: 0
-Tue Dec 05 04:46:20 MST 2017:User inserted: 100 coin to coin slot
-Tue Dec 05 04:46:21 MST 2017:User inserted: 25 coin to coin slot
-Tue Dec 05 04:46:21 MST 2017:User inserted: 5 coin to coin slot
-Tue Dec 05 04:46:22 MST 2017:User inserted: 5 coin to coin slot
-Tue Dec 05 04:46:22 MST 2017:Lime Zilla button pressed by user with: 0
-Tue Dec 05 04:46:23 MST 2017:User Could not purchase Lime Zilla. 130 cents missing from credit.
-Tue Dec 05 04:46:34 MST 2017:User inserted: 100 coin to coin slot
-Tue Dec 05 04:46:34 MST 2017:User inserted: 25 coin to coin slot
-Tue Dec 05 04:46:35 MST 2017:User inserted: 5 coin to coin slot
-Tue Dec 05 04:46:35 MST 2017:User inserted: 5 coin to coin slot
-Tue Dec 05 04:46:36 MST 2017:Lime Zilla button pressed by user with: 5
-Tue Dec 05 04:46:37 MST 2017:User inserted: 100 coin to coin slot
-Tue Dec 05 04:46:39 MST 2017:User inserted: 25 coin to coin slot
-Tue Dec 05 04:46:40 MST 2017:User inserted: 5 coin to coin slot
-Tue Dec 05 04:46:41 MST 2017:Lime Zilla button pressed by user with: 0
-Tue Dec 05 04:47:24 MST 2017:User inserted: 100 coin to coin slot
-Tue Dec 05 04:47:24 MST 2017:User inserted: 25 coin to coin slot
-Tue Dec 05 04:47:25 MST 2017:User inserted: 5 coin to coin slot
-Tue Dec 05 04:47:26 MST 2017:User inserted: 5 coin to coin slot
-Tue Dec 05 04:47:26 MST 2017:Lime Zilla button pressed by user with: 0
-Tue Dec 05 04:47:29 MST 2017:User inserted: 100 coin to coin slot
-Tue Dec 05 04:47:29 MST 2017:User inserted: 25 coin to coin slot
-Tue Dec 05 04:47:29 MST 2017:User inserted: 5 coin to coin slot
-Tue Dec 05 04:47:30 MST 2017:User inserted: 5 coin to coin slot
-Tue Dec 05 04:47:30 MST 2017:Lime Zilla button pressed by user with: 0
-Tue Dec 05 04:47:36 MST 2017:User inserted: 100 coin to coin slot
-Tue Dec 05 04:47:36 MST 2017:User inserted: 25 coin to coin slot
-Tue Dec 05 04:47:38 MST 2017:User inserted: 5 coin to coin slot
-Tue Dec 05 04:47:39 MST 2017:User inserted: 5 coin to coin slot
-Tue Dec 05 04:47:39 MST 2017:Lime Zilla button pressed by user with: 5
-Tue Dec 05 04:47:40 MST 2017:User inserted: 100 coin to coin slot
-Tue Dec 05 04:47:41 MST 2017:User inserted: 25 coin to coin slot
-Tue Dec 05 04:47:42 MST 2017:User inserted: 5 coin to coin slot
-Tue Dec 05 04:47:42 MST 2017:Lime Zilla button pressed by user with: 0
-Tue Dec 05 04:48:04 MST 2017:User inserted: 200 coin to coin slot
-Tue Dec 05 04:48:05 MST 2017:User inserted: 100 coin to coin slot
-Tue Dec 05 04:48:07 MST 2017:Fissure button pressed by user with: 0
-Tue Dec 05 04:48:07 MST 2017:User Could not purchase Dr. Walker. 554 cents missing from credit.
-Tue Dec 05 04:48:08 MST 2017:User Could not purchase Himalayan Rain. 225 cents missing from credit.
-Tue Dec 05 04:48:09 MST 2017:User Could not purchase Lime Zilla. 130 cents missing from credit.
-Tue Dec 05 05:29:47 MST 2017: Credit: 200
-Tue Dec 05 05:29:47 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 05:29:47 MST 2017: Credit: 400
-Tue Dec 05 05:29:47 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 05:29:48 MST 2017: Credit: 100
-Tue Dec 05 05:29:48 MST 2017: Fissure button pressed by user with: 100
-Tue Dec 05 05:29:49 MST 2017: Credit: 300
-Tue Dec 05 05:29:49 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 05:29:49 MST 2017: Fissure button pressed by user with: 0
-Tue Dec 05 05:29:52 MST 2017: Credit: 100
-Tue Dec 05 05:29:52 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 05:29:52 MST 2017: Credit: 125
-Tue Dec 05 05:29:52 MST 2017: User inserted: 25 coin to coin slot
-Tue Dec 05 05:29:52 MST 2017: Credit: 130
-Tue Dec 05 05:29:52 MST 2017: User inserted: 5 coin to coin slot
-Tue Dec 05 05:29:53 MST 2017: Lime Zilla button pressed by user with: 0
-Tue Dec 05 05:29:55 MST 2017: Credit: 200
-Tue Dec 05 05:29:55 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 05:29:55 MST 2017: Credit: 400
-Tue Dec 05 05:29:55 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 05:29:56 MST 2017: Credit: 600
-Tue Dec 05 05:29:56 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 05:29:57 MST 2017: Credit: 800
-Tue Dec 05 05:29:57 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 05:29:57 MST 2017: Credit: 1000
-Tue Dec 05 05:29:57 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 05:29:57 MST 2017: Credit: 1200
-Tue Dec 05 05:29:57 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 05:29:57 MST 2017: Credit: 170
-Tue Dec 05 05:29:57 MST 2017: Fissure button pressed by user with: 170
-Tue Dec 05 05:29:57 MST 2017: User Could not purchase Fissure. 130 cents missing from credit.
-Tue Dec 05 05:29:58 MST 2017: User Could not purchase Fissure. 130 cents missing from credit.
-Tue Dec 05 05:29:58 MST 2017: User Could not purchase Fissure. 130 cents missing from credit.
-Tue Dec 05 05:29:58 MST 2017: User Could not purchase Fissure. 130 cents missing from credit.
-Tue Dec 05 05:29:58 MST 2017: User Could not purchase Fissure. 130 cents missing from credit.
-Tue Dec 05 05:29:59 MST 2017: User Could not purchase Fissure. 130 cents missing from credit.
-Tue Dec 05 05:29:59 MST 2017: User Could not purchase Fissure. 130 cents missing from credit.
-Tue Dec 05 05:29:59 MST 2017: User Could not purchase Fissure. 130 cents missing from credit.
-Tue Dec 05 05:29:59 MST 2017: User Could not purchase Fissure. 130 cents missing from credit.
-Tue Dec 05 05:29:59 MST 2017: User Could not purchase Fissure. 130 cents missing from credit.
-Tue Dec 05 05:30:00 MST 2017: Credit: 370
-Tue Dec 05 05:30:00 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 05:30:01 MST 2017: Credit: 70
-Tue Dec 05 05:30:01 MST 2017: Fissure button pressed by user with: 70
-Tue Dec 05 05:30:02 MST 2017: Credit: 270
-Tue Dec 05 05:30:02 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 05:30:03 MST 2017: User Could not purchase Lime Zilla becasue the deivery chute is full of change
-Tue Dec 05 05:30:04 MST 2017: User Could not purchase Lime Zilla becasue the deivery chute is full of change
-Tue Dec 05 05:30:06 MST 2017: Credit: 295
-Tue Dec 05 05:30:06 MST 2017: User inserted: 25 coin to coin slot
-Tue Dec 05 05:30:06 MST 2017: Credit: 300
-Tue Dec 05 05:30:06 MST 2017: User inserted: 5 coin to coin slot
-Tue Dec 05 05:30:07 MST 2017: User Could not purchase Fissure becasue the deivery chute is full of change
-Tue Dec 05 05:30:07 MST 2017: Fissure button pressed by user with: 300
-Tue Dec 05 05:30:08 MST 2017: User Could not purchase Lime Zilla becasue the deivery chute is full of change
-Tue Dec 05 05:30:08 MST 2017: User Could not purchase Lime Zilla becasue the deivery chute is full of change
-Tue Dec 05 05:30:08 MST 2017: Fissure button pressed by user with: 300
-Tue Dec 05 05:30:09 MST 2017: User Could not purchase Dr. Walker. 254 cents missing from credit.
-Tue Dec 05 05:30:09 MST 2017: User Could not purchase Himalayan Rain becasue the deivery chute is full of change
-Tue Dec 05 05:30:09 MST 2017: User Could not purchase Himalayan Rain becasue the deivery chute is full of change
-Tue Dec 05 05:30:10 MST 2017: User Could not purchase Himalayan Rain becasue the deivery chute is full of change
-Tue Dec 05 05:30:10 MST 2017: Lime Zilla button pressed by user with: 300
-Tue Dec 05 05:30:10 MST 2017: User Could not purchase Himalayan Rain becasue the deivery chute is full of change
-Tue Dec 05 05:30:11 MST 2017: Fissure button pressed by user with: 300
-Tue Dec 05 05:30:11 MST 2017: Lime Zilla button pressed by user with: 300
-Tue Dec 05 05:30:11 MST 2017: User Could not purchase Himalayan Rain becasue the deivery chute is full of change
-Tue Dec 05 05:30:11 MST 2017: User Could not purchase Dr. Walker. 254 cents missing from credit.
-Tue Dec 05 05:30:11 MST 2017: Fissure button pressed by user with: 300
-Tue Dec 05 05:30:12 MST 2017: Lime Zilla button pressed by user with: 300
-Tue Dec 05 05:30:12 MST 2017: User Could not purchase Dr. Walker. 254 cents missing from credit.
-Tue Dec 05 05:30:12 MST 2017: Fissure button pressed by user with: 300
-Tue Dec 05 05:30:13 MST 2017: Lime Zilla button pressed by user with: 300
-Tue Dec 05 05:30:13 MST 2017: Lime Zilla button pressed by user with: 300
-Tue Dec 05 05:37:23 MST 2017: Credit: 25
-Tue Dec 05 05:37:23 MST 2017: User inserted: 25 coin to coin slot
-Tue Dec 05 05:37:23 MST 2017: Credit: 50
-Tue Dec 05 05:37:23 MST 2017: User inserted: 25 coin to coin slot
-Tue Dec 05 05:37:23 MST 2017: Credit: 75
-Tue Dec 05 05:37:23 MST 2017: User inserted: 25 coin to coin slot
-Tue Dec 05 05:37:24 MST 2017: Credit: 100
-Tue Dec 05 05:37:24 MST 2017: User inserted: 25 coin to coin slot
-Tue Dec 05 05:37:24 MST 2017: Credit: 125
-Tue Dec 05 05:37:24 MST 2017: User inserted: 25 coin to coin slot
-Tue Dec 05 05:37:24 MST 2017: Credit: 150
-Tue Dec 05 05:37:24 MST 2017: User inserted: 25 coin to coin slot
-Tue Dec 05 05:37:24 MST 2017: Credit: 175
-Tue Dec 05 05:37:24 MST 2017: User inserted: 25 coin to coin slot
-Tue Dec 05 05:37:24 MST 2017: Credit: 200
-Tue Dec 05 05:37:24 MST 2017: User inserted: 25 coin to coin slot
-Tue Dec 05 05:37:24 MST 2017: Credit: 225
-Tue Dec 05 05:37:24 MST 2017: User inserted: 25 coin to coin slot
-Tue Dec 05 05:37:25 MST 2017: Credit: 250
-Tue Dec 05 05:37:25 MST 2017: User inserted: 25 coin to coin slot
-Tue Dec 05 05:37:25 MST 2017: Credit: 275
-Tue Dec 05 05:37:25 MST 2017: User inserted: 25 coin to coin slot
-Tue Dec 05 05:37:25 MST 2017: Credit: 300
-Tue Dec 05 05:37:25 MST 2017: User inserted: 25 coin to coin slot
-Tue Dec 05 05:37:26 MST 2017: Fissure button pressed by user with: 0
-Tue Dec 05 05:45:13 MST 2017: Credit: 200
-Tue Dec 05 05:45:37 MST 2017: this
-Tue Dec 05 06:03:58 MST 2017: Credit: 200
-Tue Dec 05 06:03:58 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:03:59 MST 2017: Credit: 300
-Tue Dec 05 06:03:59 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 06:04:00 MST 2017: Fissure button pressed by user with: 0
-Tue Dec 05 06:04:01 MST 2017: Credit: 200
-Tue Dec 05 06:04:01 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:04:02 MST 2017: Credit: 300
-Tue Dec 05 06:04:02 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 06:04:02 MST 2017: Fissure button pressed by user with: 0
-Tue Dec 05 06:04:03 MST 2017: Credit: 200
-Tue Dec 05 06:04:03 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:04:03 MST 2017: Credit: 300
-Tue Dec 05 06:04:03 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 06:04:03 MST 2017: Fissure button pressed by user with: 0
-Tue Dec 05 06:04:04 MST 2017: Credit: 200
-Tue Dec 05 06:04:04 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:04:04 MST 2017: Credit: 300
-Tue Dec 05 06:04:04 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 06:04:04 MST 2017: Fissure button pressed by user with: 0
-Tue Dec 05 06:04:04 MST 2017: Credit: 200
-Tue Dec 05 06:04:04 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:04:05 MST 2017: Credit: 300
-Tue Dec 05 06:04:05 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 06:04:05 MST 2017: Fissure button pressed by user with: 0
-Tue Dec 05 06:04:05 MST 2017: Credit: 200
-Tue Dec 05 06:04:05 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:04:06 MST 2017: Credit: 300
-Tue Dec 05 06:04:06 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 06:04:06 MST 2017: Fissure button pressed by user with: 300
-Tue Dec 05 06:04:06 MST 2017: Credit: 500
-Tue Dec 05 06:04:06 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:04:07 MST 2017: Credit: 600
-Tue Dec 05 06:04:07 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 06:04:07 MST 2017: Fissure button pressed by user with: 600
-Tue Dec 05 06:04:07 MST 2017: Fissure button pressed by user with: 600
-Tue Dec 05 06:04:08 MST 2017: Fissure button pressed by user with: 600
-Tue Dec 05 06:04:08 MST 2017: Fissure button pressed by user with: 600
-Tue Dec 05 06:04:08 MST 2017: Fissure button pressed by user with: 600
-Tue Dec 05 06:04:08 MST 2017: Fissure button pressed by user with: 600
-Tue Dec 05 06:04:09 MST 2017: User Could not purchase Dr. Walker becasue the deivery chute is full of change
-Tue Dec 05 06:04:10 MST 2017: Fissure button pressed by user with: 600
-Tue Dec 05 06:04:11 MST 2017: User Could not purchase Dr. Walker becasue the deivery chute is full of change
-Tue Dec 05 06:04:11 MST 2017: Fissure button pressed by user with: 600
-Tue Dec 05 06:36:27 MST 2017: Credit: 10
-Tue Dec 05 06:36:27 MST 2017: User inserted: 10 coin to coin slot
-Tue Dec 05 06:36:28 MST 2017: Credit: 15
-Tue Dec 05 06:36:28 MST 2017: User inserted: 5 coin to coin slot
-Tue Dec 05 06:36:29 MST 2017: Credit: 3
-Tue Dec 05 06:36:29 MST 2017: Lime Zilla button pressed by user with: 3
-Tue Dec 05 06:36:30 MST 2017: Credit: 13
-Tue Dec 05 06:36:30 MST 2017: User inserted: 10 coin to coin slot
-Tue Dec 05 06:36:30 MST 2017: Credit: 18
-Tue Dec 05 06:36:30 MST 2017: User inserted: 5 coin to coin slot
-Tue Dec 05 06:36:30 MST 2017: Credit: 1
-Tue Dec 05 06:36:30 MST 2017: Lime Zilla button pressed by user with: 1
-Tue Dec 05 06:36:32 MST 2017: Credit: 201
-Tue Dec 05 06:36:32 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:36:33 MST 2017: Credit: 164
-Tue Dec 05 06:36:33 MST 2017: Lime Zilla button pressed by user with: 164
-Tue Dec 05 06:36:33 MST 2017: Credit: 152
-Tue Dec 05 06:36:33 MST 2017: Lime Zilla button pressed by user with: 152
-Tue Dec 05 06:36:33 MST 2017: Credit: 140
-Tue Dec 05 06:36:33 MST 2017: Lime Zilla button pressed by user with: 140
-Tue Dec 05 06:36:34 MST 2017: Lime Zilla button pressed by user with: 140
-Tue Dec 05 06:36:34 MST 2017: Lime Zilla button pressed by user with: 140
-Tue Dec 05 06:36:34 MST 2017: Lime Zilla button pressed by user with: 140
-Tue Dec 05 06:36:34 MST 2017: Lime Zilla button pressed by user with: 140
-Tue Dec 05 06:36:34 MST 2017: Lime Zilla button pressed by user with: 140
-Tue Dec 05 06:36:35 MST 2017: Lime Zilla button pressed by user with: 140
-Tue Dec 05 06:36:35 MST 2017: Lime Zilla button pressed by user with: 140
-Tue Dec 05 06:36:36 MST 2017: User Could not purchase Fissure. 160 cents missing from credit.
-Tue Dec 05 06:36:36 MST 2017: Lime Zilla button pressed by user with: 140
-Tue Dec 05 06:36:36 MST 2017: User Could not purchase Himalayan Rain. 85 cents missing from credit.
-Tue Dec 05 06:36:37 MST 2017: User Could not purchase Dr. Walker. 414 cents missing from credit.
-Tue Dec 05 06:36:37 MST 2017: User Could not purchase Fissure. 160 cents missing from credit.
-Tue Dec 05 06:36:37 MST 2017: User Could not purchase Himalayan Rain. 85 cents missing from credit.
-Tue Dec 05 06:36:38 MST 2017: User Could not purchase Fissure. 160 cents missing from credit.
-Tue Dec 05 06:36:38 MST 2017: Credit: 340
-Tue Dec 05 06:36:38 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:36:40 MST 2017: User Could not purchase Fissure becasue the deivery chute is full of change
-Tue Dec 05 06:36:47 MST 2017: User Could not purchase Fissure becasue the deivery chute is full of change
-Tue Dec 05 06:36:48 MST 2017: User Could not purchase Himalayan Rain becasue the deivery chute is full of change
-Tue Dec 05 06:36:48 MST 2017: User Could not purchase Dr. Walker. 214 cents missing from credit.
-Tue Dec 05 06:36:48 MST 2017: User Could not purchase Fissure becasue the deivery chute is full of change
-Tue Dec 05 06:36:49 MST 2017: User Could not purchase Himalayan Rain becasue the deivery chute is full of change
-Tue Dec 05 06:36:49 MST 2017: Lime Zilla button pressed by user with: 340
-Tue Dec 05 06:36:49 MST 2017: User Could not purchase Dr. Walker. 214 cents missing from credit.
-Tue Dec 05 06:37:54 MST 2017: Credit: 200
-Tue Dec 05 06:37:54 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:37:55 MST 2017: Credit: 400
-Tue Dec 05 06:37:55 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:37:55 MST 2017: Credit: 600
-Tue Dec 05 06:37:55 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:37:55 MST 2017: Credit: 800
-Tue Dec 05 06:37:55 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:37:55 MST 2017: Credit: 1000
-Tue Dec 05 06:37:55 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:37:55 MST 2017: Credit: 1200
-Tue Dec 05 06:37:55 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:37:55 MST 2017: Credit: 1400
-Tue Dec 05 06:37:55 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:37:56 MST 2017: Credit: 1600
-Tue Dec 05 06:37:56 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:37:56 MST 2017: Credit: 1800
-Tue Dec 05 06:37:56 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:37:56 MST 2017: Credit: 2000
-Tue Dec 05 06:37:56 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:37:56 MST 2017: Credit: 2200
-Tue Dec 05 06:37:56 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:37:56 MST 2017: Credit: 2400
-Tue Dec 05 06:37:56 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:37:56 MST 2017: Credit: 2600
-Tue Dec 05 06:37:56 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:37:57 MST 2017: Credit: 2800
-Tue Dec 05 06:37:57 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:37:57 MST 2017: Credit: 3000
-Tue Dec 05 06:37:57 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:37:57 MST 2017: Credit: 3200
-Tue Dec 05 06:37:57 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:37:57 MST 2017: Credit: 3400
-Tue Dec 05 06:37:57 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:37:57 MST 2017: Credit: 3600
-Tue Dec 05 06:37:57 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:37:58 MST 2017: Credit: 3800
-Tue Dec 05 06:37:58 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:37:58 MST 2017: Credit: 4000
-Tue Dec 05 06:37:58 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:37:58 MST 2017: Credit: 4200
-Tue Dec 05 06:37:58 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:37:58 MST 2017: Credit: 4400
-Tue Dec 05 06:37:58 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:37:58 MST 2017: Credit: 4600
-Tue Dec 05 06:37:58 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:37:58 MST 2017: Credit: 4800
-Tue Dec 05 06:37:58 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:37:59 MST 2017: Credit: 5000
-Tue Dec 05 06:37:59 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:37:59 MST 2017: Credit: 4870
-Tue Dec 05 06:37:59 MST 2017: Lime Zilla button pressed by user with: 4870
-Tue Dec 05 06:38:00 MST 2017: Credit: 140
-Tue Dec 05 06:38:00 MST 2017: Lime Zilla button pressed by user with: 140
-Tue Dec 05 06:38:00 MST 2017: Credit: 10
-Tue Dec 05 06:38:00 MST 2017: Lime Zilla button pressed by user with: 10
-Tue Dec 05 06:38:05 MST 2017: Credit: 210
-Tue Dec 05 06:38:05 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:05 MST 2017: Credit: 410
-Tue Dec 05 06:38:05 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:05 MST 2017: Credit: 610
-Tue Dec 05 06:38:05 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:06 MST 2017: Credit: 810
-Tue Dec 05 06:38:06 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:06 MST 2017: Credit: 1010
-Tue Dec 05 06:38:06 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:06 MST 2017: Credit: 480
-Tue Dec 05 06:38:06 MST 2017: Lime Zilla button pressed by user with: 480
-Tue Dec 05 06:38:06 MST 2017: Credit: 150
-Tue Dec 05 06:38:06 MST 2017: Lime Zilla button pressed by user with: 150
-Tue Dec 05 06:38:07 MST 2017: Lime Zilla button pressed by user with: 150
-Tue Dec 05 06:38:07 MST 2017: Lime Zilla button pressed by user with: 150
-Tue Dec 05 06:38:07 MST 2017: Credit: 350
-Tue Dec 05 06:38:07 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:08 MST 2017: Lime Zilla button pressed by user with: 350
-Tue Dec 05 06:38:08 MST 2017: Lime Zilla button pressed by user with: 350
-Tue Dec 05 06:38:08 MST 2017: Credit: 50
-Tue Dec 05 06:38:08 MST 2017: Fissure button pressed by user with: 50
-Tue Dec 05 06:38:08 MST 2017: User Could not purchase Fissure. 250 cents missing from credit.
-Tue Dec 05 06:38:09 MST 2017: Credit: 250
-Tue Dec 05 06:38:09 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:09 MST 2017: Credit: 450
-Tue Dec 05 06:38:09 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:09 MST 2017: Credit: 650
-Tue Dec 05 06:38:09 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:09 MST 2017: Credit: 850
-Tue Dec 05 06:38:09 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:10 MST 2017: Credit: 150
-Tue Dec 05 06:38:10 MST 2017: Fissure button pressed by user with: 150
-Tue Dec 05 06:38:10 MST 2017: User Could not purchase Fissure. 150 cents missing from credit.
-Tue Dec 05 06:38:10 MST 2017: User Could not purchase Fissure. 150 cents missing from credit.
-Tue Dec 05 06:38:10 MST 2017: Credit: 350
-Tue Dec 05 06:38:10 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:11 MST 2017: Credit: 550
-Tue Dec 05 06:38:11 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:11 MST 2017: Credit: 750
-Tue Dec 05 06:38:11 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:11 MST 2017: Credit: 950
-Tue Dec 05 06:38:11 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:11 MST 2017: Credit: 1150
-Tue Dec 05 06:38:11 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:11 MST 2017: Credit: 50
-Tue Dec 05 06:38:11 MST 2017: Fissure button pressed by user with: 50
-Tue Dec 05 06:38:12 MST 2017: User Could not purchase Fissure. 250 cents missing from credit.
-Tue Dec 05 06:38:12 MST 2017: User Could not purchase Fissure. 250 cents missing from credit.
-Tue Dec 05 06:38:12 MST 2017: Credit: 250
-Tue Dec 05 06:38:12 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:13 MST 2017: User Could not purchase Fissure. 50 cents missing from credit.
-Tue Dec 05 06:38:13 MST 2017: Credit: 450
-Tue Dec 05 06:38:13 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:13 MST 2017: Credit: 150
-Tue Dec 05 06:38:13 MST 2017: Fissure button pressed by user with: 150
-Tue Dec 05 06:38:14 MST 2017: Credit: 350
-Tue Dec 05 06:38:14 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:14 MST 2017: Credit: 50
-Tue Dec 05 06:38:14 MST 2017: Fissure button pressed by user with: 50
-Tue Dec 05 06:38:15 MST 2017: Credit: 250
-Tue Dec 05 06:38:15 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:15 MST 2017: Credit: 450
-Tue Dec 05 06:38:15 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:15 MST 2017: Fissure button pressed by user with: 450
-Tue Dec 05 06:38:16 MST 2017: Credit: 650
-Tue Dec 05 06:38:16 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:17 MST 2017: Credit: 96
-Tue Dec 05 06:38:17 MST 2017: Dr. Walker button pressed by user with: 96
-Tue Dec 05 06:38:17 MST 2017: Credit: 296
-Tue Dec 05 06:38:17 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:18 MST 2017: Credit: 496
-Tue Dec 05 06:38:18 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:18 MST 2017: Credit: 696
-Tue Dec 05 06:38:18 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:18 MST 2017: Credit: 142
-Tue Dec 05 06:38:18 MST 2017: Dr. Walker button pressed by user with: 142
-Tue Dec 05 06:38:18 MST 2017: Credit: 342
-Tue Dec 05 06:38:18 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:19 MST 2017: Credit: 542
-Tue Dec 05 06:38:19 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:19 MST 2017: Credit: 742
-Tue Dec 05 06:38:19 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:19 MST 2017: Credit: 188
-Tue Dec 05 06:38:19 MST 2017: Dr. Walker button pressed by user with: 188
-Tue Dec 05 06:38:20 MST 2017: Credit: 388
-Tue Dec 05 06:38:20 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:20 MST 2017: Credit: 588
-Tue Dec 05 06:38:20 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:20 MST 2017: Credit: 788
-Tue Dec 05 06:38:20 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:20 MST 2017: Credit: 988
-Tue Dec 05 06:38:20 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:20 MST 2017: Credit: 34
-Tue Dec 05 06:38:20 MST 2017: Dr. Walker button pressed by user with: 34
-Tue Dec 05 06:38:21 MST 2017: Credit: 234
-Tue Dec 05 06:38:21 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:21 MST 2017: Credit: 434
-Tue Dec 05 06:38:21 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:21 MST 2017: Credit: 634
-Tue Dec 05 06:38:21 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:21 MST 2017: Credit: 834
-Tue Dec 05 06:38:21 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:22 MST 2017: Credit: 80
-Tue Dec 05 06:38:22 MST 2017: Dr. Walker button pressed by user with: 80
-Tue Dec 05 06:38:22 MST 2017: Credit: 280
-Tue Dec 05 06:38:22 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:22 MST 2017: Credit: 480
-Tue Dec 05 06:38:22 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:22 MST 2017: Credit: 680
-Tue Dec 05 06:38:22 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:23 MST 2017: Credit: 880
-Tue Dec 05 06:38:23 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:23 MST 2017: Dr. Walker button pressed by user with: 880
-Tue Dec 05 06:38:23 MST 2017: Credit: 1080
-Tue Dec 05 06:38:23 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:24 MST 2017: Credit: 1280
-Tue Dec 05 06:38:24 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:24 MST 2017: Credit: 1480
-Tue Dec 05 06:38:24 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:24 MST 2017: Credit: 55
-Tue Dec 05 06:38:24 MST 2017: Himalayan Rain button pressed by user with: 55
-Tue Dec 05 06:38:24 MST 2017: User Could not purchase Himalayan Rain. 170 cents missing from credit.
-Tue Dec 05 06:38:25 MST 2017: Credit: 155
-Tue Dec 05 06:38:25 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 06:38:25 MST 2017: Credit: 255
-Tue Dec 05 06:38:25 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 06:38:25 MST 2017: Credit: 355
-Tue Dec 05 06:38:25 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 06:38:26 MST 2017: Credit: 130
-Tue Dec 05 06:38:26 MST 2017: Himalayan Rain button pressed by user with: 130
-Tue Dec 05 06:38:26 MST 2017: Credit: 330
-Tue Dec 05 06:38:26 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:27 MST 2017: Credit: 5
-Tue Dec 05 06:38:27 MST 2017: Himalayan Rain button pressed by user with: 5
-Tue Dec 05 06:38:27 MST 2017: Credit: 205
-Tue Dec 05 06:38:27 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:28 MST 2017: User Could not purchase Himalayan Rain. 20 cents missing from credit.
-Tue Dec 05 06:38:28 MST 2017: Credit: 405
-Tue Dec 05 06:38:28 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:28 MST 2017: Credit: 80
-Tue Dec 05 06:38:28 MST 2017: Himalayan Rain button pressed by user with: 80
-Tue Dec 05 06:38:29 MST 2017: Credit: 280
-Tue Dec 05 06:38:29 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:29 MST 2017: Credit: 55
-Tue Dec 05 06:38:29 MST 2017: Himalayan Rain button pressed by user with: 55
-Tue Dec 05 06:38:30 MST 2017: Credit: 255
-Tue Dec 05 06:38:30 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:30 MST 2017: Himalayan Rain button pressed by user with: 255
-Tue Dec 05 06:38:31 MST 2017: Credit: 455
-Tue Dec 05 06:38:31 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:31 MST 2017: Himalayan Rain button pressed by user with: 455
-Tue Dec 05 06:38:31 MST 2017: Credit: 655
-Tue Dec 05 06:38:31 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:38:32 MST 2017: Himalayan Rain button pressed by user with: 655
-Tue Dec 05 06:38:32 MST 2017: Dr. Walker button pressed by user with: 655
-Tue Dec 05 06:38:32 MST 2017: Fissure button pressed by user with: 655
-Tue Dec 05 06:38:33 MST 2017: Lime Zilla button pressed by user with: 655
-Tue Dec 05 06:38:33 MST 2017: Himalayan Rain button pressed by user with: 655
-Tue Dec 05 06:38:33 MST 2017: Fissure button pressed by user with: 655
-Tue Dec 05 06:42:40 MST 2017: Credit: 200
-Tue Dec 05 06:42:40 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:42:40 MST 2017: Credit: 400
-Tue Dec 05 06:42:40 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:42:41 MST 2017: Credit: 600
-Tue Dec 05 06:42:41 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:42:41 MST 2017: Credit: 800
-Tue Dec 05 06:42:41 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:42:41 MST 2017: Credit: 1000
-Tue Dec 05 06:42:41 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:42:41 MST 2017: Credit: 1200
-Tue Dec 05 06:42:41 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:42:41 MST 2017: Credit: 1400
-Tue Dec 05 06:42:41 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:42:41 MST 2017: Credit: 1600
-Tue Dec 05 06:42:41 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:42:42 MST 2017: Credit: 1800
-Tue Dec 05 06:42:42 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:42:42 MST 2017: Credit: 2000
-Tue Dec 05 06:42:42 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:42:45 MST 2017: Credit: 1700
-Tue Dec 05 06:42:45 MST 2017: Fissure button pressed by user with: 1700
-Tue Dec 05 06:42:46 MST 2017: Fissure button pressed by user with: 0
-Tue Dec 05 06:43:09 MST 2017: Credit: 200
-Tue Dec 05 06:43:09 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:43:09 MST 2017: Credit: 400
-Tue Dec 05 06:43:09 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:43:09 MST 2017: Credit: 600
-Tue Dec 05 06:43:09 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:43:10 MST 2017: Credit: 800
-Tue Dec 05 06:43:10 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:43:10 MST 2017: Credit: 1000
-Tue Dec 05 06:43:10 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:43:10 MST 2017: Credit: 1200
-Tue Dec 05 06:43:10 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:43:10 MST 2017: Credit: 1400
-Tue Dec 05 06:43:10 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:43:10 MST 2017: Credit: 1600
-Tue Dec 05 06:43:10 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:43:11 MST 2017: Credit: 1800
-Tue Dec 05 06:43:11 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:43:11 MST 2017: Credit: 2000
-Tue Dec 05 06:43:11 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:43:11 MST 2017: Credit: 1100
-Tue Dec 05 06:43:11 MST 2017: Fissure button pressed by user with: 1100
-Tue Dec 05 06:43:15 MST 2017: Fissure button pressed by user with: 0
-Tue Dec 05 06:43:47 MST 2017: Credit: 5
-Tue Dec 05 06:43:47 MST 2017: User inserted: 5 coin to coin slot
-Tue Dec 05 06:43:52 MST 2017: Credit: 15
-Tue Dec 05 06:43:52 MST 2017: User inserted: 10 coin to coin slot
-Tue Dec 05 06:43:53 MST 2017: Credit: 40
-Tue Dec 05 06:43:53 MST 2017: User inserted: 25 coin to coin slot
-Tue Dec 05 06:43:54 MST 2017: Credit: 140
-Tue Dec 05 06:43:54 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 06:43:54 MST 2017: Credit: 340
-Tue Dec 05 06:43:54 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:43:56 MST 2017: Credit: 40
-Tue Dec 05 06:43:56 MST 2017: Fissure button pressed by user with: 40
-Tue Dec 05 06:44:20 MST 2017: Credit: 200
-Tue Dec 05 06:44:20 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:20 MST 2017: Credit: 400
-Tue Dec 05 06:44:20 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:20 MST 2017: Credit: 600
-Tue Dec 05 06:44:20 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:20 MST 2017: Credit: 800
-Tue Dec 05 06:44:20 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:20 MST 2017: Credit: 1000
-Tue Dec 05 06:44:20 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:20 MST 2017: Credit: 1200
-Tue Dec 05 06:44:20 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:21 MST 2017: Credit: 1400
-Tue Dec 05 06:44:21 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:21 MST 2017: Credit: 1600
-Tue Dec 05 06:44:21 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:21 MST 2017: Credit: 1800
-Tue Dec 05 06:44:21 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:22 MST 2017: Credit: 2000
-Tue Dec 05 06:44:22 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:22 MST 2017: Credit: 1700
-Tue Dec 05 06:44:22 MST 2017: Fissure button pressed by user with: 1700
-Tue Dec 05 06:44:24 MST 2017: Fissure button pressed by user with: 0
-Tue Dec 05 06:44:27 MST 2017: User Could not purchase Fissure. 300 cents missing from credit.
-Tue Dec 05 06:44:27 MST 2017: Credit: 200
-Tue Dec 05 06:44:27 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:28 MST 2017: Credit: 400
-Tue Dec 05 06:44:28 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:28 MST 2017: Credit: 600
-Tue Dec 05 06:44:28 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:28 MST 2017: Credit: 100
-Tue Dec 05 06:44:28 MST 2017: Fissure button pressed by user with: 100
-Tue Dec 05 06:44:29 MST 2017: Credit: 300
-Tue Dec 05 06:44:29 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:29 MST 2017: Credit: 500
-Tue Dec 05 06:44:29 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:29 MST 2017: Credit: 700
-Tue Dec 05 06:44:29 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:30 MST 2017: Fissure button pressed by user with: 0
-Tue Dec 05 06:44:30 MST 2017: Credit: 200
-Tue Dec 05 06:44:30 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:31 MST 2017: Credit: 400
-Tue Dec 05 06:44:31 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:31 MST 2017: Credit: 600
-Tue Dec 05 06:44:31 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:31 MST 2017: Credit: 800
-Tue Dec 05 06:44:31 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:32 MST 2017: Credit: 100
-Tue Dec 05 06:44:32 MST 2017: Fissure button pressed by user with: 100
-Tue Dec 05 06:44:32 MST 2017: Credit: 300
-Tue Dec 05 06:44:32 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:33 MST 2017: Credit: 500
-Tue Dec 05 06:44:33 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:33 MST 2017: Credit: 700
-Tue Dec 05 06:44:33 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:33 MST 2017: Fissure button pressed by user with: 700
-Tue Dec 05 06:44:34 MST 2017: Credit: 900
-Tue Dec 05 06:44:34 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:34 MST 2017: Credit: 1100
-Tue Dec 05 06:44:34 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:34 MST 2017: Fissure button pressed by user with: 1100
-Tue Dec 05 06:44:35 MST 2017: Credit: 146
-Tue Dec 05 06:44:35 MST 2017: Dr. Walker button pressed by user with: 146
-Tue Dec 05 06:44:36 MST 2017: Credit: 346
-Tue Dec 05 06:44:36 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:36 MST 2017: Credit: 546
-Tue Dec 05 06:44:36 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:36 MST 2017: Credit: 746
-Tue Dec 05 06:44:36 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:36 MST 2017: Credit: 16
-Tue Dec 05 06:44:36 MST 2017: Lime Zilla button pressed by user with: 16
-Tue Dec 05 06:44:37 MST 2017: User Could not purchase Himalayan Rain. 209 cents missing from credit.
-Tue Dec 05 06:44:37 MST 2017: Credit: 216
-Tue Dec 05 06:44:37 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:38 MST 2017: Credit: 416
-Tue Dec 05 06:44:38 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:38 MST 2017: Credit: 616
-Tue Dec 05 06:44:38 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:38 MST 2017: Credit: 816
-Tue Dec 05 06:44:38 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:39 MST 2017: Credit: 86
-Tue Dec 05 06:44:39 MST 2017: Lime Zilla button pressed by user with: 86
-Tue Dec 05 06:44:39 MST 2017: User Could not purchase Lime Zilla. 44 cents missing from credit.
-Tue Dec 05 06:44:39 MST 2017: User Could not purchase Himalayan Rain. 139 cents missing from credit.
-Tue Dec 05 06:44:40 MST 2017: User Could not purchase Himalayan Rain. 139 cents missing from credit.
-Tue Dec 05 06:44:40 MST 2017: Credit: 286
-Tue Dec 05 06:44:40 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:40 MST 2017: Credit: 486
-Tue Dec 05 06:44:40 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:40 MST 2017: Credit: 686
-Tue Dec 05 06:44:40 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:44:41 MST 2017: Credit: 156
-Tue Dec 05 06:44:41 MST 2017: Lime Zilla button pressed by user with: 156
-Tue Dec 05 06:44:41 MST 2017: User Could not purchase Himalayan Rain. 69 cents missing from credit.
-Tue Dec 05 06:46:11 MST 2017: Credit: 200
-Tue Dec 05 06:46:11 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:46:16 MST 2017: User Could not purchase Himalayan Rain. 25 cents missing from credit.
-Tue Dec 05 06:46:18 MST 2017: Credit: 300
-Tue Dec 05 06:46:19 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 06:46:19 MST 2017: Credit: 75
-Tue Dec 05 06:46:19 MST 2017: Himalayan Rain button pressed by user with: 75
-Tue Dec 05 06:46:21 MST 2017: Credit: 275
-Tue Dec 05 06:46:21 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:46:23 MST 2017: Credit: 50
-Tue Dec 05 06:46:23 MST 2017: Himalayan Rain button pressed by user with: 50
-Tue Dec 05 06:46:27 MST 2017: Credit: 250
-Tue Dec 05 06:46:27 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:46:28 MST 2017: Credit: 25
-Tue Dec 05 06:46:28 MST 2017: Himalayan Rain button pressed by user with: 25
-Tue Dec 05 06:46:31 MST 2017: Credit: 225
-Tue Dec 05 06:46:31 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:46:35 MST 2017: Credit: 235
-Tue Dec 05 06:46:35 MST 2017: User inserted: 10 coin to coin slot
-Tue Dec 05 06:46:35 MST 2017: Credit: 245
-Tue Dec 05 06:46:35 MST 2017: User inserted: 10 coin to coin slot
-Tue Dec 05 06:46:35 MST 2017: Credit: 250
-Tue Dec 05 06:46:35 MST 2017: User inserted: 5 coin to coin slot
-Tue Dec 05 06:46:36 MST 2017: Credit: 25
-Tue Dec 05 06:46:36 MST 2017: Himalayan Rain button pressed by user with: 25
-Tue Dec 05 06:46:44 MST 2017: Credit: 50
-Tue Dec 05 06:46:44 MST 2017: User inserted: 25 coin to coin slot
-Tue Dec 05 06:46:45 MST 2017: User Could not purchase Himalayan Rain. 175 cents missing from credit.
-Tue Dec 05 06:46:48 MST 2017: Credit: 250
-Tue Dec 05 06:46:48 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:46:48 MST 2017: Credit: 450
-Tue Dec 05 06:46:48 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:46:49 MST 2017: Himalayan Rain button pressed by user with: 0
-Tue Dec 05 06:47:04 MST 2017: Credit: 200
-Tue Dec 05 06:47:04 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:47:05 MST 2017: Credit: 400
-Tue Dec 05 06:47:05 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:47:05 MST 2017: Credit: 600
-Tue Dec 05 06:47:05 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 06:47:18 MST 2017: Credit: 25
-Tue Dec 05 06:47:18 MST 2017: User inserted: 25 coin to coin slot
-Tue Dec 05 06:48:10 MST 2017: this
-Tue Dec 05 07:04:00 MST 2017: Credit: 200
-Tue Dec 05 07:04:01 MST 2017: Credit: 250
-Tue Dec 05 07:04:01 MST 2017: Credit: 50
-Tue Dec 05 07:04:01 MST 2017: Credit: 50
-Tue Dec 05 07:04:07 MST 2017: this
-Tue Dec 05 07:04:18 MST 2017: Credit: 200
-Tue Dec 05 07:14:37 MST 2017: Credit: 200
-Tue Dec 05 07:14:37 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 07:14:37 MST 2017: Credit: 400
-Tue Dec 05 07:14:37 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 07:14:37 MST 2017: Credit: 600
-Tue Dec 05 07:14:37 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 07:14:37 MST 2017: Credit: 300
-Tue Dec 05 07:14:37 MST 2017: Fissure button pressed by user with: 300
-Tue Dec 05 07:14:38 MST 2017: Credit: 75
-Tue Dec 05 07:14:38 MST 2017: Himalayan Rain button pressed by user with: 75
-Tue Dec 05 07:14:38 MST 2017: Credit: 100
-Tue Dec 05 07:14:38 MST 2017: User inserted: 25 coin to coin slot
-Tue Dec 05 07:14:39 MST 2017: Credit: 200
-Tue Dec 05 07:14:39 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 07:14:39 MST 2017: Credit: 300
-Tue Dec 05 07:14:39 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 07:14:39 MST 2017: User Could not purchase Dr. Walker. 254 cents missing from credit.
-Tue Dec 05 07:14:40 MST 2017: Credit: 400
-Tue Dec 05 07:14:40 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 07:14:40 MST 2017: Credit: 600
-Tue Dec 05 07:14:40 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 07:14:41 MST 2017: Credit: 46
-Tue Dec 05 07:14:41 MST 2017: Dr. Walker button pressed by user with: 46
-Tue Dec 05 07:17:11 MST 2017: Credit: 200
-Tue Dec 05 07:17:11 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 07:17:11 MST 2017: Credit: 400
-Tue Dec 05 07:17:11 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 07:17:11 MST 2017: Credit: 600
-Tue Dec 05 07:17:11 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 07:17:11 MST 2017: Credit: 800
-Tue Dec 05 07:17:11 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 07:17:11 MST 2017: Credit: 1000
-Tue Dec 05 07:17:11 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 07:17:12 MST 2017: Credit: 1200
-Tue Dec 05 07:17:12 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 07:17:12 MST 2017: Credit: 1400
-Tue Dec 05 07:17:12 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 07:17:12 MST 2017: Credit: 1600
-Tue Dec 05 07:17:12 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 07:17:12 MST 2017: Credit: 1800
-Tue Dec 05 07:17:12 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 07:17:13 MST 2017: Credit: 1500
-Tue Dec 05 07:17:13 MST 2017: Fissure button pressed by user with: 1500
-Tue Dec 05 07:17:13 MST 2017: Fissure button pressed by user with: 0
-Tue Dec 05 07:17:13 MST 2017: User Could not purchase Fissure. 300 cents missing from credit.
-Tue Dec 05 07:17:14 MST 2017: Credit: 200
-Tue Dec 05 07:17:14 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 07:17:14 MST 2017: User Could not purchase Fissure. 100 cents missing from credit.
-Tue Dec 05 07:17:15 MST 2017: Credit: 400
-Tue Dec 05 07:17:15 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 07:17:15 MST 2017: Credit: 100
-Tue Dec 05 07:17:15 MST 2017: Fissure button pressed by user with: 100
-Tue Dec 05 07:17:15 MST 2017: Credit: 300
-Tue Dec 05 07:17:15 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 07:17:16 MST 2017: Credit: 500
-Tue Dec 05 07:17:16 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 07:17:16 MST 2017: Fissure button pressed by user with: 0
-Tue Dec 05 07:17:16 MST 2017: Credit: 200
-Tue Dec 05 07:17:16 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 07:17:16 MST 2017: Credit: 400
-Tue Dec 05 07:17:16 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 07:17:17 MST 2017: Credit: 100
-Tue Dec 05 07:17:17 MST 2017: Fissure button pressed by user with: 100
-Tue Dec 05 07:17:22 MST 2017: User Could not purchase Fissure. 200 cents missing from credit.
-Tue Dec 05 07:17:23 MST 2017: Credit: 300
-Tue Dec 05 07:17:23 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 07:17:23 MST 2017: Credit: 500
-Tue Dec 05 07:17:23 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 07:17:23 MST 2017: Fissure button pressed by user with: 500
-Tue Dec 05 07:17:24 MST 2017: Fissure button pressed by user with: 500
-Tue Dec 05 07:17:24 MST 2017: Fissure button pressed by user with: 500
-Tue Dec 05 07:17:24 MST 2017: Fissure button pressed by user with: 500
-Tue Dec 05 07:17:24 MST 2017: Fissure button pressed by user with: 500
-Tue Dec 05 07:17:25 MST 2017: Fissure button pressed by user with: 500
-Tue Dec 05 07:17:25 MST 2017: Fissure button pressed by user with: 500
-Tue Dec 05 07:17:25 MST 2017: Fissure button pressed by user with: 500
-Tue Dec 05 07:17:26 MST 2017: Fissure button pressed by user with: 500
-Tue Dec 05 07:17:26 MST 2017: Fissure button pressed by user with: 500
-Tue Dec 05 07:17:26 MST 2017: Fissure button pressed by user with: 500
-Tue Dec 05 07:17:27 MST 2017: Fissure button pressed by user with: 500
-Tue Dec 05 07:31:12 MST 2017: Credit: 200
-Tue Dec 05 07:31:12 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 07:31:12 MST 2017: Credit: 199
-Tue Dec 05 07:31:12 MST 2017: Fissure button pressed by user with: 199
-Tue Dec 05 07:31:12 MST 2017: Credit: 198
-Tue Dec 05 07:31:12 MST 2017: Fissure button pressed by user with: 198
-Tue Dec 05 07:31:13 MST 2017: Credit: 197
-Tue Dec 05 07:31:13 MST 2017: Fissure button pressed by user with: 197
-Tue Dec 05 07:31:13 MST 2017: Credit: 196
-Tue Dec 05 07:31:13 MST 2017: Fissure button pressed by user with: 196
-Tue Dec 05 07:31:13 MST 2017: Credit: 195
-Tue Dec 05 07:31:13 MST 2017: Fissure button pressed by user with: 195
-Tue Dec 05 08:04:40 MST 2017: User Could not purchase Lime Zilla. 130 cents missing from credit.
-Tue Dec 05 08:04:41 MST 2017: User Could not purchase Lime Zilla. 130 cents missing from credit.
-Tue Dec 05 08:04:42 MST 2017: User Could not purchase Lime Zilla. 130 cents missing from credit.
-Tue Dec 05 08:04:43 MST 2017: User Could not purchase Lime Zilla. 130 cents missing from credit.
-Tue Dec 05 08:04:44 MST 2017: User Could not purchase Lime Zilla. 130 cents missing from credit.
-Tue Dec 05 08:04:46 MST 2017: User Could not purchase Lime Zilla. 130 cents missing from credit.
-Tue Dec 05 08:06:06 MST 2017: Credit: 25
-Tue Dec 05 08:06:06 MST 2017: User inserted: 25 coin to coin slot
-Tue Dec 05 08:06:10 MST 2017: Credit: 30
-Tue Dec 05 08:06:10 MST 2017: User inserted: 5 coin to coin slot
-Tue Dec 05 08:06:11 MST 2017: Credit: 230
-Tue Dec 05 08:06:11 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 08:06:13 MST 2017: Credit: 430
-Tue Dec 05 08:06:13 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:09:14 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:09:14 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:09:15 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:09:15 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:09:15 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:09:15 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:09:15 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:09:16 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:09:16 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:09:16 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:09:17 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:09:17 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:09:17 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:09:17 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:09:17 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:09:17 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:09:18 MST 2017: User inserted: 25 coin to coin slot
-Tue Dec 05 19:09:18 MST 2017: User inserted: 25 coin to coin slot
-Tue Dec 05 19:09:18 MST 2017: User inserted: 25 coin to coin slot
-Tue Dec 05 19:09:18 MST 2017: User inserted: 25 coin to coin slot
-Tue Dec 05 19:09:18 MST 2017: User inserted: 25 coin to coin slot
-Tue Dec 05 19:09:19 MST 2017: User inserted: 25 coin to coin slot
-Tue Dec 05 19:09:19 MST 2017: User inserted: 25 coin to coin slot
-Tue Dec 05 19:09:19 MST 2017: User inserted: 25 coin to coin slot
-Tue Dec 05 19:09:19 MST 2017: User inserted: 25 coin to coin slot
-Tue Dec 05 19:09:19 MST 2017: User inserted: 25 coin to coin slot
-Tue Dec 05 19:10:48 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:10:49 MST 2017: User inserted: 25 coin to coin slot
-Tue Dec 05 19:10:50 MST 2017: User inserted: 5 coin to coin slot
-Tue Dec 05 19:10:51 MST 2017: User inserted: 10 coin to coin slot
-Tue Dec 05 19:10:51 MST 2017: User Could not purchase Fissure. 160 cents missing from credit.
-Tue Dec 05 19:10:52 MST 2017: User Could not purchase Himalayan Rain. 215 cents missing from credit.
-Tue Dec 05 19:10:54 MST 2017: User Could not purchase Dr. Walker. 544 cents missing from credit.
-Tue Dec 05 19:10:56 MST 2017: User Could not purchase Fissure. 290 cents missing from credit.
-Tue Dec 05 19:10:56 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:10:57 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:10:57 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:10:57 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:10:57 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:10:57 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:12:42 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:12:43 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:13:21 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:13:22 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:13:50 MST 2017: User Could not purchase Fissure. 300 cents missing from credit.
-Tue Dec 05 19:13:51 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:13:52 MST 2017: User Could not purchase Fissure. 100 cents missing from credit.
-Tue Dec 05 19:13:52 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:15:02 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:15:03 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:15:03 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:15:03 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:15:03 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:15:03 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:15:04 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:15:04 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:15:04 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:16:26 MST 2017: User Could not purchase Fissure. 300 cents missing from credit.
-Tue Dec 05 19:16:27 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:16:27 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:16:27 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:16:27 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:16:27 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:16:27 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:16:27 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:16:44 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:16:44 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:17:18 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:17:18 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:17:18 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:17:18 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:17:18 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:17:18 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:31:38 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:31:38 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:31:38 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:31:39 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:31:39 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:31:39 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:31:39 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:37:17 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:37:17 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:37:17 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:37:17 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:37:18 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:38:03 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:38:04 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:38:04 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:38:46 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:38:47 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:38:47 MST 2017: User Could not purchase Fissure. 100 cents missing from credit.
-Tue Dec 05 19:38:49 MST 2017: User Could not purchase Dr. Walker. 354 cents missing from credit.
-Tue Dec 05 19:38:49 MST 2017: User inserted: 10 coin to coin slot
-Tue Dec 05 19:38:50 MST 2017: User inserted: 10 coin to coin slot
-Tue Dec 05 19:38:50 MST 2017: User inserted: 10 coin to coin slot
-Tue Dec 05 19:38:50 MST 2017: User inserted: 10 coin to coin slot
-Tue Dec 05 19:38:50 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:38:50 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:38:51 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:38:51 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:38:51 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:38:51 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:39:46 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:39:47 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:39:47 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:39:47 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:39:47 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:39:47 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:39:47 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:40:43 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:40:43 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:40:43 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:40:43 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:40:43 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:40:43 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:40:43 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:40:44 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:40:44 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:42:10 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:42:11 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:42:11 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:42:11 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:42:11 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:42:11 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:42:12 MST 2017: Dr. Walker button pressed by user with: 646
-Tue Dec 05 19:42:40 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:42:40 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:42:40 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:42:40 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:42:40 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:42:40 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:42:41 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:42:41 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:42:41 MST 2017: User inserted: 100 coin to coin slot
-Tue Dec 05 19:42:41 MST 2017: Fissure button pressed by user with: 600
-Tue Dec 05 19:42:44 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:42:44 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:42:44 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:42:44 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:42:46 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:42:46 MST 2017: User inserted: 200 coin to coin slot
-Tue Dec 05 19:42:46 MST 2017: Fissure button pressed by user with: 600
-Tue Dec 05 20:38:30 MST 2017: this
-Tue Dec 05 20:57:47 MST 2017: Credit: 200
-Tue Dec 05 20:57:48 MST 2017: Credit: 250
-Tue Dec 05 20:57:48 MST 2017: Credit: 50
-Tue Dec 05 20:57:48 MST 2017: Credit: 100
-Tue Dec 05 20:58:08 MST 2017: Credit: 200
-Tue Dec 05 21:19:26 MST 2017: this
-Tue Dec 05 21:19:26 MST 2017: this
-Tue Dec 05 21:21:53 MST 2017: Credit: 200
-Tue Dec 05 21:27:26 MST 2017: Credit: 200
-Tue Dec 05 21:29:39 MST 2017: Credit: 200
-Tue Dec 05 21:30:29 MST 2017: Credit: 200
-Tue Dec 05 21:39:40 MST 2017: Credit: 200
-Tue Dec 05 21:41:51 MST 2017: Credit: 200
-Tue Dec 05 21:41:51 MST 2017: Credit: 200
-Tue Dec 05 21:42:43 MST 2017: Credit: 200
-Tue Dec 05 21:43:17 MST 2017: Credit: 200
-Tue Dec 05 21:43:43 MST 2017: Credit: 200
-Tue Dec 05 21:44:12 MST 2017: Credit: 300
-Tue Dec 05 21:44:12 MST 2017: Credit: 100
-Tue Dec 05 21:44:16 MST 2017: Credit: 200
-Tue Dec 05 21:44:17 MST 2017: Credit: 250
-Tue Dec 05 21:44:17 MST 2017: Credit: 50
-Tue Dec 05 21:44:17 MST 2017: Credit: 100
-Tue Dec 05 22:23:29 MST 2017: Credit: 200
-Tue Dec 05 22:24:05 MST 2017: this
-Tue Dec 05 22:24:12 MST 2017: Credit: 300
-Tue Dec 05 22:24:12 MST 2017: Credit: 100
-Tue Dec 05 22:24:18 MST 2017: Credit: 200
-Tue Dec 05 22:24:19 MST 2017: Credit: 250
-Tue Dec 05 22:24:19 MST 2017: Credit: 50
-Tue Dec 05 22:24:19 MST 2017: Credit: 100
-Tue Dec 05 22:25:21 MST 2017: Credit: 200
-Tue Dec 05 22:25:44 MST 2017: this
-Tue Dec 05 22:25:51 MST 2017: Credit: 300
-Tue Dec 05 22:25:51 MST 2017: Credit: 100
-Tue Dec 05 22:25:56 MST 2017: Credit: 200
-Tue Dec 05 22:25:57 MST 2017: Credit: 250
-Tue Dec 05 22:25:57 MST 2017: Credit: 50
-Tue Dec 05 22:25:57 MST 2017: Credit: 100
-Wed Dec 06 18:09:06 MST 2017: Credit: 200
-Wed Dec 06 18:09:06 MST 2017: User inserted: 200 coin to coin slot
-Wed Dec 06 18:09:06 MST 2017: Credit: 300
-Wed Dec 06 18:09:06 MST 2017: User inserted: 100 coin to coin slot
-Wed Dec 06 18:09:07 MST 2017: Credit: 325
-Wed Dec 06 18:09:07 MST 2017: User inserted: 25 coin to coin slot
-Wed Dec 06 18:09:08 MST 2017: Lime Zilla button pressed by user with: 0
-Wed Dec 06 18:09:08 MST 2017: User Could not purchase Himalayan Rain. 225 cents missing from credit.
-Wed Dec 06 18:09:37 MST 2017: Credit: 200
-Wed Dec 06 18:09:37 MST 2017: User inserted: 200 coin to coin slot
-Wed Dec 06 18:09:38 MST 2017: Credit: 300
-Wed Dec 06 18:09:38 MST 2017: User inserted: 100 coin to coin slot
-Wed Dec 06 18:09:38 MST 2017: Credit: 325
-Wed Dec 06 18:09:38 MST 2017: User inserted: 25 coin to coin slot
-Wed Dec 06 18:09:39 MST 2017: Credit: 335
-Wed Dec 06 18:09:39 MST 2017: User inserted: 10 coin to coin slot
-Wed Dec 06 18:09:39 MST 2017: Credit: 535
-Wed Dec 06 18:09:39 MST 2017: User inserted: 200 coin to coin slot
-Wed Dec 06 18:09:41 MST 2017: Fissure button pressed by user with: 0
-Wed Dec 06 18:09:42 MST 2017: User Could not purchase Lime Zilla. 130 cents missing from credit.
-Wed Dec 06 18:09:42 MST 2017: User Could not purchase Himalayan Rain. 225 cents missing from credit.
-Wed Dec 06 18:09:42 MST 2017: User Could not purchase Dr. Walker. 555 cents missing from credit.
-Wed Dec 06 18:09:43 MST 2017: User Could not purchase Fissure. 300 cents missing from credit.
-Wed Dec 06 18:09:43 MST 2017: User Could not purchase Lime Zilla. 130 cents missing from credit.
-Wed Dec 06 18:09:43 MST 2017: User Could not purchase Himalayan Rain. 225 cents missing from credit.
-Wed Dec 06 18:09:43 MST 2017: User Could not purchase Dr. Walker. 555 cents missing from credit.
-Wed Dec 06 18:09:44 MST 2017: User Could not purchase Fissure. 300 cents missing from credit.
-Wed Dec 06 18:26:59 MST 2017: Credit: 200
-Wed Dec 06 18:26:59 MST 2017: User inserted: 200 coin to coin slot
-Wed Dec 06 18:27:00 MST 2017: Credit: 400
-Wed Dec 06 18:27:00 MST 2017: User inserted: 200 coin to coin slot
-Wed Dec 06 18:31:43 MST 2017: Credit: 200
-Wed Dec 06 18:31:43 MST 2017: User inserted: 200 coin to coin slot
-Wed Dec 06 18:33:23 MST 2017: Credit: 200
-Wed Dec 06 18:33:23 MST 2017: User inserted: 200 coin to coin slot
-Wed Dec 06 18:33:24 MST 2017: Credit: 400
-Wed Dec 06 18:33:24 MST 2017: User inserted: 200 coin to coin slot
-Wed Dec 06 18:33:25 MST 2017: Fissure button pressed by user with: 0
-Wed Dec 06 18:34:23 MST 2017: Credit: 200
-Wed Dec 06 18:35:56 MST 2017: Credit: 200
-Wed Dec 06 18:35:56 MST 2017: User inserted: 200 coin to coin slot
-Wed Dec 06 18:35:56 MST 2017: Credit: 300
-Wed Dec 06 18:35:56 MST 2017: User inserted: 100 coin to coin slot
-Wed Dec 06 18:35:57 MST 2017: Credit: 325
-Wed Dec 06 18:35:57 MST 2017: User inserted: 25 coin to coin slot
-Wed Dec 06 18:36:12 MST 2017: this
-Wed Dec 06 18:36:15 MST 2017: Credit: 300
-Wed Dec 06 18:36:15 MST 2017: Credit: 100
-Wed Dec 06 18:36:19 MST 2017: Credit: 200
-Wed Dec 06 18:36:20 MST 2017: Credit: 250
-Wed Dec 06 18:36:20 MST 2017: Credit: 50
-Wed Dec 06 18:36:20 MST 2017: Credit: 100
-Wed Dec 06 18:36:24 MST 2017: Credit: 130
-Wed Dec 06 18:36:24 MST 2017: Credit: 200
-Wed Dec 06 18:36:24 MST 2017: Credit: 130
-Wed Dec 06 18:36:24 MST 2017: Credit: 130
-Wed Dec 06 18:36:24 MST 2017: Credit: 200
-Wed Dec 06 21:09:48 MST 2017: Credit: 200
-Wed Dec 06 21:10:23 MST 2017: this
-Wed Dec 06 21:10:27 MST 2017: Credit: 300
-Wed Dec 06 21:10:27 MST 2017: Credit: 100
-Wed Dec 06 21:10:40 MST 2017: Credit: 200
-Wed Dec 06 21:10:41 MST 2017: Credit: 250
-Wed Dec 06 21:10:41 MST 2017: Credit: 50
-Wed Dec 06 21:10:41 MST 2017: Credit: 100
-Wed Dec 06 21:10:45 MST 2017: Credit: 130
-Wed Dec 06 21:10:45 MST 2017: Credit: 200
-Wed Dec 06 21:10:45 MST 2017: Credit: 130
-Wed Dec 06 21:10:45 MST 2017: Credit: 130
-Wed Dec 06 21:10:45 MST 2017: Credit: 200
-Wed Dec 06 21:13:41 MST 2017: Credit: 200
-Wed Dec 06 21:13:58 MST 2017: this
-Wed Dec 06 21:13:58 MST 2017: Credit: 500
-Wed Dec 06 21:13:58 MST 2017: Credit: 200
-Wed Dec 06 21:13:58 MST 2017: Credit: 300
-Wed Dec 06 21:13:58 MST 2017: Credit: 200
-Wed Dec 06 21:13:58 MST 2017: Credit: 400
-Wed Dec 06 21:13:58 MST 2017: Credit: 200
-Wed Dec 06 21:13:59 MST 2017: Credit: 450
-Wed Dec 06 21:13:59 MST 2017: Credit: 250
-Wed Dec 06 21:13:59 MST 2017: Credit: 300
-Wed Dec 06 21:13:59 MST 2017: Credit: 100
-Wed Dec 06 21:13:59 MST 2017: Credit: 230
-Wed Dec 06 21:13:59 MST 2017: Credit: 200
-Wed Dec 06 21:13:59 MST 2017: Credit: 130
-Wed Dec 06 21:13:59 MST 2017: Credit: 130
-Wed Dec 06 21:13:59 MST 2017: Credit: 200
-Wed Dec 06 21:15:07 MST 2017: Credit: 200
-Wed Dec 06 21:15:24 MST 2017: this
-Wed Dec 06 21:15:24 MST 2017: Credit: 500
-Wed Dec 06 21:15:24 MST 2017: Credit: 200
-Wed Dec 06 21:15:24 MST 2017: Credit: 300
-Wed Dec 06 21:15:24 MST 2017: Credit: 200
-Wed Dec 06 21:15:24 MST 2017: Credit: 400
-Wed Dec 06 21:15:24 MST 2017: Credit: 200
-Wed Dec 06 21:15:25 MST 2017: Credit: 450
-Wed Dec 06 21:15:25 MST 2017: Credit: 250
-Wed Dec 06 21:15:25 MST 2017: Credit: 300
-Wed Dec 06 21:15:25 MST 2017: Credit: 100
-Wed Dec 06 21:15:25 MST 2017: Credit: 230
-Wed Dec 06 21:15:25 MST 2017: Credit: 200
-Wed Dec 06 21:15:25 MST 2017: Credit: 130
-Wed Dec 06 21:15:25 MST 2017: Credit: 130
-Wed Dec 06 21:15:25 MST 2017: Credit: 200
-Wed Dec 06 21:15:55 MST 2017: Credit: 200
-Wed Dec 06 21:16:12 MST 2017: this
-Wed Dec 06 21:16:12 MST 2017: Credit: 500
-Wed Dec 06 21:16:12 MST 2017: Credit: 200
-Wed Dec 06 21:16:12 MST 2017: Credit: 300
-Wed Dec 06 21:16:12 MST 2017: Credit: 200
-Wed Dec 06 21:16:12 MST 2017: Credit: 400
-Wed Dec 06 21:16:12 MST 2017: Credit: 200
-Wed Dec 06 21:16:13 MST 2017: Credit: 450
-Wed Dec 06 21:16:13 MST 2017: Credit: 250
-Wed Dec 06 21:16:13 MST 2017: Credit: 300
-Wed Dec 06 21:16:13 MST 2017: Credit: 100
-Wed Dec 06 21:16:13 MST 2017: Credit: 230
-Wed Dec 06 21:16:13 MST 2017: Credit: 200
-Wed Dec 06 21:16:13 MST 2017: Credit: 130
-Wed Dec 06 21:16:13 MST 2017: Credit: 130
-Wed Dec 06 21:16:13 MST 2017: Credit: 200
+Thu Dec 07 17:35:02 MST 2017: Credit: 200
+Thu Dec 07 17:35:19 MST 2017: this
+Thu Dec 07 17:35:19 MST 2017: Credit: 500
+Thu Dec 07 17:35:19 MST 2017: Credit: 600
+Thu Dec 07 17:35:19 MST 2017: Credit: 500
+Thu Dec 07 17:35:19 MST 2017: Credit: 700
+Thu Dec 07 17:35:19 MST 2017: Credit: 500
+Thu Dec 07 17:35:20 MST 2017: Credit: 750
+Thu Dec 07 17:35:20 MST 2017: Credit: 550
+Thu Dec 07 17:35:20 MST 2017: Credit: 600
+Thu Dec 07 17:35:20 MST 2017: Credit: 400
+Thu Dec 07 17:35:20 MST 2017: Credit: 530
+Thu Dec 07 17:35:20 MST 2017: Credit: 200
+Thu Dec 07 17:35:20 MST 2017: Credit: 130
+Thu Dec 07 17:35:20 MST 2017: Credit: 130
+Thu Dec 07 17:35:20 MST 2017: Credit: 200
+Thu Dec 07 17:38:26 MST 2017: Credit: 300
+Thu Dec 07 17:40:36 MST 2017: Credit: 200
+Thu Dec 07 17:40:53 MST 2017: this
+Thu Dec 07 17:40:53 MST 2017: Credit: 500
+Thu Dec 07 17:40:53 MST 2017: Credit: 600
+Thu Dec 07 17:40:53 MST 2017: Credit: 500
+Thu Dec 07 17:40:53 MST 2017: Credit: 700
+Thu Dec 07 17:40:53 MST 2017: Credit: 500
+Thu Dec 07 17:40:54 MST 2017: Credit: 750
+Thu Dec 07 17:40:54 MST 2017: Credit: 550
+Thu Dec 07 17:40:54 MST 2017: Credit: 600
+Thu Dec 07 17:40:54 MST 2017: Credit: 400
+Thu Dec 07 17:40:54 MST 2017: Credit: 530
+Thu Dec 07 17:40:54 MST 2017: Credit: 200
+Thu Dec 07 17:40:54 MST 2017: Credit: 130
+Thu Dec 07 17:40:54 MST 2017: Credit: 130
+Thu Dec 07 17:40:54 MST 2017: Credit: 200
+Thu Dec 07 17:46:29 MST 2017: Credit: 300
+Thu Dec 07 17:46:29 MST 2017: Credit: 400
+Thu Dec 07 17:46:29 MST 2017: Credit: 300
+Thu Dec 07 17:47:03 MST 2017: Credit: 300
+Thu Dec 07 17:47:03 MST 2017: Credit: 400
+Thu Dec 07 17:47:03 MST 2017: Credit: 300
+Thu Dec 07 17:47:04 MST 2017: Credit: 300
+Thu Dec 07 17:47:04 MST 2017: Credit: 400
+Thu Dec 07 17:47:04 MST 2017: Credit: 300
+Thu Dec 07 17:47:05 MST 2017: Credit: 300
+Thu Dec 07 17:47:05 MST 2017: Credit: 400
+Thu Dec 07 17:47:05 MST 2017: Credit: 300
+Thu Dec 07 17:47:06 MST 2017: Credit: 300
+Thu Dec 07 17:47:06 MST 2017: Credit: 400
+Thu Dec 07 17:47:06 MST 2017: Credit: 300
+Thu Dec 07 17:47:06 MST 2017: Credit: 300
+Thu Dec 07 17:47:06 MST 2017: Credit: 300
+Thu Dec 07 17:47:06 MST 2017: Credit: 400
+Thu Dec 07 17:47:06 MST 2017: Credit: 400
+Thu Dec 07 17:47:06 MST 2017: Credit: 300
+Thu Dec 07 17:47:06 MST 2017: Credit: 300
+Thu Dec 07 17:47:07 MST 2017: Credit: 300
+Thu Dec 07 17:47:07 MST 2017: Credit: 400
+Thu Dec 07 17:47:07 MST 2017: Credit: 300
+Thu Dec 07 17:47:07 MST 2017: Credit: 300
+Thu Dec 07 17:47:07 MST 2017: Credit: 400
+Thu Dec 07 17:47:07 MST 2017: Credit: 300
+Thu Dec 07 17:47:08 MST 2017: Credit: 300
+Thu Dec 07 17:47:08 MST 2017: Credit: 400
+Thu Dec 07 17:47:08 MST 2017: Credit: 300
+Thu Dec 07 17:47:24 MST 2017: Credit: 300
+Thu Dec 07 17:47:25 MST 2017: Credit: 400
+Thu Dec 07 17:47:25 MST 2017: Credit: 300
+Thu Dec 07 17:47:27 MST 2017: Credit: 300
+Thu Dec 07 17:47:28 MST 2017: Credit: 400
+Thu Dec 07 17:47:28 MST 2017: Credit: 300
+Thu Dec 07 17:49:25 MST 2017: Credit: 300
+Thu Dec 07 17:49:25 MST 2017: Credit: 400
+Thu Dec 07 17:49:25 MST 2017: Credit: 300
+Thu Dec 07 17:51:49 MST 2017: Credit: 300
+Thu Dec 07 17:51:49 MST 2017: Credit: 400
+Thu Dec 07 17:51:49 MST 2017: Credit: 300
+Thu Dec 07 17:52:39 MST 2017: Credit: 300
+Thu Dec 07 17:52:39 MST 2017: Credit: 400
+Thu Dec 07 17:52:39 MST 2017: Credit: 300
+Thu Dec 07 17:55:39 MST 2017: Credit: 300
+Thu Dec 07 17:55:39 MST 2017: Credit: 400
+Thu Dec 07 17:56:59 MST 2017: Credit: 300
+Thu Dec 07 17:56:59 MST 2017: Credit: 400
+Thu Dec 07 17:56:59 MST 2017: Credit: 300
+Thu Dec 07 17:57:04 MST 2017: Credit: 300
+Thu Dec 07 17:57:04 MST 2017: Credit: 400
+Thu Dec 07 17:57:04 MST 2017: Credit: 300
+Thu Dec 07 17:57:57 MST 2017: Credit: 200
+Thu Dec 07 17:57:57 MST 2017: User inserted: 200 coin to coin slot
+Thu Dec 07 17:57:58 MST 2017: Credit: 400
+Thu Dec 07 17:57:58 MST 2017: User inserted: 200 coin to coin slot
+Thu Dec 07 17:57:58 MST 2017: Fissure button pressed by user with: 0
+Thu Dec 07 17:57:59 MST 2017: Credit: 200
+Thu Dec 07 17:57:59 MST 2017: User inserted: 200 coin to coin slot
+Thu Dec 07 17:57:59 MST 2017: Credit: 400
+Thu Dec 07 17:57:59 MST 2017: User inserted: 200 coin to coin slot
+Thu Dec 07 17:58:00 MST 2017: Himalayan Rain button pressed by user with: 0
+Thu Dec 07 17:58:01 MST 2017: Credit: 200
+Thu Dec 07 17:58:01 MST 2017: User inserted: 200 coin to coin slot
+Thu Dec 07 17:58:01 MST 2017: Credit: 400
+Thu Dec 07 17:58:01 MST 2017: User inserted: 200 coin to coin slot
+Thu Dec 07 17:58:01 MST 2017: Credit: 600
+Thu Dec 07 17:58:01 MST 2017: User inserted: 200 coin to coin slot
+Thu Dec 07 17:58:01 MST 2017: Credit: 800
+Thu Dec 07 17:58:01 MST 2017: User inserted: 200 coin to coin slot
+Thu Dec 07 17:58:02 MST 2017: Credit: 1000
+Thu Dec 07 17:58:02 MST 2017: User inserted: 200 coin to coin slot
+Thu Dec 07 17:58:02 MST 2017: Credit: 1200
+Thu Dec 07 17:58:02 MST 2017: User inserted: 200 coin to coin slot
+Thu Dec 07 17:58:02 MST 2017: Dr. Walker button pressed by user with: 0
+Thu Dec 07 17:58:18 MST 2017: Credit: 200
+Thu Dec 07 17:58:18 MST 2017: User inserted: 200 coin to coin slot
+Thu Dec 07 17:58:18 MST 2017: Credit: 400
+Thu Dec 07 17:58:18 MST 2017: User inserted: 200 coin to coin slot
+Thu Dec 07 17:58:20 MST 2017: Credit: 600
+Thu Dec 07 17:58:20 MST 2017: User inserted: 200 coin to coin slot
+Thu Dec 07 17:58:27 MST 2017: Credit: 45
+Thu Dec 07 17:58:27 MST 2017: Dr. Walker button pressed by user with: 45
+Thu Dec 07 17:58:55 MST 2017: Credit: 100
+Thu Dec 07 17:58:55 MST 2017: User inserted: 100 coin to coin slot
+Thu Dec 07 17:58:56 MST 2017: Credit: 125
+Thu Dec 07 17:58:56 MST 2017: User inserted: 25 coin to coin slot
+Thu Dec 07 17:58:57 MST 2017: Credit: 135
+Thu Dec 07 17:58:57 MST 2017: User inserted: 10 coin to coin slot
+Thu Dec 07 17:58:58 MST 2017: Credit: 5
+Thu Dec 07 17:58:58 MST 2017: Lime Zilla button pressed by user with: 5
+Thu Dec 07 19:31:06 MST 2017: Credit: 200
+Thu Dec 07 19:31:23 MST 2017: this
+Thu Dec 07 19:31:23 MST 2017: Credit: 500
+Thu Dec 07 19:31:23 MST 2017: Credit: 200
+Thu Dec 07 19:31:23 MST 2017: Credit: 300
+Thu Dec 07 19:31:23 MST 2017: Credit: 200
+Thu Dec 07 19:31:23 MST 2017: Credit: 400
+Thu Dec 07 19:31:24 MST 2017: Credit: 200
+Thu Dec 07 19:31:25 MST 2017: Credit: 450
+Thu Dec 07 19:31:25 MST 2017: Credit: 250
+Thu Dec 07 19:31:25 MST 2017: Credit: 300
+Thu Dec 07 19:31:25 MST 2017: Credit: 100
+Thu Dec 07 19:31:25 MST 2017: Credit: 230
+Thu Dec 07 19:31:25 MST 2017: Credit: 200
+Thu Dec 07 19:31:25 MST 2017: Credit: 130
+Thu Dec 07 19:31:25 MST 2017: Credit: 130
+Thu Dec 07 19:31:25 MST 2017: Credit: 200
+Thu Dec 07 20:09:21 MST 2017: this
+Thu Dec 07 20:35:08 MST 2017: Credit: 200
+Thu Dec 07 20:35:08 MST 2017: User inserted: 200 coin to coin slot
+Thu Dec 07 20:35:09 MST 2017: Lime Zilla button pressed by user with: 0
+Thu Dec 07 20:35:11 MST 2017: Credit: 100
+Thu Dec 07 20:35:11 MST 2017: User inserted: 100 coin to coin slot
+Thu Dec 07 20:35:13 MST 2017: Credit: 200
+Thu Dec 07 20:35:13 MST 2017: User inserted: 100 coin to coin slot
+Thu Dec 07 20:35:14 MST 2017: Lime Zilla button pressed by user with: 0
+Thu Dec 07 20:35:28 MST 2017: Credit: 200
+Thu Dec 07 20:35:45 MST 2017: this
+Thu Dec 07 20:35:45 MST 2017: Credit: 500
+Thu Dec 07 20:35:45 MST 2017: Credit: 200
+Thu Dec 07 20:35:45 MST 2017: Credit: 300
+Thu Dec 07 20:35:45 MST 2017: Credit: 200
+Thu Dec 07 20:35:45 MST 2017: Credit: 400
+Thu Dec 07 20:35:45 MST 2017: Credit: 200
+Thu Dec 07 20:35:46 MST 2017: Credit: 450
+Thu Dec 07 20:35:46 MST 2017: Credit: 250
+Thu Dec 07 20:35:46 MST 2017: Credit: 300
+Thu Dec 07 20:35:46 MST 2017: Credit: 100
+Thu Dec 07 20:35:46 MST 2017: Credit: 230
+Thu Dec 07 20:35:46 MST 2017: Credit: 200
+Thu Dec 07 20:35:46 MST 2017: Credit: 130
+Thu Dec 07 20:35:46 MST 2017: Credit: 130
+Thu Dec 07 20:35:46 MST 2017: Credit: 200
+Thu Dec 07 20:42:32 MST 2017: Credit: 200
+Thu Dec 07 20:42:49 MST 2017: this
+Thu Dec 07 20:42:49 MST 2017: Credit: 500
+Thu Dec 07 20:42:49 MST 2017: Credit: 200
+Thu Dec 07 20:42:49 MST 2017: Credit: 300
+Thu Dec 07 20:42:49 MST 2017: Credit: 200
+Thu Dec 07 20:42:49 MST 2017: Credit: 400
+Thu Dec 07 20:42:49 MST 2017: Credit: 200
+Thu Dec 07 20:42:50 MST 2017: Credit: 450
+Thu Dec 07 20:42:50 MST 2017: Credit: 250
+Thu Dec 07 20:42:50 MST 2017: Credit: 300
+Thu Dec 07 20:42:50 MST 2017: Credit: 100
+Thu Dec 07 20:42:50 MST 2017: Credit: 230
+Thu Dec 07 20:42:50 MST 2017: Credit: 200
+Thu Dec 07 20:42:50 MST 2017: Credit: 130
+Thu Dec 07 20:42:50 MST 2017: Credit: 130
+Thu Dec 07 20:42:50 MST 2017: Credit: 200
+Thu Dec 07 20:43:19 MST 2017: Credit: 200
+Thu Dec 07 20:43:36 MST 2017: this
+Thu Dec 07 20:43:36 MST 2017: Credit: 500
+Thu Dec 07 20:43:36 MST 2017: Credit: 200
+Thu Dec 07 20:43:36 MST 2017: Credit: 300
+Thu Dec 07 20:43:36 MST 2017: Credit: 200
+Thu Dec 07 20:43:36 MST 2017: Credit: 400
+Thu Dec 07 20:43:36 MST 2017: Credit: 200
+Thu Dec 07 20:43:37 MST 2017: Credit: 450
+Thu Dec 07 20:43:37 MST 2017: Credit: 250
+Thu Dec 07 20:43:37 MST 2017: Credit: 300
+Thu Dec 07 20:43:37 MST 2017: Credit: 100
+Thu Dec 07 20:43:37 MST 2017: Credit: 230
+Thu Dec 07 20:43:37 MST 2017: Credit: 200
+Thu Dec 07 20:43:37 MST 2017: Credit: 130
+Thu Dec 07 20:43:37 MST 2017: Credit: 130
+Thu Dec 07 20:43:37 MST 2017: Credit: 200

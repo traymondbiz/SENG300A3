@@ -6,16 +6,20 @@ import java.util.List;
 
 import org.lsmr.vending.hardware.*;
 
-import ca.ucalgary.seng300.a3.configuration.ConfigurationAlpha;
 import ca.ucalgary.seng300.a3.configuration.ConfigurationModule;
+import ca.ucalgary.seng300.a3.configuration.TechnicianModule;
 import ca.ucalgary.seng300.a3.enums.DisplayType;
 import ca.ucalgary.seng300.a3.enums.OutputDataType;
 import ca.ucalgary.seng300.a3.enums.OutputMethod;
 import ca.ucalgary.seng300.a3.exceptions.InsufficientFundsException;
 import ca.ucalgary.seng300.a3.finance.TransactionModule;
-import ca.ucalgary.seng300.a3.information.InfoSector;
+import ca.ucalgary.seng300.a3.information.OutputModule;
 
 /**
+ * Software Engineering 300 - Group Assignment 3
+ * VendingManager.java
+ * 
+ * 
  * VendingManager is the primary access-point for the logic controlling the
  * VendingMachine hardware. It is associated with VendingListener, which listens
  * for event notifications from the hardware classes.
@@ -33,27 +37,31 @@ import ca.ucalgary.seng300.a3.information.InfoSector;
  * We have been instructed that the VendingMachine and other hardware classes
  * are known-good, so integration testing will be sufficient.
  * 
- * @author Raymond Tran (30028473)
- * @author Thomas Coderre (10169277)
- * @author Thobthai Chulpongsatorn (30005238)
- * 
+ * Id Input/Output Technology and Solutions (Group 2)
+ * @author Raymond Tran 			(30028473)
+ * @author Hooman Khosravi 			(30044760)
+ * @author Christopher Smith 		(10140988)
+ * @author Mengxi Cheng 			(10151992)
+ * @author Zachary Metz 			(30001506)
+ * @author Abdul Basit 				(30033896)
+ * @author Elodie Boudes			(10171818)
+ * @author Michael De Grood			(10134884)
+ * @author Tae Chyung				(10139101)		
+ * @author Xian-Meng Low			(10127970)			
+ *   
+ * @version	2.0
+ * @since	2.0
  */
 public class VendingManager {
 	private static VendingManager mgr;
 	private static VendingListener listener;
-	private static InfoSector infoSector;
-	private static ConfigurationAlpha configurationAlpha;
-	private static VendingMachine vm;
-	
-	//added by zach
-	private static TransactionModule tm;
+	private static OutputModule outputModule;
+	private static ConfigurationModule configurationModule;
+	private static VendingMachine vendingMachine;
+	private static TransactionModule transactionModule;
 	private static int credit;
-
-	//added by XM
-
 	private static List <String> newPopList = new ArrayList<String>();
 	private static List <Integer> newPriceList = new ArrayList<Integer>();
-	//
 	
 	/**
 	 * Singleton constructor. Initializes and stores the singleton instance
@@ -62,16 +70,15 @@ public class VendingManager {
 	private VendingManager(){
 		VendingListener.initialize(this);
 		
-		InfoSector.initialize(this);
-		ConfigurationAlpha.initialize(this);
+		OutputModule.initialize(this);
+		ConfigurationModule.initialize(this);
 		
-		infoSector = InfoSector.getInstance();
-		configurationAlpha = ConfigurationAlpha.getInstance();
+		outputModule = OutputModule.getInstance();
+		configurationModule = ConfigurationModule.getInstance();
 		listener = VendingListener.getInstance();
-			
-		//added by zach
+
 		TransactionModule.initialize(this);
-		tm = TransactionModule.getInstance();
+		transactionModule = TransactionModule.getInstance();
 		
 	}
 	
@@ -84,20 +91,15 @@ public class VendingManager {
 	 */
 	public static void initialize(VendingMachine host) {
 		mgr = new VendingManager(); 
-		vm = host;
-		mgr.registerListeners();
-		
-		
-		configurationAlpha.setStartingState();
-
-		
+		vendingMachine = host;
+		mgr.registerListeners();	
+		configurationModule.setStartingState();		
 	}
 	
 	public void setOutputMap(OutputDataType outputDataType, OutputMethod outputMethod, boolean value ) {
 		
-		infoSector.setOutputMap(outputDataType, outputMethod, value);
-		
-		
+		outputModule.setOutputMap(outputDataType, outputMethod, value);
+	
 	}
 		
 	/**
@@ -116,11 +118,9 @@ public class VendingManager {
 		getCoinSlot().register(listener);
 		getDisplay().register(listener);
 		registerButtonListener(listener);
-		//added by XM
 		getConfigPanel().getDisplay().register(listener);
 		registerConfigButtonListener(listener);
 		getLock().register(listener);
-		//end
 	}
 	
 	
@@ -136,7 +136,6 @@ public class VendingManager {
 		}		
 	}
 	
-	//added by XM
 	/**
 	 * Register the buttons of the Configuration Panel.
 	 * The amount of buttons registered depends on the array of characters in ConfigurationModule, buttonValue.
@@ -145,7 +144,7 @@ public class VendingManager {
 	 */
 	private void registerConfigButtonListener(PushButtonListener listener) {
 		try {
-			int configButtonCount = configurationAlpha.getNumberOfConfigButtons();
+			int configButtonCount = configurationModule.getNumberOfConfigButtons();
 			for(int i = 0; i < configButtonCount; i++) {
 				getConfigPanel().getButton(i).register(listener);
 			}
@@ -158,19 +157,18 @@ public class VendingManager {
 	 * @return	Number of Configuration Panel buttons that are registered.
 	 */
 	public int getNumberOfConfigButtons() {
-		return configurationAlpha.getNumberOfConfigButtons();
+		return configurationModule.getNumberOfConfigButtons();
 	}
-	//end
 	
 	/**
 	 * Produces an array of valid coin denominations accepted by the machine.
 	 * @return	An array of valid coin denomination.
 	 */
 	public int[] getValidCoinsArray() {
-		int i = vm.getNumberOfCoinRacks();
+		int i = vendingMachine.getNumberOfCoinRacks();
 		int[] inValidCoins = new int[i];
 		for (int x = 0; x < i; x++) {
-			inValidCoins[x] = vm.getCoinKindForCoinRack(x);
+			inValidCoins[x] = vendingMachine.getCoinKindForCoinRack(x);
 		}
 		return inValidCoins;
 	}
@@ -180,10 +178,10 @@ public class VendingManager {
 	 * @return	An array representing the number of each particular coin accepted by the machine.
 	 */
 	public int[] getCoinCount() {
-		int j = vm.getNumberOfCoinRacks();
+		int j = vendingMachine.getNumberOfCoinRacks();
 		int[] inCoinCount = new int[j];
 		for (int x = 0; x < j; x++) {
-			CoinRack tempRack = vm.getCoinRack(x);
+			CoinRack tempRack = vendingMachine.getCoinRack(x);
 			inCoinCount[x] = tempRack.size();
 		}
 		return inCoinCount;
@@ -195,10 +193,10 @@ public class VendingManager {
 	 * @return	An array of each pop price.
 	 */
 	public int[] getPopPrices() {
-		int k = vm.getNumberOfPopCanRacks();
+		int k = vendingMachine.getNumberOfPopCanRacks();
 		int[] inPopPrices = new int[k];
 		for (int x = 0; x < k; x++) {
-			inPopPrices[x] = vm.getPopKindCost(x);
+			inPopPrices[x] = vendingMachine.getPopKindCost(x);
 		}
 		return inPopPrices;
 	}
@@ -206,66 +204,65 @@ public class VendingManager {
 
 	// General Purpose Accessor Methods
 	public int getCredit() {
-		return credit;
-		
+		return credit;	
 	}
 	void enableSafety(){
-		vm.enableSafety();
+		vendingMachine.enableSafety();
 	}
 	void disableSafety(){
-		vm.disableSafety();
+		vendingMachine.disableSafety();
 	}
 	boolean isSafetyEnabled(){
-		return vm.isSafetyEnabled();
+		return vendingMachine.isSafetyEnabled();
 	}
 	IndicatorLight getExactChangeLight(){
-		return vm.getExactChangeLight();
+		return vendingMachine.getExactChangeLight();
 	}
 	IndicatorLight getOutOfOrderLight(){
-		return vm.getOutOfOrderLight();
+		return vendingMachine.getOutOfOrderLight();
 	}
 	int getNumberOfSelectionButtons(){
-		return vm.getNumberOfSelectionButtons();
+		return vendingMachine.getNumberOfSelectionButtons();
 	}
 	PushButton getSelectionButton(int index){
-		return vm.getSelectionButton(index);
+		return vendingMachine.getSelectionButton(index);
 	}
 	CoinSlot getCoinSlot(){
-		return vm.getCoinSlot(); 
+		return vendingMachine.getCoinSlot(); 
 	}
 	CoinReceptacle getCoinReceptacle(){
-		return vm.getCoinReceptacle(); 
+		return vendingMachine.getCoinReceptacle(); 
 	}
 	
 	DeliveryChute getDeliveryChute(){
-		return vm.getDeliveryChute(); 
+		return vendingMachine.getDeliveryChute(); 
 	}
 	int getNumberOfCoinRacks(){
-		return vm.getNumberOfCoinRacks();
+		return vendingMachine.getNumberOfCoinRacks();
 	}
 	CoinRack getCoinRack(int index){
-		return vm.getCoinRack(index); 
+		return vendingMachine.getCoinRack(index); 
 	}
 	CoinRack getCoinRackForCoinKind(int value){
-		return vm.getCoinRackForCoinKind(value); 
+		return vendingMachine.getCoinRackForCoinKind(value); 
 	}
 	Integer getCoinKindForCoinRack(int index){
-		return vm.getCoinKindForCoinRack(index); 
+		return vendingMachine.getCoinKindForCoinRack(index); 
 	}
 	public int getNumberOfPopCanRacks(){
-		return vm.getNumberOfPopCanRacks(); 
+		return vendingMachine.getNumberOfPopCanRacks(); 
 	}
 	public String getPopKindName(int index){
-		return vm.getPopKindName(index); 
+		return vendingMachine.getPopKindName(index); 
 	}
 	public int getPopKindCost(int index){
-		return vm.getPopKindCost(index); 
+		return vendingMachine.getPopKindCost(index); 
 	}
 	PopCanRack getPopCanRack(int index){
-		return vm.getPopCanRack(index); 
+		return vendingMachine.getPopCanRack(index); 
 	}
 	public int getPopCanCount(int index){
-		return vm.getPopCanRack(index).size(); 
+		return vendingMachine.getPopCanRack(index).size(); 
 	}
 	public void dispensePopCanRack(int index) throws DisabledException, EmptyException, CapacityExceededException {
 		getPopCanRack(index).dispensePopCan();
@@ -276,15 +273,15 @@ public class VendingManager {
 		
 	}
 	Display getDisplay(){
-		return vm.getDisplay();
+		return vendingMachine.getDisplay();
 	}
 	
 	CoinReturn getCoinReturn() {
-		return vm.getCoinReturn();
+		return vendingMachine.getCoinReturn();
 	}
 	
 	Lock getLock() {
-		return vm.getLock();
+		return vendingMachine.getLock();
 	}
 	
 	/**
@@ -292,14 +289,12 @@ public class VendingManager {
 	 */
 	public boolean getConfigMode()
 	{
-		return configurationAlpha.getMode();
+		return configurationModule.getMode();
 	}
 	
-	//added by XM
 	ConfigurationPanel getConfigPanel() {
-		return vm.getConfigurationPanel();
+		return vendingMachine.getConfigurationPanel();
 	}
-	//end
 
 	/**
 	 * Returns the index of the given SelectionButton,
@@ -317,13 +312,6 @@ public class VendingManager {
 		return -1;
 	}
 	
-	/**
-	 * Gets the credit available for purchases, in cents. 
-	 * Public access for testing and external access. 
-	 * It is assumed to not be a security vulnerability.
-	 * @return The stored credit, in cents.
-	 */
-	
 	
 	/**
 	 * Displays a string message.
@@ -332,21 +320,18 @@ public class VendingManager {
 	public void displayMessage(String str, boolean locked){
 		// originally !locked
 		if (locked)
-			vm.getDisplay().display(str);
+			vendingMachine.getDisplay().display(str);
 		else
 			getConfigPanel().getDisplay().display(str);
 	}
 	
 	public DisplayType getDisplayType( Display display) {
 		
-		if(display == vm.getDisplay()) return DisplayType.FRONT_DISPLAY;
+		if(display == vendingMachine.getDisplay()) return DisplayType.FRONT_DISPLAY;
 		
 		if(display == getConfigPanel().getDisplay()) return DisplayType.BACK_PANEL_DISPKAY;
 		
-		return DisplayType.UNKNOWN_DISPLAY;
-		
-		
-		
+		return DisplayType.UNKNOWN_DISPLAY;	
 		
 	}
 	
@@ -358,13 +343,11 @@ public class VendingManager {
 	 */
 	public void addMessage(String str, OutputDataType dataType, int time) {
 		try {
-			infoSector.sendOutput( str, dataType, time);
+			outputModule.sendOutput( str, dataType, time);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
+			
 	}
 
     /**
@@ -372,22 +355,23 @@ public class VendingManager {
      * @param added The credit to add, in cents.
      */
 	public void resetDisplay() {
-        infoSector.resetDisplay();
+        outputModule.resetDisplay();
 	}
 	
-	//New code by Christopher
-	//Restarts configurationModule's display
+	/**
+	 * Restarts configurationModule's display
+	 */
 	public void activateCofigPanel() {
-		configurationAlpha.startConfigPanel();
+		configurationModule.startConfigPanel();
 	}
 	
-	//Clears configurationModule's variables
+	/**
+	 * Clears configurationModule's variables
+	 */
 	public void deactivateConfigPanel() {
-		configurationAlpha.clearConfigPanel();
+		configurationModule.clearConfigPanel();
 	}
-	//End of new code (Chris)
-  
-	//added by XM
+
 	/**
 	 * Displays message in Configuration Panel's display
 	 * 
@@ -398,13 +382,8 @@ public class VendingManager {
 		
 	}
 	
-	//End of new code (XM)
 	
 //vvv=======================VENDING LOGIC START=======================vvv	
-
-
-
-
 
 
 	/**
@@ -413,7 +392,7 @@ public class VendingManager {
 	 * @throws IOException 
 	 */
     public void addCredit(int added) throws IOException{
-    	tm.addCredit(added);
+    	transactionModule.addCredit(added);
     }
     
 	/**
@@ -428,7 +407,7 @@ public class VendingManager {
 	 */
 	public void buy(int popIndex) throws InsufficientFundsException, EmptyException, 
 											DisabledException, CapacityExceededException, IOException {
-		tm.buy(popIndex);
+		transactionModule.buy(popIndex);
 	}
 	
 	/**
@@ -440,10 +419,6 @@ public class VendingManager {
 		mgr.addMessage(msg, dataType  ,time);
 		
 	}
-	
-	/**
-	 * wrapper method for change module so other modules can interact with it
-	 */
 	
 	/**
 	 * Dispense the specified coin.
@@ -474,16 +449,15 @@ public class VendingManager {
 		getExactChangeLight().deactivate();
 	}
 	public void updateExactChangeLightState() {
-		tm.updateExactChangeLight();
+		transactionModule.updateExactChangeLight();
 	}
 	public void interruptDisplay(){
-		infoSector.interruptLoopingThread();
+		outputModule.interruptLoopingThread();
 
 	}
 	/**
 	 * Activates the Out Of Order light when necessary.
 	 */
-	//added by zach
 	public void setOutOfOrder() {
 		getOutOfOrderLight().activate();
 		//disable what the user can interact with
@@ -493,14 +467,13 @@ public class VendingManager {
 		mgr.displayMessage("OUT OF ORDER", true);
 	}
 	
-	//added by XM
 	
 	/**
 	 * Send the index of the configuration panel button that was pushed.
 	 * @param index		Index of the configuration panel button
 	 */
 	public void pressConfigButton (int index) {
-		configurationAlpha.enterChar(index);
+		configurationModule.enterChar(index);
 	}
 	
 	/**
@@ -508,7 +481,7 @@ public class VendingManager {
 	 */
 	public void pressedConfigEnterButton() {
 		
-		configurationAlpha.pressedEnter();
+		configurationModule.pressedEnter();
 		
 	}
 	
@@ -520,7 +493,7 @@ public class VendingManager {
 	 */
 	public boolean checkPopRackExist(int index) {
 		try {
-			String a = vm.getPopKindName(index);
+			String a = vendingMachine.getPopKindName(index);
 			return true;
 		}catch(Exception e){
 			return false;
@@ -537,23 +510,22 @@ public class VendingManager {
 	 * @param newPrice	New price to be changed to
 	 */
 	public void changePopPrice(int index, int newPrice) {
-		for (int i = 0; i < vm.getNumberOfSelectionButtons(); i++) {
+		for (int i = 0; i < vendingMachine.getNumberOfSelectionButtons(); i++) {
 			if(i == index) {
-				newPopList.add(vm.getPopKindName(i));
+				newPopList.add(vendingMachine.getPopKindName(i));
 				newPriceList.add(newPrice);
 			}
 			else {
-				newPopList.add(vm.getPopKindName(i));
-				newPriceList.add(vm.getPopKindCost(i));
+				newPopList.add(vendingMachine.getPopKindName(i));
+				newPriceList.add(vendingMachine.getPopKindCost(i));
 			}
 		}
 		
-		vm.configure(newPopList, newPriceList);
+		vendingMachine.configure(newPopList, newPriceList);
 		newPopList.clear();
 		newPriceList.clear();
 	}
-	//end
-	//added by zach
+
 	public void setCredit(int newCredit) {
 		credit = newCredit;
 	}

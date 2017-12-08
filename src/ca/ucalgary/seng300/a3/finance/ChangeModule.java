@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import ca.ucalgary.seng300.a3.core.VendingManager;
 
 /**
- * Software Engineering 300 - Group Assignment 2
+ * Software Engineering 300 - Group Assignment 3
  * ChangeModule.java
  *
  * Performs calculations to determine all possible change denominations that may have to been returned,
@@ -24,19 +24,16 @@ import ca.ucalgary.seng300.a3.core.VendingManager;
  * @author Mengxi Cheng 			(10151992)
  * @author Zachary Metz 			(30001506)
  * @author Abdul Basit 				(30033896)
- *
+ * @author Elodie Boudes			(10171818)
+ * @author Michael De Grood			(10134884)
+ * @author Tae Chyung				(10139101)		
+ * @author Xian-Meng Low			(10127970)			
+ *   
  * @version	2.0
  * @since	2.0
  */
 public class ChangeModule {
 
- 	/*
-	 * Initialized arrays representing arbitrary values to calculate on.
-	 * valid_coins	represents the machine's accepted currency denominations.
-	 * pop_prices	represents the costs of some particular pop. (Dependent on index.)
-	 * coin_count	represents the current available amount of coins (excluding the user's)
-	 * 				that can be used to make change. Ascending value order.
-	 */
 
 	/**
 	 * Self-referential variable. (Singleton)
@@ -61,6 +58,7 @@ public class ChangeModule {
 	/**
 	 * An array corresponding to the prices of pop available in the machine.
 	 */
+	@SuppressWarnings("unused")
 	private static int[] popPrices;
 
 	/**
@@ -112,10 +110,6 @@ public class ChangeModule {
 		popPrices = inPopPrices;
 	}
 
-	/**
-	 * Debugging method that receives exact values (initialized above) and performs an
-	 * algorithm to determine whether the 'Exact Change Light' should be on or off.
-	 */
 
 
 
@@ -286,9 +280,6 @@ public class ChangeModule {
 		}
 
 		ArrayList<Integer> map = new ArrayList<Integer>();
-		//for (int i = 0; i < coinKinds.length; i++) {
-		//	map.put(coinKinds[i], 0);
-		//}
 
 		for (int i = change; i >= 0; i--) {
 			if (sumArray(bestChange[i]) > 0) {
@@ -303,7 +294,6 @@ public class ChangeModule {
 		return map;
 	}
 
-	//added by Zach
 	private int sumArray(int[] array){
 		int sum = 0;
 		for(int value: array){

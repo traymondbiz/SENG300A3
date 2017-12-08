@@ -10,23 +10,28 @@ import java.util.Date;
 public class LoggingModule {
 	private static Writer output;
 
-	/**
-	 * Software Engineering 300 - Group Assignment 2
-	 * LoggingModule.java
-	 * 
-	 * Records messages that are handed to it into a text file.
-	 * 
-	 * Id Input/Output Technology and Solutions (Group 2)
-	 * @author Raymond Tran 			(30028473)
-	 * @author Hooman Khosravi 			(30044760)
-	 * @author Christopher Smith 		(10140988)
-	 * @author Mengxi Cheng 			(10151992)
-	 * @author Zachary Metz 			(30001506)
-	 * @author Abdul Basit 				(30033896)
-	 * 
-	 * @version	2.0
-	 * @since	2.0
-	 */	
+ /**
+ * Software Engineering 300 - Group Assignment 3
+ * LoggingModule.java
+ * 
+ * Records messages that are handed to it into a text file.
+ * 
+ * 
+ * Id Input/Output Technology and Solutions (Group 2)
+ * @author Raymond Tran 			(30028473)
+ * @author Hooman Khosravi 			(30044760)
+ * @author Christopher Smith 		(10140988)
+ * @author Mengxi Cheng 			(10151992)
+ * @author Zachary Metz 			(30001506)
+ * @author Abdul Basit 				(30033896)
+ * @author Elodie Boudes			(10171818)
+ * @author Michael De Grood			(10134884)
+ * @author Tae Chyung				(10139101)		
+ * @author Xian-Meng Low			(10127970)			
+ *   
+ * @version	2.0
+ * @since	2.0
+ */
 	
 	
 	/* Reference material
@@ -43,7 +48,7 @@ public class LoggingModule {
 	/**
 	 * Reference to manager of this module. (Hardware calls, other module calls, etc.)
 	 */
-	private static InfoSector mgr;
+	private static OutputModule mgr;
 	
 	/**
 	 * Private constructor to prevent additional creations. (Singleton)
@@ -56,7 +61,7 @@ public class LoggingModule {
 	 * 
 	 * @param manager	The VendingManager assigning itself this class.
 	 */
-	public static void initialize(InfoSector manager) {
+	public static void initialize(OutputModule manager) {
 		if (manager != null) {
 			mgr = manager;
 			loggingModule = new LoggingModule();

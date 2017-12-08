@@ -13,12 +13,10 @@ import ca.ucalgary.seng300.a3.finance.ChangeModule;
 import ca.ucalgary.seng300.a3.*;
 
 /**
- * Software Engineering 300 - Group Assignment 2
- * ChangeModuleTest.java
+ * Software Engineering 300 - Group Assignment 3
+ * ChangeModuletest.java
  * 
- * This class is used to test the functionality of the ChangeModule class.
- * 
- * 100.0% code coverage was achieved in ChangeModule.
+ * This class tests the change module 
  * 
  * Id Input/Output Technology and Solutions (Group 2)
  * @author Raymond Tran 			(30028473)
@@ -27,12 +25,14 @@ import ca.ucalgary.seng300.a3.*;
  * @author Mengxi Cheng 			(10151992)
  * @author Zachary Metz 			(30001506)
  * @author Abdul Basit 				(30033896)
+ * @author Elodie Boudes			(10171818)
+ * @author Michael De Grood			(10134884)
+ * @author Tae Chyung				(10139101)		
+ * @author Xian-Meng Low			(10127970)			
  *   
  * @version	2.0
  * @since	2.0
- */
-
-/*
+ *
  * ChangeModule.java originally had the method called updateExactChangeLight(), but it has
  * since been moved over to FinanceSector.java
  * As a result, in order to fix the compilation errors, a private instance of FinanceSector has
@@ -42,8 +42,8 @@ import ca.ucalgary.seng300.a3.*;
  * tie-ins with VendingManager, and that to a VendingMachine.
  */
 public class ChangeModuleTest {	
-	private ChangeModule cm;
-	private VendingMachine vend;
+	private ChangeModule changeModule;
+	private VendingMachine vendingMachine;
 	private int[] validCoins;
 	private int[] coinCount = {0, 10, 1, 3, 5, 0};
 	
@@ -66,7 +66,7 @@ public class ChangeModuleTest {
     	int receptacleCapacity = 200; 
     	int deliveryChuteCapacity = 5;
     	int coinReturnCapacity = 5;
-    	vend = new VendingMachine(coinKind, selectionButtonCount, coinRackCapacity, popCanRackCapacity, receptacleCapacity, deliveryChuteCapacity, coinReturnCapacity);
+    	vendingMachine = new VendingMachine(coinKind, selectionButtonCount, coinRackCapacity, popCanRackCapacity, receptacleCapacity, deliveryChuteCapacity, coinReturnCapacity);
     	
     	validCoins = coinKind;
 	}
@@ -78,9 +78,9 @@ public class ChangeModuleTest {
 	public void testNotExactChange(){
 		//Create vending machine with pop prices set to 170
 		configureVend(170);
-		cm = ChangeModule.getInstance();
+		changeModule = ChangeModule.getInstance();
 		// See note at top of code.
-		boolean expected = false; boolean actual = cm.checkChangeLight(validCoins, coinCount);
+		boolean expected = false; boolean actual = changeModule.checkChangeLight(validCoins, coinCount);
 		assertEquals(expected, actual); //Exact change should not be required
 	}
 	
@@ -91,9 +91,9 @@ public class ChangeModuleTest {
 	public void testExactChange(){
 		//Create vending machine with pop prices set to 200
 		configureVend(200);
-		cm = ChangeModule.getInstance();
+		changeModule = ChangeModule.getInstance();
 		// See note at top of code.
-		boolean expected = true; boolean actual = cm.checkChangeLight(validCoins, coinCount);
+		boolean expected = true; boolean actual = changeModule.checkChangeLight(validCoins, coinCount);
 		assertEquals(expected, actual);//Exact change should be required
 	}
 
@@ -104,9 +104,9 @@ public class ChangeModuleTest {
 	public void testExactChange2(){
 		//Create vending machine with pop prices set to 150
 		configureVend(150);
-		cm = ChangeModule.getInstance();
+		changeModule = ChangeModule.getInstance();
 		// See note at top of code.
-		boolean expected = false; boolean actual = cm.checkChangeLight(validCoins, coinCount);
+		boolean expected = false; boolean actual = changeModule.checkChangeLight(validCoins, coinCount);
 		assertEquals(expected, actual); //Exact change should be required
 	}
 
@@ -117,12 +117,12 @@ public class ChangeModuleTest {
 	public void testCoinsToReturn(){
 		//Create vending machine with pop prices set to 150
 		configureVend(150);
-		cm = ChangeModule.getInstance();
+		changeModule = ChangeModule.getInstance();
 		// See note at top of code.
 		//cm.updateExactChangeLight();
 		//fSec.updateExactChangeLight();
 		ArrayList<Integer> returnList = new ArrayList<Integer>();
-		returnList = cm.getCoinsToReturn(10, validCoins, coinCount);
+		returnList = changeModule.getCoinsToReturn(10, validCoins, coinCount);
 		ArrayList<Integer> expectedReturn = new ArrayList<Integer>();
 		expectedReturn.add(10);
 		assertEquals(expectedReturn, returnList); //Confirm how many of each coin is returned
@@ -134,8 +134,8 @@ public class ChangeModuleTest {
 	 */
 	@After
 	public void tearDown(){
-		cm = null;
-		vend = null;
+		changeModule = null;
+		vendingMachine = null;
 	}
 	
 	/**
@@ -156,7 +156,7 @@ public class ChangeModuleTest {
 		//Add Coke as a selectable pop
 		PopCan popcan = new PopCan("Coke");
 		try {
-			vend.getPopCanRack(0).acceptPopCan(popcan);
+			vendingMachine.getPopCanRack(0).acceptPopCan(popcan);
 		} catch (CapacityExceededException | DisabledException e) {
 		};
 		
@@ -166,7 +166,7 @@ public class ChangeModuleTest {
 			popCanCosts.add(popPrice);
 		}
 		//Configure and create the vending machine to be tested
-		vend.configure(popCanNames, popCanCosts);	
-    	VendingManager.initialize(vend);		
+		vendingMachine.configure(popCanNames, popCanCosts);	
+    	VendingManager.initialize(vendingMachine);		
 	}
 }

@@ -1,22 +1,11 @@
 package ca.ucalgary.seng300.a3.test;
 
-import static org.junit.Assert.*;
-
-import java.io.*;
-
-import org.junit.*;
-
-import ca.ucalgary.seng300.a3.core.*;
-import ca.ucalgary.seng300.a3.information.LoggingModule;
-import ca.ucalgary.seng300.a3.*;
 
 /**
- * Software Engineering 300 - Group Assignment 2
- * LoggingModuleTest.java
+ * Software Engineering 300 - Group Assignment 3
+ * GUIModule.java
  * 
  * This class is used to test the functionality of the LoggingModule class.
- * 
- * 100% code coverage was achieved in LoggingModule.
  * 
  * Id Input/Output Technology and Solutions (Group 2)
  * @author Raymond Tran 			(30028473)
@@ -25,12 +14,26 @@ import ca.ucalgary.seng300.a3.*;
  * @author Mengxi Cheng 			(10151992)
  * @author Zachary Metz 			(30001506)
  * @author Abdul Basit 				(30033896)
- * 
+ * @author Elodie Boudes			(10171818)
+ * @author Michael De Grood			(10134884)
+ * @author Tae Chyung				(10139101)		
+ * @author Xian-Meng Low			(10127970)			
+ *   
  * @version	2.0
  * @since	2.0
  */
+
+
+import static org.junit.Assert.*;
+
+import java.io.*;
+
+import org.junit.*;
+
+import ca.ucalgary.seng300.a3.information.LoggingModule;
+
 public class LoggingModuleTest {
-	private LoggingModule logging;
+	private LoggingModule loggingModule;
 
 	/**
 	 * A method to initialize the LoggingModule class
@@ -39,7 +42,7 @@ public class LoggingModuleTest {
 	@Before
 	public void setup(){
 		LoggingModule.initialize();
-		logging = LoggingModule.getInstance();
+		loggingModule = LoggingModule.getInstance();
 	}
 	
 	/* Reference material for reading from a file
@@ -52,7 +55,7 @@ public class LoggingModuleTest {
 	 */
 	@Test
 	public void testLog() throws IOException{
-		logging.logMessage("this");
+		loggingModule.logMessage("this");
 		
 		// The name of the file to open.
 		String fileName = "Log.txt";
@@ -91,6 +94,6 @@ public class LoggingModuleTest {
 	 */
 	@After
 	public void tearDown(){
-		logging = null;
+		loggingModule = null;
 	}
 }

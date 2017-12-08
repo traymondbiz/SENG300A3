@@ -14,12 +14,10 @@ import ca.ucalgary.seng300.a3.core.*;
 import ca.ucalgary.seng300.a3.enums.DisplayType;
 
 /**
- * Software Engineering 300 - Group Assignment 2
- * DisplayModuleTest.java
+ * Software Engineering 300 - Group Assignment 3
+ * DisplayeModuleTest.java
  * 
- * This class is used to test the functionality of the Display_Module class.
- * 
- * 94.0% code coverage was achieved in Display_Module.
+ * This class tests the displays 
  * 
  * Id Input/Output Technology and Solutions (Group 2)
  * @author Raymond Tran 			(30028473)
@@ -28,12 +26,16 @@ import ca.ucalgary.seng300.a3.enums.DisplayType;
  * @author Mengxi Cheng 			(10151992)
  * @author Zachary Metz 			(30001506)
  * @author Abdul Basit 				(30033896)
+ * @author Elodie Boudes			(10171818)
+ * @author Michael De Grood			(10134884)
+ * @author Tae Chyung				(10139101)		
+ * @author Xian-Meng Low			(10127970)			
  *   
  * @version	2.0
  * @since	2.0
  */
 public class DisplayModuleTest {
-	private VendingMachine vend;
+	private VendingMachine vendingMachine;
 
 	/**
 	 * A method to prepare a vending machine to the basic specifications outlined by the Client 
@@ -55,7 +57,7 @@ public class DisplayModuleTest {
     	int receptacleCapacity = 200; 
     	int deliveryChuteCapacity = 5;
     	int coinReturnCapacity = 5;
-    	vend = new VendingMachine(coinKind, selectionButtonCount, coinRackCapacity, popCanRackCapacity, receptacleCapacity, deliveryChuteCapacity, coinReturnCapacity);
+    	vendingMachine = new VendingMachine(coinKind, selectionButtonCount, coinRackCapacity, popCanRackCapacity, receptacleCapacity, deliveryChuteCapacity, coinReturnCapacity);
    
     	//Generate pop names
 		List<String> popCanNames = new ArrayList<String>();
@@ -69,7 +71,7 @@ public class DisplayModuleTest {
 		//Add Coke to pop can rack 0
 		PopCan popcan = new PopCan("Coke");
 		try {
-			vend.getPopCanRack(0).acceptPopCan(popcan);
+			vendingMachine.getPopCanRack(0).acceptPopCan(popcan);
 		} catch (CapacityExceededException | DisabledException e) {
 		};
 		
@@ -78,7 +80,7 @@ public class DisplayModuleTest {
 		for (int i = 0; i < 6; i++) {
 			popCanCosts.add(200);
 		}
-		vend.configure(popCanNames, popCanCosts);
+		vendingMachine.configure(popCanNames, popCanCosts);
 	}
 	
 	/**
@@ -88,7 +90,7 @@ public class DisplayModuleTest {
 	 */
 	@Test
 	public void testHiThere() throws InterruptedException{
-		VendingManager.initialize(vend);
+		VendingManager.initialize(vendingMachine);
 		Thread.sleep(1000);
 		assertEquals("Hi there!", VendingListener.returnMsg(DisplayType.FRONT_DISPLAY));
 	}
@@ -100,7 +102,7 @@ public class DisplayModuleTest {
 	 */
 	@Test
 	public void testHiThereErased() throws InterruptedException{
-		VendingManager.initialize(vend);
+		VendingManager.initialize(vendingMachine);
 		Thread.sleep(6000);
 		assertEquals("", VendingListener.returnMsg(DisplayType.FRONT_DISPLAY));
 	}
@@ -112,7 +114,7 @@ public class DisplayModuleTest {
 	 */
 	@Test
 	public void testMessageCycle() throws InterruptedException{
-		VendingManager.initialize(vend);
+		VendingManager.initialize(vendingMachine);
 		Thread.sleep(16000);
 		assertEquals("Hi there!", VendingListener.returnMsg(DisplayType.FRONT_DISPLAY));
 
@@ -123,7 +125,7 @@ public class DisplayModuleTest {
 	 */
 	@Test
 	public void testCreditChange() throws IOException{
-		VendingManager.initialize(vend);
+		VendingManager.initialize(vendingMachine);
 		VendingManager vm = VendingManager.getInstance();
 		vm.addCredit(200);
 		assertEquals("Credit: 200", VendingListener.returnMsg(DisplayType.FRONT_DISPLAY));
@@ -134,6 +136,6 @@ public class DisplayModuleTest {
 	 */	
 	@After
 	public void tearDown() {
-		vend = null; 
+		vendingMachine = null; 
 	} 
 }

@@ -1,5 +1,27 @@
 package ca.ucalgary.seng300.a3.test;
 
+/**
+ * Software Engineering 300 - Group Assignment 3
+ * ConfigurationTest.java
+ * 
+ * This class tests the configuration of the vending machine 
+ * 
+ * Id Input/Output Technology and Solutions (Group 2)
+ * @author Raymond Tran 			(30028473)
+ * @author Hooman Khosravi 			(30044760)
+ * @author Christopher Smith 		(10140988)
+ * @author Mengxi Cheng 			(10151992)
+ * @author Zachary Metz 			(30001506)
+ * @author Abdul Basit 				(30033896)
+ * @author Elodie Boudes			(10171818)
+ * @author Michael De Grood			(10134884)
+ * @author Tae Chyung				(10139101)		
+ * @author Xian-Meng Low			(10127970)			
+ *   
+ * @version	2.0
+ * @since	2.0
+ */
+
 import static org.junit.Assert.*;
 
 import java.util.List;
@@ -14,7 +36,7 @@ import ca.ucalgary.seng300.a3.core.VendingManager;
 import ca.ucalgary.seng300.a3.enums.DisplayType;
 
 public class ConfigurationTest {
-	private VendingMachine vend;
+	private VendingMachine vendingMachine;
 
 	/**
 	 * A method to prepare a vending machine to the basic specifications outlined by the Client 
@@ -36,7 +58,7 @@ public class ConfigurationTest {
     	int receptacleCapacity = 200; 
     	int deliveryChuteCapacity = 5;
     	int coinReturnCapacity = 5;
-    	vend = new VendingMachine(coinKind, selectionButtonCount, coinRackCapacity, popCanRackCapacity, receptacleCapacity, deliveryChuteCapacity, coinReturnCapacity);
+    	vendingMachine = new VendingMachine(coinKind, selectionButtonCount, coinRackCapacity, popCanRackCapacity, receptacleCapacity, deliveryChuteCapacity, coinReturnCapacity);
     	
     	//Generate pop names
 		List<String> popCanNames = new ArrayList<String>();
@@ -50,7 +72,7 @@ public class ConfigurationTest {
         //Add Coke to pop can rack 0
 		PopCan popcan = new PopCan("Coke");
 		try {
-			vend.getPopCanRack(0).acceptPopCan(popcan);
+			vendingMachine.getPopCanRack(0).acceptPopCan(popcan);
 		} catch (CapacityExceededException | DisabledException e) {
 		};
 		
@@ -60,7 +82,7 @@ public class ConfigurationTest {
 			popCanCosts.add(200);
 		}
 		
-		vend.configure(popCanNames, popCanCosts);
+		vendingMachine.configure(popCanNames, popCanCosts);
 	}
 	
 	/**Tested price changing capabilities. Changed pop slot 1's price from 200 to 100.
@@ -68,7 +90,7 @@ public class ConfigurationTest {
 	@Test
 	public void testPriceChange(){
 		//Create vending machine
-		VendingManager.initialize(vend);
+		VendingManager.initialize(vendingMachine);
 		VendingManager vm = VendingManager.getInstance();
 		//Enter 1 to change rack 1 price
 		vm.pressConfigButton(1);
@@ -78,7 +100,7 @@ public class ConfigurationTest {
 		vm.pressConfigButton(0);
 		vm.pressConfigButton(0);
 		vm.pressedConfigEnterButton();
-		assertEquals(100, vend.getPopKindCost(1)); //Confirm price is now 100
+		assertEquals(100, vendingMachine.getPopKindCost(1)); //Confirm price is now 100
 	}
 	
 	/**Tested configuration panel's display.
@@ -87,7 +109,7 @@ public class ConfigurationTest {
 	@Test
 	public void testConfigDisplay() throws InterruptedException {
 		//Create vending machine
-		VendingManager.initialize(vend);
+		VendingManager.initialize(vendingMachine);
 		VendingManager vm = VendingManager.getInstance();
 		//Enter 2 to change rack 2 price
 		
@@ -103,7 +125,7 @@ public class ConfigurationTest {
 		vm.pressConfigButton(0);
 		assertEquals("New Price: 100", VendingListener.returnMsg(DisplayType.BACK_PANEL_DISPKAY)); //New characters "100" should be added to display
 		vm.pressedConfigEnterButton();
-		assertEquals(100, vend.getPopKindCost(2));		//Confirm price updated
+		assertEquals(100, vendingMachine.getPopKindCost(2));		//Confirm price updated
 		assertEquals("Pop Slot: ", VendingListener.returnMsg(DisplayType.BACK_PANEL_DISPKAY));	//Display should reset after entering new mode
 	}
 }

@@ -5,7 +5,6 @@ import static org.junit.Assert.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.junit.*; 
 
 import org.junit.Before;
 import org.junit.Test;
@@ -33,9 +32,7 @@ import ca.ucalgary.seng300.a3.exceptions.InsufficientFundsException;
  * Software Engineering 300 - Group Assignment 3
  * VendingListener.java
  * 
- * This class is registered by VendingManager with hardware classes to listen for hardware
- * events and perform first-pass checks and error-handling for them. Most "heavy-lifting" 
- * is completed within VendingManager.
+ * This class simulates the interaction a user will have with the vending machine 
  * 
  * Id Input/Output Technology and Solutions (Group 2)
  * @author Raymond Tran 			(30028473)
@@ -55,7 +52,7 @@ import ca.ucalgary.seng300.a3.exceptions.InsufficientFundsException;
 
 public class UserTest implements PopCanRackListener, DisplayListener, IndicatorLightListener, LockListener{
 
-	private VendingMachine vm;
+	private VendingMachine vendingMachine;
 	private int[] validCoins;
 	private int[] coinCount = {0, 10, 1, 3, 5, 0};
 	private VendingManager mgr;
@@ -80,20 +77,20 @@ public class UserTest implements PopCanRackListener, DisplayListener, IndicatorL
 		int receptacleCapacity = 200; 
 		int deliveryChuteCapacity = 20;
 		int coinReturnCapacity = 20;
-		vm = new VendingMachine(coinKind, selectionButtonCount, coinRackCapacity, popCanRackCapacity, receptacleCapacity, deliveryChuteCapacity, coinReturnCapacity);
-		vm.loadCoins(10,10,10,10,10);
-		VendingManager.initialize(vm);
+		vendingMachine = new VendingMachine(coinKind, selectionButtonCount, coinRackCapacity, popCanRackCapacity, receptacleCapacity, deliveryChuteCapacity, coinReturnCapacity);
+		vendingMachine.loadCoins(10,10,10,10,10);
+		VendingManager.initialize(vendingMachine);
 		mgr = VendingManager.getInstance();
 		
 		for(int i = 0; i < selectionButtonCount; i++)
 		{
-			vm.getPopCanRack(i).register(this);
+			vendingMachine.getPopCanRack(i).register(this);
 		}
-		vm.getDisplay().register(this);
-		vm.getExactChangeLight().register(this);
-		vm.getOutOfOrderLight().register(this);
-		vm.getLock().register(this);
-		vm.getConfigurationPanel().getDisplay().register(this);
+		vendingMachine.getDisplay().register(this);
+		vendingMachine.getExactChangeLight().register(this);
+		vendingMachine.getOutOfOrderLight().register(this);
+		vendingMachine.getLock().register(this);
+		vendingMachine.getConfigurationPanel().getDisplay().register(this);
 
 		popCanNames.add("Lime Zilla");
 		popCanNames.add("Fissure");
@@ -107,7 +104,7 @@ public class UserTest implements PopCanRackListener, DisplayListener, IndicatorL
 		// Stock Vending Machine: 5 Lime Zillas
 		try {
 			for(int i = 0; i < 2; i++) {
-				vm.getPopCanRack(0).acceptPopCan(limeZilla);
+				vendingMachine.getPopCanRack(0).acceptPopCan(limeZilla);
 			}
 		} 
 		catch (CapacityExceededException | DisabledException e) {
@@ -126,7 +123,7 @@ public class UserTest implements PopCanRackListener, DisplayListener, IndicatorL
 		popCanCosts.add(300);
 		popCanCosts.add(225);
 		popCanCosts.add(554);
-		vm.configure(popCanNames, popCanCosts);
+		vendingMachine.configure(popCanNames, popCanCosts);
 	    try {
 			mgr.buy(0);
 		} catch (InsufficientFundsException | EmptyException | DisabledException | CapacityExceededException
@@ -147,7 +144,7 @@ public class UserTest implements PopCanRackListener, DisplayListener, IndicatorL
 		popCanCosts.add(300);
 		popCanCosts.add(225);
 		popCanCosts.add(554);
-		vm.configure(popCanNames, popCanCosts);
+		vendingMachine.configure(popCanNames, popCanCosts);
 	    try {
 	    	mgr.addCredit(130);
 	    	mgr.buy(0);
@@ -175,7 +172,7 @@ public class UserTest implements PopCanRackListener, DisplayListener, IndicatorL
 		popCanCosts.add(300);
 		popCanCosts.add(225);
 		popCanCosts.add(554);
-		vm.configure(popCanNames, popCanCosts);
+		vendingMachine.configure(popCanNames, popCanCosts);
 		
 		mgr.addCredit(200);
 		int remaining = mgr.getCredit() - 130 ;
@@ -200,7 +197,7 @@ public class UserTest implements PopCanRackListener, DisplayListener, IndicatorL
 		popCanCosts.add(300);
 		popCanCosts.add(225);
 		popCanCosts.add(554);
-		vm.configure(popCanNames, popCanCosts);
+		vendingMachine.configure(popCanNames, popCanCosts);
 		
 		mgr.addCredit(200);	
 		int remaining = mgr.getCredit() - 130 ;

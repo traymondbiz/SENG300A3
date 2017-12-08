@@ -12,7 +12,7 @@ import ca.ucalgary.seng300.a3.enums.OutputDataType;
 import ca.ucalgary.seng300.a3.exceptions.InsufficientFundsException;
 
 /**
- * Software Engineering 300 - Group Assignment 2
+ * Software Engineering 300 - Group Assignment 3
  * TransactionModule.java
  * 
  * Handles all purchase-type interactions.
@@ -24,7 +24,11 @@ import ca.ucalgary.seng300.a3.exceptions.InsufficientFundsException;
  * @author Mengxi Cheng 			(10151992)
  * @author Zachary Metz 			(30001506)
  * @author Abdul Basit 				(30033896)
- * 
+ * @author Elodie Boudes			(10171818)
+ * @author Michael De Grood			(10134884)
+ * @author Tae Chyung				(10139101)		
+ * @author Xian-Meng Low			(10127970)			
+ *   
  * @version	2.0
  * @since	2.0
  */
@@ -40,8 +44,7 @@ public class TransactionModule {
 	 */
 	private static TransactionModule transactionModule;
 	
-	//added by zach
-	private static ChangeModule cm;
+	private static ChangeModule changeModule;
 	
 	/**
 	 * Forces the existing singleton instance to be replaced.
@@ -52,7 +55,7 @@ public class TransactionModule {
 	public static void initialize(VendingManager host){
 		transactionModule = new TransactionModule();
 		ChangeModule.initialize(transactionModule);
-		cm = ChangeModule.getInstance();
+		changeModule = ChangeModule.getInstance();
 		mgr  = host;
 		
 	}
@@ -105,7 +108,9 @@ public class TransactionModule {
 				mgr.dispensePopCanRack(popIndex);
 				int remaining = mgr.getCredit() - cost ;
 				if(remaining > 0) { // if true there is change to give
-					ArrayList<Integer> returnList = cm.getCoinsToReturn(remaining,mgr.getValidCoinsArray(),mgr.getCoinCount());
+					int[] validCoins = mgr.getValidCoinsArray();
+					int[] coinCount = mgr.getCoinCount();
+					ArrayList<Integer> returnList = changeModule.getCoinsToReturn(remaining,validCoins, coinCount);
 					while(!returnList.isEmpty()) {
 						mgr.dispenseCoin(returnList.get(0));
 						remaining -= returnList.get(0);
@@ -128,10 +133,10 @@ public class TransactionModule {
 			throw new InsufficientFundsException("Cannot buy " + popName + ". " + dif + " cents missing.");
 		}
 	}
-	//added by zach
+
 	public void updateExactChangeLight() {
 		
-		if(cm.checkChangeLight(mgr.getValidCoinsArray(), mgr.getPopPrices())) {
+		if(changeModule.checkChangeLight(mgr.getValidCoinsArray(), mgr.getPopPrices())) {
 			mgr.deactivateExactChangeLight();
 		}else {
 			mgr.activateExactChangeLight();

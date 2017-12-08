@@ -7,16 +7,13 @@ import org.lsmr.vending.hardware.*;
 
 import ca.ucalgary.seng300.a3.enums.DisplayType;
 import ca.ucalgary.seng300.a3.enums.OutputDataType;
-import ca.ucalgary.seng300.a3.enums.OutputMethod;
 import ca.ucalgary.seng300.a3.exceptions.InsufficientFundsException;
 
 /**
- * Software Engineering 300 - Group Assignment 2
+ * Software Engineering 300 - Group Assignment 3
  * VendingListener.java
  * 
- * This class is registered by VendingManager with hardware classes to listen for hardware
- * events and perform first-pass checks and error-handling for them. Most "heavy-lifting" 
- * is completed within VendingManager.
+ * This class is used to implement all the listeners in the hardware. 
  * 
  * Id Input/Output Technology and Solutions (Group 2)
  * @author Raymond Tran 			(30028473)
@@ -25,9 +22,13 @@ import ca.ucalgary.seng300.a3.exceptions.InsufficientFundsException;
  * @author Mengxi Cheng 			(10151992)
  * @author Zachary Metz 			(30001506)
  * @author Abdul Basit 				(30033896)
- * 
+ * @author Elodie Boudes			(10171818)
+ * @author Michael De Grood			(10134884)
+ * @author Tae Chyung				(10139101)		
+ * @author Xian-Meng Low			(10127970)			
+ *   
  * @version	2.0
- * @since	1.0
+ * @since	2.0
  */
 
 public class VendingListener implements CoinSlotListener, PushButtonListener, CoinReturnListener, DisplayListener, LockListener {
@@ -73,15 +74,7 @@ public class VendingListener implements CoinSlotListener, PushButtonListener, Co
 		return listener;
 	}
 
-	// Currently unneeded listener events.
-	@Override
-	public void coinRejected(CoinSlot slot, Coin coin) {}
-	@Override
-	public void enabled(AbstractHardware<? extends AbstractHardwareListener> hardware) {}
-	@Override
-	public void disabled(AbstractHardware<? extends AbstractHardwareListener> hardware) {}
-	@Override
-	public void returnIsFull(CoinReturn coinReturn) {}
+
 
 	/**
 	 * Responds to "pressed" notifications from registered SelectionButtons. 
@@ -110,11 +103,9 @@ public class VendingListener implements CoinSlotListener, PushButtonListener, Co
 				}
 			}
 			
-			//end
 		}
 		else{
 			try{
-				//Assumes a 1-to-1, strictly ordered mapping betwee
 				mgr.buy(bIndex);
 				mgr.addMessage(mgr.getPopKindName(bIndex)+" button pressed by user with: "+ Integer.toString(mgr.getCredit()), OutputDataType.BUTTON_PRESSED  ,0);
 				
@@ -141,7 +132,6 @@ public class VendingListener implements CoinSlotListener, PushButtonListener, Co
 				
 				mgr.setOutOfOrder();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}		
@@ -157,13 +147,10 @@ public class VendingListener implements CoinSlotListener, PushButtonListener, Co
 		try {
 			mgr.addCredit(coin.getValue());
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		
 			mgr.addMessage("User inserted: " + Integer.toString(coin.getValue()) +" coin to coin slot",OutputDataType.VALID_COIN_INSERTED,0);
-		
-		
 	}
 
 	/**
@@ -171,13 +158,8 @@ public class VendingListener implements CoinSlotListener, PushButtonListener, Co
 	 */
 	@Override
 	public void coinsDelivered(CoinReturn coinReturn, Coin[] coins){
-		mgr.resetDisplay();
-		
-		
-			
-				mgr.addMessage(("Coins Returned to User: " + coins.toString()),OutputDataType.COIN_REFUNDED,0);
-			
-		
+		mgr.resetDisplay();	
+				mgr.addMessage(("Coins Returned to User: " + coins.toString()),OutputDataType.COIN_REFUNDED,0);		
 		
 	}
 	
@@ -194,9 +176,6 @@ public class VendingListener implements CoinSlotListener, PushButtonListener, Co
 		
 		if(mgr.getDisplayType(display) == DisplayType.BACK_PANEL_DISPKAY ) messagePanel = newMessage;
 		
-		
-
-		
 	}
 
 	/**
@@ -205,25 +184,34 @@ public class VendingListener implements CoinSlotListener, PushButtonListener, Co
 	 */
 	public static String returnMsg(DisplayType displayType){
 		
-		
-		if(displayType == DisplayType.FRONT_DISPLAY ) return message;
-		
-		if(displayType == DisplayType.BACK_PANEL_DISPKAY ) return messagePanel;
-		
+		if(displayType == DisplayType.FRONT_DISPLAY ) return message;	
+		if(displayType == DisplayType.BACK_PANEL_DISPKAY ) return messagePanel;	
 		return "";
 	}
 
-	//New code by Christopher
+	/**
+	 * Disabled the safety from the vending machine 
+	 */
 	@Override
 	public void locked(Lock lock) {
 		mgr.disableSafety();
 		mgr.deactivateConfigPanel();
 	}
 
+	/**
+	 * Enabled the safety on the vending machine 
+	 */
 	@Override
 	public void unlocked(Lock lock) {
 		mgr.enableSafety();	
 		mgr.activateCofigPanel();
 	}
-	//End of new code
+
+	
+	
+	// Currently unneeded listener events.
+	public void coinRejected(CoinSlot slot, Coin coin) {}
+	public void enabled(AbstractHardware<? extends AbstractHardwareListener> hardware) {}
+	public void disabled(AbstractHardware<? extends AbstractHardwareListener> hardware) {}
+	public void returnIsFull(CoinReturn coinReturn) {}
 }
