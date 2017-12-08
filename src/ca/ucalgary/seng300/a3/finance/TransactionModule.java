@@ -105,7 +105,9 @@ public class TransactionModule {
 				mgr.dispensePopCanRack(popIndex);
 				int remaining = mgr.getCredit() - cost ;
 				if(remaining > 0) { // if true there is change to give
-					ArrayList<Integer> returnList = cm.getCoinsToReturn(remaining,mgr.getValidCoinsArray(),mgr.getCoinCount());
+					int[] validCoins = mgr.getValidCoinsArray();
+					int[] coinCount = mgr.getCoinCount();
+					ArrayList<Integer> returnList = cm.getCoinsToReturn(remaining,validCoins, coinCount);
 					while(!returnList.isEmpty()) {
 						mgr.dispenseCoin(returnList.get(0));
 						remaining -= returnList.get(0);
